@@ -5,40 +5,7 @@
         <meta charset="UTF-8">
         <title> Maquuette site web page d'accueil</title>
 
-        <style>
-            #membrename, #gestionnaire, #admin, #membreMail ,#gestMail, #adminMail{
-                background-color: whitesmoke;
-            }
-
-            body{
-                overflow-wrap: break-word;
-            }
-
-            div{
-                display: flex;
-                flex-direction: row;
-                justify-content:center;
-                width: fit-content;
-
-            }
-            main{
-                text-align: center;
-                justify-content: center;
-                margin-top: 10%;
-                margin-left: 40%;
-            }
-            fieldset{
-                width: fit-content;
-                border: 2px ridge #2CE4CA;
-                box-shadow:   2px 1px 3px mediumslateblue;
-            }
-            .input,.valider{
-                display: none;
-
-            }
-
-
-        </style>
+        <link rel="stylesheet" href="style.css" />
 
     </head>
 
@@ -64,7 +31,7 @@
             <p>
                 <span class="gest"> <strong> Connexion gestionnaire  </strong> :<br> <br> </span>
                    <span class="input gestionnaire"> identifiant : <input id="gestionnaire" type="mail" value="" placeholder="adresse mail"><br> <br>
-                mt de passe : <input id="gestMail" type="password" value="" placeholder="mot de passse"> </span>
+                mot de passe : <input id="gestMail" type="password" value="" placeholder="mot de passse"> </span>
             </p>
 
         </div>

@@ -1,0 +1,30 @@
+#membrename, #gestionnaire, #admin, #membreMail ,#gestMail, #adminMail{
+    background-color: whitesmoke;
+}
+
+body{
+    overflow-wrap: break-word;
+}
+
+div{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    width: fit-content;
+
+}
+main{
+    text-align: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-left: 40%;
+}
+fieldset{
+    width: fit-content;
+    border: 2px ridge #2CE4CA;
+    box-shadow:   2px 1px 3px mediumslateblue;
+}
+.input,.valider{
+    display: none;
+
+}
