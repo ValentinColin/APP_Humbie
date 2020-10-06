@@ -1,9 +1,9 @@
-input{
-    background-color: whitesmoke;
-}
-
 body{
     overflow-wrap: break-word;
+}
+
+h1{
+    text-align: center;
 }
 
 div{
@@ -28,6 +28,10 @@ fieldset{
 
 .Input, .valider{
     display: none;
+}
+
+input{
+    background-color: whitesmoke;
 }
 
 p{

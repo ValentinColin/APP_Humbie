@@ -8,7 +8,8 @@ function hr(){
 
 function connexion(balise,i){
     balise.addEventListener("click",function(){
-        var AffichageInput= document.querySelectorAll(".Input")[i];
+        //var AffichageInput= document.querySelectorAll(".Input")[i]; 
+        var AffichageInput= document.querySelectorAll("p[class~='Input']")[i];
         AffichageInput.style="display : inline;"
 
         var div=document.querySelectorAll("div");
@@ -18,11 +19,10 @@ function connexion(balise,i){
             }
         }
       hr();
-
     });
 }
 
-var typeUser=document.querySelectorAll("p");
+var typeUser=document.querySelectorAll("h2");
 
 connexion(typeUser[0],0);
 connexion(typeUser[1],1);
