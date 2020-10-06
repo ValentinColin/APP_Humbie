@@ -1,5 +1,4 @@
-
-#membrename, #gestionnaire, #admin, #membreMail ,#gestMail, #adminMail{
+input{
     background-color: whitesmoke;
 }
 
@@ -12,23 +11,25 @@ div{
     flex-direction: row;
     justify-content:center;
     width: fit-content;
-
 }
+
 main{
     text-align: center;
     justify-content: center;
     margin-top: 10%;
     margin-left: 40%;
 }
+
 fieldset{
     width: fit-content;
     border: 2px ridge #2CE4CA;
     box-shadow:   2px 1px 3px mediumslateblue;
 }
-.Input,.valider{
-    display: none;
 
+.Input, .valider{
+    display: none;
 }
+
 p{
     text-align: justify;
 }
