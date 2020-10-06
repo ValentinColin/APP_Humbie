@@ -1,0 +1,86 @@
+/*
+
+	Liste non-exaustive de sélecteurs de balise en CSS3
+
+	Voir: https://www.w3.org/Style/css3-selectors-updates/WD-css3-selectors-20010126.fr.html 
+	 ...pour plus d'information
+*/
+
+
+
+/* Toutes les balise portant ce nom.
+ici -> Tous les paragraphes */
+p {
+
+}
+
+/* Toutes les balises désigné (répétition de la méthode ci dessus).
+ici ->  Tous les titres h1 et tous les textes importants */
+h1, em {
+
+}
+
+/* Toutes les balises ayant l'attribut class renseigné.
+ici ->  Toutes les balises avec l'attribut de classe: classNAME */
+.classNAME {
+
+}
+
+/* La balise ayant l'id renseigné.
+ici -> La balise ayant l'id: idNAME */
+#idNAME {
+
+}
+
+/* Sélectionne toutes les balises sans exception. 
+On l'appelle le sélecteur universel. */
+* {
+
+}
+
+/* Sélectionne toutes les balises contenue dans une autre.
+ici -> Sélectionne toutes les balises <em> situées à l'intérieur d'une balise <h3> */
+h3 em {
+
+}
+
+/* Toutes les premières balise qui en suit directement une autres.
+ici -> Sélectionne la première balise <p> située après un titre <h3> */
+h3 + p {
+
+}
+
+/* Toutes les balises qui possède un attribut.
+ici -> Sélectionne tous les liens <a> qui possèdent un attribut title */
+a[title] {
+
+}
+
+/* Toutes les balises qui possède un attribut et une valeur exacte.
+ici -> Idem, mais l'attribut doit en plus avoir exactement pour valeur « Cliquez ici » */
+a[title="Cliquez ici"] {
+
+}
+
+/* Toutes les balises qui possède un attribut et une valeur au moins partiellement.
+ici -> Idem, l'attribut doit cette fois contenir dans sa valeur le mot « ici » 
+(peu importe sa position). */
+a[title*="ici"] {
+
+}
+
+/* Tout élément E dont l'attribut "foo" contient une liste de valeurs 
+SÉPARÉES PAR DES ESPACES, L'UNE de ces valeurs étant EXACTEMENT ÉGAL à "bar" */
+E[foo~="bar"] {
+
+}
+
+/* Tout élément E dont la valeur de l'attribut "foo" COMMENCE EXACTEMENT par la chaîne "bar" */
+E[foo^="bar"] {
+
+}
+
+/* Tout élément E dont la valeur de l'attribut "foo" FINIT EXACTEMENT par la chaîne "bar" */
+E[foo$="bar"] {
+
+}
