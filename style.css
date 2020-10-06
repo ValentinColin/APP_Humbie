@@ -2,8 +2,21 @@ body{
     overflow-wrap: break-word;
 }
 
+main{
+    text-align: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-left: 40%;
+}
+
 h1{
     text-align: center;
+}
+
+fieldset{
+    width: fit-content;
+    border: 2px ridge #2CE4CA;
+    box-shadow:   2px 1px 3px mediumslateblue;
 }
 
 div{
@@ -13,17 +26,8 @@ div{
     width: fit-content;
 }
 
-main{
-    text-align: center;
-    justify-content: center;
-    margin-top: 10%;
-    margin-left: 40%;
-}
-
-fieldset{
-    width: fit-content;
-    border: 2px ridge #2CE4CA;
-    box-shadow:   2px 1px 3px mediumslateblue;
+p{
+    text-align: justify;
 }
 
 .Input, .valider{
@@ -34,9 +38,6 @@ input{
     background-color: whitesmoke;
 }
 
-p{
-    text-align: justify;
-}
 
 
 
