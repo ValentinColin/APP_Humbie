@@ -1,5 +1,6 @@
 body{
     overflow-wrap: break-word;
+    background: url("Images/background.jpg");
 }
 
 main{
@@ -21,7 +22,7 @@ fieldset{
 
 div{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content:center;
     width: fit-content;
 }
