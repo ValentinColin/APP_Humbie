@@ -22,6 +22,7 @@ function connexion(balise,i){
     });
 }
 
+
 var typeUser=document.querySelectorAll("h2");
 
 connexion(typeUser[0],0);
