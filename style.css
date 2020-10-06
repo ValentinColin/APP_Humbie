@@ -17,7 +17,7 @@ h1{
 fieldset{
     width: fit-content;
     border: 2px ridge #2CE4CA;
-    box-shadow:   2px 1px 3px mediumslateblue;
+    box-shadow:   3px 2px 2px mediumslateblue;
 }
 
 div{
@@ -31,13 +31,33 @@ p{
     text-align: justify;
 }
 
-.Input, .valider{
+.Input, .valider , #retour{
     display: none;
+
+
 }
 
 input{
     background-color: whitesmoke;
 }
+
+#retour{
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    color: darkblue;
+}
+
+legend{
+    border-left: 1px ridge cyan;
+    border-right: 1px ridge cyan;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.2em;
+    color: darkblue;
+
+}
+
 
 
 
