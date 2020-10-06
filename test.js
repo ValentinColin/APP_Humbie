@@ -9,7 +9,7 @@ function hr(){
 function connexion(balise,i){
     balise.addEventListener("click",function(){
         var AffichageInput= document.querySelectorAll(".Input")[i];
-        AffichageInput.style="display : block;"
+        AffichageInput.style="display : inline;"
 
         var div=document.querySelectorAll("div");
         for (var k=0; k<div.length;++k){
