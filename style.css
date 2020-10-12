@@ -33,8 +33,6 @@ p{
 
 .Input, .valider , #retour{
     display: none;
-
-
 }
 
 input{
@@ -48,7 +46,7 @@ input{
     color: darkblue;
     line-height: 4px;
 }
-
+/*
 legend{
     border-left: 1px ridge cyan;
     border-right: 1px ridge cyan;
@@ -57,8 +55,7 @@ legend{
     font-size: 1.2em;
     color: darkblue;
 
-}
-
+}*/
 
 .valider a{
     font-size: 12px;
