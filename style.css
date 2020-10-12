@@ -1,0 +1,69 @@
+body{
+    overflow-wrap: break-word;
+    background: url("Images/background.jpg");
+}
+
+main{
+    text-align: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-left: 40%;
+}
+
+h1{
+    text-align: center;
+}
+
+fieldset{
+    width: fit-content;
+    border: 2px ridge #2CE4CA;
+    box-shadow:   3px 2px 2px mediumslateblue;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    width: fit-content;
+}
+
+p{
+    text-align: justify;
+}
+
+.Input, .valider , #retour{
+    display: none;
+
+
+}
+
+input{
+    background-color: whitesmoke;
+}
+
+#retour{
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    color: darkblue;
+    line-height: 4px;
+}
+
+legend{
+    border-left: 1px ridge cyan;
+    border-right: 1px ridge cyan;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.2em;
+    color: darkblue;
+
+}
+
+
+.valider a{
+    font-size: 12px;
+}
+
+
+
+
