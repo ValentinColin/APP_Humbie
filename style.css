@@ -23,7 +23,7 @@ fieldset{
 div{
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     width: fit-content;
 }
 
@@ -33,6 +33,7 @@ p{
 
 .Input, .valider{
     display: none;
+    text-align: center;
 }
 
 input{
