@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title> Maquette site web page d'accueil</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 </header>
 <main>
 
-    <fieldset method="post" action="php/login2.php">
+    <fieldset method="post" action="login2.php">
         <legend>Connexion</legend>
 
     	<a id="retour"> << </a>
@@ -67,7 +67,7 @@
 </footer>
 </body>
 
-<script src="javascript/login.js">
+<script src="../javascript/login.js">
 
 </script>
 
