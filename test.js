@@ -10,9 +10,8 @@ function hr(etatDisplay){
 
 function connexion(balise,i){
     balise.addEventListener("click",function(){
-        //var AffichageInput= document.querySelectorAll(".Input")[i];
         var AffichageInput= document.querySelectorAll("p[class~='Input']")[i];
-        AffichageInput.style="display : inline;"
+        AffichageInput.style.display= "inline";
 
         var div=document.querySelectorAll("div");
         for (var k=0; k<div.length;++k){
