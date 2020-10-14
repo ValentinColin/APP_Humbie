@@ -4,9 +4,9 @@ if ($_SESSION['connected']){
     header('Location: main.php');
 }
 $erreur = null;
-require_once('login2.php');
+require_once('login.php');
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>

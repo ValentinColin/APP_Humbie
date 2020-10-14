@@ -1,29 +1,52 @@
 <?php
-function good_password(pseudo_given,password_given) 
+
+use function PHPSTORM_META\type;
+
+if(!empty($_POST['pseudo']) and !empty($_POST['password']))
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=Humbie;charset=utf8','root','root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    //  Récupération de l'utilisateur et de son pass hashé
+    $bdd = new PDO('mysql:host=localhost;dbname=Humbie', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $req = $bdd->query('SELECT id, pseudo, password, prenom, nom
+                        FROM Members 
+                        WHERE pseudo = \'' . $_POST['pseudo'] . '\''
+                        );
 
-	$reponse = $bdd->Query('
-		SELECT pseudo, password
-		FROM Members
-		WHERE password = ' . password_hash($_POST['password'], PASSWORD_DEFAULT)
-		);
+    $data = $req->fetch(); // Tableau possédant à présent les clés:valeurs
 
-	if ($donnees = $reponse->fetch()) {
-		# Access granted
-		echo 'Access granted';
-		$result = True;
-	} else {
-		# Access denied
-		echo 'Access denied';
-		$result = False;
-	}
+    // Indique qu'on a fini de traité la requête (permet d'éviter des problèmes lors de futurs requête)
+    $req->closeCursor();
 
-	return $result;
+    // Fonction inutilisable tant que le mot de passe n'a pas été hasher
+    // Comparaison du pass envoyé via le formulaire avec la base
+    //$isPasswordCorrect = password_verify($_POST['password'], $data['password']);
+
+    // En attendant que la fonction password_verify() puisse être utiliser...
+    $isPasswordCorrect = false;
+    if ($_POST['password'] === $data['password']) { $isPasswordCorrect = true; }
+
+
+    if (empty($data))
+    {
+        $erreur = 'Mauvais mot de passe ou pseudo !';
+
+    }
+    else
+    {
+        if ($isPasswordCorrect) 
+        {
+            $_SESSION['id'] = $data['id'];
+            $_SESSION['pseudo'] = $data['pseudo'];
+            $_SESSION['prenom'] = $data['prenom'];
+            $_SESSION['nom'] = $data['nom'];
+            $_SESSION['connected'] = true;
+            echo 'Vous êtes connecté !';
+            
+            // redirection
+            header('Location: main.php');
+        }
+        else 
+        {
+            $erreur = 'Mauvais mot de passe ou pseudo !';
+        }
+    }
 }
-
-/* 
-Écrire une réponse pour dire que cela c'est bien passer ? 
-Genre du texte->(Valider en vert) qui s'affiche mais si il y a une erreur alors un texte explicatif en rouge
-*/
-?>
