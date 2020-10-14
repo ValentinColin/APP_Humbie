@@ -1,3 +1,7 @@
+<?php
+$erreur = null;
+require_once('login2.php');
+?>
 <!doctype html>
 <html lang="fr">
 
@@ -13,8 +17,9 @@
     <h1> Page d'authentification</h1>
 </header>
 <main>
+ 
 
-    <fieldset method="post" action="login2.php">
+    <fieldset >
         <legend>Connexion</legend>
 
     	<a id="retour"> << </a>
@@ -23,11 +28,13 @@
             <h2>
                 Connexion Admin :
             </h2>
-
-            <p class="Input admin">
-                Identifiant :  <input id="adminMail" type="mail"     name="Pseudo"   value="" placeholder="adresse mail"><br> <br>
-                Mot de passe : <input id="adminPwd"  type="password" name="Password" value="" placeholder="mot de passe">
-            </p>
+            <form method="post" action="maquette.php">
+                <p class="Input admin">
+                    Identifiant :  <input id="adminMail" type="mail"     name="pseudo"   value="" placeholder="adresse mail"><br> <br>
+                    Mot de passe : <input id="adminPwd"  type="password" name="password" value="" placeholder="mot de passe"><br>
+                    <input type="submit" value="valider">
+                </p>
+            </form>
         </div>
 
         <hr>
@@ -55,10 +62,11 @@
                 Mot de passe : <input id="userPwd"  type="password" name="Password" value="" placeholder="mot de passe">
             </p>
         </div>
-
-        <p class="valider">
-            <input type="submit" value="valider">
-        </p>
+        <!-- <form method="post" action="maquette.php">
+            <p class="valider">
+                <input type="submit" value="valider">
+            </p>  -->
+        </form>
     </fieldset>
 
 </main>

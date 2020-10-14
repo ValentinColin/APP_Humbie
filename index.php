@@ -20,7 +20,7 @@
     		<td>: (Notre site web principal)</td>
     	</tr>
     	<tr>
-    		<td><a href="DataBase.html">DataBase</a></td>
+    		<td><a href="DataBase.php">DataBase</a></td>
     		<td>: (Afficher la liste des membres enregistrer dans la base de données)</td>
     	</tr>
     </table>

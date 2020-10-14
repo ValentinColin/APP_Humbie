@@ -4,7 +4,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=Humbie', 'root', 'root', array(PDO::
 //$bdd = new PDO('mysql:host=localhost;dbname=Humbie', 'root', 'root');
 
 $reponse = $bdd->query('
-	SELECT id, access , prenom, nom
+	SELECT id, access , prenom, nom, password
 	FROM Members 
 	ORDER BY access');
 
@@ -13,18 +13,20 @@ echo '<table>';
 echo '<caption>Base de donnée</caption>';
 echo '<tr>
 		<td> id      </td>
-		<td><strong> access  </strong></td>
-		<td><strong> prenom  </strong></td>
-		<td><strong> nom     </strong></td>
+		<td><strong> access   </strong></td>
+		<td><strong> prenom   </strong></td>
+		<td><strong> nom      </strong></td>
+		<td><strong> password </strong></td>
 	  </tr>';
 
 while ($donnees = $reponse->fetch())
 {
 	echo 	'<tr>' . 
-				'<td>' . $donnees['id']     . '</td>' .
-				'<td>' . $donnees['access'] . '</td>' .
-				'<td>' . $donnees['prenom'] . '</td>' .
-				'<td>' . $donnees['nom']    . '</td>' .
+				'<td>' . $donnees['id']       . '</td>' .
+				'<td>' . $donnees['access']   . '</td>' .
+				'<td>' . $donnees['prenom']   . '</td>' .
+				'<td>' . $donnees['nom']      . '</td>' .
+				'<td>' . $donnees['password'] . '</td>' .
 			'</tr>';
 }
 echo '</table>';
