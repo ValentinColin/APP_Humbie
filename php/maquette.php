@@ -1,4 +1,8 @@
 <?php
+session_start();
+if ($_SESSION['connected']){
+    header('Location: main.php');
+}
 $erreur = null;
 require_once('login2.php');
 ?>
@@ -65,8 +69,8 @@ require_once('login2.php');
         <!-- <form method="post" action="maquette.php">
             <p class="valider">
                 <input type="submit" value="valider">
-            </p>  -->
-        </form>
+            </p>  
+        </form> -->
     </fieldset>
 
 </main>

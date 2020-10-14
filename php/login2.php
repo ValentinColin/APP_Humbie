@@ -33,6 +33,7 @@ else
         session_start();
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $_POST['pseudo'];
+        $_SESSION['connected'] = true;
         echo 'Vous êtes connecté !';
         header('Location: main.php');
     }
