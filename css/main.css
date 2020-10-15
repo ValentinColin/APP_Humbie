@@ -29,12 +29,19 @@
 	text-decoration: underline;
 }
 
+header {
+
+}
+
+#icon_burger_menu {
+	height: 40px;
+	width: auto;
+}
+
 body {
 	padding: 0;
 	margin: 0;
 	text-align: center;
-	justify-content: center;
-	
 }
 
 #navbar {
@@ -47,30 +54,20 @@ body {
 	border-color: bisque;
 	align-items: center;
 	min-height: 50px;
-
-	
-
-
 }
-
-
 
 #navbar li {
 	display: inline;
 	list-style: none;
 	width: 100%;
-	
-	
 }
-
-
 
 #navbar li a{
 	display: inline-block;
 	color:#04445a;
 	outline: none;
 	text-decoration: none;
-
+	text-align: center;
 }
 
 .burger div{
@@ -78,6 +75,38 @@ body {
 	height: 5px;
 	background-color: white;
 	margin: 5px;
+}
+
+footer {
 
 }
 
+#footer_nav {
+	margin: 0;
+  	padding: 0;
+  	list-style: none;
+  	text-align: center;
+}
+
+#footer_nav li {
+	display: inline;
+	margin-right: 1px;
+  	color: #fff;
+  	background: #c00;
+}
+
+#footer_nav li a {
+	padding: 4px 20px;
+	background: #FFFFFF;
+	color: #000000;
+	border: 1px dotted #600;
+	font: 1em "Trebuchet MS",Arial,sans-serif;
+	line-height: 1em;
+	text-align: center;
+	text-decoration: none;
+}
+
+#footer_nav li a:hover, #navigation li a:focus, #navigation li a:active {
+  background: #FFA500; /* Orange */
+  text-decoration: underline;
+}
