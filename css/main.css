@@ -30,6 +30,54 @@
 }
 
 body {
+	padding: 0;
+	margin: 0;
 	text-align: center;
-    justify-content: center;
+	justify-content: center;
+	
 }
+
+#navbar {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	background-color: aquamarine;
+	border-style: solid;
+	border-color: bisque;
+	align-items: center;
+	min-height: 50px;
+
+	
+
+
+}
+
+
+
+#navbar li {
+	display: inline;
+	list-style: none;
+	width: 100%;
+	
+	
+}
+
+
+
+#navbar li a{
+	display: inline-block;
+	color:#04445a;
+	outline: none;
+	text-decoration: none;
+
+}
+
+.burger div{
+	width: 25px;
+	height: 5px;
+	background-color: white;
+	margin: 5px;
+
+}
+
