@@ -39,6 +39,7 @@ header {
 }
 
 body {
+	overflow-wrap: break-word;
 	padding: 0;
 	margin: 0;
 	text-align: center;
