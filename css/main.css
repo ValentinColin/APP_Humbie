@@ -1,0 +1,35 @@
+/* J'essaye un truc */
+#navigation {
+	width: 300px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#navigation li {
+	background: whitesmoke;
+	color: #fff;
+	border: 1px solid #00BFFF;
+	margin-bottom: 1px;
+}
+
+#navigation li a {
+	display: block;
+	background: whitesmoke;
+	color: green;
+	font: 1em "Trebuchet MS",Arial,sans-serif; 
+	line-height: 1em;
+	text-align: center;
+	text-decoration: none;
+	padding: 4px 0;
+}
+
+#navigation li a:hover, #navigation li a:focus, #navigation li a:active {
+	background: rgb(220,220,220);
+	text-decoration: underline;
+}
+
+body {
+	text-align: center;
+    justify-content: center;
+}
