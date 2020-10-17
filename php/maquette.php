@@ -1,11 +1,23 @@
 <?php
 session_start();
-if ($_SESSION['connected']){
-    header('Location: main.php');
+
+try 
+{
+    if ($_SESSION['connected'])
+    {
+        header('Location: main.php');
+    }       
+} 
+catch (Exception $e) 
+{
+    // Première connexion
 }
+
+
 $erreur = null;
 require_once('login.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 

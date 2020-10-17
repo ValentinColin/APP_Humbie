@@ -1,0 +1,38 @@
+footer {
+
+}
+
+/* Style de la barre de navigation dans le footer */
+
+#footer_nav {
+	margin: 0;
+  	padding: 0;
+  	list-style: none;
+  	text-align: center;
+}
+
+#footer_nav li {
+	display: inline;
+	margin-right: 1px;
+  	/*border: 1px dotted #600;*/
+}
+
+#footer_nav li a {
+	padding: 4px 20px;
+	background: #FFFFFF;
+	color: #000000;
+	/*border: 1px dotted #600;*/
+	font: 1em "Trebuchet MS",Arial,sans-serif;
+	line-height: 1em;
+	text-align: center;
+	text-decoration: none;
+}
+
+#footer_nav li a:hover, #navigation li a:focus, #navigation li a:active {
+  background: #FFA500; /* Orange */
+  text-decoration: underline;
+}
+
+#lang {
+	/*border: 0px dotted #600;*/
+}
