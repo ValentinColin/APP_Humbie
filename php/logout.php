@@ -6,5 +6,5 @@ $_SESSION = array();
 session_destroy();
 
 // Redirection
-header('Location: maquette.php');
+header('Location: loginPage.php');
 ?>
