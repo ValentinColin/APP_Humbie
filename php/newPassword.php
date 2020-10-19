@@ -25,13 +25,13 @@ require_once('login.php');
 
         <main>
 
-            <form method="post" action="#">
+            <form method="post" action="password.php">
                 <fieldset >
                     <legend>Réinitialisation de mot de passe</legend>
 
                     <a class='backLoginPage' href='loginPage.php'> <<< </a>
                     <p class="input">
-                        Adresse mail  :  <input id="mail" type="mail" name="pseudo"  placeholder="adresse mail"><br>
+                        Adresse mail  :  <input id="mail" type="mail" name="mail"  placeholder="adresse mail"><br>
 
                     </p>
                     <hr>
