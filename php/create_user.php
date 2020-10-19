@@ -9,17 +9,14 @@ catch(Exception $e)
         die('Erreur : '.$e->getMessage());
 }
 
-$req = $bdd->query('SELECT id
-                    FROM Members 
-                    WHERE pseudo = \'' . $_SESSION['pseudo'] . '\''
-                    );
-
-$id_manager = $req->fetch()['id'];
-$req->closeCursor();
+/* L'id du manager est transmis dans la bdd du user 
+   afin de savoir qui est son suppérieur hiérarchique direct 
+   ainsi que celui qui a crée son compte */
+$id_manager = $_SESSION['id'];
 
 $bdd->exec('
 	INSERT INTO Members (id_manager, prenom, nom, email, birthday_date, aviation_licence_date) 
-	VALUES ' . $id_manager . $_POST['prenom'] . $_POST['nom'] . $_POST['email'] . $_POST['birthday_date'] . $_POST['aviation_licence_date']
+	VALUES '.$id_manager.$_POST['prenom'].$_POST['nom'].$_POST['email'].$_POST['birthday_date'].$_POST['aviation_licence_date']
 	);
 
 
