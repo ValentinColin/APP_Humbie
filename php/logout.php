@@ -1,6 +1,10 @@
 <?php
 session_start();
-$_SESSION['connected']=0;
-header('Location: maquette.php');
 
+// Suppression des variables de session et de la session
+$_SESSION = array();
+session_destroy();
+
+// Redirection
+header('Location: maquette.php');
 ?>
