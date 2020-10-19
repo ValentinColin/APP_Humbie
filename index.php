@@ -2,7 +2,7 @@
 //include("php/maquette.php");
 //session_start(); // On démarre la session AVANT toute chose
 ?>
- 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +16,7 @@
     </p>
     <table>
     	<tr>
-    		<td><a href="php/maquette.php">Maquette</a></td>
+    		<td><a href="php/loginPage.php">Page de connexion</a></td>
     		<td>: (Notre site web principal)</td>
     	</tr>
     	<tr>
