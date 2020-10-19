@@ -29,7 +29,7 @@ function user_name(){
 <header>
 	<!-- En-tête -->
 	<ul id="header_nav">
-	<li><a href="../html/building.html" title="Menu"><img class="icon" src="../Images/icon-burger-menu.png"></a></li>
+		<li><a href="../html/building.html" title="Menu"><img class="icon" src="../Images/icon-burger-menu.png"></a></li>
 
 		<li><a href="../html/building.html" title="header_nav_HOME"><img class="icon" src="../Images/icon-home.png"></a></li>
 
@@ -39,11 +39,11 @@ function user_name(){
 				<input type="submit" name="Searching button" value="search">
 			</form></li>
 
-		<li><a href="../html/building.html" title="header_nav_PARAMETRE"> <img class="icon" src="../Images/icon-settings.png">
-	</a></li>
+		<li><a href="../html/building.html" title="header_nav_PARAMETRE"><img class="icon" src="../Images/icon-settings.png"></a></li>
 
 		<li><img id="photo_profil" class="icon" src=<?php echo generate_path_photo() ?>>
 			<a href="../html/building.html" title="header_nav_PROFIL"><?php echo user_name() ?></a></li>
+
 		<li><form method="post" action="logout.php">
 		<input type="submit" value="déconnexion"></form></li>
 	</ul>
