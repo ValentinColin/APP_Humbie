@@ -1,16 +1,9 @@
 <?php
 session_start();
-if(!$_SESSION['connected']){
-    header('Location: loginPage.php');
-}
+include('function.php');
 
-function generate_path_photo(){
-	return '../Images/Photo/'.$_SESSION['prenom'].$_SESSION['nom'].$_SESSION['id'].'.png';
-}
-
-function user_name(){
-	return $_SESSION['prenom'].' '.$_SESSION['nom'];
-}
+// On vérifie toujours si le visiteur est connecter, sinon on le redirige vers la page demander
+if_not_connected($redirection='loginPage.php');
 
 ?>
 

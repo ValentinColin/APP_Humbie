@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-if ( isset($_SESSION['connected'])){
+if (isset($_SESSION['connected'])){
     if($_SESSION['connected']){
         header('Location: main.php');
     }
 } else {
-    $a=7;
+    // Première connexion
 };
 $erreur = null;
 require_once('login.php');
@@ -36,8 +36,8 @@ require_once('login.php');
 
 
                     <p class="input">
-                        Identifiant :  <input id="mail" type="mail" name="pseudo"  placeholder="adresse mail"><br> <br>
-                        Mot de passe : <input id="adminPwd"  type="password" name="password" placeholder="mot de passe"><br>
+                        Identifiant :  <input id="mail" type="mail" name="pseudo"  placeholder="adresse mail" required><br> <br>
+                        Mot de passe : <input id="adminPwd"  type="password" name="password" placeholder="mot de passe" required><br>
                     </p>
                     <hr>
                     <p id='confirm'> <input id='submit'type='submit' value='Se connecter'>

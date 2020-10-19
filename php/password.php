@@ -14,8 +14,8 @@ $req = $bdd->prepare('UPDATE Members
                       WHERE email = :mail'
                         );
 
-$message = "voici votre nouveau mot de passe : $motdepasse ";
-$mail = mail($_POST['mail'], "Réinitialisation du mot de passe", $message);
+$message = 'voici votre nouveau mot de passe : ' . $motdepasse;
+$mail = mail($_POST['mail'], 'Réinitialisation du mot de passe', $message);
 
 if($mail){
     echo 'le mail a bien été envoyé';
