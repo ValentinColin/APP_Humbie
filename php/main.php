@@ -1,11 +1,12 @@
 <?php
 session_start();
+mail("valentin.colin78@gmail.com","obj","msg");
 if(!$_SESSION['connected']){
     header('Location: maquette.php');
 }
 
 function generate_path_photo(){
-	return '../Images/Photo/'.$_SESSION['prenom'].$_SESSION['nom'].$_SESSION['id'].'.jpg';
+	return '../Images/Photo/'.$_SESSION['prenom'].$_SESSION['nom'].$_SESSION['id'].'.png';
 }
 
 ?>
@@ -18,22 +19,27 @@ function generate_path_photo(){
 	<link rel="stylesheet" type="text/css" href="../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<link rel="stylesheet" type="text/css" href="../css/footer.css">
-  	<link rel="icon" href="../Images/logo_Humbie.png">
+  	<link rel="icon" href="../Images/icon-humbie.png">
+  	<!-- Temporaire -->
+  	
 </head>
 <body>
 <header>
 	<!-- En-tête -->
 	<ul id="header_nav">
-		<li><a href="../html/building.html" title="Menu"><img id="icon_burger_menu" src="../Images/icon-burger-menu.png"></a></li>
-		<li><a href="../html/building.html" title="header_nav_HOME">Home (icone)</a></li>
+		<li><a href="../html/building.html" title="Menu"><img class="icon" src="../Images/icon-burger-menu.png"></a></li>
+		<li><a href="../html/building.html" title="home"><img class="icon" src="../Images/icon-home.png"></a></li>
 		<li><form method="post" action="">
-				<input type="text" name="Research" placeholder="Research">
-				<span><a id="RechercheAvancer" href="">Recherche avancer</a></span>
-				<input type="submit" name="Searching button" value="Search">
+			<div class="wrapper">
+				<input class="one" type="text" name="Research" placeholder="Recherche">
+				<a id="RechercheAvancer" class="two" href="">Recherche avancer</a>
+				<input class="three" type="submit" name="Searching button" value="Search">
+			</div>
 			</form></li>
-		<li><a href="../html/building.html" title="header_nav_PARAMETRE">Paramètres (icone)</a></li>
-		<li><img id="photo_profil" src=<?php echo generate_path_photo() ?>>
-			<a href="../html/building.html" title="header_nav_PROFIL"><?php echo $_SESSION['prenom'].' '.$_SESSION['nom'] ?></a></li>
+		<li><a href="../html/building.html" title="settings"><img class="icon" src="../Images/icon-settings.png"></a></li>
+		<li><div><img class="icon photo" src=<?php echo generate_path_photo() ?>>
+			<a href="../html/building.html" title="profil"><?php echo $_SESSION['prenom'].' '.$_SESSION['nom'] ?></a></div>
+			</li>
 		<li><form method="post" action="logout.php"><input type="submit" value="déconnexion"></form></li>
 	</ul>
 </header>
@@ -47,7 +53,7 @@ function generate_path_photo(){
 		<li><a id="menu5" href="../html/building.html" title="section 5 (building...)">section 5 (building...)</a></li>
 	</ul>
 </nav>
-<main onload="draw();">
+<main onclick="draw();">
 	<!-- Corps -->
 	<hr>
 	<?php 
@@ -55,7 +61,7 @@ function generate_path_photo(){
 	echo '<p>Vous êtes actuellement sur la page principale.</p>';
 	?>
 	<?php 
-	for ($i=10; $i < 10; $i++) { 
+	for ($i=0; $i < 10; $i++) { 
 	 	echo 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -73,7 +79,7 @@ function generate_path_photo(){
 	<p>Copyright © 2020 - Humbie Corp. All rights reserved.</p>
 	<ul id="footer_nav">
 		<li><a href="../html/building.html" title="Politique de confidentialité">Politique de confidentialité</a></li>
-		<li><a href="../html/building.html" title="I do something">something</a></li>
+		<li><a href="../html/building.html" title="">something</a></li>
 		<li><a href="../html/building.html" title="FAQ">FAQ</a></li>
 		<li><a href="mailto:valentin.colin78@gmail.com" title="valentin.colin78@gmail.com">Nous contacter</a></li>
 		<li><a>Français</a>/<a id="lang_en" href="../html/building.html">English</a></li>
