@@ -35,7 +35,7 @@ function generate_path_photo(){
 				<input type="submit" name="Searching button" value="search">
 			</form></li>
 
-		<li><a href="../html/building.html" title="header_nav_PARAMETRE"> <img class="icone" src="../Images/icon-settings.png">
+		<li><a href="../html/building.html" title="header_nav_PARAMETRE"> <img class="icon" src="../Images/icon-settings.png">
 	</a></li>
 
 		<li><img  id="photo_profil" src=<?php echo generate_path_photo() ?>>
