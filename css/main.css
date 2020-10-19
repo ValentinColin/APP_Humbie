@@ -4,6 +4,9 @@ body {
 	overflow-wrap: break-word;
 	padding: 0;
 	margin: 0;
+	width: 99%;
+	margin: 3px;
+	text-align: center;
 
 
 }
@@ -47,7 +50,7 @@ body {
 canvas {
 	 border: 1px solid black;
 }
-
+/*
 header{grid-area: header;}
 #mainNav{grid-area:mainNav;}
 main{grid-area:main;}
@@ -61,4 +64,7 @@ body{
 						  "mainNav main"
 						  " footer footer";
 }
+
+
+*/
 
