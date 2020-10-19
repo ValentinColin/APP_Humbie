@@ -22,7 +22,10 @@ if(!empty($_POST['pseudo']) and !empty($_POST['password']))
 
     // En attendant que la fonction password_verify() puisse être utiliser...
     $isPasswordCorrect = false;
-    if ($_POST['password'] === $data['password']) { $isPasswordCorrect = true; }
+    if ($_POST['password'] === $data['password']) 
+    { 
+        $isPasswordCorrect = true; 
+    }
 
 
     if (empty($data))

@@ -44,7 +44,7 @@ WHERE condition
 GROUP BY expression
 HAVING condition
 { UNION | INTERSECT | EXCEPT }
-ORDER BY expression
+ORDER BY expression [DESC]
 LIMIT count
 OFFSET start
 */

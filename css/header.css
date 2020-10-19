@@ -1,11 +1,53 @@
 header {
-	flex-direction: row;
+	/*flex-direction: row;*/
 }
 
 .research {
 
 }
 
+#photo_profil{
+	height: 40px;
+	width: auto;
+	margin: 5px;
+	border: 1px solid black;
+}
+
 .profil {
 	
+}
+
+/* Style de la barre de navigation du header */
+
+#header_nav {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	/*background-color: aquamarine;*/
+	background-color: #FFFFFF;
+	/*border-style: solid;*/
+	/*border-color: bisque;*/
+	align-items: center;
+	min-height: 50px;
+}
+
+#header_nav li {
+	display: inline;
+	list-style: none;
+	width: 100%;
+	border: 1px solid black;
+}
+
+#header_nav li a{
+	display: inline-block;
+	color:#04445a;
+	outline: none;
+	text-decoration: none;
+	text-align: center;
+}
+
+#icon_burger_menu {
+	height: 40px;
+	width: auto;
 }
