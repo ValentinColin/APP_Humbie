@@ -1,7 +1,6 @@
 body{
     overflow-wrap: break-word;
     background: url("../images/background.jpg");
-
 }
 
 main{
@@ -22,7 +21,6 @@ fieldset{
     box-shadow:   3px 2px 2px mediumslateblue;
 }
 
-
 p{
     text-align: justify;
 }
@@ -31,26 +29,24 @@ input{
     background-color: whitesmoke;
 }
 
-
 legend{
 
     font-variant: small-caps;
     font-size: 1.3em;
     font-weight: bolder;
-
-
 }
 
 #newPsw{
     font-size: 0.8em;
     color: blueviolet;
-    padding-left: 22%;
+    padding-left: 10%;
 }
 
 #confirm{
     border-right: 4px ridge mediumslateblue;
     border-left: 4px ridge #2CE4CA;
 }
+
 #tryAgain{
     width: fit-content;
     padding-left: 3%;

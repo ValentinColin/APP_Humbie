@@ -36,7 +36,7 @@ require_once('login.php');
 
                     </p>
                     <hr>
-                     <input id='submit' type='submit' value='Réinitialiser'>
+                    <input type='submit' value='Réinitialiser'>
 
 
                 </fieldset>

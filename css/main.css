@@ -1,5 +1,8 @@
 /* ********************************************************* */
-
+header {
+	padding: 0;
+	margin: 0;
+}
 body {
 	overflow-wrap: break-word;
 	padding: 0;
@@ -7,13 +10,9 @@ body {
 	width: 99%;
 	margin: 3px;
 	text-align: center;
-
-
 }
 
 /* Style de la barre de navigation du menu */
-
-
 
 #navigation {
 	width: 300px;
