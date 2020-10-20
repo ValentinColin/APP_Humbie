@@ -7,18 +7,18 @@ main{
     text-align: center;
     justify-content: center;
     margin-top: 10%;
-    margin-left: 40%;
+    margin-left: 39%;
 }
 
 h1{
     text-align: center;
-    color: black ;
+    color: black;
 }
 
 fieldset{
     width: fit-content;
     border: 2px ridge #2CE4CA;
-    box-shadow:   3px 2px 2px mediumslateblue;
+    box-shadow: 3px 2px 2px mediumslateblue;
 }
 
 p{
@@ -29,8 +29,29 @@ input{
     background-color: whitesmoke;
 }
 
-legend{
+input[type="mail"], input[type="password"] {
+    background: rgba(255,255,255,0);
+    border: none;
+    border-bottom: 2px solid black;
+    text-align: center;
+    font-size: 0.8em;
+    width: 185px;
+}
 
+input[type="mail"]:focus, input[type="password"]:focus {
+    outline: none;
+}
+
+input[type="mail"]::placeholder, input[type="password"]::placeholder {
+    color: black;
+    font-style: italic;
+}
+
+input[type="mail"]:focus::placeholder, input[type="password"]:focus::placeholder {
+    color: rgba(255,255,255,0); 
+}
+
+legend{
     font-variant: small-caps;
     font-size: 1.3em;
     font-weight: bolder;
@@ -39,12 +60,7 @@ legend{
 #newPsw{
     font-size: 0.8em;
     color: blueviolet;
-    padding-left: 10%;
-}
-
-#confirm{
-    border-right: 4px ridge mediumslateblue;
-    border-left: 4px ridge #2CE4CA;
+    padding-left: 20%;
 }
 
 #tryAgain{

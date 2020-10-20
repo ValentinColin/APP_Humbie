@@ -36,11 +36,12 @@ require_once('login.php');
                     <legend>Connexion</legend>
 
                     <p class="input">
-                        Adresse mail :<input id="input_mail" type="mail"     name="mail"     placeholder="adresse mail" required><br><br>
-                        Mot de passe :<input id="imput_pass" type="password" name="password" placeholder="mot de passe" required><br>
+                        Adresse mail :<input id="input_mail" type="mail"     name="mail"     placeholder="adresse mail" autocomplete="on"required><br><br>
+                        Mot de passe :<input id="imput_pass" type="password" name="password" placeholder="mot de passe" autocomplete="on"required><br>
                     </p>
                     <hr>
-                    <p id='confirm'> <input id='submit' type='submit' value='Se connecter'>
+                    <p> 
+                        <input id='submit' type='submit' value='Se connecter'>
                         <a id='newPsw' href='newPassword.php'>Mot de passe oublié</a>
                     </p>
 
