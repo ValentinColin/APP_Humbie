@@ -32,6 +32,7 @@ require_once('login.php');
                     <a class='backLoginPage' href='loginPage.php'> <<< </a>
                     <p class="input">
                         Adresse mail  :  <input id="mail" type="mail" name="mail"  placeholder="adresse mail"><br>
+                        <span id="errorDisplay"> Le texte saisi ne correspond pas à une adresse mail </span>
 
                     </p>
                     <hr>
