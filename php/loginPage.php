@@ -29,19 +29,18 @@ require_once('login.php');
 
         <main>
             
-            <p id ='tryAgain'> Adresse mail ou  mot de passe incorrecte. <p>
+            <p id ='tryAgain'> Adresse mail ou mot de passe incorrecte. <p>
             <form method="post" action="">
                 <fieldset >
                     <legend>Connexion</legend>
 
-
                     <p class="input">
-                        Identifiant :  <input id="mail" type="mail" name="pseudo"  placeholder="adresse mail" required><br> <br>
-                        Mot de passe : <input id="adminPwd"  type="password" name="password" placeholder="mot de passe" required><br>
+                        Adresse mail :<input id="input_mail" type="mail"     name="mail"     placeholder="adresse mail" required><br><br>
+                        Mot de passe :<input id="imput_pass" type="password" name="password" placeholder="mot de passe" required><br>
                     </p>
                     <hr>
-                    <p id='confirm'> <input id='submit'type='submit' value='Se connecter'>
-                    <a id='newPsw' href='newPassword.php'> Mot de passe oublié </a>
+                    <p id='confirm'> <input id='submit' type='submit' value='Se connecter'>
+                        <a id='newPsw' href='newPassword.php'>Mot de passe oublié</a>
                     </p>
 
                 </fieldset>
