@@ -31,11 +31,11 @@ require_once('login.php');
 
                     <a class='backLoginPage' href='loginPage.php'> <<< </a>
                     <p class="input">
-                        Adresse mail  :  <input id="mail" type="mail" name="mail"  placeholder="adresse mail"><br>
+                        Adresse mail  :  <input type="mail" name="mail"  placeholder="adresse mail"><br>
 
                     </p>
                     <hr>
-                     <input id='submit' type='submit' value='Réinitialiser'>
+                    <input type='submit' value='Réinitialiser'>
 
 
                 </fieldset>

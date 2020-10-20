@@ -20,4 +20,11 @@ function user_name(){
 	return $_SESSION['prenom'].' '.$_SESSION['nom'];
 }
 
+function passwordgen($len= 6){
+    $chaine = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890+-*/%!:/;.,?$";
+    $chaine = str_shuffle($chaine);
+    $chaine = substr($chaine, 0, $len);
+    return $chaine;
+}
+
 ?>
