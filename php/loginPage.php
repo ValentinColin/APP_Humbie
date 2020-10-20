@@ -4,13 +4,16 @@ session_start();
 if (isset($_SESSION['connected'])){
     if($_SESSION['connected']){
         header('Location: main.php');
+        exit;
     }
 } else {
-    // Première connexion
+    $_SESSION['connected'] = false;
 };
 $erreur = null;
 require_once('login.php');
 ?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -26,9 +29,7 @@ require_once('login.php');
         <header>
             <h1> Page d'authentification</h1>
         </header>
-
         <main>
-            
             <p id ='tryAgain'> Adresse mail ou mot de passe incorrecte. <p>
             <form method="post" action="">
                 <fieldset >
@@ -45,10 +46,8 @@ require_once('login.php');
 
                 </fieldset>
             </form>
-
-    </main>
-</center>
-
+        </main>
+    </center>
 </body>
 <script src="../js/loginPage.js"> </script>
 

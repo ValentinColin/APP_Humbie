@@ -4,7 +4,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=Humbie', 'root', 'root', array(PDO::
 //$bdd = new PDO('mysql:host=localhost;dbname=Humbie', 'root', 'root');
 
 $reponse = $bdd->query('
-	SELECT id, access , prenom, nom, password
+	SELECT id, access , prenom, nom, email, password
 	FROM Members 
 	ORDER BY access');
 
@@ -17,6 +17,7 @@ echo '<tr>
 		<td><strong> prenom   </strong></td>
 		<td><strong> nom      </strong></td>
 		<td><strong> password </strong></td>
+		<td><strong> email    </strong></td>
 	  </tr>';
 
 while ($donnees = $reponse->fetch())
@@ -27,6 +28,7 @@ while ($donnees = $reponse->fetch())
 				'<td>' . $donnees['prenom']   . '</td>' .
 				'<td>' . $donnees['nom']      . '</td>' .
 				'<td>' . $donnees['password'] . '</td>' .
+				'<td>' . $donnees['email'] . '</td>' .
 			'</tr>';
 }
 echo '</table>';
