@@ -36,7 +36,8 @@ require_once('login.php');
 
                     </p>
                     <hr>
-                    <input type='submit' value='Réinitialiser'>
+                     <input id='submit' type='submit' value='Réinitialiser'>
+                     <span id='unclickable'>Pour Réinitialiser, Veillez saisir votre adresse mail.  </span>
 
 
                 </fieldset>
