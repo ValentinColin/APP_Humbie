@@ -1,10 +1,16 @@
 <?php 
-if(isset($_POST['code'])){
+session_start();
+
+if(isset($_POST['code']) && isset($_SESSION['mail'])){
     if($_POST['code'] != $_SESSION['motdepasse']){
-        header('password.php');
+        header('Location: password.php');
+        exit;
+              
     }
 }else{
-    header('password.php');
+    header('Location: password.php');
+    exit;
+    
 }
 unset($_SESSION['motdepasse']);
 
