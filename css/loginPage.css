@@ -25,7 +25,7 @@ h1{
 fieldset{
     width: fit-content;
     border: 2px ridge var(--humbie-color);
-    box-shadow: 3px 2px 2px mediumslateblue;
+    box-shadow: 1px 2px 2px 3px mediumslateblue;
 }
 
 p{
@@ -121,11 +121,15 @@ legend{
 
 .cta:focus {
    outline: none;
+
 }
 
 .cta:hover {
     transition: 0.5s;
     box-shadow: 3px 3px 0 var(--humbie-color);
+    color: yellowgreen;
+    background-color: #3201C1;;
+
 }
 
 .cta span:nth-child(2) {
