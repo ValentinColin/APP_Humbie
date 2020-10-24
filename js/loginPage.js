@@ -6,10 +6,10 @@ var br =document.getElementById('br');
 
 
 
-document.body.addEventListener("mouseover",function(){// On verifie que le champs n'est pas vide
 
-    if (mail.value!=' '){ // ON vérifie bien si le champs n'est pas vide
-    mail.addEventListener("keyup",function(){
+
+
+    mail.addEventListener("blur",function(){
 
 
         var verif=mail.value // Récupère la saisie d'utilisateur
@@ -18,7 +18,6 @@ document.body.addEventListener("mouseover",function(){// On verifie que le champ
             errorDisplay.style.display='none'; // désactive le message qui s'affiche lorsque le mot de passe n'est pas correct.
             br.style.display='none';
             mail.style="border-bottom: 2px solid green;"
-            mail.style="box-shadow: 3px 1px 1px mediumslateblue;"
 
         }
         else{ // Si l'adresse n'est pas correct.
@@ -32,11 +31,9 @@ document.body.addEventListener("mouseover",function(){// On verifie que le champ
 
         }
 
-        })
+        });
 
-    };
 
-});
 
 
 submit.addEventListener("click",function(){

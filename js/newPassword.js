@@ -4,7 +4,7 @@ var errorDisplay=document.getElementById("errorDisplay");
 var br =document.getElementById('br');
 
 
-newPsw.addEventListener("keyup",function(){
+newPsw.addEventListener("blur",function(){
 var verif=newPsw.value // Récupère la saisie d'utilisateur
 if (verifMail(verif)){ // Vérifie si l'adresse mail est correctement l'écrit.
     errorDisplay.style.display='none'; // désactive le message qui s'affiche lorsque le mot de passe n'est pas correct.
