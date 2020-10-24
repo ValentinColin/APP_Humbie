@@ -2,7 +2,7 @@
 session_start();
 include('function.php');
 
-// On vérifie toujours si le visiteur est connecter, sinon on le redirige vers la page demander
+// On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
 if_not_connected($redirection='loginPage.php');
 
 ?>
@@ -24,7 +24,7 @@ if_not_connected($redirection='loginPage.php');
 	<ul id="header_nav">
 		<li><a href="../html/building.html" title="Menu"><img class="icon" src="../Images/icon-burger-menu.png"></a></li>
 
-		<li><a href="../html/building.html" title="header_nav_HOME"><img class="icon" src="../Images/icon-home.png"></a></li>
+		<li><a href="main.php" title="header_nav_HOME"><img class="icon" src="../Images/icon-home.png"></a></li>
 
 		<li><form method="post" action="">
 				<input type="text" name="Research" placeholder="Research">
@@ -32,7 +32,7 @@ if_not_connected($redirection='loginPage.php');
 				<input type="submit" name="Searching button" value="search">
 			</form></li>
 
-		<li><a href="../html/building.html" title="header_nav_PARAMETRE"><img class="icon" src="../Images/icon-settings.png"></a></li>
+		<li><a href="parametres.php" title="header_nav_PARAMETRE"><img class="icon" src="../Images/icon-settings.png"></a></li>
 
 		<li><img id="photo_profil" class="icon" src=<?php echo generate_path_photo() ?>>
 			<a href="../html/building.html" title="header_nav_PROFIL"><?php echo user_name() ?></a></li>
