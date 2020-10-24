@@ -31,13 +31,15 @@ require_once('login.php');
 
                     <a class='backLoginPage' href='loginPage.php'> <<< </a>
                     <p class="input">
-                        Adresse mail  :  <input id="mail" type="mail" name="mail"  placeholder="adresse mail"><br>
-                        <span id="errorDisplay"> Le texte saisi ne correspond pas à une adresse mail </span>
+                    <span id="errorDisplay"> Adresse mail incorrecte </span>
+                        <br id='br'>
+                        Adresse mail  :  <input id="mail" type="mail" name="mail"  placeholder="cest-un@exemple.fr" required><br>
+
 
                     </p>
                     <hr>
                      <input id='submit' type='submit' value='Réinitialiser'>
-                     <span id='unclickable'>Pour Réinitialiser, Veillez saisir votre adresse mail.  </span>
+
 
 
                 </fieldset>
