@@ -8,7 +8,7 @@ if_not_connected($redirection='loginPage.php');
 
 <?php echo 'changer de photo';?>
 
-<form type='post' action="**">
+<form type='post' action="photoChangement.php">
     <input type='submit' value='changerdephoto'>
 </form>
 
