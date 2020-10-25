@@ -55,6 +55,6 @@ if_not_connected($redirection='loginPage.php');
 	<?php require('footer.php'); ?>
 </body>
 
-<script src="../js/main.js"></script>
+<script src="../js/home.js"></script>
 
 </html>

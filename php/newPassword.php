@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['connected']){
-    header('Location: main.php');
+    header('Location: home.php');
 }
 $erreur = null;
 require_once('login.php');

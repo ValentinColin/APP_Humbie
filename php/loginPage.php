@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['connected'])){
     if($_SESSION['connected']){
-        header('Location: main.php');
+        header('Location: home.php');
         exit;
     }
 } else {

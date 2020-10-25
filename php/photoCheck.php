@@ -11,8 +11,8 @@ if(isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
     if (in_array($fileExtension, $authorizedExtensions ))
     {   
         $_FILES['photo']['name'] = $_SESSION['id'].'.png';
-        move_uploaded_file($_FILES['photo']['tmp_name'],generate_path_photo());
-        header('Location: main.php');
+        move_uploaded_file($_FILES['photo']['tmp_name'],path_photo());
+        header('Location: home.php');
     }else
     {
         header('Location: parametres.php');

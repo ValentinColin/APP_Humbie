@@ -2,7 +2,7 @@
 	<ul>
 		<li><a href="../html/building.html" title="Menu"><img class="icon" src="../Images/icon-burger-menu.png"></a></li>
 
-		<li><a href="main.php" title="HOME"><img class="icon" src="../Images/icon-home.png"></a></li>
+		<li><a href="home.php" title="HOME"><img class="icon" src="../Images/icon-home.png"></a></li>
 
 		<li><form method="post" action="">
 				<span>

@@ -34,7 +34,7 @@ if(!empty($_POST['mail']) and !empty($_POST['password']))
         echo 'Vous êtes connecté !';
         
         // redirection
-        header('Location: main.php');
+        header('Location: home.php');
         exit;
     } 
     else

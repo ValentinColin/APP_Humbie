@@ -23,13 +23,3 @@ if_not_connected('loginPage.php');
     
 </body>
 </html>
-
-
-
-<?php 
-
-
-
-
-
-?>

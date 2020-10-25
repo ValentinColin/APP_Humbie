@@ -2,15 +2,15 @@
 // Page qui contrôle de rôle de visiteur connecté pour le renvoyer vers la bonne page principal
 switch ($_SESSION['access'] ) {
 	case 'USER':
-		header('Location: main.php');
+		header('Location: home.php');
 		exit;
 
 	case 'MANAGER':
-		header('Location: main.php');
+		header('Location: home.php');
 		exit;
 
 	case 'ADMIN':
-		header('Location: main.php');
+		header('Location: home.php');
 		exit;
 	
 	default:
