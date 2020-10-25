@@ -11,7 +11,8 @@ if_not_connected($redirection='loginPage.php');
 <head>
 	<title>Profil</title>
 	<link rel="stylesheet" type="text/css" href="../css/config.css">
-	<!-- <link rel="stylesheet" type="text/css" href="default.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="../css/default.css"> -->
+	<link rel="stylesheet" type="text/css" href="../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../css/profil.css">
 	<link rel="stylesheet" type="text/css" href="../css/footer.css">
 </head>
@@ -50,7 +51,7 @@ if_not_connected($redirection='loginPage.php');
 			</table>
 		</div>
 		<div id="box-content" class="my-block">
-			<button class="pull-right">Modifié mon profil</button>
+			<button class="pull-right">Modifier mon profil</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
 			<h2>A propos de moi</h2>
 			<hr>
 			<table>
