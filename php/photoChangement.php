@@ -1,3 +1,11 @@
+<?php
+session_start();
+include('function.php');
+if_not_connected('loginPage.php');
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
