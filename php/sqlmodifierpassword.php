@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('function.php');
 
 if (!isset($_POST['password']) || !isset($_POST['passwordConfirm'])){
     header('Location: changepassword.php');
@@ -11,7 +12,8 @@ if ($_POST['password'] == $_POST['passwordConfirm']){
                           SET password = :motdepasse
                           WHERE email = :mail'
                         );
-    $req -> execute(array(':mail' =>$_SESSION['mail'], ':motdepasse' => $_POST['password']));
+    $password = passwordhash($_POST['password']);
+    $req -> execute(array(':mail' =>$_SESSION['mail'], ':motdepasse' => $password));
     unset($_SESSION['mail']);
     header('Location: loginPage.php');
     exit;

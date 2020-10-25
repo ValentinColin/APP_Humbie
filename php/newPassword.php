@@ -20,7 +20,8 @@ require_once('login.php');
 <body>
     <center>
         <header>
-        <!---->
+        <h1> Page Réinitialisation</h1>
+        <img id="compagnyLogo"src="../Images/Infini_Measures.png" alt="">
         </header>
 
         <main>
@@ -29,11 +30,11 @@ require_once('login.php');
                 <fieldset >
                     <legend>Réinitialisation de mot de passe</legend>
 
-                    <a class='backLoginPage' href='loginPage.php'> <<< </a>
+                    <a class='backLoginPage' href='loginPage.php' title="Retouner à la page de connexion"> <<< </a>
                     <p class="input">
                     <span id="errorDisplay"> Adresse mail incorrecte </span>
                         <br id='br'>
-                        Adresse mail  :  <input id="mail" type="mail" name="mail"  placeholder="cest-un@exemple.fr" required><br>
+                        Adresse mail  :  <input id="mail" type="mail" name="mail"  placeholder="ceci-est-n@exemple.fr" required><br>
 
 
                     </p>

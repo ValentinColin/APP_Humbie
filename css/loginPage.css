@@ -11,10 +11,14 @@ body{
 }
 
 main{
+    /* Les quatres lignes en dessous de celles-ci
+    permettent de centrer parfaitement la fenêtre*/
+    position: absolute;
     text-align: center;
-    justify-content: center;
-    margin-top: 10%;
-    margin-left: 39%;
+    top:40%; left: 50%; /* Pas très util de centrer verticalemen, d'où le top :40%*/
+    transform: translate(-50%,-50%);
+   justify-content: center;
+
 }
 
 h1{
@@ -47,7 +51,7 @@ p{
 
 
 input[type="mail"]::placeholder, input[type="password"]::placeholder {
-    color: rgba(0,0,0,.5);
+    color: mediumslateblue;
     font-style: italic;
 }
 
@@ -91,7 +95,7 @@ legend{
 }
 
 
-
+/*#####################*/
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
 
@@ -184,15 +188,17 @@ path.two {
 
 @keyframes color_anim {
     0% {
-        fill: white;
-    }
-    50% {
         fill: var(--humbie-color);
     }
-    100% {
+    50% {
         fill: white;
     }
+    100% {
+        fill: red;
+    }
 }
+
+/*#########################*/
 
 
 #confirm{
@@ -217,4 +223,13 @@ input[type="submit"]:hover{
     display: none;
     text-align: 'center';
 
+}
+
+#compagnyLogo{
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 150px;
+    height: auto;
+    opacity: 0.9;
 }

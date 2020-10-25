@@ -23,8 +23,7 @@ if(!empty($_POST['mail']) and !empty($_POST['password']))
         $erreur = 'Adresse mail ou mot de passe incorrecte.';
     }
     // Sinon si le mdp est correct
-    // else if (password_verify($_POST['password'], $data['password']))
-    else if ($_POST['password'] === $data['password']) 
+    else if (password_verify($_POST['password'], $data['password']))
     {
         $_SESSION['id'] = $data['id'];
         $_SESSION['access'] = $data['access'];
