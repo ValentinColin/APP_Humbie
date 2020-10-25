@@ -34,8 +34,9 @@ if_not_connected($redirection='loginPage.php');
 
 		<li><a href="parametres.php" title="header_nav_PARAMETRE"><img class="icon" src="../Images/icon-settings.png"></a></li>
 
-		<li><img id="photo_profil" class="icon" src=<?php echo generate_path_photo() ?>>
-			<a href="../html/building.html" title="header_nav_PROFIL"><?php echo user_name() ?></a></li>
+		<li><a href="profil.php" title="header_nav_PROFIL">
+			<img id="photo_profil" class="icon" src=<?php echo path_photo() ?>><?php echo user_name() ?>
+			</a></li>
 
 		<li><form method="post" action="logout.php">
 		<input type="submit" value="déconnexion"></form></li>

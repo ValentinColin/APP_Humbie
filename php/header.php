@@ -1,13 +1,29 @@
-<header>
-	<h1>Nom de l'application</h1>
+<header id="main_header">
+	<ul>
+		<li><a href="../html/building.html" title="Menu"><img class="icon" src="../Images/icon-burger-menu.png"></a></li>
 
-	<div class="Research">
-		<input type="text" name="Research" placeholder="Research" required >
-		<span><a id="RechercheAvancer" href="">Recherche avancer</a></span>
-	</div>
+		<li><a href="main.php" title="HOME"><img class="icon" src="../Images/icon-home.png"></a></li>
 
-	<div class="Profil">
-		<figure title="Profil"><img id="Photo" src="lien_photo.png" onclick="lien_vers_la_page_de_profil.html"></figure>
-		<span><a id="profilName" href="">PRÉNOM NOM</a></span>
-	</div>
+		<li><form method="post" action="">
+				<span>
+					<input type="search" name="search" placeholder="Recherche">
+					<input type="submit" name="Searching button" value="search">
+				</span><br>
+				<a id="RechercheAvancer" href="">Recherche avancée</a>
+			</form></li>
+
+		<li><a href="parametres.php" title="PARAMETRE">
+				<img class="icon" src="../Images/icon-settings.png">
+			</a></li>
+
+		<li><a href="profil.php" title="PROFIL">
+			<div id="header-profil-grid">
+				<div id="box-photo"><img id="photo_profil" class="icon" src=<?php echo path_photo() ?>></div>
+				<span id="box-nom"><?php echo user_name() ?></span>
+				<span id="box-deconexion">
+					<form method="post" action="logout.php"><input type="submit" value="déconnexion"></form>
+				</span>
+			</div>
+			</a></li>
+	</ul>
 </header>

@@ -4,9 +4,9 @@
 	flex-direction: row;
 	justify-content: space-evenly;
 	list-style: none;
-	justify-self: center;
+	/*justify-self: center;*/
 	align-items: center;
-	background-color: grey;
+	background-color: white;
 }
 
 #header_nav li {

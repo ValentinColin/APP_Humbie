@@ -1,5 +1,5 @@
 footer {
-
+	text-align: center;
 }
 
 /* Style de la barre de navigation dans le footer */
@@ -8,7 +8,6 @@ footer {
 	margin: 0;
   	padding: 0;
   	list-style: none;
-  	text-align: center;
 }
 
 #footer_nav li {
@@ -30,6 +29,7 @@ footer {
 
 #footer_nav li a:hover, #navigation li a:focus, #navigation li a:active {
   background: #FFA500; /* Orange */
+  background: linear-gradient(rgb(27,236,235), rgb(7,239,131)); /* Valeurs prisent sur le logo de Humbie */
   text-decoration: underline;
 }
 

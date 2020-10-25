@@ -1,0 +1,167 @@
+body {
+	margin:0;
+	padding:0;
+	background-color: var(--background-color); /* Un whitesmoke plus prononcé */
+	background: var(--background-gradient);
+}
+
+/* --- TAILLE --- */
+.icon{
+	max-height: 30px;
+	width: auto;
+	/*border: 1px solid black;  Pour visualiser le block */
+}
+
+#photo_profil_big{
+	width: 100%; /* On force l'image à prendre toute la largeur de la colonne de navigation du menu */
+	height: auto;
+	/*border: 1px solid black;  Pour visualiser le block */
+}
+
+/* --- POSITIONNEMENT --- */
+
+/* Ici je met sert de la grille pour pour placer mes box mais aussi pour crée des espaces entre ces derniers (en créant des lignes/colonnes vide */
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr var(--space-around-box) 3fr; /* 2 colonnes qui prennent chacune une 'fraction' de l'espace disponible et une colonne de 20px entr les 2 deux (servira d'espacement)*/
+	grid-auto-rows: minmax(var(--space-around-box), auto); /* Permet d'avoir une ligne inutiliser d'au moins x pixel et pour les autres une valeur auto est assigné */ 
+	padding: var(--space-around-box);
+	padding-top: 0;
+	/*border: 1px solid blue;*/
+}
+#box-title   {grid-column: 1 / 4;	grid-row: 1;}
+#box-nav 	 {grid-column: 	   1;	grid-row: 3;}
+#box-content {grid-column: 	   3;	grid-row: 3;}
+
+.pull-left{float: left;}
+.pull-right{float: right;}
+.pull-clear{clear: both; /* Retire la propriété float */}
+
+#box-title{
+	display: grid;
+	grid-template-columns: 50px 1fr;
+	/*grid-auto-rows: minmax(10px, auto);*/
+	align-items: center;
+	
+}
+
+#box-title div{grid-column: 1;margin-left: 30px;}
+#box-title h1{grid-column: 2;}
+
+
+/* --- HEADER --- */
+header {
+	margin: var(--space-around-box);
+	padding: 2px;
+	padding-right: 65px; /* Correction d'un bug */
+	/*border: 1px solid red;*/
+	border-radius: var(--border-radius);
+	background-color: white;
+}
+
+header ul{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around; /* Espacement entre les éléments de la liste  */
+	list-style: none;
+	justify-self: center;
+	align-items: center; /* centrer les items verticalement */
+	/*background-color: white;*/
+}
+
+header ul{
+	max-width: 100%;
+	/*border:1px solid grey;*/
+}
+
+header ul li {
+	text-align: justify;
+	/*border: 1px double blue;*/
+}
+
+#header-profil-grid{
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* 2 colonnes qui prennent chacune une 'fraction' de l'espace disponible */
+	grid-template-row: repeat(2, 1fr); /* 2 lignes qui prennent chacune une 'fraction' de l'espace disponible */
+}
+/* Cellules de la grid ci-dessus */
+#box-photo      { grid-column: 1; grid-row: 1 / 3; }
+#box-nom        { grid-column: 2; grid-row: 1;     }
+#box-deconexion { grid-column: 2; grid-row: 2;     }
+
+/* --- BOX --- */
+.wrapper div {
+	background-color: var(--background-color-box);
+	/*border: 1px solid black;*/
+	border-radius: var(--border-radius);
+}
+
+/* --- TITRE H1/H2 --- */
+#box-title h1 {
+	margin-left: 30px;
+}
+
+#box-content h2 {
+	margin-left: 30px;
+}
+
+#box-nav h2{
+	text-align: center;
+}
+
+/* --- MODIFICATION DE LA TABLE --- */
+
+/* box de navigation */
+#box-nav table{
+	margin: 20px 20px;
+}
+
+#box-nav table tr{
+	padding: 10px;
+}
+
+#box-nav table tr td{
+	padding: 10px;
+}
+
+/* box de centenu principal */
+#box-content table{
+	margin: 20px 20px;
+	/*border: 1px solid black;*/
+}
+
+#box-content table tr{
+	padding: 10px 20px;
+}
+
+#box-content table tr td, #box-content table tr th{
+	padding: 20px 70px;
+	/*padding-left: 0px;*/
+	/*border: 1px solid black;*/
+	text-align: left;
+}
+
+#box-content table tr td.unstrong-cell, #box-content table tr th.strong-cell{
+	padding-left: 0px;
+}
+
+
+strong{
+	font-weight: bold;
+	color: var(--color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

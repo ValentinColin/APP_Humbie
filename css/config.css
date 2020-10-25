@@ -1,0 +1,13 @@
+:root{
+	--background-gradient: linear-gradient(315deg, rgb(27,236,235), rgb(7,239,131));
+	--background-color: #F0F0F0; /* Un whitesmoke plus prononcé */
+	--background-color-box: white;
+
+	--border-radius: 5px;
+
+	--space-around-box: 20px;
+}
+
+strong{
+	--color: black;
+}

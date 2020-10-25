@@ -12,7 +12,7 @@ function if_connected($redirection){
 	}
 }
 
-function generate_path_photo(){
+function path_photo(){
 	return '../Images/Photo/'.$_SESSION['prenom'].$_SESSION['nom'].$_SESSION['id'].'.png';
 }
 
