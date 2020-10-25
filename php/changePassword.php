@@ -26,7 +26,7 @@ if(isset($_POST['code']) && isset($_SESSION['mail'])){
         $req -> execute(array(':mail' => $_SESSION['mail']));
         $data = $req -> fetch();
 
-        if($_POST['motdepasse'] != $data[0]){
+        if(!password_verify($_POST['motdepasse'], $data[0])){
             header('Location: confirmationUser.php');
             exit;
         }

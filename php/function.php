@@ -27,4 +27,8 @@ function passwordgen($len= 6){
     return $chaine;
 }
 
+function passwordhash($password){
+	return password_hash($password, PASSWORD_BCRYPT,['cost' => 9]);
+}
+
 ?>
