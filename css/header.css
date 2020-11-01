@@ -27,6 +27,14 @@ header ul li{
 	/*border: 1px double blue;*/
 }
 
+header ul li.li-search{
+	width: 50%;
+}
+
+input[type="search"]{
+	width: 50%;
+}
+
 #header-profil-grid{
 	text-align: center;
 	display: grid;
