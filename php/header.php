@@ -1,13 +1,13 @@
 <header id="main_header">
 	<ul>
-		<li><a href="../html/building.html" title="Menu"><img class="icon" src="../Images/icon-burger-menu.png"></a></li>
+		<!-- <li><a href="../html/building.html" title="Menu"><img class="icon" src="../Images/icon-burger-menu.png"></a></li> -->
 
 		<li><a href="home.php" title="HOME"><img class="icon" src="../Images/icon-home.png"></a></li>
 
-		<li><form method="post" action="">
+		<li class="li-search"><form method="post" action="">
 				<span>
 					<input type="search" name="search" placeholder="Recherche">
-					<input type="submit" name="Searching button" value="search">
+					<input type="submit" name="Searching button" value="Recherche">
 				</span><br>
 				<a id="RechercheAvancer" href="">Recherche avancée</a>
 			</form></li>
