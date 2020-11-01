@@ -53,6 +53,7 @@ if_not_connected($redirection='loginPage.php');
 		<div id="box-content" class="my-block">
 			<button class="pull-right">Modifier mon profil</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
 			<h2>A propos de moi</h2>
+
 			<hr>
 			<table>
 				<tr> <!-- ligne 1 -->
@@ -74,6 +75,8 @@ if_not_connected($redirection='loginPage.php');
 					<td class="unstrong-cell"><?php echo $_SESSION['mail'] ?></td> <!-- colonne 4 -->
 				</tr>
 			</table>
+
+			<br>
 
 			<h2>Test</h2>
 			<hr>
