@@ -5,6 +5,7 @@
 body{
     overflow-wrap: break-word;
     background: url("../images/background.jpg") no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
 
@@ -17,7 +18,7 @@ main{
     text-align: center;
     top:40%; left: 50%; /* Pas très util de centrer verticalemen, d'où le top :40%*/
     transform: translate(-50%,-50%);
-   justify-content: center;
+    justify-content: center;
 
 }
 

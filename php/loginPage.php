@@ -22,6 +22,7 @@ require_once('login.php');
     <meta charset="UTF-8">
     <title> Page d'authentification</title>
     <link rel="stylesheet" href="../css/loginPage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 </head>
 
