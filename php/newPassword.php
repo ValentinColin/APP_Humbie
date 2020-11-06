@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['connected']){
-    header('Location: main.php');
+    header('Location: home.php');
 }
 $erreur = null;
 require_once('login.php');
@@ -21,7 +21,7 @@ require_once('login.php');
     <center>
         <header>
         <h1> Page Réinitialisation</h1>
-        <img id="compagnyLogo"src="../Images/Infini_Measures.png" alt="">
+        <!-- <img id="compagnyLogo"src="../Images/Infini_Measures.png" alt=""> -->
         </header>
 
         <main>

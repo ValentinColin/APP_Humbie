@@ -12,7 +12,20 @@ function if_connected($redirection){
 	}
 }
 
-function generate_path_photo(){
+// Peut-être pas encore fonctionnel (à voir selon l'organisation des fichiers et la méthode des liens de redirecetion)
+function path_lang($default_path){
+	$path = $default_path;
+	if($_SESSION['lang'] == 'en'){
+		if(substr($default_path,0,3) == '../'){
+			$path = '../en/' . substr($default_path,3);
+		} else {
+			$path = '../en/' . $default_path;
+		}
+	}
+	return $path;
+}
+
+function path_photo(){
 	return '../Images/Photo/'.$_SESSION['prenom'].$_SESSION['nom'].$_SESSION['id'].'.png';
 }
 
@@ -25,6 +38,10 @@ function passwordgen($len= 6){
     $chaine = str_shuffle($chaine);
     $chaine = substr($chaine, 0, $len);
     return $chaine;
+}
+
+function passwordhash($password){
+	return password_hash($password, PASSWORD_BCRYPT,['cost' => 9]);
 }
 
 ?>

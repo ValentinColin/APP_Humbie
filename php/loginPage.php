@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['connected'])){
     if($_SESSION['connected']){
-        header('Location: main.php');
+        header('Location: home.php');
         exit;
     }
 } else {
@@ -22,6 +22,7 @@ require_once('login.php');
     <meta charset="UTF-8">
     <title> Page d'authentification</title>
     <link rel="stylesheet" href="../css/loginPage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 </head>
 
@@ -29,7 +30,7 @@ require_once('login.php');
     <center>
         <header>
             <h1> Page d'authentification</h1>
-            <img id="compagnyLogo"src="../Images/Infini_Measures.png" alt="">
+            <!-- <img id="compagnyLogo" src="../Images/Infini_Measures.png" alt=""> -->
         </header>
         <main>
 

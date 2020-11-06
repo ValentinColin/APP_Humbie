@@ -1,27 +1,53 @@
-#header_nav{
+/* ===========================
+   FEUILLE DE STYLES DU HEADER
+   =========================== */
+
+header{
+	margin: var(--space-around-box);
+	padding: 2px; /* Pour avoir un taille environ égal à celle du header secondaire (titres/modules) */
+	padding-right: 65px; /* Correction d'un bug */
+	/*border: 1px solid red; /* Pour visualiser le block */
+	border-radius: var(--border-radius);
+	background-color: white;
+}
+
+header ul{
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: space-around; /* Espacement entre les éléments de la liste  */
 	list-style: none;
 	justify-self: center;
-	align-items: center;
-	background-color: grey;
+	align-items: center; /* centrer les items verticalement */
+	/*background-color: white;*/
 }
 
-#header_nav li {
+header ul li{
 	text-align: justify;
-	/*border-left: 2px double white;*/
+	/*border: 1px double blue;*/
 }
 
-#photo_profil{
-	height: 30px;
-	width: auto;
-	border: 1px solid black;
+header ul li.li-search{
+	width: 50%;
 }
+
+input[type="search"]{
+	width: 50%;
+}
+
+#header-profil-grid{
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* 2 colonnes qui prennent chacune une 'fraction' de l'espace disponible */
+	grid-template-row: repeat(2, 1fr); /* 2 lignes qui prennent chacune une 'fraction' de l'espace disponible */
+}
+/* Placement des cellules de la grid ci-dessus */
+#box-photo      { grid-column: 1; grid-row: 1 / 3; }
+#box-nom        { grid-column: 2; grid-row: 1;     }
+#box-deconexion { grid-column: 2; grid-row: 2;     }
 
 .icon{
-	width: 40px;
+	width: 30px;
 	height: auto;
+	/*border: 1px solid black; /* Pour visualiser le block */
 }
-
