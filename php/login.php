@@ -7,7 +7,7 @@ if(!empty($_POST['mail']) and !empty($_POST['password']))
     //  Récupération de l'utilisateur et de son pass hashé
     $bdd = new PDO('mysql:host=localhost;dbname=Humbie', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $req = $bdd->query('SELECT id, access, password, email, prenom, nom
-                        FROM Members 
+                        FROM Members
                         WHERE email = \'' . $_POST['mail'] . '\''
                         );
 
@@ -21,8 +21,10 @@ if(!empty($_POST['mail']) and !empty($_POST['password']))
     if (empty($data))
     {
         $erreur = 'Adresse mail ou mot de passe incorrecte.';
+        header('Location: loginPage.php?connexion=non');
     }
     // Sinon si le mdp est correct
+
     else if (password_verify($_POST['password'], $data['password']))
     {
         $_SESSION['id'] = $data['id'];
@@ -32,13 +34,14 @@ if(!empty($_POST['mail']) and !empty($_POST['password']))
         $_SESSION['nom'] = $data['nom'];
         $_SESSION['connected'] = true;
         echo 'Vous êtes connecté !';
-        
+
         // redirection
         header('Location: home.php');
         exit;
-    } 
+    }
     else
     {
         $erreur = 'Adresse mail ou mot de passe incorrecte.';
+        header('Location: loginPage.php?connexion=non');
     }
 }

@@ -8,6 +8,7 @@ body{
     background-size: cover;
     display: flex;
     flex-direction: column;
+    color:black;
 
 }
 
@@ -74,8 +75,12 @@ legend{
 
 #tryAgain{
     width: fit-content;
-    padding-left: 3%;
-    display: none;
+    padding-left: 5%;
+    font-size: 1.1em;
+    font-weight: bold;
+
+
+   /* display: none; */
 }
 
 #input_mail{
