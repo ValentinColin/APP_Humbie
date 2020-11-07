@@ -33,7 +33,7 @@ require_once('login.php');
             <!-- <img id="compagnyLogo" src="../Images/Infini_Measures.png" alt=""> -->
         </header>
         <main>
-            <?php if ($_GET['connexion']=='non') :?>
+            <?php if (isset($_GET['connexion']) && $_GET['connexion']=='non') :?>
             <p id ='tryAgain'> Adresse mail ou mot de passe incorrecte. <p>
             <?php endif ?>
             <form method="post" action="">
