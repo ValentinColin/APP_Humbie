@@ -5,21 +5,26 @@ var br =document.getElementById('br');
 
 
 newPsw.addEventListener("blur",function(){
-var verif=newPsw.value // Récupère la saisie d'utilisateur
-if (verifMail(verif)){ // Vérifie si l'adresse mail est correctement l'écrit.
-    errorDisplay.style.display='none'; // désactive le message qui s'affiche lorsque le mot de passe n'est pas correct.
-    mail.style="border-bottom: 2px solid green;"
-    unclickable.style.display='none';// n'affiche plus le texte
+if(mail.value !=''){// le le champ est vide, on affiche pas de message
+	var verif=newPsw.value // Récupère la saisie d'utilisateur
+	if (verifMail(verif)){ // Vérifie si l'adresse mail est correctement l'écrit.
+		errorDisplay.style.display='none'; // désactive le message qui s'affiche lorsque le mot de passe n'est pas correct.
+		mail.style="border-bottom: 2px solid green;"
+		unclickable.style.display='none';// n'affiche plus le texte
+	}
+	else{ // Si l'adresse n'est pas correct.
+		errorDisplay.style.display='block'; // affiche le message d'erreur
+		errorDisplay.style.color='yellow'; //
+		errorDisplay.style.backgroundColor='rgba(0,0,0,0.1)'
+		errorDisplay.style.textAlign='center'
+		mail.style="border-bottom: 2px solid red;"
+		br.style.display='inline';
+
+	}
 }
-else{ // Si l'adresse n'est pas correct.
-    errorDisplay.style.display='block'; // affiche le message d'erreur
-    errorDisplay.style.color='yellow'; //
-    errorDisplay.style.backgroundColor='rgba(0,0,0,0.1)'
-    errorDisplay.style.textAlign='center'
-    mail.style="border-bottom: 2px solid red;"
-    br.style.display='inline';
-
-
+else{
+	errorDisplay.style.display='none'
+	mail.style="border-bottom: 2px solid black;"
 }
 })
 
@@ -35,7 +40,8 @@ submit.addEventListener("click",function(){
             alert (newPsw.value.toUpperCase()+" : ne correspond pas à une adresse mail","Adresse mail incorrecte")
               // On remet le champs dans son etat initial.
               newPsw.value='';
-        }
+		}
+
 });
 
 function verifMail(inputUser){ //fonction qui vérifie si le contenu du champs correspond bien à une adresse mail.

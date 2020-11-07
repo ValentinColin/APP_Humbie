@@ -8,28 +8,34 @@ var br =document.getElementById('br');
 
 mail.addEventListener("blur",function(){
 
+	if(mail.value !=''){// le le champ est vide, on affiche pas de message
+		var verif=mail.value // Récupère la saisie d'utilisateur
+		if (verifMail(verif)){ // Vérifie si l'adresse mail est correctement l'écrit.
 
-	var verif=mail.value // Récupère la saisie d'utilisateur
-	if (verifMail(verif)){ // Vérifie si l'adresse mail est correctement l'écrit.
+			errorDisplay.style.display='none'; /* désactive le message qui s'affiche
+			lorsque le mot de passe n'est pas correct.*/
+			br.style.display='none';
+			mail.style="border-bottom: 2px solid green;"
 
-		errorDisplay.style.display='none'; /* désactive le message qui s'affiche
-		lorsque le mot de passe n'est pas correct.*/
-		br.style.display='none';
-		mail.style="border-bottom: 2px solid green;"
+		}
+		else{ // Si l'adresse n'est pas correct.
+
+			errorDisplay.style.display='block'; // affiche le message d'erreur
+			errorDisplay.style.color='yellow'; // couleur rouge
+			mail.style="border-bottom: 2px solid red;"
+			errorDisplay.style.backgroundColor='rgba(0,0,0,0.1)'
+			errorDisplay.style.textAlign="center"
+			br.style.display='inline';
+
+		}
+
+		}
+	else{
+		errorDisplay.style.display='none'
+		mail.style="border-bottom: 2px solid black;"
 
 	}
-	else{ // Si l'adresse n'est pas correct.
-
-		errorDisplay.style.display='block'; // affiche le message d'erreur
-		errorDisplay.style.color='yellow'; // couleur rouge
-		mail.style="border-bottom: 2px solid red;"
-		errorDisplay.style.backgroundColor='rgba(0,0,0,0.1)'
-		errorDisplay.style.textAlign="center"
-		br.style.display='inline';
-
-	}
-
-	});
+})
 
 
 
