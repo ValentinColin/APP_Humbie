@@ -32,11 +32,25 @@ if_not_connected($redirection='loginPage.php');
 			<nav id='mainNav'>
 				<!-- Navigation (ie. Menu) -->
 				<ul id="navigation">
-					<li><a id="menu1" href="../../html/building.html" title="section 1 (building...)">section 1 (building...)</a></li>
-					<li><a id="menu2" href="../../html/building.html" title="section 2 (building...)">section 2 (building...)</a></li>
-					<li><a id="menu3" href="../../html/building.html" title="section 3 (building...)">section 3 (building...)</a></li>
-					<li><a id="menu4" href="../../html/building.html" title="section 4 (building...)">section 4 (building...)</a></li>
-					<li><a id="menu5" href="../../html/building.html" title="section 5 (building...)">section 5 (building...)</a></li>
+					<li><a href="../../html/building.html">--- USERS ---</a></li>
+					<li><a href="../../html/building.html">Dernier test (Users)</a></li>
+					<li><a href="../../html/building.html">Historique des Tests (Users)</a></li>
+					<li><a href="../../html/building.html">Planning (Users)</a></li>
+					<li><a href="../../html/building.html">FAQ (Users)</a></li>
+					<li><a href="../../html/building.html">Support (Users)</a></li>
+					<li><a href="../../html/building.html">----------------</a></li>
+					<li><a href="../../html/building.html">--- Managers ---</a></li>
+					<li><a href="../../html/building.html">Pilotes /ie.Users (Managers)</a></li>
+					<li><a href="../../html/building.html">Planning et gestion (Managers)</a></li>
+					<li><a href="../../html/building.html">Statistiques (Managers)</a></li>
+					<li><a href="../../html/building.html">FAQ (Managers)</a></li>
+					<li><a href="../../html/building.html">Support (Managers)</a></li>
+					<li><a href="../../html/building.html">-------------</a></li>
+					<li><a href="../../html/building.html">--- ADMIN ---</a></li>
+					<li><a href="../../html/building.html">Managers (Admin)</a></li>
+					<li><a href="../../html/building.html">Pilotes /ie.Users (Admin)</a></li>
+					<li><a href="../../html/building.html">Gestion des tickets (Admin)</a></li>
+					<li><a href="../../html/building.html">Gestion de la FAQ (Admin)</a></li>
 				</ul>
 			</nav>
 		</div>
