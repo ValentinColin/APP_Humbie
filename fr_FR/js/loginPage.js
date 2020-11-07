@@ -98,7 +98,7 @@ window.alert = function(text, aname)
 	// Bouton fermant
 	var img = document.createElement("img");
 	var close = box.appendChild(img);
-	close.src = "../Images/close.png";
+	close.src = "../../Images/close.png";
 	close.width = 26;
 
 	button.onclick= function() {

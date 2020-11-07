@@ -21,7 +21,7 @@ require_once('../php_pur/login.php');
 <head>
     <meta charset="UTF-8">
     <title> Page d'authentification</title>
-    <link rel="stylesheet" href="../../css/loginPage.css">
+    <link rel="stylesheet" href="../../../css/loginPage.css">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 </head>
@@ -34,7 +34,7 @@ require_once('../php_pur/login.php');
         </header>
         <main>
             <?php if (isset($_GET['connexion']) && $_GET['connexion']=='non') :?>
-            <p id ='tryAgain'> Adresse mail ou mot de passe incorrecte. <p>
+            <p id ='tryAgain'>Adresse mail ou mot de passe incorrecte.<p>
             <?php endif ?>
             <form method="post" action="">
                 <fieldset >

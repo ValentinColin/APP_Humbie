@@ -10,18 +10,18 @@ if_not_connected($redirection='loginPage.php');
 <html>
 <head>
 	<title>Profil</title>
-	<link rel="stylesheet" type="text/css" href="../../css/config.css">
-	<!-- <link rel="stylesheet" type="text/css" href="../../css/default.css"> -->
-	<link rel="stylesheet" type="text/css" href="../../css/header.css">
-	<link rel="stylesheet" type="text/css" href="../../css/profil.css">
-	<link rel="stylesheet" type="text/css" href="../../css/footer.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/config.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../../../css/default.css"> -->
+	<link rel="stylesheet" type="text/css" href="../../../css/header.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/profil.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/footer.css">
 </head>
 <body>
 	<?php require('header.php'); ?>
 
 	<div class="wrapper">
 		<div id="box-title" class="my-block">
-			<div><a href="../../html/building.html" title="Menu"><img class="icon" src="../../Images/icon-burger-menu.png"></a></div>
+			<div><a href="../../../html/building.html" title="Menu"><img class="icon" src="../../../Images/icon-burger-menu.png"></a></div>
 			<h1> > Profil</h1>
 		</div>
 		<div id="box-nav" class="my-block">

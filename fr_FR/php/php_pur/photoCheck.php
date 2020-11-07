@@ -13,13 +13,9 @@ if(isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
         $_FILES['photo']['name'] = $_SESSION['id'].'.png';
         move_uploaded_file($_FILES['photo']['tmp_name'],path_photo());
         header('Location: ../page_html/home.php');
-    }else
-    {
-        header('Location: ../page_html/parametres.php');
+        exit;
     }
-}else
-{
-    header('Location: ../page_html/parametres.php');
 }
 
+header('Location: ../page_html/parametres.php');
 ?>

@@ -12,8 +12,8 @@ require_once('../php_pur/login.php');
 <head>
     <meta charset="UTF-8">
     <title> Réinitialisation de mot de passe </title>
-    <link rel="stylesheet" href="../../css/loginPage.css">
-    <link rel="stylesheet" href="../../css/newPassword.css">
+    <link rel="stylesheet" href="../../../css/loginPage.css">
+    <link rel="stylesheet" href="../../../css/newPassword.css">
 
 </head>
 

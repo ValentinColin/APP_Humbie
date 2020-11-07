@@ -30,15 +30,12 @@ if(isset($_POST['code']) && isset($_SESSION['mail'])){
             header('Location: confirmationUser.php');
             exit;
         }
-        
     }else{
         header('Location: confirmationUser.php');
         exit;
 
     }
 }
-
-
 ?>
 
 <!DOCTYPE html>
