@@ -78,9 +78,7 @@ legend{
     padding-left: 5%;
     font-size: 1.1em;
     font-weight: bold;
-
-
-   /* display: none; */
+    color: red;
 }
 
 #input_mail{
