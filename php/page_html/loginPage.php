@@ -10,7 +10,7 @@ if (isset($_SESSION['connected'])){
     $_SESSION['connected'] = false;
 };
 $erreur = null;
-require_once('login.php');
+require_once('../php_pur/login.php');
 ?>
 
 
@@ -21,7 +21,7 @@ require_once('login.php');
 <head>
     <meta charset="UTF-8">
     <title> Page d'authentification</title>
-    <link rel="stylesheet" href="../css/loginPage.css">
+    <link rel="stylesheet" href="../../css/loginPage.css">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 </head>
@@ -42,7 +42,7 @@ require_once('login.php');
 
                     <p class="input">
                         <span id="errorDisplay"> Adresse mail non valide</span> <br id='br'>
-                        Adresse mail :<input id="input_mail" type="mail"  name="mail" placeholder="ceci-est-n@exemple.fr" required> <br> <br>
+                        Adresse mail :<input id="input_mail" type="mail"  name="mail" placeholder="ceci-est-un@exemple.fr" required> <br> <br>
 
                         Mot de passe :<input id="input_pass" type="password" name="password" placeholder="mot de passe" required>
                     </p>
@@ -75,7 +75,7 @@ require_once('login.php');
         </main>
     </center>
 </body>
-<script src="../js/loginPage.js"> </script>
+<script src="../../js/loginPage.js"> </script>
 
 </html>
 

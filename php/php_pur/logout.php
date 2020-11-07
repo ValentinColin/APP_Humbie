@@ -6,5 +6,5 @@ $_SESSION = array();
 session_destroy();
 
 // Redirection
-header('Location: loginPage.php');
+header('Location: ../page_html/loginPage.php');
 ?>

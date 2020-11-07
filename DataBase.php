@@ -9,7 +9,7 @@
 <body>
     <div>
         <center>
-            <?php include("php/showBDD.php"); ?>
+            <?php include("showDB.php"); ?>
         </center>
     </div>
 </body>

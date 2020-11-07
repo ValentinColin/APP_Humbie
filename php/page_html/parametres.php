@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include('function.php');
+include('../php_pur/function.php');
 if_not_connected($redirection='loginPage.php');
 ?>
 

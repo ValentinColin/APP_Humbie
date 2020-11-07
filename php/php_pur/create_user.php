@@ -6,7 +6,7 @@ try
 }
 catch(Exception $e)
 {
-        die('Erreur : '.$e->getMessage());
+    die('Erreur : '.$e->getMessage());
 }
 
 /* L'id du manager est transmis dans la bdd du user 

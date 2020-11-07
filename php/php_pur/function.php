@@ -26,7 +26,7 @@ function path_lang($default_path){
 }
 
 function path_photo(){
-	return '../Images/Photo/'.$_SESSION['prenom'].$_SESSION['nom'].$_SESSION['id'].'.png';
+	return '../../Images/Photo/'.$_SESSION['prenom'].$_SESSION['nom'].$_SESSION['id'].'.png';
 }
 
 function user_name(){

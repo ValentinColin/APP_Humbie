@@ -1,6 +1,7 @@
 <?php 
 session_start();
-include('function.php');
+include('../php_pur/function.php');
+
 if (isset($_POST['mail'])){
     $bdd = new PDO('mysql:host=localhost;dbname=Humbie', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     $req = $bdd->query("SELECT COUNT(*) FROM members WHERE email = '".$_POST['mail']."'");
@@ -21,11 +22,11 @@ if(!isset($_SESSION['motdepasse']) || isset($_POST['resend'])){
     $_SESSION['motdepasse'] = passwordgen(7);
     $message = 'Voici le code secret : ' . $_SESSION['motdepasse'];
     $mail = mail($_SESSION['mail'], 'Réinitialisation du mot de passe', $_SESSION['motdepasse']);
-if($mail){
-    echo 'Le mail a bien été envoyé';
-}else{
-    echo 'Erreur ';
-}
+    if($mail){
+        echo 'Le mail a bien été envoyé';
+    }else{
+        echo 'Erreur ';
+    }
 }
 ?>
 

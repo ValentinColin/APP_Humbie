@@ -21,7 +21,8 @@ if(!empty($_POST['mail']) and !empty($_POST['password']))
     if (empty($data))
     {
         $erreur = 'Adresse mail ou mot de passe incorrecte.';
-        header('Location: loginPage.php?connexion=non');
+        header('Location: ../page_html/loginPage.php?connexion=non');
+        exit;
     }
     // Sinon si le mdp est correct
 
@@ -33,15 +34,16 @@ if(!empty($_POST['mail']) and !empty($_POST['password']))
         $_SESSION['prenom'] = $data['prenom'];
         $_SESSION['nom'] = $data['nom'];
         $_SESSION['connected'] = true;
-        echo 'Vous êtes connecté !';
+        echo 'Vous êtes connecté !'; // Inutile
 
         // redirection
-        header('Location: home.php');
+        header('Location: ../page_html/home.php');
         exit;
     }
     else
     {
         $erreur = 'Adresse mail ou mot de passe incorrecte.';
-        header('Location: loginPage.php?connexion=non');
+        header('Location: ../page_html/loginPage.php?connexion=non');
+        exit;
     }
 }

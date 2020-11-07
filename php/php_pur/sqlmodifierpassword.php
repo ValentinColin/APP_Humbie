@@ -3,7 +3,7 @@ session_start();
 include('function.php');
 
 if (!isset($_POST['password']) || !isset($_POST['passwordConfirm'])){
-    header('Location: changepassword.php');
+    header('Location: ../page_html/changepassword.php');
     exit;
 }
 if ($_POST['password'] == $_POST['passwordConfirm']){
@@ -15,10 +15,10 @@ if ($_POST['password'] == $_POST['passwordConfirm']){
     $password = passwordhash($_POST['password']);
     $req -> execute(array(':mail' =>$_SESSION['mail'], ':motdepasse' => $password));
     unset($_SESSION['mail']);
-    header('Location: loginPage.php');
+    header('Location: ../page_html/loginPage.php');
     exit;
 }else{
-    header('Location: changepassword.php');
+    header('Location: ../page_html/changepassword.php');
     exit;
 }
 

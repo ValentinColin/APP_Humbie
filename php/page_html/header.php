@@ -1,13 +1,13 @@
 <header id="header-grid">
 	<div id="cell-header-home" class="cell-header">
-		<a href="home.php" title="HOME"><img class="icon" src="../Images/icon-home.png"></a>
+		<a href="home.php" title="HOME"><img class="icon" src="../../Images/icon-home.png"></a>
 	</div>
 
 	<div id="cell-header-search" class="cell-header">
 		<form method="post"> <!-- L'action est définie dans l'input de type: image -->
 			<div class="search">
 				<input type="text" id="searchBar" placeholder="Barre de Recherche">
-				<input type="image" id="loupe" class="icon" formaction="search.php" src="../Images/icon-loupe.png">
+				<input type="image" id="loupe" class="icon" formaction="../php_pur/search.php" src="../../Images/icon-loupe.png">
 			</div>
 			<a id="RechercheAvancer" href="">Recherche avancée</a>
 		</form>
@@ -15,7 +15,7 @@
 
 	<div id="cell-header-settings" class="cell-header">
 		<a href="parametres.php" title="PARAMETRE">
-			<img class="icon" src="../Images/icon-settings.png">
+			<img class="icon" src="../../Images/icon-settings.png">
 		</a>
 	</div>
 
@@ -25,7 +25,7 @@
 				<div id="box-photo"><img id="photo_profil" class="icon" src=<?php echo path_photo() ?>></div>
 				<span id="box-nom"><?php echo user_name() ?></span>
 				<span id="box-deconexion">
-					<form method="post" action="logout.php">
+					<form method="post" action="../php_pur/logout.php">
 						<input type="submit" value="déconnexion">
 					</form>
 				</span>

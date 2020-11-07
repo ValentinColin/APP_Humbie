@@ -16,7 +16,7 @@
     </p>
     <table>
     	<tr>
-    		<td><a href="php/loginPage.php">Page de connexion</a></td>
+    		<td><a href="php/page_html/loginPage.php">Page de connexion</a></td>
     		<td>: (Notre site web principal)</td>
     	</tr>
     	<tr>
