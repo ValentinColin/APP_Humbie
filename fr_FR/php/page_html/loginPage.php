@@ -42,8 +42,7 @@ require_once('../php_pur/login.php');
 
                     <p class="input">
                         <span id="errorDisplay"> Adresse mail non valide</span> <br id='br'>
-                        Adresse mail :<input id="input_mail" type="mail"  name="mail" placeholder="ceci-est-un@exemple.fr" required> <br> <br>
-
+                        Adresse mail :<input id="input_mail" type="mail"  name="mail" <?php if (isset($_COOKIE['mail'])):?> value= <?php echo $_COOKIE['mail']; endif; ?> placeholder="ceci-est-un@exemple.fr" required> <br> <br>                            
                         Mot de passe :<input id="input_pass" type="password" name="password" placeholder="mot de passe" required>
                     </p>
                     <hr>
@@ -73,4 +72,3 @@ require_once('../php_pur/login.php');
 <script src="../../js/loginPage.js"> </script>
 
 </html>
-

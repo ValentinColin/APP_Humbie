@@ -27,7 +27,8 @@ if(!empty($_POST['mail']) and !empty($_POST['password']))
     // Sinon si le mdp est correct
 
     else if (password_verify($_POST['password'], $data['password']))
-    {
+    {   
+        setcookie('mail', $data['email'], time() + 365*24*3600, null, null, false, true);
         $_SESSION['id'] = $data['id'];
         $_SESSION['access'] = $data['access'];
         $_SESSION['mail'] = $data['email'];
