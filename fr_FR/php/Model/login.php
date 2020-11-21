@@ -3,6 +3,7 @@
  * Model: login *
  * ************ */
 include("../Controller/function.php");
+include("login_bdd.php");
 
 
 /* Cette fonction se connecte à la BDD en vérifiant que 
