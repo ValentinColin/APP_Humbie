@@ -19,6 +19,10 @@
     		<td><a href="fr_FR/php/page_html/loginPage.php">Page de connexion</a></td>
     		<td>: (Notre site web principal)</td>
     	</tr>
+        <tr>
+            <td><a href="fr_FR/php/View/login.php">Page de connexion</a></td>
+            <td>: (Notre site web principal avec l'architecture MVC)</td>
+        </tr>
     	<tr>
     		<td><a href="DataBase.php">DataBase</a></td>
     		<td>: (Afficher la liste des membres enregistrer dans la base de données)</td>
