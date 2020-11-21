@@ -35,7 +35,7 @@ if_not_connected($redirection='loginPage.php');
 			// TODO: Réduire ce bout de code en une fonction !
 			if(isset($_GET['existing'])){ 
 				if($_GET['existing'] == 'true'){ 
-					echo 'Cette adresse mail existe déjà !'
+					echo 'Cette adresse mail existe déjà !';
 				}
 			}
 		?>
