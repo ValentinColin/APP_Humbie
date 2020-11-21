@@ -37,20 +37,20 @@ if_not_connected($redirection='loginPage.php');
 					<li><a href="../../../html/building.html">Historique des Tests (Users)</a></li>
 					<li><a href="../../../html/building.html">Planning (Users)</a></li>
 					<li><a href="User/faq.php">FAQ (Users)</a></li>
-					<li><a href="../../../html/building.html">Support (Users)</a></li>
+					<li><a href="User/ticket.php">Support (Users)</a></li>
 					<li><a href="../../../html/building.html">----------------</a></li>
 					<li><a href="../../../html/building.html">--- Managers ---</a></li>
 					<li><a href="../../../html/building.html">Pilotes /ie.Users (Managers)</a></li>
 					<li><a href="../../../html/building.html">Planning et gestion (Managers)</a></li>
 					<li><a href="../../../html/building.html">Statistiques (Managers)</a></li>
 					<li><a href="../../../html/building.html">FAQ (Managers)</a></li>
-					<li><a href="../../../html/building.html">Support (Managers)</a></li>
+					<li><a href="Manager/ticket.php">Support (Managers)</a></li>
 					<li><a href="../../../html/building.html">-------------</a></li>
 					<li><a href="../../../html/building.html">--- ADMIN ---</a></li>
 					<li><a href="../../../html/building.html">Managers (Admin)</a></li>
 					<li><a href="../../../html/building.html">Pilotes /ie.Users (Admin)</a></li>
-					<li><a href="../../../html/building.html">Gestion des tickets (Admin)</a></li>
-					<li><a href="../../../html/building.html">Gestion de la FAQ (Admin)</a></li>
+					<li><a href="Admin/ticket.php">Gestion des tickets (Admin)</a></li>
+					<li><a href="Admin/faq.php">Gestion de la FAQ (Admin)</a></li>
 				</ul>
 			</nav>
 		</div>
