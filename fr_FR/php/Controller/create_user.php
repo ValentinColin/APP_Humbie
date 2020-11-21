@@ -14,7 +14,7 @@ $member = $req->fetch(); // Tableau possédant à présent les clés:valeurs
 $req->closeCursor();
 
 // Si on a trouver au moins une personne dans la base de données,
-if(not empty($member))
+if(! empty($member))
 {
 	if($member['banned']){
 		header('Location: ../View/create_user.php?existing=true$banned=true');
