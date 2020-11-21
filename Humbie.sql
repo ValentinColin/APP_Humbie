@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 4.9.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 21, 2020 at 05:39 PM
--- Server version: 5.7.24
--- PHP Version: 7.4.1
+-- Host: localhost:8889
+-- Generation Time: Nov 21, 2020 at 06:21 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `humbie`
+-- Database: `Humbie`
 --
 
 -- --------------------------------------------------------
@@ -61,18 +59,19 @@ CREATE TABLE `members` (
   `nom` varchar(255) NOT NULL DEFAULT 'LAST_NAME_UNDEFINED' COMMENT 'À remplir',
   `birthday_date` date DEFAULT NULL COMMENT 'À remplir',
   `aviation_licence_date` date DEFAULT NULL COMMENT 'À remplir',
-  `inscription_date` date DEFAULT NULL COMMENT 'À compléter automatiquement via PHP',
-  `last_login` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'À compléter automatiquement via PHP'
+  `inscription_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'À compléter automatiquement via PHP',
+  `last_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'À compléter automatiquement via PHP',
+  `banned` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Status du membre comme étant banni du site web'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`id`, `id_manager`, `access`, `password`, `email`, `prenom`, `nom`, `birthday_date`, `aviation_licence_date`, `inscription_date`, `last_login`) VALUES
-(1, NULL, 'ADMIN', '$2y$09$Oitk3bZZBbUl5TjEYfm75uJOgai5lJhCXxysmfWaV9dh2fTytU0tS', 'valentin.colin78@gmail.com', 'Valentin', 'Colin', '2000-03-14', NULL, '2020-10-13', '2020-10-13 01:22:36'),
-(2, NULL, 'MANAGER', '$2y$09$Oitk3bZZBbUl5TjEYfm75uJOgai5lJhCXxysmfWaV9dh2fTytU0tS', 'eti.faviere@gmail.com', 'Etienne', 'Favière', '2000-10-02', NULL, '2020-10-13', '2020-10-13 01:25:40'),
-(3, 2, 'USER', '$2y$09$Oitk3bZZBbUl5TjEYfm75uJOgai5lJhCXxysmfWaV9dh2fTytU0tS', 'valentin.colin78@gmail.com', 'Alexandre', 'Lin', '2001-01-10', NULL, '2020-10-13', '2020-10-13 01:27:40');
+INSERT INTO `members` (`id`, `id_manager`, `access`, `password`, `email`, `prenom`, `nom`, `birthday_date`, `aviation_licence_date`, `inscription_date`, `last_login`, `banned`) VALUES
+(1, NULL, 'ADMIN', '$2y$09$Oitk3bZZBbUl5TjEYfm75uJOgai5lJhCXxysmfWaV9dh2fTytU0tS', 'valentin.colin78@gmail.com', 'Valentin', 'Colin', '2000-03-14', NULL, '2020-10-12 22:00:00', '2020-10-12 23:22:36', 0),
+(2, NULL, 'MANAGER', '$2y$09$Oitk3bZZBbUl5TjEYfm75uJOgai5lJhCXxysmfWaV9dh2fTytU0tS', 'eti.faviere@gmail.com', 'Etienne', 'Favière', '2000-10-02', NULL, '2020-10-12 22:00:00', '2020-10-12 23:25:40', 0),
+(3, 2, 'USER', '$2y$09$Oitk3bZZBbUl5TjEYfm75uJOgai5lJhCXxysmfWaV9dh2fTytU0tS', 'alexandrelin100@gmail.com', 'Alexandre', 'Lin', '2001-01-10', NULL, '2020-10-12 22:00:00', '2020-10-12 23:27:40', 0);
 
 -- --------------------------------------------------------
 
@@ -180,7 +179,6 @@ ALTER TABLE `test_board`
 --
 ALTER TABLE `tickets`
   MODIFY `id_ticket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
