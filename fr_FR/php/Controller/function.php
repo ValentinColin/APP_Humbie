@@ -1,14 +1,15 @@
-<?php 
+<?php
 
 function if_not_connected($redirection){
 	if(!$_SESSION['connected']){
-    	header('Location: '.$redirection);
+		header('Location: '.$redirection);
+		exit;
 	}
 }
 
 function if_connected($redirection){
 	if($_SESSION['connected']){
-    	header('Location: '.$redirection);
+		header('Location: '.$redirection);
 	}
 }
 
@@ -43,6 +44,26 @@ function passwordgen($len= 6){
 
 function passwordhash($password){
 	return password_hash($password, PASSWORD_BCRYPT,['cost' => 9]);
+}
+
+// Cette focntion s'assure qu'une donnée  existe et renvoie le contenu de la donnée de manière sécurisée.
+function exist_data(String $data, bool $post=True ) : String {
+	if($post){// on vérfie si la donnée existe et n'est pas vide.
+		if (isset($_POST[$data]) && ! empty($_POST[$data])){
+			return htmlspecialchars($_POST[$data]);
+		}
+		else{
+			return null;
+		}
+	}
+	else{// on vérfie si la donnée existe et n'est pas vide.
+		if (isset($_GET[$data]) && ! empty($_GET[$data])){
+			return htmlspecialchars($_GET[$data]);
+		}
+		else{
+			return null;
+		}
+	}
 }
 
 ?>
