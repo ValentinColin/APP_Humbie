@@ -15,7 +15,8 @@ mail.addEventListener("blur",function(){
 			errorDisplay.style.display='none'; /* désactive le message qui s'affiche
 			lorsque le mot de passe n'est pas correct.*/
 			br.style.display='none';
-			mail.style="border-bottom: 2px solid green;"
+			mail.style="border: 2px solid green;"
+			mail.style.backgroundColor=" transparent"
 
 		}
 		else{ // Si l'adresse n'est pas correct.
