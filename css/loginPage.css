@@ -4,7 +4,7 @@
 
 body{
     overflow-wrap: break-word;
-    background: url("../images/background.jpg") no-repeat;
+    background: url("../images/background2.jpg") no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -69,7 +69,7 @@ p{
 
 
 input[type="mail"]::placeholder, input[type="password"]::placeholder {
-    color: mediumslateblue;
+    color: white; /*mediumslateblue;*/
     font-style: italic;
 }
 
@@ -114,7 +114,7 @@ legend{
     padding: 14px 40px;
     background-color: rgba(255,255,255,0.1);
     border:2px solid #3498db;
-    color: blueviolet;
+    color: white;  /*blueviolet */
 
 
 
@@ -133,13 +133,7 @@ legend{
     justify-content: space-evenly;
 }
 
-input[type="submit"]:hover{
-    font-size: 12px;
-    border:2px solid green;
-    background-color:
-    color : green
 
-}
 
 
 #errorDisplay{
@@ -156,7 +150,9 @@ legend{
 
 
 #submit:hover{
-   background-color: rgba(20,240,20,0.4);
-   color : black;
+    font-size: 18px;
+    border:2px solid green;
+   background-color: rgba(20,240,20,0.2);
+   color : blueviolet;
 }
 
