@@ -115,9 +115,6 @@ legend{
     background-color: rgba(255,255,255,0.1);
     border:2px solid #3498db;
     color: white;  /*blueviolet */
-
-
-
 }
 
 
@@ -150,9 +147,10 @@ legend{
 
 
 #submit:hover{
-    font-size: 18px;
+    /*font-size: 18px;*/
     border:2px solid green;
-   background-color: rgba(20,240,20,0.2);
-   color : blueviolet;
+    /*background-color: rgba(20,240,20,0.2);*/
+    /*color : blueviolet;*/
+    color: green;
 }
 

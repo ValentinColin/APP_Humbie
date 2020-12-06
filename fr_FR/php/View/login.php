@@ -2,9 +2,17 @@
 /* *********** *
  * View: login *
  * *********** */
-include("../Controller/function.php")
+session_start();
+include("../Controller/function.php");
 
-
+if (isset($_SESSION['connected'])){
+    if($_SESSION['connected']){
+        header('Location: home.php'); // Ne fonctionne pas
+        exit;
+    }
+} else {
+    $_SESSION['connected'] = false;
+};
 ?>
 
 <!DOCTYPE html>
@@ -27,19 +35,15 @@ include("../Controller/function.php")
             <form method="post" action="../Controller/login.php">
                 <fieldset >
                     <legend>Connexion</legend>
-
                     <p class="input">
-                        <span id="errorDisplay"> Adresse mail non valide</span><br id='br'>
-                        Adresse mail :<input id="input_mail" type="mail"  name="mail" placeholder="ceci-est-un@exemple.com" required><br><br>
-
-                        Mot de passe :<input id="input_pass" type="password" name="password" placeholder="mot de passe" required>
+                        <span id="errorDisplay">Adresse mail non valide</span><br id='br'>
+                        <input id="input_mail" type="mail"  name="mail" 
+                            <?php if (isset($_COOKIE['mail'])):?> value= <?= $_COOKIE['mail']; endif; ?> 
+                            placeholder="ceci-est-un@exemple.fr" required><br><br>
+                        <input id="input_pass" type="password" name="password" placeholder="mot de passe" required>
+                        <hr><br>
+                        <input id='submit' type='submit' value='Se connecter'>
                     </p>
-                    <hr>
-
-                    <input id='submit' type='submit' value='Se connecter'>
-
-                  	<!-- Bouton lovinsky -->
-
                 </fieldset>
             </form>
         </main>
