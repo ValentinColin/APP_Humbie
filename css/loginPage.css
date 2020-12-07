@@ -38,6 +38,10 @@ h1{
 
 }
 
+hr{
+    margin-bottom: 0px;
+}
+
 fieldset{
 
     border: 2px ridge var(--humbie-color);
@@ -61,6 +65,7 @@ p{
     outline: none;
     color: white ;
     margin-left: 12%;
+    line-height: 10px;
 
 
 }
@@ -100,6 +105,7 @@ legend{
 #input_mail{
     outline: none;/* Pour pouvoir changer la couleur de l'input de l'adresse Mail*/
     line-height: 1.4em;
+    margin-bottom: 20px;
 }
 
 #br{
@@ -115,6 +121,7 @@ legend{
     background-color: rgba(255,255,255,0.1);
     border:2px solid #3498db;
     color: white;  /*blueviolet */
+    margin-top: 20px;
 }
 
 
@@ -137,6 +144,7 @@ legend{
     display: none;
     text-align: 'center';
 
+
 }
 
 
@@ -146,6 +154,8 @@ legend{
 }
 
 
+
+
 #submit:hover{
     /*font-size: 18px;*/
     border:2px solid green;
@@ -153,4 +163,5 @@ legend{
     /*color : blueviolet;*/
     color: green;
 }
+
 

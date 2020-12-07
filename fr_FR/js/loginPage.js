@@ -22,9 +22,9 @@ mail.addEventListener("blur",function(){
 		else{ // Si l'adresse n'est pas correct.
 
 			errorDisplay.style.display='block'; // affiche le message d'erreur
-			errorDisplay.style.color='yellow'; // couleur rouge
-			mail.style="border-bottom: 2px solid red;"
-			errorDisplay.style.backgroundColor='rgba(0,0,0,0.1)'
+			errorDisplay.style.color='blueviolet'; // couleur rouge
+			errorDisplay.style.fontWeight='bold'
+			mail.style="border: 2px solid red;"
 			errorDisplay.style.textAlign="center"
 			br.style.display='inline';
 
@@ -33,8 +33,7 @@ mail.addEventListener("blur",function(){
 		}
 	else{
 		errorDisplay.style.display='none'
-		mail.style="border-bottom: 2px solid black;"
-
+		mail.style="border: 2px solid #3498db;"
 	}
 })
 
