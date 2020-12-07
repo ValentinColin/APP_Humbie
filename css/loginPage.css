@@ -158,10 +158,10 @@ legend{
 
 #submit:hover{
     /*font-size: 18px;*/
-    border:2px solid green;
+    border:2px solid  #B1C0C8;
     /*background-color: rgba(20,240,20,0.2);*/
     /*color : blueviolet;*/
-    color: green;
+    color: white;
 }
 
 
