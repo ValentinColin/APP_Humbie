@@ -7,12 +7,11 @@ include("../Controller/function.php");
 
 if (isset($_SESSION['connected'])){
     if($_SESSION['connected']){
-        header('Location: home.php'); // Ne fonctionne pas
-        exit;
+        go('home.php');
     }
 } else {
     $_SESSION['connected'] = false;
-};
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +19,8 @@ if (isset($_SESSION['connected'])){
 <head>
 	<meta charset="UTF-8">
     <title>Page d'authentification</title>
-    <link rel="stylesheet" href="../../../css/loginPage.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/config.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/loginPage.css">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 </head>
 <body>

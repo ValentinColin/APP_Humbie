@@ -22,7 +22,7 @@ mail.addEventListener("blur",function(){
 		else{ // Si l'adresse n'est pas correct.
 
 			errorDisplay.style.display='block'; // affiche le message d'erreur
-			errorDisplay.style.color='blueviolet'; // couleur rouge
+			errorDisplay.style.color='red'; // couleur rouge
 			errorDisplay.style.fontWeight='bold'
 			mail.style="border: 2px solid red;"
 			errorDisplay.style.textAlign="center"
