@@ -4,6 +4,14 @@
 
 footer {
 	text-align: center;
+	/* modif qui permet au footer de rester en bas de page*/
+	position: fixed;/* Ou relative si l'on tient à voir le footer juste avant la fin du body*/
+	bottom: 10px;
+	left: 50%;
+	width: 100%;
+	transform: translate(-50%);
+	background-color: var(--background-gradient);
+	margin-top: 20px;
 }
 
 /* Style de la barre de navigation dans le footer */
@@ -36,7 +44,8 @@ footer {
   background: linear-gradient(rgb(27,236,235), rgb(7,239,131)); /* Valeurs prisent sur le logo de Humbie */
   text-decoration: underline;
 }
-
-#lang {
-	/*border: 0px dotted #600;*/
+/*
+#lang{
+	border: 0px dotted #600;
 }
+*/

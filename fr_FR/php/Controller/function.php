@@ -53,7 +53,7 @@ function exist_data(String $data, bool $post=True ) : String {
 			return htmlspecialchars($_POST[$data]);
 		}
 		else{
-			return null;
+			return '0';
 		}
 	}
 	else{// on vérfie si la donnée existe et n'est pas vide.
@@ -61,7 +61,7 @@ function exist_data(String $data, bool $post=True ) : String {
 			return htmlspecialchars($_GET[$data]);
 		}
 		else{
-			return null;
+			return '0';
 		}
 	}
 }

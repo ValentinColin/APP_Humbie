@@ -17,59 +17,93 @@ exist_data(Strig data, post=true) -> verifie si la session existe en la renvoie 
 */
 
 // Vérififier si un utilisateur est connecter avant de récupérer des données.
-echo ' 474';
+
 if_not_connected($redirection="../View/login.php");
 
 
 // récupération des
 $search=exist_data("search",False);
 $classement =exist_data("classement",False);
-$nom=exist_data('nom',False);
-$prenom=exist_data('prenom',False);
+$nomPrenom=exist_data('searchBar',False);
 
+$nom=null;
+$prenom=null;
+if($nomPrenom!='0'){
+    $separer=explode(" ",$nomPrenom);
+    $prenom=$separer[0];
+    $nom=$separer[1];
+
+    if(count($nom) <1){$nom='nomVide';}
+
+    $search='OnePeople';
+    echo $nom.' '.$prenom;
+}
+$decroissant=false;
+$_SESSION['noOne']=false;
 
 switch($search){
     case "AllUser" :
-        if($classement){
-            getNameLastNameMngOfUser('decroissant');
+        if($classement=='decroissant'){
+            $resultat=getNameLastNameMngOfUser('decroissant');
+            $decroissant=true;
+
         }else{
-            getNameLastNameMngOfUser();
+            $resultat=getNameLastNameMngOfUser();
         }
-        $path="../View/Admin/search_all_uom.php";// uom for user or manager
-        $_SESSION['search']='AllUser';
+        $path="../../View/Admin/searchUser.php";// uom for user or manager
+        $_SESSION['search']=$resultat;
         break;
 
     case "AllManager" :
-        if($classement){
-            getNameLastNameManager('decroissant');
+        if($classement=='decroissant'){
+            $resultat=getNameLastNameManager('decroissant');
+            $decroissant=true;
         }else{
-            getNameLastNameManager();
+            $resultat=getNameLastNameManager();
         }
-        $path="../View/Admin/search_all_uom.php";
-        $_SESSION['search']='AllManager';
+        $path="../../View/Admin/searchManager.php";
+        $_SESSION['search']=$resultat;
         break;
 
-    case "AllMembers":
-        if($classement){
-            getNameLastNameAllMembers('decroissant');
+    case "AllMember":
+        if($classement=='decroissant'){
+            $resultat=getNameLastNameAllMembers('decroissant');
+            $decroissant=true;
         }else{
-            getNameLastNameAllMembers();
+            $resultat=getNameLastNameAllMembers();
         }
-        $path="../View/Admin/search_all_uom.php";
-        $_SESSION['search']='AllMembers';
+        $path="../../View/Admin/searchAllMember.php";
+        $_SESSION['search']=$resultat;
         break;
 
     case "OnePeople" :
-        getUserOrManager($nom,$prenom);
-        $path="../View/Admin/search_uom.php";
-        $_SESSION['search']='OnePeople';
+
+        $resultat=getUserOrManager($nom,$prenom);
+
+        if($resultat==null){
+            $resultat=getUserOrManager($prenom,$nom);
+
+            if($resultat==null){
+                $_SESSION['noOne']=true;
+                header('location: ../../View/Admin/simpleSearch.php');
+            }
+        }
+
+        $path="../../View/Admin/simpleSearch.php";
+        $_SESSION['search']=$resultat;
         break;
     default :
-        header('location : ../View/Admin/home.php');
+
+        header('location: ../../View/Admin/home.php');
         exit;
 }
-    header('location : '.$path);
+
+$_SESSION['decroissant']=$decroissant;
+    header("Location: $path");
     exit;
+
+
+
 
 ?>
 

@@ -4,10 +4,10 @@
 	</div>
 
 	<div id="cell-header-search" class="cell-header">
-		<form method="post"> <!-- L'action est définie dans l'input de type: image -->
+		<form method="get"> <!-- L'action est définie dans l'input de type: image -->
 			<div class="search">
-				<input type="text" id="searchBar" placeholder="Barre de Recherche">
-				<input type="image" id="loupe" class="icon" formaction="../../../../html/building.html" src="../../../../Images/icon-loupe.png">
+				<input name='searchBar' type="text" id="searchBar" placeholder="Barre de Recherche">
+			<input type="image" id="loupe" class="icon" formaction="../../Controller/search_member_c.php/" src="../../../../Images/icon-loupe.png">
 			</div>
 			<a id="RechercheAvancer" href="">Recherche avancée</a>
 		</form>

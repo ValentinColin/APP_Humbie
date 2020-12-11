@@ -16,40 +16,54 @@ if_not_connected($redirection='../../View/login.php');
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/searchManager.css">
   	<!-- <link rel="icon" href="../../../Images/logo_Humbie.png"> Ne fonctionne pas -->
   	<link rel="script" type="text/css" href="../../../../js/drawGraph.js">
 </head>
 <body>
 	<?php require('header.php'); ?>
 
-	<div class="wrapper">
-		<div id="box-title" class="my-block">
-			<div><a href="../../../../html/building.html" title="Menu"><img class="icon" src="../../../../Images/icon-burger-menu.png"></a></div>
-			<h1>  Page Principale</h1>
-		</div>
+    <main>
 
 		<div id="box-nav" class="my-block">
-			<?php require('nav.php') ?>
-		</div>
-
-		<div id="box-content" class="my-block">
-			<main onclick="draw()">
-				<!-- Corps -->
-				<?= '<p>Bonjour '.$_SESSION['prenom'].' '.$_SESSION['nom'].' ['.$_SESSION['access'].'] !</p>'.
-					'<p>Vous êtes actuellement sur la page principale.</p>';
-				?>
-				<label>
-					<h2>Un graphique</h2>
-					<svg id="graphExemple1" width="900" height="450"></svg>
-				</label>
-			</main>
+            <?php require('nav.php') ?>
 		</div>
 	</div>
+
+    <div id='search-page'>
+        <h1 > Resultat de recherche </h1>
+
+
+    <?php if ($_SESSION['noOne']) :?>
+        <p> L'utilisateur recherché n'existe pas </p>
+    <?php endif; ?>
+
+
+    <?php if (!$_SESSION['noOne']) :?>
+
+    <table>
+    <tr>
+         <td> nom :   <strong>  <?php print_r( strtoupper($_SESSION['search'][0][0])); ?> </strong>  </td>
+         <td> penom :   <strong> <?php print_r($_SESSION['search'][0][1]); ?> </strong>  </td>
+         <td> Rôle :   <strong> <?php print_r($_SESSION['search'][0][2]); ?> </strong>  </td>
+
+    <tr>
+    </table>
+
+
+
+
+
+    <?php endif; ?>
+
+    </div>
+
+    </main>
+
+
 
 	<?php require('footer.php'); ?>
 </body>
 
-<script src="../../../js/jsGraphDisplay.1.0.js"></script> <!-- Script source permettant de dessiner des graphiques -->
-<script src="../../../js/drawGraph.js"></script> <!-- Script qui détermine quoi afficher comme graphique (et avec quelles données) -->
-
+<?php //$_SESSION['search']=''; ?>
 </html>

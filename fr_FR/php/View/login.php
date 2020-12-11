@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* *********** *
  * View: login *
  * *********** */
@@ -37,11 +37,11 @@ if (isset($_SESSION['connected'])){
                     <legend>Connexion</legend>
                     <p class="input">
                         <span id="errorDisplay">Adresse mail non valide</span><br id='br'>
-                        <input id="input_mail" type="mail"  name="mail" 
-                            <?php if (isset($_COOKIE['mail'])):?> value= <?= $_COOKIE['mail']; endif; ?> 
-                            placeholder="ceci-est-un@exemple.fr" required><br><br>
+                        <input id="input_mail" type="mail"  name="mail"
+                            <?php if (isset($_COOKIE['mail'])):?> value= <?= $_COOKIE['mail']; endif; ?>
+                            placeholder="ceci-est-un@exemple.fr" required>
                         <input id="input_pass" type="password" name="password" placeholder="mot de passe" required>
-                        <hr><br>
+                        <hr>
                         <input id='submit' type='submit' value='Se connecter'>
                     </p>
                 </fieldset>
