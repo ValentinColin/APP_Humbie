@@ -10,7 +10,24 @@ function if_not_connected($redirection){
 function if_connected($redirection){
 	if($_SESSION['connected']){
 		header('Location: '.$redirection);
+		exit;
 	}
+}
+
+function go($page){
+	switch ($_SESSION['access']) {
+		case 'USER':
+			$role_folder = 'User';
+			break;
+		case 'MANAGER':
+			$role_folder = 'Manager';
+			break;
+		case 'ADMIN':
+			$role_folder = 'Admin';
+			break;
+	}
+	header('Location: '.$role_folder.'/'.$page);
+	exit;
 }
 
 // Peut-être pas encore fonctionnel (à voir selon l'organisation des fichiers et la méthode des liens de redirecetion)
