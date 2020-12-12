@@ -19,7 +19,7 @@ if_not_connected($redirection="../../View/login.php");
 	<!-- <link rel="stylesheet" type="text/css" href="../../../../css/faq.css"> -->
 </head>
 <body>
-	<?php require("../../View/Admin/header.php"); ?>
+	<?php require("header.php"); ?>
 
 	<div class="wrapper">
 		<div id="box-add-question" class="my-block">
@@ -47,6 +47,6 @@ if_not_connected($redirection="../../View/login.php");
 		</div>
 	</div>
 
-	<?php require("../../View/Admin/footer.php"); ?>
+	<?php require("footer.php"); ?>
 </body>
 </html>
