@@ -35,7 +35,7 @@ if_not_connected($redirection='../../View/login.php');
 
 
         <div id='classement'>
-        <span> classé les noms par ordre: <span>
+        <span> classé les noms par ordre alphabétique: <span>
         <a href="../../Controller/search_member_c.php/?search=AllMember">
         <input type='button' value='croissant'
         <?php if( !$_SESSION['decroissant']) :?> disabled title='tri déjà effectif'  <?php endif ?> >
@@ -51,8 +51,8 @@ if_not_connected($redirection='../../View/login.php');
 
         <table>
             <tr>
-                 <th> nom </th>
-                 <th> prénom </th>
+                 <th> Nom </th>
+                 <th> Prénom </th>
                  <th> E-mail </th>
                  <th> Rôle</th>
              </tr>

@@ -6,12 +6,12 @@ footer {
 	text-align: center;
 	/* modif qui permet au footer de rester en bas de page*/
 	position: fixed;/* Ou relative si l'on tient à voir le footer juste avant la fin du body*/
-	bottom: 10px;
+	bottom: 1px;
 	left: 50%;
 	width: 100%;
 	transform: translate(-50%);
 	background-color: var(--background-gradient);
-	margin-top: 20px;
+	margin-top: 100px;
 }
 
 /* Style de la barre de navigation dans le footer */

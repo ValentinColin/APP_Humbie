@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* ************ *
  * Model: login *
  * ************ */
@@ -6,7 +6,7 @@ include("../Controller/function.php");
 include("login_bdd.php");
 
 
-/* Cette fonction se connecte à la BDD en vérifiant que 
+/* Cette fonction se connecte à la BDD en vérifiant que
  * le mail et le mot de passe son correct.
  * De plus s'ils sont correct, la fonction définie
  * les variables de sessions.
@@ -27,7 +27,7 @@ function login($mail, $password){
 
 	if(empty($data)) { // erreur de mail
 		$success = false;
-	} 
+	}
 	else if(password_verify($password, $data['password'])) {
 		$_SESSION['id'] = $data['id'];
         $_SESSION['access'] = $data['access'];

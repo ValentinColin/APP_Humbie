@@ -62,10 +62,10 @@ function getNameLastNameAllMembers(String $ordre=''):array{
                 $connexion= new PDO("mysql:host=localhost;dbname=humbie","root","root");
                 $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 if($ordre=="decroissant"){
-                     $requete=$connexion->prepare("SELECT prenom,nom,access FROM Members WHERE not access='ADMIN'  ORDER BY nom DESC");
+                     $requete=$connexion->prepare("SELECT prenom,nom,email,access FROM Members WHERE not access='ADMIN'  ORDER BY nom DESC");
                 }
                 else{
-                    $requete=$connexion->prepare("SELECT prenom,nom,access FROM Members WHERE not access='ADMIN' ORDER BY nom ASC");
+                    $requete=$connexion->prepare("SELECT prenom,nom,email,access FROM Members WHERE not access='ADMIN' ORDER BY nom ASC");
 
                 }
                 $requete->execute();

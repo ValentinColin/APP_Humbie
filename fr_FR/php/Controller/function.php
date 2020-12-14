@@ -83,4 +83,17 @@ function exist_data(String $data, bool $post=True ) : String {
 	}
 }
 
+// function qui permet la redicrection suivant le rôle de l'utilisateur connecté.
+function role(String $role, String $redirectionUser, String $redirectionManager, String $redirectionAdmin ):String{
+	if($role=="USER"){
+		return $redirectionUser;
+	}
+	else if( $role=="MANAGER"){
+		return $redirectionManager;
+	}
+	else{
+		return $redirectionAdmin;
+	}
+}
+
 ?>

@@ -1,0 +1,22 @@
+main{
+    display: flex;
+    flex-direction: row;
+    width: 97%;
+    margin-left: 20px;
+    margin-right: 90px;
+    margin-bottom: 50px;
+
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+    margin-left: 20px;
+    margin-right: 90px;
+    background-color: transparent;
+}
+
+.wrapper div{
+    background-color: transparent;
+}

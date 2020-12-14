@@ -16,10 +16,19 @@ if_not_connected($redirection="../../View/login.php");
 	<link rel="stylesheet" type="text/css" href="../../../../css/config.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
+	<link rel="stylesheet" type="text/css" href="../../../../css/home.css">
+	<link rel="stylesheet" type="text/css" href="../../../../css/faq.css">
 	<!-- <link rel="stylesheet" type="text/css" href="../../../../css/faq.css"> -->
 </head>
 <body>
 	<?php require("header.php"); ?>
+
+
+	<main>
+
+	<div id="box-nav" class="my-block">
+			<?php require('nav.php') ?>
+		</div>
 
 	<div class="wrapper">
 		<div id="box-add-question" class="my-block">
@@ -46,6 +55,8 @@ if_not_connected($redirection="../../View/login.php");
 			<?php } ?>
 		</div>
 	</div>
+
+	</main>
 
 	<?php require("footer.php"); ?>
 </body>

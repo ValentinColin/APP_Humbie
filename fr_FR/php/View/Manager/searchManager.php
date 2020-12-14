@@ -26,23 +26,23 @@ if_not_connected($redirection='../../View/login.php');
     <main>
 
 		<div id="box-nav" class="my-block">
-		<?php require('nav.php') ?>
+			<?php require('nav.php') ?>
 		</div>
 	</div>
 
     <div id='search-page'>
-        <h1 >  Pilotes et Manager </h1>
+        <h1 >  Les managers </h1>
 
 
         <div id='classement'>
         <span> classé les noms par ordre: <span>
-        <a href="../../Controller/search_member_c.php/?search=AllMember">
+        <a href="../../Controller/search_member_c.php/?search=AllManager">
         <input type='button' value='croissant'
         <?php if( !$_SESSION['decroissant']) :?> disabled title='tri déjà effectif'  <?php endif ?> >
         </a>
 
 
-        <a href="../../Controller/search_member_c.php/?search=AllMember&classement=decroissant">
+        <a href="../../Controller/search_member_c.php/?search=AllManager&classement=decroissant">
        <input type='button' value='décroissant'
        <?php if( $_SESSION['decroissant']) :?> disabled title='tri déjà effectif'  <?php endif ?> >
         </a>
@@ -53,16 +53,12 @@ if_not_connected($redirection='../../View/login.php');
             <tr>
                  <th> nom </th>
                  <th> prénom </th>
-                 <th> E-mail </th>
-                 <th> Rôle</th>
              </tr>
 
             <?php for($i=0;$i<count($_SESSION['search']);$i++) :?>
              <tr>
                 <td> <?php print_r ( strtoupper($_SESSION['search'][$i][1])); ?>  </td>
                 <td> <?php print_r ($_SESSION['search'][$i][0]); ?>  </td>
-                <td> <a href="mailto:service.humbie@gmail.com" title="Contacter <?=$_SESSION['search'][$i][0]?>  par mail"> <?php print_r ($_SESSION['search'][$i][2]); ?>  </a> </td>
-                <td> <?php print_r ($_SESSION['search'][$i][3]); ?>  </td>
             <tr>
            <?php  endfor; ?>
 

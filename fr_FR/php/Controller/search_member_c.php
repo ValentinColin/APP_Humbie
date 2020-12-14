@@ -25,7 +25,8 @@ if_not_connected($redirection="../View/login.php");
 $search=exist_data("search",False);
 $classement =exist_data("classement",False);
 $nomPrenom=exist_data('searchBar',False);
-
+$role=$_SESSION['access'];
+echo $role;
 $nom=null;
 $prenom=null;
 if($nomPrenom!='0'){
@@ -40,6 +41,7 @@ if($nomPrenom!='0'){
 }
 $decroissant=false;
 $_SESSION['noOne']=false;
+
 
 switch($search){
     case "AllUser" :
@@ -61,18 +63,21 @@ switch($search){
         }else{
             $resultat=getNameLastNameManager();
         }
-        $path="../../View/Admin/searchManager.php";
+        $path=role($role," ","../../View/Manager/searchManager.php","../../View/Admin/searchManager.php");
         $_SESSION['search']=$resultat;
         break;
 
     case "AllMember":
+
         if($classement=='decroissant'){
+
             $resultat=getNameLastNameAllMembers('decroissant');
             $decroissant=true;
         }else{
             $resultat=getNameLastNameAllMembers();
         }
-        $path="../../View/Admin/searchAllMember.php";
+
+        $path=role($role,"../../View/User/searchAllMember.php","../../View/Manager/searchAllMember.php","../../View/Admin/searchAllMember.php");
         $_SESSION['search']=$resultat;
         break;
 
@@ -101,8 +106,6 @@ switch($search){
 $_SESSION['decroissant']=$decroissant;
     header("Location: $path");
     exit;
-
-
 
 
 ?>
