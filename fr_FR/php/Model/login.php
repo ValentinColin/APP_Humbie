@@ -17,7 +17,7 @@ include("login_bdd.php");
 function login($mail, $password){
 	$bdd = login_bdd();
 	$req = $bdd->query('SELECT id, email, password, access, prenom, nom
-                        FROM Members
+                        FROM members
                         WHERE email = \'' . $mail . '\''
                         );
 
