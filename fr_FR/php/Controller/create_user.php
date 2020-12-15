@@ -1,38 +1,19 @@
 <?php
-include('./function.php');
+include('../Model/create_user.php');
 
-$bdd = login_bdd('mysql:host=localhost;dbname=Humbie','root','root');
+/*
+ * Vérifier que les données entrante sont correctes, toutes valide
+ */
 
-$req = $bdd->query('SELECT id, mail, banned
-                    FROM Members
-                    WHERE mail = \'' . $_POST['mail'] . '\''
-                	);
-
-$member = $req->fetch(); // Tableau possédant à présent les clés:valeurs
-
-// Indique qu'on a fini de traité la requête (permet d'éviter des problèmes lors de futurs requête)
-$req->closeCursor();
-
-// Si on a trouver au moins une personne dans la base de données,
-if(! empty($member))
-{
-	if($member['banned']){
-		header('Location: ../View/create_user.php?existing=true$banned=true');
-	    exit;
-	} 
-	else{
-	    header('Location: ../View/create_user.php?existing=true$banned=false');
-	    exit;
-	} 
+if (mail_exist($_POST['mail'])) {
+	header('Location: ../View/Admin/create_user.php?mailExisting=true');
+	die();
 } else {
-	include('../Model/create_user.php');
-	header('Location: ../View/create_user.php');
+	$password = create_user($_POST);
+	$mail = mail($_POST['mail'], 'Initialisation du mot de passe', $password);
+
+	if ($mail)
+		header('Location: ../View/Admin/create_user.php?sending=true');
+	else
+		header('Location: ../View/Admin/create_user.php?sending=false');
 }
-
-/* 
-Écrire une réponse pour informer le créateur que la création du user à été effectuer correctement ? 
-Genre du texte->(Valider en vert) qui s'affiche mais si il y a une erreur alors un texte explicatif en rouge
-*/
-
-?>
-
