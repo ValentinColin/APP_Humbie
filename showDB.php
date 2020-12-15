@@ -1,12 +1,11 @@
 <?php
+include("fr_FR/php/Model/login_bdd.php");
 // En cas d'erreur non compréhensible, rajouter le dernière argument ci-dessous pour avoir plus de détails
-$bdd = new PDO('mysql:host=localhost;dbname=Humbie', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-//$bdd = new PDO('mysql:host=localhost;dbname=Humbie', 'root', 'root');
+$bdd = login_bdd();
 
-$reponse = $bdd->query('
-	SELECT id, access , prenom, nom, email, password
-	FROM Members 
-	ORDER BY access');
+$reponse = $bdd->query('SELECT id, access , prenom, nom, email, password
+						FROM members 
+						ORDER BY access');
 
 
 echo '<table>';
