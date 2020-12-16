@@ -90,11 +90,11 @@ switch($search){
 
             if($resultat==null){
                 $_SESSION['noOne']=true;
-                header('location: ../../View/Admin/simpleSearch.php');
+                header('location:'.role($role,"../../View/User/simpleSearch.php","../../View/Manager/simpleSearch.php","../../View/Admin/simpleSearch.php"));
             }
         }
 
-        $path="../../View/Admin/simpleSearch.php";
+        $path=role($role,"../../View/User/simpleSearch.php","../../View/Manager/simpleSearch.php","../../View/Admin/simpleSearch.php");
         $_SESSION['search']=$resultat;
         break;
     default :
