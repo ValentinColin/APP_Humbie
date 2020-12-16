@@ -5,7 +5,7 @@
 footer {
 	text-align: center;
 	/* modif qui permet au footer de rester en bas de page*/
-	position: fixed;/* Ou relative si l'on tient à voir le footer juste avant la fin du body*/
+	position: relative;/* Ou relative si l'on tient à voir le footer juste avant la fin du body*/
 	bottom: 1px;
 	left: 50%;
 	width: 100%;
