@@ -47,14 +47,14 @@ if_not_connected($redirection="../../View/login.php");
 
 				<h2>Type de données</h2>
 				
-				<p> données recueillies sont de type nom, prénom, adresse mail, taille de pieds et musique préférée. Nous les recueillons afin de générer un profil le plus complet et le plus personnalisé possible.</p>
+				<p>Les données recueillies sont de type nom, prénom, adresse mail, taille de pieds et musique préférée. Nous les recueillons afin de générer un profil le plus complet et le plus personnalisé possible.</p>
 
 				<p>Chacune de ces données est stockée en non-chiffrée sur notre base de donnée sur GitHub, où tout un chacun y a accès s' il dispose du lien : Sécurité assurée ! Personne ne saura jamais que vous avez fait un test avec nos matériels !</p>
 
 
 
 
-				<h2>Quelles finalité pour vos données</h2>
+				<h2>Quelles finalités pour vos données</h2>
 
 				<p>Étant une société exploitée par un groupe de personnes nous encadrant et à but strictement non lucratif, nous ne trions strictement aucun avantage des données engrangées aux cours des processus décrits plus haut.</p> 
 				

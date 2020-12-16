@@ -1,0 +1,10 @@
+#notice_text{
+    margin-left : 4%;
+    margin-right : 7%;
+}
+
+main{
+    display:flex;
+    flex-direction: row;
+    
+}
