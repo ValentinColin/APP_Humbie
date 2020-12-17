@@ -14,10 +14,10 @@ if(mail.value !=''){// le le champ est vide, on affiche pas de message
 	}
 	else{ // Si l'adresse n'est pas correct.
 		errorDisplay.style.display='block'; // affiche le message d'erreur
-		errorDisplay.style.color='yellow'; //
-		errorDisplay.style.backgroundColor='rgba(0,0,0,0.1)'
+		errorDisplay.style.color='red'; //
+		errorDisplay.style.backgroundColor='transparent'
 		errorDisplay.style.textAlign='center'
-		mail.style="border-bottom: 2px solid red;"
+		mail.style="border: 2px solid red;"
 		br.style.display='inline';
 
 	}

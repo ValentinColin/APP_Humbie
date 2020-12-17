@@ -42,7 +42,9 @@ if (isset($_SESSION['connected'])){
                             placeholder="Adresse mail" required>
                         <input id="input_pass" type="password" name="password" placeholder="Mot de passe" required>
                         <hr>
-                        <input id='submit' type='submit' value='Se connecter'>
+                        <input id='submit' type='submit' value='Se connecter'> <br> <br>
+
+                        <a id= 'newPassword'href='newPassword.php'> Mot de passe oublié </a>
                     </p>
                 </fieldset>
             </form>

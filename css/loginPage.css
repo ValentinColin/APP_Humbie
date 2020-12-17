@@ -43,7 +43,7 @@ p{
     text-align: justify;
 }
 
-#input_mail, #input_pass {
+#input_mail, #input_pass,#mail {
     background: rgba(255,255,255,0.1);
     border:2px solid #3498db;
     padding : 14px 10px;
@@ -62,7 +62,7 @@ input[type="mail"]::placeholder, input[type="password"]::placeholder {
     font-style: italic;
 }
 
-input[type="mail"]:focus::placeholder, input[type="password"]:focus::placeholder {
+input[type="mail"]:focus::placeholder, input[type="password"]:focus::placeholder,#mail {
     color: transparent;
 }
 
@@ -88,7 +88,7 @@ legend{
 
 }
 
-#input_mail{
+#input_mail,#mail{
     outline: none;/* Pour pouvoir changer la couleur de l'input de l'adresse Mail*/
     line-height: 1.4em;
     margin-bottom: 20px;
@@ -138,6 +138,21 @@ legend{
     color: white;
 }
 
+#newPassword{
+
+    color:#B1C0C8;
+    text-decoration : none;
+
+}
+
+#newPassword:hover{
+    text-decoration: underline white ;
+}
+#mail{
+    color: white;
+}
+
+
 
 @media screen and (max-width :1000px){
 
@@ -158,3 +173,4 @@ legend{
     }
 
 }
+
