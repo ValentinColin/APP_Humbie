@@ -48,6 +48,7 @@ if_not_connected($redirection="../View/login.php");
             </p>
                     
     <?php } ?>
+    <?php require("footer.php"); ?>
     
 </body>
 </html>

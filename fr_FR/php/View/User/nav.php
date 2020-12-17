@@ -6,6 +6,6 @@
 	    <li><a href="empty">Mes Résultats de Tests</a></li>
 	    <li><a href="empty">Mes Statistiques</a></li>
 	    <li><a href="faq.php">FAQ</a></li>
-	    <li><a href="empty">Support</a></li>
+	    <li><a href="ticket.php">Tickets</a></li>
 	</ul>
 </nav>

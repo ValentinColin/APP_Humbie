@@ -37,5 +37,6 @@ if_not_connected($redirection="../View/login.php");
     <input type="text" name="content" placeholder="Ecrivez votre requête">
     <input type="submit" value="Envoyer" name="poster">
     </form>
+    <?php require("footer.php"); ?>
 </body>
 </html>
