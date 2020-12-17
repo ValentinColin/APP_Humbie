@@ -31,11 +31,11 @@ function login_bdd($errmode=true)
 	try
 	{
 		if (DB_LOCAL) {
-			$DNS = 'mysql:host=localhost;dbname=Humbie';
+			$DNS = 'mysql:host=localhost;dbname=Humbie;charset=utf8';
 			$id = 'root';
 			$password = 'root';
 		} else {
-			$DNS = 'mysql:host='.DB_HOST.';dbname='.DB_NAME;
+			$DNS = 'mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8';
 			$id = DB_USER;
 			$password = DB_PASSWORD;
 		}
