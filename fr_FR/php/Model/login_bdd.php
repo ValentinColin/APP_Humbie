@@ -14,10 +14,10 @@ define('DB_PASSWORD', 'isep');
 function old_login_bdd($DNS='mysql:host=localhost;dbname=Humbie', $id='root', $password='root', $errmode=true){
 	try
 	{
-		if($errmode)
-			$bdd = new PDO($DNS, $id, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		else
-			$bdd = new PDO($DNS, $id, $password);
+		if($errmode){
+			$bdd = new PDO($DNS, $id, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));}
+		else{
+			$bdd = new PDO($DNS, $id, $password);}
 		return $bdd;
 	}
 	catch(Exception $e)
@@ -40,10 +40,12 @@ function login_bdd($errmode=true)
 			$password = DB_PASSWORD;
 		}
 		
-		if($errmode)
+		if($errmode){
 			$bdd = new PDO($DNS, $id, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		else
+		}
+		else{
 			$bdd = new PDO($DNS, $id, $password);
+		}
 
 		return $bdd;
 	}

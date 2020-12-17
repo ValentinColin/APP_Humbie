@@ -1,7 +1,7 @@
 <?php 
 include("../Controller/function.php");
 include("../Model/faq.php");
-
+session_start();
 if_not_connected($redirection="../View/login.php");
 
 $bdd = login_bdd();

@@ -7,7 +7,7 @@ function getFAQ(){
 	$bdd = login_bdd();
 
 	$req = $bdd->query('SELECT id, question, answer
-						FROM FAQ');
+						FROM faq');
 
 	$faq = array();
 	while($row = $req->fetch()){
@@ -34,6 +34,6 @@ function addQuestion($question, $answer){
 /* Supprime une Question/Answer de la FAQ */
 function deleteQuestion($id){
 	$bdd = login_bdd();
-    $bdd->query('DELETE FROM Faq 
+    $bdd->query('DELETE FROM faq 
     			 WHERE id = ' . $id);
 }
