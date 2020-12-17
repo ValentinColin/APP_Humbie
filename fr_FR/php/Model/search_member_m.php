@@ -1,4 +1,3 @@
-
 <?php
 
 include("login_bdd.php");
@@ -8,24 +7,21 @@ function getNameLastNameMngOfUser(String $ordre=''):array--> ligne 14
 function getNameLastNameManager(String $ordre=''):array  --> ligne 37
 function getNameLastNameAllMembers(String $ordre=''):array --> ligne 60
 function getUserOrManager(String $nom, String $prenom):array --> ligne 82
-
 */
-
 //Recupère,nom prenom et id managers des utilisateurs et les classes
 // par odre croissant ou decroissant, suivant le parametre
 function getNameLastNameMngOfUser(String $ordre=''):array{
 try{
-   $connexion=old_login_bdd();// connexion à la bdd
-        $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// en cas d'erreur
-        if($ordre=="decroissant"){ // si decroissant, classement par ordre decroissant
-            $requete=$connexion->prepare("SELECT prenom,nom,id_manager FROM members WHERE access='USER' ORDER BY nom DESC");
-        }
-        else{// sinonn, classement des utilisateur par ordre croissant
-              $requete=$connexion->prepare("SELECT prenom,nom,id_manager FROM members WHERE access='USER' ORDER BY nom ASC");
-        }
-        $requete->execute();// récupération des données
-        return $requete->fetchall();// tableau contenant les données récupérées
-
+   $connexion=login_bdd();// connexion à la bdd
+   $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// en cas d'erreur
+         if($ordre=="decroissant"){ // si decroissant, classement par ordre decroissant
+        $requete=$connexion->prepare("SELECT prenom,nom,id_manager FROM members WHERE access='USER' ORDER BY nom DESC");
+    }
+    else{// sinonn, classement des utilisateur par ordre croissant
+            $requete=$connexion->prepare("SELECT prenom,nom,id_manager FROM members WHERE access='USER' ORDER BY nom ASC");
+    }
+    $requete->execute();// récupération des données
+    return $requete->fetchall();// tableau contenant les données récupérées
 }
 catch(PDOException $e){
     return null;
@@ -38,7 +34,7 @@ catch(PDOException $e){
 function getNameLastNameManager(String $ordre=''):array{
     try{
 
-       $connexion=old_login_bdd();
+       $connexion=login_bdd();
             $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             if($ordre=="decroissant"){
                  $requete=$connexion->prepare("SELECT prenom,nom,email FROM members WHERE access='MANAGER' ORDER BY nom DESC");
@@ -61,7 +57,7 @@ function getNameLastNameManager(String $ordre=''):array{
 function getNameLastNameAllMembers(String $ordre=''):array{
         try{
 
-           $connexion=old_login_bdd();
+           $connexion=login_bdd();
                 $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 if($ordre=="decroissant"){
                      $requete=$connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN'  ORDER BY nom DESC");
@@ -80,15 +76,14 @@ function getNameLastNameAllMembers(String $ordre=''):array{
      }
 
      // fonction pour rechercher un pilote ou un manager
-     function getUserOrManager(String $nom, String $prenom='rien'):array{
-
+function getUserOrManager(String $nom, String $prenom='rien'):array{
         try{
 
-       $connexion=old_login_bdd();
-            $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $requete=$connexion->prepare("SELECT prenom,nom,access FROM members WHERE  nom='$nom' AND prenom='$prenom' AND not access='ADMIN' ");
-            $requete->execute();
-            return $requete->fetchall();
+       $connexion=login_bdd();
+        $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $requete=$connexion->prepare("SELECT prenom,nom,access FROM members WHERE  nom='$nom' AND prenom='$prenom' AND not access='ADMIN' ");
+        $requete->execute();
+        return $requete->fetchall();
 
     }
     catch(PDOException $e){
