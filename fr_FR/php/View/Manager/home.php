@@ -12,7 +12,7 @@ if_not_connected($redirection='../../View/login.php');
 <head>
 	<meta charset="UTF-8">
 	<title>Humbie</title>
-	<link rel="stylesheet" type="text/css" href="../../../../css/global.css"> <!-- Pour fixer le footer en bas de la page -->
+	<!-- <link rel="stylesheet" type="text/css" href="../../../../css/global.css"> --> <!-- Pour fixer le footer en bas de la page -->
 	<link rel="stylesheet" type="text/css" href="../../../../css/config.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
