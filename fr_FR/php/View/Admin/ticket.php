@@ -1,8 +1,8 @@
 <?php
+require_once("../../Model/ticket.php");
+require_once("../../Controller/function.php");
 session_start();
-include("../../Controller/ticket.php");
-include("../../Model/ticket.php");
-if_not_connected($redirection="../../View/login.php");
+if_not_connected($redirection="../View/login.php");
 
 ?>
 
@@ -11,7 +11,7 @@ if_not_connected($redirection="../../View/login.php");
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>FAQ</title>
+	<title>Ticket</title>
 	<link rel="stylesheet" type="text/css" href="../../../../css/config.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
@@ -29,8 +29,8 @@ if_not_connected($redirection="../../View/login.php");
 	</div>
 
     <?php 
-        echo '<h1> Il y a '.count($ticket).' tickets en attente: </h1> ';
         $ticket = getTicket();
+        echo '<h1> Il y a '.count($ticket).' tickets en attente: </h1> ';
         for ($i=0; $i < count($ticket); $i++) { 
     ?>
             <p>
@@ -47,9 +47,7 @@ if_not_connected($redirection="../../View/login.php");
 
             </p>
                     
-    <?php 
-    endwhile; 
-    ?>
+    <?php } ?>
     
 </body>
 </html>

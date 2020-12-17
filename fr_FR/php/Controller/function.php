@@ -30,6 +30,22 @@ function go($page){
 	exit;
 }
 
+function goView($page){
+	switch ($_SESSION['access']) {
+		case 'USER':
+			$role_folder = 'User';
+			break;
+		case 'MANAGER':
+			$role_folder = 'Manager';
+			break;
+		case 'ADMIN':
+			$role_folder = 'Admin';
+			break;
+	}
+	header('Location: ../View/'.$role_folder.'/'.$page);
+	exit;
+}
+
 // Peut-être pas encore fonctionnel (à voir selon l'organisation des fichiers et la méthode des liens de redirecetion)
 /*
 function path_lang($default_path){

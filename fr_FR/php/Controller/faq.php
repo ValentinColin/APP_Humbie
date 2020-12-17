@@ -18,3 +18,4 @@ else{ // On supprime une question/réponse
 
 header('Location: ../View/Admin/faq.php');
 exit;
+?>
