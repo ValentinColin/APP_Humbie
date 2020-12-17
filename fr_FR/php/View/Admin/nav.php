@@ -6,6 +6,7 @@
     <li><a href="../../Controller/search_member_c.php/?search=AllManager">Managers</a></li>
     <li><a href="../../Controller/search_member_c.php/?search=AllUser">Pilotes</a></li>
     <li><a href="../../Controller/search_member_c.php/?search=AllMember">Tous les membres</a></li>
+    <li><a href="create_user.php">Ajouter un membre</a></li>
     <li><a href="ticket.php">Gestion des tickets</a></li>
     <li><a href="faq.php">Gestion de la FAQ</a></li>
 </ul>

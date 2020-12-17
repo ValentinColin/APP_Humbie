@@ -16,23 +16,23 @@ function mail_exist($mail){
 
 function create_user($data){
 	$bdd = login_bdd();
-	$req = $bdd->prepare('INSERT INTO members (email,password,access,nom,prenom,birthday_date,aviation_licence_date)
-    					  VALUES (:mail ,:password ,:access ,:nom ,:prenom ,:birthday_date ,:aviation_licence_date)');
+	$req = $bdd->prepare('INSERT INTO members (email,password,access,id_manager,nom,prenom,birthday_date,aviation_licence_date)
+    					  VALUES (:mail ,:password ,:access ,:id_manager, :nom ,:prenom ,:birthday_date ,:aviation_licence_date)');
 
 	$password_gen = passwordgen();
     $password_gen_hash = passwordhash($password_gen);
 
-    if (empty($data['id_manager']) 			$data['id_manager'] = null; 
+    if (empty($data['id_manager'])) 		$data['id_manager'] = 0; 
     if (empty($data['license_aviation'])) 	$data['license_aviation'] = null;
 
     $req->execute(array(':mail' => htmlspecialchars($data['mail']),
 					    ':password' => $password_gen_hash,
 					    ':access' => htmlspecialchars($data['role']),
-					    ':id_man' => htmlspecialchars($data['id_manager']),
-					    ':nom' 	  => htmlspecialchars($data['nom']),
+					    ':id_manager' => $data['id_manager'],
+					    ':nom' => htmlspecialchars($data['nom']),
 					    ':prenom' => htmlspecialchars($data['prenom']),
-					    ':birthday_date' => htmlspecialchars($data['birthday']),
-					    ':aviation_licence_date' => htmlspecialchars($data['license_aviation'])));
+					    ':birthday_date' => $data['birthday'],
+					    ':aviation_licence_date' => $data['license_aviation']));
    
     return $passwordgen;
 }
