@@ -39,9 +39,9 @@ function sendTicketByMail($post){
     $datas= $reponse->fetch();
 
     $message =  "Votre ticket a reçu une réponse. \r\n
-                topic : ".$row['topic']." \r\n
-                sujet : ".$row['subject']." \r\n
-                Question de : ".$datas["nom"]." ".$datas["prenom"]." \r\n
+                topic : ".$row['topic']." \r
+                sujet : ".$row['subject']." \r
+                Question de : ".$datas["nom"]." ".$datas["prenom"]." \r
                 réquête émise le : ".$row['date_request']." \r\n
                 Contenu: ".$row['msg_request']." \r\n
                 Réponse: ".$row['msg_reply'];
