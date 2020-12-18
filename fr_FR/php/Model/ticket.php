@@ -59,4 +59,28 @@ function getTicket(){
     return $ticket;
 
 }
+
+function getTicketById($id,$status){
+    $bdd = login_bdd();
+    $req =$bdd->query('SELECT  `id_ticket`,`topic`, `subject`, `id_member`, `date_request`, `msg_request`,`msg_reply`
+                    FROM `tickets` WHERE `id_member` = '.$id.' AND `status` = '.$status);
+    $ticket = array();
+    while($row = $req->fetch()){
+        $reponse =$bdd->query('SELECT  `nom`,`prenom`FROM `members` WHERE `id` = '.$row["id_member"]);
+        $datas= $reponse->fetch();
+        array_push($ticket, array( "id_ticket" => $row["id_ticket"], 
+                                "topic"     => $row["topic"],
+                                "subject"   => $row["subject"],
+                                "id_member" => $row["id_member"],
+                                "date_request" => $row["date_request"],
+                                "msg_request" => $row["msg_request"],
+                                "name"      => $datas["nom"],
+                                "firstname"      => $datas["prenom"],
+                                "msg_reply"  => $row["msg_reply"]
+                                ));
+        }
+    $req->closeCursor();
+    return $ticket;
+
+}
 ?>
