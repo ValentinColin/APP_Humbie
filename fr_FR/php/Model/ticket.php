@@ -30,6 +30,29 @@ function ticketReply($id,$reponse,$post){
     ));
 }
 
+function sendTicketByMail($post){
+    $bdd = login_bdd();
+    $req =$bdd->query('SELECT  `id_ticket`,`topic`, `subject`, `id_member`, `date_request`, `msg_request`,`msg_reply`
+                    FROM `tickets` WHERE `id_ticket` = '.idTicket($post));
+    $row = $req->fetch();
+    $reponse =$bdd->query('SELECT  `nom`,`prenom`,`email`FROM `members` WHERE `id` = '.$row["id_member"]);
+    $datas= $reponse->fetch();
+
+    $message =  "Votre ticket a reçu une réponse. \r\n
+                topic : ".$row['topic']." \r\n
+                sujet : ".$row['subject']." \r\n
+                Question de : ".$datas["nom"]." ".$datas["prenom"]." \r\n
+                réquête émise le : ".$row['date_request']." \r\n
+                Contenu: ".$row['msg_request']." \r\n
+                Réponse: ".$row['msg_reply'];
+
+    $mail = mail($datas["email"], 'Réponse à votre ticket', $message);
+    return $mail;
+
+}
+
+
+
 /* Permet de récupérer l'id d'un ticket */
 function idTicket($post){
     $keys = array_keys($post);

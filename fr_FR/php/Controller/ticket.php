@@ -9,6 +9,9 @@ if (isset($_POST['poster'])){
 }
 elseif (isset($_POST['reponse'])){
     ticketReply($_SESSION['id'],$_POST['reponse'],$_POST);
+    if (isset($_POST['mail'])){
+        sendTicketByMail($_POST);
+    }
 }
 
 goView('ticket.php');

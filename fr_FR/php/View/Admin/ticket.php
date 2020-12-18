@@ -43,6 +43,8 @@ if_not_connected($redirection="../View/login.php");
                 <form action="../../Controller/ticket.php" method="post">
                     <input type="text" name="reponse" placeholder="Contenu de la réponse" require>
                     <input type="submit"  name= <?= sprintf('%d', $ticket[$i]['id_ticket']) ?> value="Poster">
+                    <label for="mail">Notifier par mail</label>
+                    <input type="checkbox" name="mail" >
                 </form>
 
             </p>

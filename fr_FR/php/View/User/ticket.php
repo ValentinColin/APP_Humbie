@@ -28,6 +28,7 @@ if_not_connected($redirection="../View/login.php");
     </div>
 
     <form action="../../Controller/ticket.php" method="post">
+    <H1>Envoyer un ticket</H1>
     <select name="topic">
         <option value="login" selected>Problème login</option> 
         <option value="test" >Problème test</option>
@@ -37,6 +38,41 @@ if_not_connected($redirection="../View/login.php");
     <input type="text" name="content" placeholder="Ecrivez votre requête">
     <input type="submit" value="Envoyer" name="poster">
     </form>
+
+    <?php 
+        $ticket = getTicketById($_SESSION['id'],'"in_process"');
+        echo '<h1> Votre historique de tickets </h1>';
+        echo '<h2> Vos tickets en attente </h2>';
+        for ($i=0; $i < count($ticket); $i++) { 
+    ?>
+            <p>
+                topic : <?= $ticket[$i]['topic']?> <br>
+                sujet : <?= $ticket[$i]['subject']?> <br>
+                Question de : <?= $ticket[$i]['name']." ".$ticket[$i]['firstname']?> <br>
+                réquête émise le : <?= $ticket[$i]['date_request'] ?> <br>
+                Contenu: <br> <?= $ticket[$i]['msg_request']?>
+
+            </p>
+                    
+    <?php } ?>
+    
+    <?php 
+        $ticket = getTicketById($_SESSION['id'],'"validated"');
+        echo '<h2> Vos tickets terminés </h2>';
+        for ($i=0; $i < count($ticket); $i++) { 
+    ?>
+            <p>
+                topic : <?= $ticket[$i]['topic']?> <br>
+                sujet : <?= $ticket[$i]['subject']?> <br>
+                Question de : <?= $ticket[$i]['name']." ".$ticket[$i]['firstname']?> <br>
+                réquête émise le : <?= $ticket[$i]['date_request'] ?> <br>
+                Contenu: <br> <?= $ticket[$i]['msg_request']?> <br>
+                Réponse: <br> <?= $ticket[$i]['msg_reply']?>
+
+            </p>
+                    
+    <?php } ?>
+
     <?php require("footer.php"); ?>
 </body>
 </html>
