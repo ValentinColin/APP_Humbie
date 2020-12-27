@@ -22,22 +22,19 @@ if_not_connected($redirection="../View/login.php");
 
 
 // récupération des
+
 $search=exist_data("search",False);
 $classement =exist_data("classement",False);
-$nomPrenom=exist_data('searchBar',False);
 $role=$_SESSION['access'];
+$triRole=exist_data("triRole",True);
+$triOrdre=exist_data("ordre",True);
+$typeRecherche=exist_data("searchPeople",false);
+$element=exist_data("barreRecherche",false);
+
 echo $role;
-$nom=null;
-$prenom=null;
-if($nomPrenom!='0'){
-    $separer=explode(" ",$nomPrenom);
-    $prenom=$separer[0];
-    $nom=$separer[1];
 
-    if(count($nom) <1){$nom='nomVide';}
-
+if($typeRecherche){
     $search='OnePeople';
-    echo $nom.' '.$prenom;
 }
 $decroissant=false;
 $_SESSION['noOne']=false;
@@ -69,13 +66,7 @@ switch($search){
 
     case "AllMember":
 
-        if($classement=='decroissant'){
-
-            $resultat=getNameLastNameAllMembers('decroissant');
-            $decroissant=true;
-        }else{
-            $resultat=getNameLastNameAllMembers();
-        }
+        $resultat=getNameLastNameAllMembers($triOrdre,$triRole);
 
         $path=role($role,"../../View/User/searchAllMember.php","../../View/Manager/searchAllMember.php","../../View/Admin/searchAllMember.php");
         $_SESSION['search']=$resultat;
@@ -83,26 +74,23 @@ switch($search){
 
     case "OnePeople" :
 
-        $resultat=getUserOrManager($nom,$prenom);
-
-        if($resultat==null){
-            $resultat=getUserOrManager($prenom,$nom);
-
-            if($resultat==null){
+        $resultat=getUserOrManager($typeRecherche,$element);
+         if($resultat==null){
                 $_SESSION['noOne']=true;
                 header('location:'.role($role,"../../View/User/simpleSearch.php","../../View/Manager/simpleSearch.php","../../View/Admin/simpleSearch.php"));
             }
-        }
 
         $path=role($role,"../../View/User/simpleSearch.php","../../View/Manager/simpleSearch.php","../../View/Admin/simpleSearch.php");
         $_SESSION['search']=$resultat;
         break;
     default :
 
-        header('location: ../../View/Admin/home.php');
+        header('location:'.role($role,"../../View/User/simpleSerch.php","../../View/Manager/simpleSearch.php","../../View/Admin/simpleSearch.php"));
         exit;
 }
 
+$_SESSION['triRole']=$triRole;
+$_SESSION['triOrdre']=$triOrdre;
 $_SESSION['decroissant']=$decroissant;
     header("Location: $path");
     exit;

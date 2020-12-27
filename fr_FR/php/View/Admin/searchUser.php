@@ -16,7 +16,7 @@ if_not_connected($redirection='../../View/login.php');
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/home.css">
-    <link rel="stylesheet" type="text/css" href="../../../../css/searchManager.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/searchPage.css">
   	<!-- <link rel="icon" href="../../../Images/logo_Humbie.png"> Ne fonctionne pas -->
   	<link rel="script" type="text/css" href="../../../../js/drawGraph.js">
 </head>

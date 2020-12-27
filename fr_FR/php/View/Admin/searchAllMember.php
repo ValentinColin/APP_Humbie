@@ -11,12 +11,12 @@ if_not_connected($redirection='../../View/login.php');
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>Humbie</title>
+	<title> Pilotes et managers</title>
 	<link rel="stylesheet" type="text/css" href="../../../../css/config.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/home.css">
-    <link rel="stylesheet" type="text/css" href="../../../../css/searchManager.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/searchPage.css">
   	<!-- <link rel="icon" href="../../../Images/logo_Humbie.png"> Ne fonctionne pas -->
   	<link rel="script" type="text/css" href="../../../../js/drawGraph.js">
 </head>
@@ -35,23 +35,13 @@ if_not_connected($redirection='../../View/login.php');
 
 
         <div id='classement'>
-        <span> classé les noms par ordre: <span>
-        <a href="../../Controller/search_member_c.php/?search=AllMember">
-        <input type='button' value='croissant'
-        <?php if( !$_SESSION['decroissant']) :?> disabled title='tri déjà effectif'  <?php endif ?> >
-        </a>
-
-
-        <a href="../../Controller/search_member_c.php/?search=AllMember&classement=decroissant">
-       <input type='button' value='décroissant'
-       <?php if( $_SESSION['decroissant']) :?> disabled title='tri déjà effectif'  <?php endif ?> >
-        </a>
+           <?php require("../divSearch.php") ?>
         </div>
 
 
         <table>
-            <tr>
-                 <th> nom </th>
+            <tr id='trth'>
+                 <th> nom  </th>
                  <th> prénom </th>
                  <th> E-mail </th>
                  <th> Rôle</th>
@@ -59,7 +49,7 @@ if_not_connected($redirection='../../View/login.php');
 
             <?php for($i=0;$i<count($_SESSION['search']);$i++) :?>
              <tr>
-                <td> <?php print_r ( strtoupper($_SESSION['search'][$i][1])); ?>  </td>
+                <td> <?php print_r ( $_SESSION['search'][$i][1]); ?>  </td>
                 <td> <?php print_r ($_SESSION['search'][$i][0]); ?>  </td>
                 <td> <a href="mailto:service.humbie@gmail.com" title="Contacter <?=$_SESSION['search'][$i][0]?>  par mail"> <?php print_r ($_SESSION['search'][$i][2]); ?>  </a> </td>
                 <td> <?php print_r ($_SESSION['search'][$i][3]); ?>  </td>
@@ -73,10 +63,9 @@ if_not_connected($redirection='../../View/login.php');
 
     </main>
 
-
-
 	<?php require('footer.php'); ?>
 </body>
+<script src='../../../js/search.js' > </script>
 
 <?php //$_SESSION['search']=''; ?>
 </html>

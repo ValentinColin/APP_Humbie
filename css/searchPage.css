@@ -1,0 +1,56 @@
+main{
+    display: flex;
+    flex-direction: row;
+    width: 97%;
+
+    margin-left: 20px;
+    margin-right: 90px;
+
+}
+
+#search-page{
+    width: 90%;
+
+    border-radius: var(--border-radius)
+
+}
+#search-page td, th{
+    font-size: 20px;
+    border-bottom: 1px grey ridge;
+    padding: 5px;
+    width: 200px;
+}
+table{
+   width: 70%;
+   text-align: center;
+   margin-left:15% ;
+
+}
+
+#classement{
+    text-align: center;
+    margin: 30px;
+}
+
+#search-page tr:hover {
+    background-color: aqua;
+}
+
+table a{
+    color:black;
+    text-decoration: none;
+}
+
+table a:hover{
+    text-decoration: underline;
+}
+
+
+.titreClassemement{
+    font-weight: bold;
+}
+#search-page #trth:hover {
+    background-color: transparent;
+
+}
+

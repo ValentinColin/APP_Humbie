@@ -9,8 +9,8 @@
 	--space-around-box: 20px;
 
 	--width-icon: 30px;
-	--height-search: 20px; /* inclut le font-size et la hauteur de l'icon de la loupe */ 
-	--height-icon-loupe: 24px; /* Attention à bien choisir la valeur pour que l'alignement se conserve */ 
+	--height-search: fit-content; /* inclut le font-size et la hauteur de l'icon de la loupe */
+	--height-icon-loupe: 24px; /* Attention à bien choisir la valeur pour que l'alignement se conserve */
 }
 
 strong{

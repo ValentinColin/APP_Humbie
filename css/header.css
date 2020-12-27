@@ -43,22 +43,37 @@ div[id="cell-header-profil"] img{
 	display: flex;
 }
 
-#searchBar{
+.searchBar{
 	margin: 0;
 	padding: 5px;
-
 	font-size: var(--height-search);
 	height: var(--height-search);
-	width: 30%;
+	width: fit-content;
 
 	border: 3px solid var(--search-color);
 	border-right: none;
 	border-radius: 5px 0 0 5px;
 }
-#searchBar:focus{
+.searchBar:focus{
 	outline: none; /* Retire le contour bleu lors du focus */
 }
 
+.searchBar1{
+	background-color: var(--search-color);
+}
+.searchBar2{
+	border-left: none;
+	border-radius: 0px;
+}
+
+.searchBar1 option {
+    background-color: var(--humbie-color);
+    color: black;
+}
+
+.searchBar1:hover{
+	background-color:  rgba(18,238,180,0.4);
+}
 #loupe{
 	margin: 0;
 	padding: 5px;
@@ -96,3 +111,4 @@ div[id="cell-header-profil"] img{
 	height: auto;
 	/*border: 1px solid black; /* Pour visualiser le block */
 }
+

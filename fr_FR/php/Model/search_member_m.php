@@ -54,17 +54,23 @@ function getNameLastNameManager(String $ordre=''):array{
 
 //Recupère,nom, prenom et roles des managers et admin et users,
 // par odre croissant ou decroissant, suivant le parametre.
-function getNameLastNameAllMembers(String $ordre=''):array{
+function getNameLastNameAllMembers(String $triOrdre,$triRole):array{
         try{
 
            $connexion=login_bdd();
                 $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                if($ordre=="decroissant"){
-                     $requete=$connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN'  ORDER BY nom DESC");
+                if($triOrdre=="decroissant" and $triRole=="oui"){
+                     $requete=$connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN'  ORDER BY access,nom DESC");
+                }
+                else if($triOrdre=="decroissant" and $triRole=="non"){
+                    $requete=$connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN'  ORDER BY nom DESC");
+               }
+
+               else if($triOrdre=="croissant" and $triRole=="oui"){
+                $requete=$connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN'  ORDER BY access,nom ASC");
                 }
                 else{
-                    $requete=$connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN' ORDER BY nom ASC");
-
+                    $requete=$connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN' ORDER BY nom ASC ");
                 }
                 $requete->execute();
                 return $requete->fetchall();
@@ -76,12 +82,17 @@ function getNameLastNameAllMembers(String $ordre=''):array{
      }
 
      // fonction pour rechercher un pilote ou un manager
-function getUserOrManager(String $nom, String $prenom='rien'):array{
+function getUserOrManager(String $typeSearch, String $item):array{
         try{
 
        $connexion=login_bdd();
         $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $requete=$connexion->prepare("SELECT prenom,nom,access FROM members WHERE  nom='$nom' AND prenom='$prenom' AND not access='ADMIN' ");
+        if($typeSearch=="searchNom"){
+          $requete=$connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE  nom='$item' AND not access='ADMIN' ");
+        }
+        else{
+            $requete=$connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE  prenom='$item' AND not access='ADMIN' ");
+        }
         $requete->execute();
         return $requete->fetchall();
 
