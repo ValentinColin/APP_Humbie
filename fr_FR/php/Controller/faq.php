@@ -1,15 +1,14 @@
-<?php 
+<?php
 include("../Controller/function.php");
 include("../Model/faq.php");
 session_start();
-if_not_connected($redirection="../View/login.php");
+if_not_connected($redirection = "../View/login.php");
 
 $bdd = login_bdd();
 
-if (isset($_POST['add'])){
+if (isset($_POST['add'])) {
     addQuestion($_POST['question'], $_POST['answer']);
-}
-else{ // On supprime une question/réponse
+} else { // On supprime une question/réponse
     $keys = array_keys($_POST);
     $id = $keys[0];
 
@@ -18,4 +17,3 @@ else{ // On supprime une question/réponse
 
 header('Location: ../View/Admin/faq.php');
 exit;
-?>

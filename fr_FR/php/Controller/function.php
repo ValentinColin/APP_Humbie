@@ -1,20 +1,23 @@
 <?php
 
-function if_not_connected($redirection){
-	if(!$_SESSION['connected']){
-		header('Location: '.$redirection);
+function if_not_connected($redirection)
+{
+	if (!$_SESSION['connected']) {
+		header('Location: ' . $redirection);
 		exit;
 	}
 }
 
-function if_connected($redirection){
-	if($_SESSION['connected']){
-		header('Location: '.$redirection);
+function if_connected($redirection)
+{
+	if ($_SESSION['connected']) {
+		header('Location: ' . $redirection);
 		exit;
 	}
 }
 
-function go($page){
+function go($page)
+{
 	switch ($_SESSION['access']) {
 		case 'USER':
 			$role_folder = 'User';
@@ -26,11 +29,12 @@ function go($page){
 			$role_folder = 'Admin';
 			break;
 	}
-	header('Location: '.$role_folder.'/'.$page);
+	header('Location: ' . $role_folder . '/' . $page);
 	exit;
 }
 
-function goView($page){
+function goView($page)
+{
 	switch ($_SESSION['access']) {
 		case 'USER':
 			$role_folder = 'User';
@@ -42,7 +46,7 @@ function goView($page){
 			$role_folder = 'Admin';
 			break;
 	}
-	header('Location: ../View/'.$role_folder.'/'.$page);
+	header('Location: ../View/' . $role_folder . '/' . $page);
 	exit;
 }
 
@@ -60,56 +64,55 @@ function path_lang($default_path){
 	return $path;
 }*/
 
-function path_photo(){
-	return '../../../../Images/Photo/'.$_SESSION['prenom'].$_SESSION['nom'].$_SESSION['id'].'.png';
+function path_photo()
+{
+	return '../../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png';
 }
 
-function user_name(){
-	return $_SESSION['prenom'].' '.$_SESSION['nom'];
+function user_name()
+{
+	return $_SESSION['prenom'] . ' ' . $_SESSION['nom'];
 }
 
-function passwordgen($len= 6){
-    $chaine = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890+-*/%!:/;.,?$";
-    $chaine = str_shuffle($chaine);
-    $chaine = substr($chaine, 0, $len);
-    return $chaine;
+function passwordgen($len = 6)
+{
+	$chaine = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890+-*/%!:/;.,?$";
+	$chaine = str_shuffle($chaine);
+	$chaine = substr($chaine, 0, $len);
+	return $chaine;
 }
 
-function passwordhash($password){
-	return password_hash($password, PASSWORD_BCRYPT,['cost' => 9]);
+function passwordhash($password)
+{
+	return password_hash($password, PASSWORD_BCRYPT, ['cost' => 9]);
 }
 
 // Cette focntion s'assure qu'une donnée  existe et renvoie le contenu de la donnée de manière sécurisée.
-function exist_data(String $data, bool $post=True ) : String {
-	if($post){// on vérfie si la donnée existe et n'est pas vide.
-		if (isset($_POST[$data]) && ! empty($_POST[$data])){
+function exist_data(String $data, bool $post = True): String
+{
+	if ($post) { // on vérfie si la donnée existe et n'est pas vide.
+		if (isset($_POST[$data]) && !empty($_POST[$data])) {
 			return htmlspecialchars($_POST[$data]);
-		}
-		else{
+		} else {
 			return '0';
 		}
-	}
-	else{// on vérfie si la donnée existe et n'est pas vide.
-		if (isset($_GET[$data]) && ! empty($_GET[$data])){
+	} else { // on vérfie si la donnée existe et n'est pas vide.
+		if (isset($_GET[$data]) && !empty($_GET[$data])) {
 			return htmlspecialchars($_GET[$data]);
-		}
-		else{
+		} else {
 			return '0';
 		}
 	}
 }
 
 // function qui permet la redicrection suivant le rôle de l'utilisateur connecté.
-function role(String $role, String $redirectionUser, String $redirectionManager, String $redirectionAdmin ):String{
-	if($role=="USER"){
+function role(String $role, String $redirectionUser, String $redirectionManager, String $redirectionAdmin): String
+{
+	if ($role == "USER") {
 		return $redirectionUser;
-	}
-	else if( $role=="MANAGER"){
+	} else if ($role == "MANAGER") {
 		return $redirectionManager;
-	}
-	else{
+	} else {
 		return $redirectionAdmin;
 	}
 }
-
-?>

@@ -1,10 +1,11 @@
-<?php 
+<?php
 include("login_bdd.php");
 
 /* Permet d'envoyer son ticket */
-function ticketPost($topic,$title,$id,$content){
+function ticketPost($topic, $title, $id, $content)
+{
     $bdd = login_bdd();
-    $req = $bdd->prepare('INSERT INTO `tickets`(`topic`, `subject`, `id_member`, `msg_request`, `id_admin`, `date_reply`, `msg_reply`, `status`) 
+    $req = $bdd->prepare('INSERT INTO `tickets`(`topic`, `subject`, `id_member`, `msg_request`, `id_admin`, `date_reply`, `msg_reply`, `status`)
     VALUES (:topic ,:title,:id_member,:message_content,null,null,null,:statut)');
 
     $req->execute(array(
@@ -17,7 +18,8 @@ function ticketPost($topic,$title,$id,$content){
 }
 
 /* Permet de répondre à un ticket */
-function ticketReply($id,$reponse,$post){
+function ticketReply($id, $reponse, $post)
+{
     $bdd = login_bdd();
     $req = $bdd->prepare('UPDATE `tickets` SET `id_admin`= :id_admin,`date_reply`= :date_reply,
     `msg_reply`= :message_reply,`status`= "validated" WHERE `id_ticket`= :id_ticket');
@@ -30,80 +32,82 @@ function ticketReply($id,$reponse,$post){
     ));
 }
 
-function sendTicketByMail($post){
+function sendTicketByMail($post)
+{
     $bdd = login_bdd();
-    $req =$bdd->query('SELECT  `id_ticket`,`topic`, `subject`, `id_member`, `date_request`, `msg_request`,`msg_reply`
-                    FROM `tickets` WHERE `id_ticket` = '.idTicket($post));
+    $req = $bdd->query('SELECT  `id_ticket`,`topic`, `subject`, `id_member`, `date_request`, `msg_request`,`msg_reply`
+                    FROM `tickets` WHERE `id_ticket` = ' . idTicket($post));
     $row = $req->fetch();
-    $reponse =$bdd->query('SELECT  `nom`,`prenom`,`email`FROM `members` WHERE `id` = '.$row["id_member"]);
-    $datas= $reponse->fetch();
+    $reponse = $bdd->query('SELECT  `nom`,`prenom`,`email`FROM `members` WHERE `id` = ' . $row["id_member"]);
+    $datas = $reponse->fetch();
 
     $message =  "Votre ticket a reçu une réponse. \r\n
-                topic : ".$row['topic']." \r
-                sujet : ".$row['subject']." \r
-                Question de : ".$datas["nom"]." ".$datas["prenom"]." \r
-                réquête émise le : ".$row['date_request']." \r\n
-                Contenu: ".$row['msg_request']." \r\n
-                Réponse: ".$row['msg_reply'];
+                topic : " . $row['topic'] . " \r
+                sujet : " . $row['subject'] . " \r
+                Question de : " . $datas["nom"] . " " . $datas["prenom"] . " \r
+                réquête émise le : " . $row['date_request'] . " \r\n
+                Contenu: " . $row['msg_request'] . " \r\n
+                Réponse: " . $row['msg_reply'];
 
     $mail = mail($datas["email"], 'Réponse à votre ticket', $message);
     return $mail;
-
 }
 
 
 
 /* Permet de récupérer l'id d'un ticket */
-function idTicket($post){
+function idTicket($post)
+{
     $keys = array_keys($post);
     return $keys[1];
 }
 
 /* Récupère les tickets en attente*/
-function getTicket(){
+function getTicket()
+{
     $bdd = login_bdd();
-    $req =$bdd->query('SELECT  `id_ticket`,`topic`, `subject`, `id_member`, `date_request`, `msg_request`
+    $req = $bdd->query('SELECT  `id_ticket`,`topic`, `subject`, `id_member`, `date_request`, `msg_request`
                     FROM `tickets` WHERE `status` = "in_process"');
     $ticket = array();
-    while($row = $req->fetch()){
-        $reponse =$bdd->query('SELECT  `nom`,`prenom`FROM `members` WHERE `id` = '.$row["id_member"]);
-        $datas= $reponse->fetch();
-        array_push($ticket, array( "id_ticket" => $row["id_ticket"], 
-                                "topic"     => $row["topic"],
-                                "subject"   => $row["subject"],
-                                "id_member" => $row["id_member"],
-                                "date_request" => $row["date_request"],
-                                "msg_request" => $row["msg_request"],
-                                "name"      => $datas["nom"],
-                                "firstname"      => $datas["prenom"]
-                                ));
-        }
+    while ($row = $req->fetch()) {
+        $reponse = $bdd->query('SELECT  `nom`,`prenom`FROM `members` WHERE `id` = ' . $row["id_member"]);
+        $datas = $reponse->fetch();
+        array_push($ticket, array(
+            "id_ticket" => $row["id_ticket"],
+            "topic"     => $row["topic"],
+            "subject"   => $row["subject"],
+            "id_member" => $row["id_member"],
+            "date_request" => $row["date_request"],
+            "msg_request" => $row["msg_request"],
+            "name"      => $datas["nom"],
+            "firstname"      => $datas["prenom"]
+        ));
+    }
     $req->closeCursor();
     return $ticket;
-
 }
 
-function getTicketById($id,$status){
+function getTicketById($id, $status)
+{
     $bdd = login_bdd();
-    $req =$bdd->query('SELECT  `id_ticket`,`topic`, `subject`, `id_member`, `date_request`, `msg_request`,`msg_reply`
-                    FROM `tickets` WHERE `id_member` = '.$id.' AND `status` = '.$status);
+    $req = $bdd->query('SELECT  `id_ticket`,`topic`, `subject`, `id_member`, `date_request`, `msg_request`,`msg_reply`
+                    FROM `tickets` WHERE `id_member` = ' . $id . ' AND `status` = ' . $status);
     $ticket = array();
-    while($row = $req->fetch()){
-        $reponse =$bdd->query('SELECT  `nom`,`prenom`FROM `members` WHERE `id` = '.$row["id_member"]);
-        $datas= $reponse->fetch();
-        array_push($ticket, array( "id_ticket" => $row["id_ticket"], 
-                                "topic"     => $row["topic"],
-                                "subject"   => $row["subject"],
-                                "id_member" => $row["id_member"],
-                                "date_request" => $row["date_request"],
-                                "msg_request" => $row["msg_request"],
-                                "name"      => $datas["nom"],
-                                "firstname"      => $datas["prenom"],
-                                "msg_reply"  => $row["msg_reply"]
-                                ));
-        }
+    while ($row = $req->fetch()) {
+        $reponse = $bdd->query('SELECT  `nom`,`prenom`FROM `members` WHERE `id` = ' . $row["id_member"]);
+        $datas = $reponse->fetch();
+        array_push($ticket, array(
+            "id_ticket" => $row["id_ticket"],
+            "topic"     => $row["topic"],
+            "subject"   => $row["subject"],
+            "id_member" => $row["id_member"],
+            "date_request" => $row["date_request"],
+            "msg_request" => $row["msg_request"],
+            "name"      => $datas["nom"],
+            "firstname"      => $datas["prenom"],
+            "msg_reply"  => $row["msg_reply"]
+        ));
+    }
     $req->closeCursor();
     return $ticket;
-
 }
-?>

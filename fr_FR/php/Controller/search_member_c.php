@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require_once '../Model/search_member_m.php';
@@ -17,84 +16,71 @@ exist_data(Strig data, post=true) -> verifie si la session existe en la renvoie 
 */
 
 // Vérififier si un utilisateur est connecter avant de récupérer des données.
-
-if_not_connected($redirection="../View/login.php");
-
+if_not_connected($redirection = "../View/login.php");
 
 // récupération des
 
-$search=exist_data("search",False);
-$classement =exist_data("classement",False);
-$role=$_SESSION['access'];
-$triRole=exist_data("triRole",True);
-$triOrdre=exist_data("ordre",True);
-$typeRecherche=exist_data("searchPeople",false);
-$element=exist_data("barreRecherche",false);
-
-echo $role;
-
-if($typeRecherche){
-    $search='OnePeople';
+$search = exist_data("search", False);
+$classement = exist_data("classement", False);
+$role = $_SESSION['access'];
+$triRole = exist_data("triRole", True);
+$triOrdre = exist_data("ordre", True);
+$typeRecherche = exist_data("searchPeople", false);
+$element = exist_data("barreRecherche", false);
+$decroissant = false;
+$_SESSION['noOne'] = false;
+if ($typeRecherche == "searchPrenom") {
+    setcookie("searchPrenom", "searchPrenom", time() + 24 * 3600 * 365);
 }
-$decroissant=false;
-$_SESSION['noOne']=false;
+if ($typeRecherche) {
+    $search = 'OnePeople';
+}
 
-
-switch($search){
-    case "AllUser" :
-        if($classement=='decroissant'){
-            $resultat=getNameLastNameMngOfUser('decroissant');
-            $decroissant=true;
-
-        }else{
-            $resultat=getNameLastNameMngOfUser();
+switch ($search) {
+    case "AllUser":
+        if ($classement == 'decroissant') {
+            $resultat = getNameLastNameMngOfUser('decroissant');
+            $decroissant = true;
+        } else {
+            $resultat = getNameLastNameMngOfUser();
         }
-        $path="../../View/Admin/searchUser.php";// uom for user or manager
-        $_SESSION['search']=$resultat;
+        $path = "../../View/Admin/searchUser.php"; //
+        $_SESSION['search'] = $resultat;
         break;
 
-    case "AllManager" :
-        if($classement=='decroissant'){
-            $resultat=getNameLastNameManager('decroissant');
-            $decroissant=true;
-        }else{
-            $resultat=getNameLastNameManager();
+    case "AllManager":
+        if ($classement == 'decroissant') {
+            $resultat = getNameLastNameManager('decroissant');
+            $decroissant = true;
+        } else {
+            $resultat = getNameLastNameManager();
         }
-        $path=role($role," ","../../View/Manager/searchManager.php","../../View/Admin/searchManager.php");
-        $_SESSION['search']=$resultat;
+        $path = role($role, " ", "../../View/Manager/searchManager.php", "../../View/Admin/searchManager.php");
+        $_SESSION['search'] = $resultat;
         break;
 
     case "AllMember":
-
-        $resultat=getNameLastNameAllMembers($triOrdre,$triRole);
-
-        $path=role($role,"../../View/User/searchAllMember.php","../../View/Manager/searchAllMember.php","../../View/Admin/searchAllMember.php");
-        $_SESSION['search']=$resultat;
+        $resultat = getNameLastNameAllMembers($triOrdre, $triRole);
+        $path = role($role, "../../View/User/searchAllMember.php", "../../View/Manager/searchAllMember.php", "../../View/Admin/searchAllMember.php");
+        $_SESSION['search'] = $resultat;
         break;
 
-    case "OnePeople" :
-
-        $resultat=getUserOrManager($typeRecherche,$element);
-         if($resultat==null){
-                $_SESSION['noOne']=true;
-                header('location:'.role($role,"../../View/User/simpleSearch.php","../../View/Manager/simpleSearch.php","../../View/Admin/simpleSearch.php"));
-            }
-
-        $path=role($role,"../../View/User/simpleSearch.php","../../View/Manager/simpleSearch.php","../../View/Admin/simpleSearch.php");
-        $_SESSION['search']=$resultat;
+    case "OnePeople":
+        $resultat = getUserOrManager($typeRecherche, $element);
+        if ($resultat == null) {
+            $_SESSION['noOne'] = true;
+            header('location:' . role($role, "../../View/User/simpleSearch.php", "../../View/Manager/simpleSearch.php", "../../View/Admin/simpleSearch.php"));
+        }
+        $path = role($role, "../../View/User/simpleSearch.php", "../../View/Manager/simpleSearch.php", "../../View/Admin/simpleSearch.php");
+        $_SESSION['search'] = $resultat;
         break;
-    default :
 
-        header('location:'.role($role,"../../View/User/simpleSerch.php","../../View/Manager/simpleSearch.php","../../View/Admin/simpleSearch.php"));
+    default:
+        header('location:' . role($role, "../../View/User/simpleSerch.php", "../../View/Manager/simpleSearch.php", "../../View/Admin/simpleSearch.php"));
         exit;
 }
-
-$_SESSION['triRole']=$triRole;
-$_SESSION['triOrdre']=$triOrdre;
-$_SESSION['decroissant']=$decroissant;
-    header("Location: $path");
-    exit;
-
-
-?>
-
+$_SESSION['triRole'] = $triRole;
+$_SESSION['triOrdre'] = $triOrdre;
+$_SESSION['decroissant'] = $decroissant;
+header("Location: $path");
+exit;
