@@ -32,6 +32,7 @@ if_not_connected($redirection = '../../View/login.php');
         </div>
 
         <div id='search-page'>
+       
             <h1>
                 <?php if (count($_SESSION["search"]) == 0) : ?>
                     Aucun résultat trouvé

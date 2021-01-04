@@ -2,12 +2,12 @@
    FEUILLE DE STYLES DU HEADER
    =========================== */
 
-header[id="header-grid"]{
+   header[id="header-grid"]{
 	display: grid;
 	grid-template-columns: 70px 5fr 50px 1fr; /* full arbitraire */
 
 	margin: var(--space-around-box);
-	padding: 10px; /* Pour avoir un taille environ égal à celle du header secondaire (titres/modules) */
+	padding: 5px; /* Pour avoir un taille environ égal à celle du header secondaire (titres/modules) */
 	/*padding-right: 65px;*/ /* Correction d'un bug */
 
 	border-radius: var(--border-radius);
@@ -20,6 +20,7 @@ div.cell-header{
 	position: relative;
 
 	padding: 10px;
+
 
 	/*border: 1px solid green;*/
 }
@@ -35,15 +36,20 @@ div[id="cell-header-profil"] img{
 	position: absolute;
     top:  50%;
     left: 10px;
-    transform: translate(0%,-50%); /* (x,y) */
+	transform: translate(0%,-50%); /* (x,y) */
+
 }
 
 /* Barre de recherche */
 .search{
 	display: flex;
+
+
+
 }
 
 .searchBar{
+
 	margin: 0;
 	padding: 5px;
 	font-size: var(--height-search);
@@ -53,6 +59,9 @@ div[id="cell-header-profil"] img{
 	border: 3px solid var(--search-color);
 	border-right: none;
 	border-radius: 5px 0 0 5px;
+
+
+
 }
 .searchBar:focus{
 	outline: none; /* Retire le contour bleu lors du focus */
@@ -112,3 +121,50 @@ div[id="cell-header-profil"] img{
 	/*border: 1px solid black; /* Pour visualiser le block */
 }
 
+#showSearch li{
+	/*background-color:  rgba(18,238,180,0.3);*/
+	border-bottom: 1px rgba( 50,50,50,0.1) solid;
+	border-top:  1px rgba( 50,50,50,0.1) solid;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+#cell-header-search form{
+
+	display: flex;
+	flex-direction: column;
+	width: fit-content;
+}
+#showSearch{
+
+	border: none;
+	list-style: none;
+	width:45%;
+	margin-left: 45%;
+	color: black;
+	font-weight: bold;
+
+}
+#cell-header-search {
+
+	position: absolute;
+	top: 1%;
+	left: 9%;
+}
+#cell-header-settings{
+	margin-left: 90%;
+}
+#cell-header-profil{
+	margin-left: 20px;
+}
+#box-nom{
+
+	width: 150px
+}
+#box-deconnexion, #box-nom{
+	margin-left: 30px;
+}
+#header-profil-grid{
+margin-left: -10px;
+width: fit-content;
+}

@@ -28,10 +28,24 @@ $triOrdre = exist_data("ordre", True);
 $typeRecherche = exist_data("searchPeople", false);
 $element = exist_data("barreRecherche", false);
 $decroissant = false;
+$nom=exist_data('nom',false);
+$prenom=exist_data('prenom',false);
+
 $_SESSION['noOne'] = false;
-if ($typeRecherche == "searchPrenom") {
-    setcookie("searchPrenom", "searchPrenom", time() + 24 * 3600 * 365);
+
+if($nom and $prenom){
+    $search = 'OnePeople';
 }
+if ($typeRecherche) {
+    if ($typeRecherche == "searchPrenom"){
+    $_SESSION["searchPrenom"]= true;
+    }
+    else{
+    $_SESSION["searchPrenom"]=false;
+
+    }
+}
+
 if ($typeRecherche) {
     $search = 'OnePeople';
 }
@@ -66,7 +80,12 @@ switch ($search) {
         break;
 
     case "OnePeople":
+        if($nom and $prenom){
+            $resultat=getUserOrManager2($nom,$prenom);
+        }
+        else{
         $resultat = getUserOrManager($typeRecherche, $element);
+        }
         if ($resultat == null) {
             $_SESSION['noOne'] = true;
             header('location:' . role($role, "../../View/User/simpleSearch.php", "../../View/Manager/simpleSearch.php", "../../View/Admin/simpleSearch.php"));

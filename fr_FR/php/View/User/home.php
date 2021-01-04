@@ -50,11 +50,10 @@ if_not_connected($redirection = '../../View/login.php');
 		</div>
 	</div>
 	<!-- <aside id="blank"></aside> -->
-	<!-- Permet de bloquer le footer en bas de l'écran -->
+	<!-- Permet de bloquer le footer en bas de lécran -->
 	<?php require('footer.php'); ?>
 </body>
 
 <script src="../../../js/jsGraphDisplay.1.0.js"></script> <!-- Script source permettant de dessiner des graphiques -->
 <script src="../../../js/drawGraph.js"></script> <!-- Script qui détermine quoi afficher comme graphique (et avec quelles données) -->
-
 </html>
