@@ -70,6 +70,7 @@ if_not_connected($redirection = '../../View/login.php');
     </main>
     <?php require('footer.php'); ?>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="../../../../convert/libs/FileSaver/FileSaver.min.js"></script>
 <script type="text/javascript" src="../../../../convert/libs/js-xlsx/xlsx.core.min.js"></script>
 <script type="text/javascript" src="../../../../convert/tableExport.min.js"></script>
