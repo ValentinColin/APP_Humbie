@@ -47,10 +47,7 @@ if_not_connected($redirection="../../View/login.php");
 
             </p>
                     
-    <?php 
-    endwhile; 
-    ?>
+    <?php } ?>
     
 </body>
 </html>
-
