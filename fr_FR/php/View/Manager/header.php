@@ -11,7 +11,7 @@
 			<div class="search">
 				<select name="searchPeople" class="searchBar searchBar1">
 					<option value='searchNom'> Rechercher par nom </option>
-					<option value='searchPrenom' <?php if ($_SESSION['searchPrenom']) : ?> selected <?php endif; ?>>
+					<option value='searchPrenom' <?php if (isset($_SESSION['searchPrenom']) && $_SESSION['searchPrenom']) : ?> selected <?php endif; ?>>
 						Recherche par prénom </option>
 				</select>
 				<input type='text' name="barreRecherche" class="searchBar searchBar2" placeholder="Barre de recherche">
