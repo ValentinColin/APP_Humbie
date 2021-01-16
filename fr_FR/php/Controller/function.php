@@ -69,6 +69,11 @@ function path_photo()
 	return '../../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png';
 }
 
+function path_photo_controller()
+{
+	return '../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png';
+}
+
 function user_name()
 {
 	return $_SESSION['prenom'] . ' ' . $_SESSION['nom'];

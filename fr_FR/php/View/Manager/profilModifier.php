@@ -36,7 +36,18 @@ if_not_connected($redirection = '../../View/login.php');
 			<h2>Détails professionnel</h2>
 			<img id="photo_profil_big" src=<?= path_photo() ?>>
 			<table>
-
+				<tr>
+    				<form method="post" action="../../Controller/profilModifier.php" enctype="multipart/form-data">
+						<th class="strong-cell"><strong>Changer de photo :</strong></td>
+					</tr>	
+					<tr>	
+						<td class="unstrong-cell"><input type="file" name="photo"></td>
+					</tr>	
+					<tr>	
+						<td class="unstrong-cell"><input type="submit" value="Envoyer la photo"></td>
+					</tr>	
+					</form>
+				</tr>
 			</table>
 		</div>
 		<div id="box-content" class="my-block">
