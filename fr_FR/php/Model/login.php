@@ -2,8 +2,8 @@
 /* ************ *
  * Model: login *
  * ************ */
-include("../Controller/function.php");
-include("login_bdd.php");
+include_once("../Controller/function.php");
+include_once("login_bdd.php");
 
 
 /* Cette fonction se connecte à la BDD en vérifiant que

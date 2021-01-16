@@ -1,6 +1,7 @@
 <?php 
-include("../Model/profilModifier.php");
-include("function.php");
+include_once("../Model/profilModifier.php");
+include_once("../Model/login.php");
+include_once("function.php");
 if_not_connected($redirection = "../../View/login.php");
 
 
@@ -10,6 +11,27 @@ if(isset($_POST['email']))
     modifierprofil($_POST['email'],$_POST['birthday_date'],$_POST['country'],$_POST['phone']);
     goView('profil.php');
     die;
+}
+elseif(isset($_POST['password']) && isset($_POST['newpassword']) && isset($_POST['repetpassword']))
+{
+
+    if (login($_SESSION['mail'],$_POST['password']) && $_POST['newpassword'] == $_POST['repetpassword'] )
+    {
+        change_password($_POST['newpassword']);
+        $_SESSION['passwordError'] = 'ok';
+        goView('profilModifier.php');
+        die;
+    }
+    elseif( $_POST['newpassword'] != $_POST['repetpassword'])
+    {
+        $_SESSION['passwordError'] = 'new';
+        goView('profilModifier.php');
+        die;
+    }
+    $_SESSION['passwordError'] = 'old';
+    goView('profilModifier.php');
+    die;
+
 }
 elseif(isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
 {

@@ -51,7 +51,7 @@ if_not_connected($redirection = '../../View/login.php');
 			</table>
 		</div>
 		<div id="box-content" class="my-block">
-        <form method="post" action="../../Controller/profilModifier.php">
+        	<form method="post" action="../../Controller/profilModifier.php">
 			<button class="pull-right">Valider les modifications</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
 			<h2>A propos de moi</h2>
 
@@ -79,9 +79,41 @@ if_not_connected($redirection = '../../View/login.php');
 					<td class="unstrong-cell"><input type="text" name="email" value="<?= $profil['email'] ?>"></td> <!-- colonne 4 -->
 				</tr>
 			</table>
+			</form>
+			<hr>
+			<h2>Modifier mot de passe</h2>
+			<form method="post" action="../../Controller/profilModifier.php">
+				<table>
+					<?php 
+					if(isset($_SESSION['passwordError'])){
+						if ($_SESSION['passwordError'] == 'ok'){
+							echo '<td class="strong-cell"><strong>Votre mot de passe a bien été modifié</strong></td>';
+						}
+						elseif ($_SESSION['passwordError'] == 'new'){
+							
+							echo "<td class='strong-cell'><strong>Le champ de confirmation n'est pas identique au nouveau mot de passe</strong></td>";
+						}
+						elseif ($_SESSION['passwordError'] == 'old'){
+							echo '<td class="strong-cell"><strong>Ancien mot de passe incorrect</strong></td>';
+						}
+						unset($_SESSION['passwordError']);
+					}
+					?>
+					<tr>
+						<th class="unstrong-cell"><input type="password" placeholder="Mot de passe actuel" name="password" ></td>	
+					</tr>
+					<tr>
+						<th class="unstrong-cell"><input type="password" placeholder="Nouveau mot de passe" name="newpassword"></td>
+						<th class="unstrong-cell"><input type="password" placeholder="Confirmer mot de passe" name="repetpassword" ></td>	
+					</tr>
+					<tr>
+					<th class="unstrong-cell"><input type="submit" value="Modifier" ></td>	
+						
+					</tr>
+				</table>
+			</form>
 
 			<br>
-        </form>
 		</div>
 	</div>
 
