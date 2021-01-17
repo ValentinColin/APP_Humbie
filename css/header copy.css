@@ -1,14 +1,16 @@
 /* ===========================
    FEUILLE DE STYLES DU HEADER
    =========================== */
-*{
-	font: 1em  "Bahnschrift light";
-}
+
    header[id="header-grid"]{
 	display: grid;
-	grid-template-columns: 70px 50fr  10fr; /* full arbitraire */
+	grid-template-columns: 70px 5fr 50px 1fr; /* full arbitraire */
+
+	margin: var(--space-around-box);
 	padding: 5px; /* Pour avoir un taille environ égal à celle du header secondaire (titres/modules) */
 	/*padding-right: 65px;*/ /* Correction d'un bug */
+
+	border-radius: var(--border-radius);
 	background-color: white;
 
 	/*text-align: center; k*/
@@ -16,7 +18,9 @@
 
 div.cell-header{
 	position: relative;
+
 	padding: 10px;
+
 
 	/*border: 1px solid green;*/
 }
@@ -40,21 +44,21 @@ div[id="cell-header-profil"] img{
 .search{
 	display: flex;
 
+
+
 }
 
 .searchBar{
 
 	margin: 0;
 	padding: 5px;
-	padding-left: 10px;
 	font-size: var(--height-search);
-	color: #464646;
-	height: 20px;
+	height: var(--height-search);
 	width: fit-content;
 
 	border: 3px solid var(--search-color);
 	border-right: none;
-	border-radius: 17px 0 0 17px;
+	border-radius: 5px 0 0 5px;
 
 
 
@@ -64,13 +68,11 @@ div[id="cell-header-profil"] img{
 }
 
 .searchBar1{
-	height: 36px;
 	background-color: var(--search-color);
 }
 .searchBar2{
 	border-left: none;
 	border-radius: 0px;
-	
 }
 
 .searchBar1 option {
@@ -83,17 +85,16 @@ div[id="cell-header-profil"] img{
 }
 #loupe{
 	margin: 0;
-	padding: 0;
-	height: 35px;
+	padding: 5px;
+
+	height: var(--height-icon-loupe);
 	width: auto;
 
 	text-align: center;
 
-	background: white;
-	border: 3px solid var(--search-color);
-	border-left: none;
-	border-radius: 0 17px 17px 0;
-	
+	background: var(--search-color);
+	border: 1px solid var(--search-color);
+	border-radius: 0 5px 5px 0;
 
 	cursor: pointer; /* Icone de la souris au survol de l'élément */
 }
@@ -102,14 +103,12 @@ div[id="cell-header-profil"] img{
 /* Cellule du profil */
 #header-profil-grid{
 	/*text-align: center;*/
-	position: relative;
-	margin-left: -10%;
 
 	display: grid;
-	grid-template-columns: 50px 1fr 1fr; /* 3 colonnes qui prennent chacune une 'fraction' de l'espace disponible */
-	grid-template-rows: 50px ; /* 1 lignes qui prennent chacune une 'fraction' de l'espace disponible */
-	grid-template-areas: "photo name deco" 
-
+	grid-template-columns: 50px 1fr; /* 2 colonnes qui prennent chacune une 'fraction' de l'espace disponible */
+	grid-template-rows: 1fr 1fr; /* 2 lignes qui prennent chacune une 'fraction' de l'espace disponible */
+	grid-template-areas: "photo name"
+						 "photo deco"
 }
 /* Placement des cellules de la grid ci-dessus */
 #box-photo      { grid-area: photo;}
@@ -148,38 +147,24 @@ div[id="cell-header-profil"] img{
 }
 #cell-header-search {
 
-	position: relative;
-	top: 15%;
-	left: 5%;
+	position: absolute;
+	top: 1%;
+	left: 9%;
 }
+#cell-header-settings{
+	margin-left: 90%;
+}
+#cell-header-profil{
+	margin-left: 20px;
+}
+#box-nom{
 
-
+	width: 150px
+}
 #box-deconnexion, #box-nom{
 	margin-left: 30px;
 }
-#box-nom{
-	font-size: 17px;
-	position: relative;
-	top: 20px;
-	width: 150px;
-	color: #464646;
-	text-decoration: none;
-}
-#box-deconnexion{
-	position: relative;
-	top: 13px;
-	
-
-}
-#button-deconnexion{
-	background-color: #0fe8ba;
-	color: white;
-	border: none;
-	border-radius: 17px;
-	height: 34px;
-}
-#box-photo{
-	position: relative;
-	top: 5px;
-
+#header-profil-grid{
+margin-left: -10px;
+width: fit-content;
 }

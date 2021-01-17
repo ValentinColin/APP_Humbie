@@ -18,17 +18,11 @@
 
 				<input type="image" id="loupe" class="icon" src="../../../../Images/icon-loupe.png">
 			</div>
-			<ul id='showSearch' class='searchBar'>
-			</ul>
+			<ul id='showSearch' class='searchBar'></ul>
 
 		</form>
 	</div>
 
-	<div id="cell-header-settings" class="cell-header">
-		<a href="parametres.php" title="PARAMETRE">
-			<img class="icon" src="../../../../Images/icon-settings.png">
-		</a>
-	</div>
 
 	<div id="cell-header-profil" class="cell-header">
 		<a href="profil.php" title="PROFIL">
@@ -37,7 +31,7 @@
 				<span id="box-nom"><?= user_name() ?></span>
 				<span id="box-deconnexion">
 					<form method="post" action="../../Controller/logout.php">
-						<input type="submit" value="déconnexion">
+						<input id="button-deconnexion" type="submit" value="déconnexion">
 					</form>
 				</span>
 			</div>
