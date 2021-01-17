@@ -10,8 +10,10 @@ footer {
 	left: 50%;
 	width: 100%;
 	transform: translate(-50%);
-	background-color: var(--background-gradient);
 	margin-top: 100px;
+	font-family: Bahnschrift;
+	background-color: black;
+	height: 50px;
 }
 
 /* Style de la barre de navigation dans le footer */
@@ -25,27 +27,22 @@ footer {
 #footer_nav li {
 	display: inline;
 	margin-right: 1px;
+	
   	/*border: 1px dotted #600;*/
 }
 
 #footer_nav li a {
-	padding: 4px 20px;
-	background: #FFFFFF;
-	color: #000000;
+	position: relative;
+	top: 13px;
+	padding: 0px 4%;
+	color: white;
 	/*border: 1px dotted #600;*/
-	font: 1em "Trebuchet MS",Arial,sans-serif;
+	font: 1em  "Bahnschrift light";
 	line-height: 1em;
 	text-align: center;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 #footer_nav li a:hover, #navigation li a:focus, #navigation li a:active {
-  background: #FFA500; /* Orange */
-  background: linear-gradient(rgb(27,236,235), rgb(7,239,131)); /* Valeurs prisent sur le logo de Humbie */
-  text-decoration: underline;
+  color: #0fe8ba;
 }
-/*
-#lang{
-	border: 0px dotted #600;
-}
-*/
