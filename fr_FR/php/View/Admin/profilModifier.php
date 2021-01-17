@@ -22,29 +22,26 @@ if_not_connected($redirection = '../../View/login.php');
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/profil.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
+	<link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
 </head>
 
 <body>
 	<?php require('header.php'); ?>
+	<?php require('nav.php'); ?>
+
+	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 
 	<div class="wrapper">
-		<div id="box-title" class="my-block">
-			<div><a href="../../../../html/building.html" title="Menu"><img class="icon" src="../../../../Images/icon-burger-menu.png"></a></div>
-			<h1>> Profil</h1>
-		</div>
 		<div id="box-nav" class="my-block">
-			<h2>Détails professionnel</h2>
 			<img id="photo_profil_big" src=<?= path_photo() ?>>
 			<table>
 				<tr>
     				<form method="post" action="../../Controller/profilModifier.php" enctype="multipart/form-data">
-						<th class="strong-cell"><strong>Changer de photo :</strong></td>
+					<tr>	
+						<td class="unstrong-cell"> <label  class="photo-modifier" for="file" id="button-profil-modifier">Choisir un fichier</label><input  id="file" type="file" name="photo"></td>
 					</tr>	
 					<tr>	
-						<td class="unstrong-cell"><input type="file" name="photo"></td>
-					</tr>	
-					<tr>	
-						<td class="unstrong-cell"><input type="submit" value="Envoyer la photo"></td>
+						<td class="unstrong-cell"><input   class="photo-modifier" id="button-send-photo" type="submit" value="Valider l'envoi du fichier"></td>
 					</tr>	
 					</form>
 				</tr>
@@ -52,36 +49,31 @@ if_not_connected($redirection = '../../View/login.php');
 		</div>
 		<div id="box-content" class="my-block">
         	<form method="post" action="../../Controller/profilModifier.php">
-			<button class="pull-right">Valider les modifications</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
-			<h2>A propos de moi</h2>
+			<h1>Informations personnelles</h1>
 
-			<hr>
 			<table>
 				<tr>
 					<!-- ligne 1 -->
-					<th class="strong-cell"><strong>NOM</strong></td> <!-- colonne 1 -->
-					<td class="unstrong-cell"><?= $_SESSION['prenom'] . ' ' . $_SESSION['nom'] ?></td> <!-- colonne 2 -->
-					<td class="strong-cell"><strong>DATE DE NAISSANCE</strong></td> <!-- colonne 3 -->
-					<td class="unstrong-cell"><input type="text" name="birthday_date" value="<?= $profil['birthday_date'] ?>"> </td> <!-- colonne 4 -->
+					<th class="strong-cell"><strong>NOM:</strong> <?= $_SESSION['prenom'] . ' ' . $_SESSION['nom'] ?></td> <!-- colonne 1 -->
+					<td class="strong-cell"><strong>DATE DE NAISSANCE:</strong> <input type="text" name="birthday_date" value="<?= $profil['birthday_date'] ?>"></td>  <!-- colonne 3 -->
+
 				</tr>
 				<tr>
 					<!-- ligne 2 -->
-					<th class="strong-cell"><strong>PAYS</strong></td> <!-- colonne 1 -->
-					<td class="unstrong-cell"><input type="text" name="country" value="<?= $profil['country'] ?>"> </td> <!-- colonne 2 -->
-					<td class="strong-cell"><strong>EXPÉRIENCE</strong></td> <!-- colonne 3 -->
-					<td class="unstrong-cell">UNKNOW</td> <!-- colonne 4 -->
+					<th class="strong-cell"><strong>PAYS:</strong> <input type="text" name="country" value="<?= $profil['country'] ?>"> </td> <!-- colonne 1 -->
+					<td class="strong-cell"><strong>EXPÉRIENCE:</strong> UNKNOW</td> <!-- colonne 3 -->
+
 				</tr>
 				<tr>
 					<!-- ligne 3 -->
-					<th class="strong-cell"><strong>TELEPHONE</strong></td> <!-- colonne 1 -->
-					<td class="unstrong-cell"><input type="text" name="phone"  value="<?= $profil['phone'] ?>"> </td> <!-- colonne 2 -->
-					<td class="strong-cell"><strong>E-MAIL</strong></td> <!-- colonne 3 -->
-					<td class="unstrong-cell"><input type="text" name="email" value="<?= $profil['email'] ?>"></td> <!-- colonne 4 -->
+					<th class="strong-cell"><strong>TELEPHONE</strong> <input type="text" name="phone"  value="<?= $profil['phone'] ?>"></td> <!-- colonne 1 -->
+					<td class="strong-cell"><strong>E-MAIL</strong> <input type="text" name="email" value="<?= $profil['email'] ?>"></td> <!-- colonne 3 -->
 				</tr>
 			</table>
+			<button id="button-profil-modifier" class="pull-right">Valider les modifications</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
 			</form>
-			<hr>
-			<h2>Modifier mot de passe</h2>
+
+			<h1 id="password-title">Modifier mot de passe</h1>
 			<form method="post" action="../../Controller/profilModifier.php">
 				<table>
 					<?php 
@@ -107,7 +99,7 @@ if_not_connected($redirection = '../../View/login.php');
 						<th class="unstrong-cell"><input type="password" placeholder="Confirmer mot de passe" name="repetpassword" ></td>	
 					</tr>
 					<tr>
-					<th class="unstrong-cell"><input type="submit" value="Modifier" ></td>	
+					<th class="unstrong-cell"><input id="button-profil-modifier" type="submit" value="Modifier" ></td>	
 						
 					</tr>
 				</table>

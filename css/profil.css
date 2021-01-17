@@ -3,7 +3,6 @@ body {
 	padding:0;
 	background-color: white;
 	background: url("../Images/icon-humbie-grand.png") no-repeat  right -10% top 150px ;
-	opacity: 1;
 	background-size: 40%;
 }
 
@@ -117,7 +116,7 @@ strong{
 
 /* Style du bouton de modification de profil*/
 #button-profil-modifier{
-	color: #464646;
+	color: #0fe8ba;
 	font: "Bahnschrift light";
 	background-color: white;
 	border: 5px solid  #0fe8ba;
@@ -131,12 +130,25 @@ strong{
 	width: 100%;
 }
 
+#password-title{
+	margin-top: 100px;
+}
 
+#button-send-photo{
+	color: white;
+	font: "Bahnschrift light";
+	background-color:#0fe8ba;
+	border: 5px solid  #0fe8ba;
+	border-radius: 15px
+}
+#file{
+	display: none;
+}
 
-
-
-
-
+.photo-modifier{
+	margin-top: 15px;
+	font: 20px;
+}
 
 
 

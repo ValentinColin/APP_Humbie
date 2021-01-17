@@ -28,6 +28,8 @@ if_not_connected($redirection = '../../View/login.php');
 	<?php require('header.php'); ?>
 	<?php require('nav.php') ?>
 
+	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
+	<div>
 		<div id="box-content" class="my-block">
 			<main onclick="draw()">
 				<!-- Corps -->
@@ -42,10 +44,11 @@ if_not_connected($redirection = '../../View/login.php');
 		</div>
 	</div>
 	<!-- <aside id="blank"></aside> -->
-	<!-- Permet de bloquer le footer en bas de lécran -->
+	<!-- Permet de bloquer le footer en bas de l'écran -->
 	<?php require('footer.php'); ?>
 </body>
 
 <script src="../../../js/jsGraphDisplay.1.0.js"></script> <!-- Script source permettant de dessiner des graphiques -->
 <script src="../../../js/drawGraph.js"></script> <!-- Script qui détermine quoi afficher comme graphique (et avec quelles données) -->
+
 </html>

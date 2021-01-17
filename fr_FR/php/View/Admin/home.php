@@ -28,7 +28,8 @@ if_not_connected($redirection = '../../View/login.php');
 	<?php require('header.php'); ?>
 	<?php require('nav.php') ?>
 
-
+	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
+	<div>
 		<div id="box-content" class="my-block">
 			<main onclick="draw()">
 				<!-- Corps -->

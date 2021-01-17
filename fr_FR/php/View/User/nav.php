@@ -4,8 +4,6 @@
 		<span id="barre">I</span>
 		<li><a href="../../Controller/search_member_c.php/?search=AllMember">Annuaire</a></li>
 		<span id="barre">I</span>
-		<li><a href="empty">(Mon Planning?)</a></li>
-		<span id="barre">I</span>
 		<li><a href="empty">Mes Résultats de Tests</a></li>
 		<span id="barre">I</span>
 		<li><a href="empty">Mes Statistiques</a></li>
