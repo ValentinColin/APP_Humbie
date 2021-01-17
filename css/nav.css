@@ -1,0 +1,29 @@
+#mainNav{
+    background-color: white;
+    text-align: center;
+
+}
+
+#navigation li{
+    margin: 0;
+    list-style: none;
+    display: inline;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+ 
+}
+
+#navigation li a{
+    color: #464646;
+    text-decoration: underline;
+    display: inline;
+
+}
+
+#barre{
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color:#0fe8ba ;
+    background-color:  #0fe8ba;
+}

@@ -43,6 +43,6 @@ footer {
 	text-decoration: underline;
 }
 
-#footer_nav li a:hover, #navigation li a:focus, #navigation li a:active {
+#footer_nav li a:hover {
   color: #0fe8ba;
 }

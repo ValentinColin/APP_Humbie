@@ -19,22 +19,14 @@ if_not_connected($redirection = '../../View/login.php');
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/home.css">
+	<link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
 	<!-- <link rel="icon" href="../../../Images/logo_Humbie.png"> Ne fonctionne pas -->
 	<link rel="script" type="text/css" href="../../../../js/drawGraph.js">
 </head>
 
 <body>
 	<?php require('header.php'); ?>
-
-	<div class="wrapper">
-		<div id="box-title" class="my-block">
-			<div><a href="../../../../html/building.html" title="Menu"><img class="icon" src="../../../../Images/icon-burger-menu.png"></a></div>
-			<h1> Page Principale</h1>
-		</div>
-
-		<div id="box-nav" class="my-block">
-			<?php require('nav.php') ?>
-		</div>
+	<?php require('nav.php') ?>
 
 		<div id="box-content" class="my-block">
 			<main onclick="draw()">
