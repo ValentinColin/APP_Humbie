@@ -1,6 +1,14 @@
-#mainNav{
+body{
     background-color: white;
+	background: url("../Images/icon-humbie-grand.png") no-repeat  right -10% top 150px ;
+	background-size: 40%;
+
+}
+#mainNav{
     text-align: center;
+    background-color: white;
+	background: url("../Images/icon-humbie-grand.png") no-repeat  right -10% top 150px ;
+	background-size: 40%;
 
 }
 
@@ -27,4 +35,12 @@
     padding-bottom: 5px;
     color:#0fe8ba ;
     background-color:  #0fe8ba;
+}
+
+#remplissage-gauche{
+	position: absolute;
+	float: left;
+	margin-top: 0px;
+	height: 80%;
+
 }
