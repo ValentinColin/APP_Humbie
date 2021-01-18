@@ -1,5 +1,8 @@
 <?php
 
+/*
+ * Cette fonction vérifie si la personne est connecter 
+ */
 function if_not_connected($redirection)
 {
 	if (!$_SESSION['connected']) {
@@ -14,6 +17,72 @@ function if_connected($redirection)
 		header('Location: ' . $redirection);
 		exit;
 	}
+}
+
+/*
+ *	Cette fonction vérifie si le rôle de l'utilisateur correspond à celui en paramètre.
+ *	Cela permet de restreindre l'accès aux page du site en fonction de leurs rôles.
+ *
+ *	ATTENTION: le paramètre $access doit être l'une de ces 4 valeurs:
+ *		USER, MANAGER, ADMIN, ALL
+ *	Sinon il y aura une redirection vers la page de login.
+ */
+function verif_access($access) {
+	// Je transforme par exemple USER -> User (afin d'utiliser la variable comme un nom de dossier)
+	$access_session = ucwords(strtolower($_SESSION['access']));
+	switch ($access) {
+		case 'USER':
+			if ($access_session != 'User') {
+				header('Location: ../../View/'.$access_session.'/home.php');
+				exit;}
+			break;
+		
+		case 'MANAGER':
+			if ($access_session != 'Manager') {
+				header('Location: ../../View/'.$access_session.'/home.php');
+				exit;}
+			break;
+
+		case 'ADMIN':
+			if ($access_session != 'Admin') {
+				header('Location: ../../View/'.$access_session.'/home.php');
+				exit;}
+			break;
+		
+		case 'ALL':
+			break;
+
+		default:
+			header('Location: ../../View/login.php');
+			exit;
+			break;
+	}
+}
+
+/* 
+ *	Vérifie si la personne qui est connecter à été banni ou non 
+ *	Si la personne à été banni il est rediriger vers la page de connection 
+ *	avec une variable banned valant true via un GET
+ *	ie: $_GET['banned'] = true
+ */
+function if_banned() {
+	if ($_SESSION['banned']) {
+		header('Location: ../../View/login.php?banned=true');
+		exit;
+	}
+}
+
+/*
+ *	Cette fonction vérifie les 3 niveaux d'accès à une page
+ *	Voir documentation des fonctions:
+ *	if_not_connected()
+ *	verif_access()
+ *	if_banned()
+ */
+function verif_access($access, $redirection='../../View/login.php') {
+	if_connected($redirection);
+	verif_role($access);
+	if_banned();
 }
 
 function go($page)
@@ -65,8 +134,13 @@ function path_lang($default_path){
 }*/
 
 function path_photo()
-{
-	return '../../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png';
+{	
+	if (file_exists('../../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png')) {
+		return '../../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png';
+	} else {
+		return '../../../../Images/Photo/default.png';
+	}
+	
 }
 
 function path_photo_controller()
