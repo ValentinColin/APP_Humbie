@@ -11,14 +11,6 @@ function if_not_connected($redirection)
 	}
 }
 
-function if_connected($redirection)
-{
-	if ($_SESSION['connected']) {
-		header('Location: ' . $redirection);
-		exit;
-	}
-}
-
 /*
  *	Cette fonction vérifie si le rôle de l'utilisateur correspond à celui en paramètre.
  *	Cela permet de restreindre l'accès aux page du site en fonction de leurs rôles.
@@ -80,7 +72,7 @@ function if_banned() {
  *	if_banned()
  */
 function verif_access($access, $redirection='../../View/login.php') {
-	if_connected($redirection);
+	if_not_connected($redirection);
 	verif_role($access);
 	if_banned();
 }
