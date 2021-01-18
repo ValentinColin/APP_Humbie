@@ -28,6 +28,8 @@ if (login($_POST["mail"], $_POST["password"])) {
 			$path = "../View/login.php";
 			break;
 	}
+	if ($_SESSION['banned'] == true)
+		$path = '../View/login.php?banned=true';
 	header("Location: " . $path);
 	exit;
 } else {

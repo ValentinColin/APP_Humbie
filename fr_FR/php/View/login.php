@@ -31,6 +31,9 @@ if (isset($_SESSION['connected'])) {
             <?php if (isset($_GET['connexion']) and $_GET['connexion'] == 'non') : ?>
                 <p id='tryAgain'>Adresse mail ou mot de passe incorrecte.</p>
             <?php endif ?>
+            <?php if (isset($_GET['banned']) and $_GET['banned'] == true) : ?>
+                <p id='banned'>Vous avez été banni du site web.</p>
+            <?php endif ?>
             <form method="post" action="../Controller/login.php">
                 <fieldset>
                     <legend>Connexion</legend>

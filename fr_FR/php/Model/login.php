@@ -17,10 +17,10 @@ include_once("login_bdd.php");
 function login($mail, $password)
 {
 	$bdd = login_bdd();
-	$req = $bdd->query('SELECT id, email, password, access, prenom, nom
+	$req = $bdd->query('SELECT id, email, password, access, prenom, nom, lang, banned
                         FROM members
                         WHERE email = \'' . $mail . '\'');
-
+	// banned vaut 1 si la personne à été banni, 0 sinon.
 	$data = $req->fetch(); // Tableau possédant à présent les clés:valeurs de la BDD
 
 	$req->closeCursor();
@@ -33,6 +33,8 @@ function login($mail, $password)
 		$_SESSION['mail'] = $data['email'];
 		$_SESSION['prenom'] = $data['prenom'];
 		$_SESSION['nom'] = $data['nom'];
+		$_SESSION['lang'] = $data['lang'];
+		$_SESSION['banned'] = $data['banned'];
 		$_SESSION['connected'] = true;
 
 		$success = true;
