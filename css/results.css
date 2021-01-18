@@ -1,0 +1,62 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#title{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+#footer-position{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+#sous-titre{
+    text-align: center;
+}
+.wrapper{
+    margin-left: 15%;
+}
+
+
+/* --- MODIFICATION DE LA TABLE --- */
+
+
+/* box de centenu principal */
+#table-main{
+
+    border-spacing: 10px;
+	/*border: 1px solid black;*/
+}
+
+
+
+.wrapper table tr td.unstrong-cell, #box-content table tr th.strong-cell{
+	padding-left: 60px;
+}
+
+strong{
+	font-size: 20px;
+	font-weight: bold;
+	color: #464646;
+}
+
+.cell{
+    border: 3px solid;
+    border-color: #0fe8ba;
+    border-radius: 50px;
+    height: 200px;
+    width: 200px;
+    padding: 5px;
+    border-spacing: 0px;
+}
+
+
+#cell-value{
+    border: 1px solid;
+    border-color: black;
+
+}

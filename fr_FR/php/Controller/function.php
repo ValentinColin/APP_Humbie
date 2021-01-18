@@ -121,3 +121,19 @@ function role(String $role, String $redirectionUser, String $redirectionManager,
 		return $redirectionAdmin;
 	}
 }
+
+// fonction qui permet de donner min,max et moyenne.
+function stats(array $array){
+	$min = min($array);
+	$max = max($array);
+	$total = 0;
+	$n = 0;
+	foreach ($array as $value){
+		$total += $value;
+		$n += 1;
+	}
+	$moy = $total/$n;
+	$results = [$min,$moy,$max];
+
+	return $results;
+}
