@@ -49,11 +49,11 @@ if_not_connected($redirection = 'loginPage.php');
 			<form method="post" action="../../Controller/create_user.php">
 				<p>
 					<label for="nom">Last name:</label>
-					<input type="text" id="nom" name="nom" placeholder="nom" required>
+					<input type="text" id="nom" name="nom" placeholder="Lastname" required>
 				</p>
 				<p>
 					<label for="prenom">First name</label>
-					<input type="text" id="prenom" name="prenom" placeholder="prenom" required>
+					<input type="text" id="prenom" name="prenom" placeholder="Firstname" required>
 					<p>
 						<label for="access">Role:</label>
 						<select id="access" name="role">

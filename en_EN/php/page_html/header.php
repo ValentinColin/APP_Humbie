@@ -6,7 +6,7 @@
 	<div id="cell-header-search" class="cell-header">
 		<form method="post"> <!-- L'action est définie dans l'input de type: image -->
 			<div class="search">
-				<input type="text" id="searchBar" placeholder="Barre de Recherche">
+				<input type="text" id="searchBar" placeholder="Search here">
 				<input type="image" id="loupe" class="icon" formaction="../php_pur/search.php" src="../../../Images/icon-loupe.png">
 			</div>
 			<a id="RechercheAvancer" href="">Advanced search</a>

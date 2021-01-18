@@ -29,16 +29,16 @@ if_not_connected($redirection="../../View/login.php");
 	</div>
 
     <?php 
-        echo '<h1> Il y a '.count($ticket).' pending tickets: </h1> ';
+        echo '<h1> There is '.count($ticket).' pending tickets: </h1> ';
         $ticket = getTicket();
         for ($i=0; $i < count($ticket); $i++) { 
     ?>
             <p>
                 topic : <?= $ticket[$i]['topic']?> <br>
-                sujet : <?= $ticket[$i]['subject']?> <br>
-                Question de : <?= $ticket[$i]['name']." ".$ticket[$i]['firstname']?> <br>
-                réquête émise le : <?= $ticket[$i]['date_request'] ?> <br>
-                Contenu: <br> <?= $ticket[$i]['msg_request']?>
+                subjet : <?= $ticket[$i]['subject']?> <br>
+                Question from : <?= $ticket[$i]['name']." ".$ticket[$i]['firstname']?> <br>
+                request the  : <?= $ticket[$i]['date_request'] ?> <br>
+                Content: <br> <?= $ticket[$i]['msg_request']?>
 
                 <form action="../../Controller/ticket.php" method="post">
                     <input type="text" name="reponse" placeholder="Content of the answer" require>

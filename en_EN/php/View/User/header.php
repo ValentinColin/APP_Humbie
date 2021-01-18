@@ -14,7 +14,7 @@
 					<option value='searchPrenom' <?php if (isset($_SESSION['searchPrenom']) && $_SESSION['searchPrenom']) : ?> selected <?php endif; ?>>
 						Search by first name </option>
 				</select>
-				<input type='text' name="barreRecherche" class="searchBar searchBar2" placeholder="Barre de recherche">
+				<input type='text' name="Search here" class="searchBar searchBar2" placeholder="...">
 
 				<input type="image" id="loupe" class="icon" src="../../../../Images/icon-loupe.png">
 			</div>

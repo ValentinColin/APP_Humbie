@@ -36,8 +36,8 @@ if_not_connected($redirection = "../View/login.php");
                 <option value="test">Test problem</option>
                 <option value="private_information">Private informations</option>
             </select>
-            <input type="text" name="title" placeholder="Nom de votre requête">
-            <input type="text" name="content" placeholder="Ecrivez votre requête">
+            <input type="text" name="title" placeholder="Name of your request">
+            <input type="text" name="content" placeholder="Write your request">
             <input type="submit" value="Envoyer" name="poster">
         </form>
 

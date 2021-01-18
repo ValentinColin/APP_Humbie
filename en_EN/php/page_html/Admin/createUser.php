@@ -7,7 +7,7 @@
 <body>
     <form action="sqlCreateUser.php" method="post">
         <select name="role">
-            <option value="User">Utilisateur</option> 
+            <option value="User">User</option> 
             <option value="Manager" selected>Manager</option>
             <option value="Admin">Admin</option>
         </select>

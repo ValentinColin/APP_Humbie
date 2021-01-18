@@ -34,7 +34,7 @@ require_once('../php_pur/login.php');
         </header>
         <main>
             <?php if (isset($_GET['connection']) && $_GET['connection']=='no') :?>
-            <p id ='tryAgain'> Email address or incorrect password.</p>
+            <p id ='tryAgain'> Email or password incorrect.</p>
             <?php endif ?>
             <form method="post" action="">
                 <fieldset >

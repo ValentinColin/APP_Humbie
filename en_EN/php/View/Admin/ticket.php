@@ -32,7 +32,7 @@ if_not_connected($redirection = "../View/login.php");
 
         <?php
         $ticket = getTicket();
-        echo '<h1> Il y a ' . count($ticket) . ' Pending tickets: </h1> ';
+        echo  count($ticket) . ' Pending tickets: </h1> ';
         for ($i = 0; $i < count($ticket); $i++) {
         ?>
             <p>

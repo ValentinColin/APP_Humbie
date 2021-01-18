@@ -42,7 +42,7 @@ if (!isset($_SESSION['motdepasse']) || isset($_POST['resend'])) {
 <body>
     <form method="post" action="changePassword.php">
         <a>
-            <p class='input'> code received: <input name="code" placeholder="code reçu"> <br></p>
+            <p class='input'> code received: <input name="code" placeholder="code received"> <br></p>
         </a>
         <hr>
         <input type='submit' value='Submit'>

@@ -33,7 +33,7 @@ require_once('../php_pur/login.php');
                         <<< </a> <p class="input">
                             <span id="errorDisplay"> Wrong mail adress </span>
                             <br id='br'>
-                            <input id="mail" type="mail" name="mail" placeholder="Adresse mail" required><br>
+                            <input id="mail" type="mail" name="mail" placeholder="Mail adress" required><br>
                             </p>
                             <hr>
                             <input id='submit' type='submit' value='Réinitialiser'>

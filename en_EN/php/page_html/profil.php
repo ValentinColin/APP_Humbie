@@ -29,7 +29,7 @@ if_not_connected($redirection='loginPage.php');
 			<img id="photo_profil_big" src=<?php echo path_photo() ?>>
 			<table>
 				<tr> <!-- ligne 1 -->
-					<td><strong>NAME</strong></td> <!-- colonne 1 -->
+					<td><strong>LAST NAME</strong></td> <!-- colonne 1 -->
 					<td><?php echo $_SESSION['prenom'] .' '. $_SESSION['nom'] ?></td> <!-- colonne 2 -->
 				</tr>
 				<tr> <!-- ligne 2 -->

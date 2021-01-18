@@ -47,7 +47,7 @@ if(isset($_POST['code']) && isset($_SESSION['mail'])){
 </head>
 <body>
     <form method="post" action="../php_pur/sqlmodifierpassword.php">
-        Nouveau mot de passe : <input type="password" name="password" placeholder="Nouveau mot de passe"><br>Confirm your password : <input type="password" name="passwordConfirm" placeholder="Nouveau mot de passe"><br>
+        Nouveau mot de passe : <input type="password" name="password" placeholder="New password"><br>Confirm your password : <input type="password" name="passwordConfirm" placeholder="New password"><br>
         <input type="submit" value="Submit">
     </form>
     

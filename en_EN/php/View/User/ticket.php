@@ -36,8 +36,8 @@ if_not_connected($redirection = "../View/login.php");
                 <option value="test">Test problem</option>
                 <option value="private_information">Private information</option>
             </select>
-            <input type="text" name="title" placeholder="Nom de votre requête">
-            <input type="text" name="content" placeholder="Ecrivez votre requête">
+            <input type="text" name="title" placeholder="Name of your request">
+            <input type="text" name="content" placeholder="Write your request here">
             <input type="submit" value="Envoyer" name="poster">
         </form>
 
@@ -66,7 +66,7 @@ if_not_connected($redirection = "../View/login.php");
             <p>
                 topic : <?= $ticket[$i]['topic'] ?> <br>
                 subjet : <?= $ticket[$i]['subject'] ?> <br>
-                Question de : <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?> <br>
+                Question from : <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?> <br>
                 Request the : <?= $ticket[$i]['date_request'] ?> <br>
                 Content: <br> <?= $ticket[$i]['msg_request'] ?> <br>
                 Answer: <br> <?= $ticket[$i]['msg_reply'] ?>

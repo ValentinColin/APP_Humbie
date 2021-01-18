@@ -11,7 +11,7 @@ if_not_connected('loginPage.php');
 
 <head>
     <meta charset="UTF-8">
-    <title>Change of picture</title>
+    <title>Change picture</title>
 </head>
 
 <body>

@@ -92,11 +92,11 @@ if_not_connected($redirection = '../../View/login.php');
 					}
 					?>
 					<tr>
-						<th class="unstrong-cell"><input type="password" placeholder="Mot de passe actuel" name="password" ></td>	
+						<th class="unstrong-cell"><input type="password" placeholder="Actual password" name="password" ></td>	
 					</tr>
 					<tr>
-						<th class="unstrong-cell"><input type="password" placeholder="Nouveau mot de passe" name="newpassword"></td>
-						<th class="unstrong-cell"><input type="password" placeholder="Confirmer mot de passe" name="repetpassword" ></td>	
+						<th class="unstrong-cell"><input type="password" placeholder="New password" name="newpassword"></td>
+						<th class="unstrong-cell"><input type="password" placeholder="Confirm password" name="repetpassword" ></td>	
 					</tr>
 					<tr>
 					<th class="unstrong-cell"><input id="button-profil-modifier" type="submit" value="Modifier" ></td>	

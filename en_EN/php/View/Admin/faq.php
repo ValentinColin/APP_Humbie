@@ -35,7 +35,7 @@ if_not_connected($redirection = "../../View/login.php");
 			<div id="box-add-question" class="my-block">
 				<form method="post" action="../../Controller/faq.php">
 					<input type="text" name="question" placeholder="Question">
-					<input type="text" name="answer" placeholder="Réponse">
+					<input type="text" name="answer" placeholder="Answer">
 					<input type="submit" name="add" value="Ajouter">
 				</form>
 			</div>

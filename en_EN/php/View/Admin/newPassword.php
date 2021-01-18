@@ -35,7 +35,7 @@ require_once('../../php_pur/login.php');
                         <<< </a> <p class="input">
                             <span id="errorDisplay">Incorrect Email </span>
                             <br id='br'>
-                             Email adress : <input id="mail" type="mail" name="mail" placeholder="ceci-est-n@exemple.fr" required><br>
+                             Email adress : <input id="mail" type="mail" name="mail" placeholder="thisisan@exemple.fr" required><br>
                             </p>
                             <hr>
                             <input id='submit' type='submit' value='Submit'>
