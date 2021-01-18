@@ -65,8 +65,13 @@ function path_lang($default_path){
 }*/
 
 function path_photo()
-{
-	return '../../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png';
+{	
+	if (file_exists('../../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png')) {
+		return '../../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png';
+	} else {
+		return '../../../../Images/Photo/default.png';
+	}
+	
 }
 
 function path_photo_controller()
