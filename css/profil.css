@@ -115,6 +115,12 @@ strong{
 	border-radius: 15px
 
 }
+#button-profil-modifier:hover{
+
+	color: white;
+	background-color: #0fe8ba;
+
+}
 /* Placement du footer */
 #footer-position{
 	position: relative;
@@ -134,6 +140,22 @@ strong{
 	border: 5px solid  #0fe8ba;
 	border-radius: 15px
 }
+#button-send-photo:hover{
+
+	color: #0fe8ba;
+
+	background-color:white;
+	border: 5px solid  #0fe8ba;
+	border-radius: 15px
+}
+
+
+
+
+
+
+
+
 #file{
 	display: none;
 }
