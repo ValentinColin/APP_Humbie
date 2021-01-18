@@ -1,0 +1,84 @@
+main{
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    width: 70%;
+    left:50%;
+    transform: translate(-50%);
+
+}
+
+h1{
+    text-align: center;
+}
+h2{
+    text-decoration: underline #0fe8ba;
+}
+
+#pbm{
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+}
+
+#topic,input,textarea {
+    outline: none;
+    border: ridge 2px #0fe8ba;
+
+}
+#pbm input{
+    margin-left: 20px;
+    width: 90%;
+}
+textarea{
+    width: 99%;
+    resize: none;
+    padding-left: 0;
+    background-color: transparent;
+
+}
+#demande{
+    width: 99%;
+    height: 100px;
+    border-radius: 10px;
+    background-color: transparent;
+    word-wrap:break-word
+}
+
+#submit{
+    margin-top: 10px;
+}
+#submit:hover{
+    color:white;
+    background-color: #0fe8ba;
+}
+#tableRep td, #tableRep th, #tableRep2 td,#tableRep2 th {
+border-bottom: 5px ridge #0fe8ba;
+padding: 10px;
+border-right: 1px ridge #0fe8ba;
+text-align: center;
+background-color: rgba(15,232,186,0.1)
+}
+#tableRep2,#tableRep{
+    position: relative;
+    left:50%;
+    transform: translate(-50%);
+}
+#tableRep2 td{
+    background-color: none;
+
+}
+
+#tableRep tr:nth-child(even) {background-color: rgba(15,232,186,0.1);}
+#tableRep tr:nth-child(odd) {background-color: transparent }
+
+#tableRep2 tr:nth-child(even) {background-color: rgba(0,0,240,0.1);}
+#tableRep2 tr:nth-child(odd) {background-color: rgba(0,100,186,0.3) ;}
+
+
+
+
+
+
+

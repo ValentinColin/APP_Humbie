@@ -1,3 +1,4 @@
+
 <?php
 require_once("../../Model/ticket.php");
 require_once("../../Controller/function.php");
@@ -17,65 +18,96 @@ if_not_connected($redirection = "../View/login.php");
     <link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/home.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/ticket.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/tickets.css">
+
 
 </head>
 
 <body>
     <?php require("header.php"); ?>
 
-    <main>
-
-        <div id="box-nav" class="my-block">
+    <div id="box-nav" class="my-block">
             <?php require('nav.php') ?>
         </div>
 
+    <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
+
+    <main>
+
         <form action="../../Controller/ticket.php" method="post">
             <H1>Envoyer un ticket</H1>
-            <select name="topic">
+        <div id="pbm">
+        <select id="topic" name="topic">
                 <option value="login" selected>Problème login</option>
                 <option value="test">Problème test</option>
                 <option value="private_information">Information privée</option>
             </select>
             <input type="text" name="title" placeholder="Nom de votre requête">
-            <input type="text" name="content" placeholder="Ecrivez votre requête">
-            <input type="submit" value="Envoyer" name="poster">
+        </div>
+            <br>
+            <textarea  name="content" placeholder="Saissisez votre message ici... (400 caractères maximum)"   rows='4' cols= '10' minlength="5" maxlength="400" wrap='hard' >
+            </textarea>
+            <br>
+            <input id="submit" type="submit" value="Envoyer" name="poster">
         </form>
 
-        <?php
+
+        <div id="historique">
+
+        <h1> Votre historique de tickets </h1>
+
+        <h2> Vos tickets en attente </h2>
+        <table id='tableRep2'>
+            <tr>
+            <th> Topic </th>
+            <th> Sujet </th>
+            <th> Question de  </th>
+            <th> Date </th>
+            <th> Contenu </th>
+            </tr>
+            <?php
         $ticket = getTicketById($_SESSION['id'], '"in_process"');
-        echo '<h1> Votre historique de tickets </h1>';
-        echo '<h2> Vos tickets en attente </h2>';
         for ($i = 0; $i < count($ticket); $i++) {
         ?>
-            <p>
-                topic : <?= $ticket[$i]['topic'] ?> <br>
-                sujet : <?= $ticket[$i]['subject'] ?> <br>
-                Question de : <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?> <br>
-                réquête émise le : <?= $ticket[$i]['date_request'] ?> <br>
-                Contenu: <br> <?= $ticket[$i]['msg_request'] ?>
-
-            </p>
+            <tr>
+              <td>  <?= $ticket[$i]['topic'] ?> </td>
+              <td>  <?= $ticket[$i]['subject'] ?> </td>
+              <td>  <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?> </td>
+              <td>  <?= $ticket[$i]['date_request'] ?> </td>
+              <td>   <?= $ticket[$i]['msg_request'] ?> </td>
+            </tr>
 
         <?php } ?>
+        </table>
 
+
+        <h2> Vos tickets terminés </h2>
+        <table id='tableRep'>
+            <tr>
+            <th> Topic </th>
+            <th> Sujet </th>
+            <th> Question de  </th>
+            <th> Date  </th>
+            <th> Contenu </th>
+            <th> Réponse</th>
+            </tr>
         <?php
         $ticket = getTicketById($_SESSION['id'], '"validated"');
-        echo '<h2> Vos tickets terminés </h2>';
         for ($i = 0; $i < count($ticket); $i++) {
-        ?>
-            <p>
-                topic : <?= $ticket[$i]['topic'] ?> <br>
-                sujet : <?= $ticket[$i]['subject'] ?> <br>
-                Question de : <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?> <br>
-                réquête émise le : <?= $ticket[$i]['date_request'] ?> <br>
-                Contenu: <br> <?= $ticket[$i]['msg_request'] ?> <br>
-                Réponse: <br> <?= $ticket[$i]['msg_reply'] ?>
-
-            </p>
-
+        ?>      <tr>
+               <td> <?= $ticket[$i]['topic'] ?></td>
+               <td> <?= $ticket[$i]['subject'] ?></td>
+               <td> <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?></td>
+               <td> <?= $ticket[$i]['date_request'] ?></td>
+               <td> <?= $ticket[$i]['msg_request'] ?></td>
+               <td> <?= $ticket[$i]['msg_reply'] ?></td>
+                </tr>
         <?php } ?>
-
-        <?php require("footer.php"); ?>
+        </table>
+    </div>
+    </main>
+    <?php require("footer.php"); ?>
 </body>
 
 </html>
