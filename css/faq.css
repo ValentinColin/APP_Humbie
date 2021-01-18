@@ -1,10 +1,16 @@
-main{
+body{
+    margin: 0;
+    padding: 0;
+}
+
+main{ 
     display: flex;
     flex-direction: row;
-    width: 97%;
+    width: 90%;
     margin-left: 20px;
     margin-right: 90px;
     margin-bottom: 50px;
+    
 
 }
 
@@ -12,11 +18,35 @@ main{
     display: flex;
     flex-direction: column;
     width: 97%;
-    margin-left: 20px;
+    margin-left: 15%;
     margin-right: 90px;
     background-color: transparent;
+    color: #464646;
+    font-family: "Bahnschrift light";
 }
 
 .wrapper div{
     background-color: transparent;
+}
+#title{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+/* Style du bouton de modification de profil*/
+#button-delete{
+	outline-style: none;
+	color: #f33333;
+	font: "Bahnschrift light";
+	background-color: white;
+	border: 1px solid  #f33333;
+	border-radius: 15px
+
+}
+#button-delete:hover{
+
+	color: white;
+	background-color: #f33333;
+
 }

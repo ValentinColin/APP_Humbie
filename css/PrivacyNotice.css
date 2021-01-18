@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 #notice_text{
     margin-left : 4%;
     margin-right : 7%;
@@ -6,5 +10,20 @@
 main{
     display:flex;
     flex-direction: row;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: #464646;
+    font-family: "Bahnschrift light";
     
+}
+#title{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+#footer-position{
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }

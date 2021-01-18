@@ -15,7 +15,7 @@ if_not_connected($redirection = '../../View/login.php');
     <link rel="stylesheet" type="text/css" href="../../../../css/config.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/header.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../../../../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/searchPage.css">
     <!-- <link rel="icon" href="../../../Images/logo_Humbie.png"> Ne fonctionne pas -->
     <link rel="script" type="text/css" href="../../../../js/drawGraph.js">
@@ -23,11 +23,10 @@ if_not_connected($redirection = '../../View/login.php');
 
 <body>
     <?php require('header.php'); ?>
+	<?php require('nav.php') ?>
+    <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
+    
     <main>
-        <div id="box-nav" class="my-block">
-            <?php require('nav.php') ?>
-        </div>
-
         <div id='search-page'>
         <p id='upload'> <button id='button-upload'  type="button"> Télécharger le tableau en format excel</button>
              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-spreadsheet-fill" viewBox="0 0 16 16">
@@ -39,7 +38,7 @@ if_not_connected($redirection = '../../View/login.php');
                 </svg>
             </p>
 
-            <h1> Pilotes et Manager </h1>
+            <h1 id="title"> Pilotes et Manager </h1>
 
             <div id='classement'>
                 <?php require("../divSearch.php") ?>
@@ -65,7 +64,9 @@ if_not_connected($redirection = '../../View/login.php');
         </div>
     </main>
 
-    <?php require('footer.php'); ?>
+    <span id="footer-position">
+		<?php require('footer.php'); ?>
+	</span>
 </body>
 <script src='../../../js/search.js'> </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -16,7 +16,7 @@ if_not_connected($redirection = '../../View/login.php');
     <link rel="stylesheet" type="text/css" href="../../../../css/config.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/header.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../../../../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/searchPage.css">
     <!-- <link rel="icon" href="../../../Images/logo_Humbie.png"> Ne fonctionne pas -->
     <link rel="script" type="text/css" href="../../../../js/drawGraph.js">
@@ -24,16 +24,12 @@ if_not_connected($redirection = '../../View/login.php');
 
 <body>
     <?php require('header.php'); ?>
+	<?php require('nav.php') ?>
+    <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 
     <main>
-
-        <div id="box-nav" class="my-block">
-            <?php require('nav.php') ?>
-        </div>
-
         <div id='search-page'>
-       
-            <h1>
+            <h1 id="title">
                 <?php if (count($_SESSION["search"]) == 0) : ?>
                     Aucun résultat trouvé
                 <?php elseif (count($_SESSION["search"]) == 1) : ?>
@@ -46,7 +42,6 @@ if_not_connected($redirection = '../../View/login.php');
             <?php if (!$_SESSION['noOne']) : ?>
 
                 <table>
-
                     <tr id='trth'>
                         <th> Nom </th>
                         <th> Prénom </th>
@@ -64,12 +59,12 @@ if_not_connected($redirection = '../../View/login.php');
                         <?php endfor; ?>
                 </table>
             <?php endif; ?>
-
         </div>
-
     </main>
 
-    <?php require('footer.php'); ?>
+    <span id="footer-position">
+		<?php require('footer.php'); ?>
+	</span>
 </body>
 
 <?php //$_SESSION['search']='';

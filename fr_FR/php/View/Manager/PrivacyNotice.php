@@ -17,22 +17,20 @@ if_not_connected($redirection = "../../View/login.php");
 	<link rel="stylesheet" type="text/css" href="../../../../css/config.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
-	<link rel="stylesheet" type="text/css" href="../../../../css/home.css">
+	<link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/PrivacyNotice.css">
 
 </head>
 
 <body>
 	<?php require('header.php'); ?>
+	<?php require('nav.php') ?>
+    <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 
 	<main>
 
-		<div id="box-nav" class="my-block">
-			<?php require('nav.php') ?>
-		</div>
-
 		<div id='notice'>
-			<h1> Politique de confidentialité </h1>
+			<h1 id="title"> Politique de confidentialité </h1>
 
 			<div id='notice_text'>
 
@@ -78,7 +76,9 @@ if_not_connected($redirection = "../../View/login.php");
 
 	</main>
 
-	<?php require('footer.php'); ?>
+	<span id="footer-position">
+		<?php require('footer.php'); ?>
+	</span>
 </body>
 
 <?php //$_SESSION['search']='';

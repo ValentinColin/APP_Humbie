@@ -27,9 +27,6 @@ if (isset($_SESSION['connected'])) {
 
 <body>
     <center>
-        <header>
-            <h1>Page d'authentification</h1>
-        </header>
         <main>
             <?php if (isset($_GET['connexion']) and $_GET['connexion'] == 'non') : ?>
                 <p id='tryAgain'>Adresse mail ou mot de passe incorrecte.</p>
