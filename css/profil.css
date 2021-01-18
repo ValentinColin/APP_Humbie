@@ -116,6 +116,7 @@ strong{
 
 /* Style du bouton de modification de profil*/
 #button-profil-modifier{
+	outline-style: none;
 	color: #0fe8ba;
 	font: "Bahnschrift light";
 	background-color: white;
@@ -135,6 +136,7 @@ strong{
 }
 
 #button-send-photo{
+	outline-style: none;
 	color: white;
 	font: "Bahnschrift light";
 	background-color:#0fe8ba;
