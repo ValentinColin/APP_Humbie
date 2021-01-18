@@ -19,7 +19,7 @@ function if_not_connected($redirection)
  *		USER, MANAGER, ADMIN, ALL
  *	Sinon il y aura une redirection vers la page de login.
  */
-function verif_access($access) {
+function verif_role($access) {
 	// Je transforme par exemple USER -> User (afin d'utiliser la variable comme un nom de dossier)
 	$access_session = ucwords(strtolower($_SESSION['access']));
 	switch ($access) {
