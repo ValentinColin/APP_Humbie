@@ -2,7 +2,7 @@
 
 include("../../Controller/function.php");
 include('../../Model/profilModifier.php');
-$profil = getProfil();
+
 
 
 // On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
@@ -31,7 +31,7 @@ if_not_connected($redirection = '../../View/login.php');
 	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 	<div class="wrapper">
 		<div id="box-nav" class="my-block">
-			<img id="photo_profil_big" src=<?= path_photo() ?>>
+			<img id="photo_profil_big" src=<?= path_photoById($_SESSION['resultat_profil']['id']) ?>>
 
 		</div>
 		<div id="box-content" class="my-block">
@@ -40,26 +40,27 @@ if_not_connected($redirection = '../../View/login.php');
 			<table>
 				<tr>
 					<!-- ligne 1 -->
-					<th class="strong-cell"><strong>NOM:</strong> <?= $_SESSION['prenom'] . ' ' . $_SESSION['nom'] ?></td> <!-- colonne 1 -->
-					<td class="strong-cell"><strong>DATE DE NAISSANCE:</strong> <?= $profil['birthday_date'] ?></td> <!-- colonne 3 -->
+					<th class="strong-cell"><strong>NOM:</strong> <?= $_SESSION['resultat_profil']['prenom'] . ' ' . $_SESSION['resultat_profil']['nom'] ?></td> <!-- colonne 1 -->
+					<td class="strong-cell"><strong>DATE DE NAISSANCE:</strong> <?= $_SESSION['resultat_profil']['birthday_date'] ?></td> <!-- colonne 3 -->
 
 					
 				</tr>
 				<tr>
 					<!-- ligne 2 -->
-					<th class="strong-cell"><strong>PAYS:</strong> <?= $profil['country'] ?></td> <!-- colonne 1 -->
+					<th class="strong-cell"><strong>PAYS:</strong> <?= $_SESSION['resultat_profil']['country'] ?></td> <!-- colonne 1 -->
 					<td class="strong-cell"><strong>EXPÉRIENCE:</strong> UNKNOW</td> <!-- colonne 3 -->
 				</tr>
 				<tr>
 					<!-- ligne 3 -->
-					<th class="strong-cell"><strong>TELEPHONE:</strong> <?= $profil['phone'] ?></td> <!-- colonne 1 -->
-					<td class="strong-cell"><strong>E-MAIL:</strong> <?= $profil['email'] ?></td> <!-- colonne 3 -->
+					<th class="strong-cell"><strong>TELEPHONE:</strong> <?= $_SESSION['resultat_profil']['phone'] ?></td> <!-- colonne 1 -->
+					<td class="strong-cell"><strong>E-MAIL:</strong> <?= $_SESSION['resultat_profil']['email'] ?></td> <!-- colonne 3 -->
 				</tr>
 			</table>
-
-			<form action="../../Controller/profilModifier.php" method="POST">
-			<button id="button-profil-modifier" class="pull-right">Modifier les informations personnelles</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
-			</form>
+			<?php  if(!isset($_SESSION['resultat_profil']) ||  $_SESSION['resultat_profil']['id'] == $_SESSION['id']){?>}
+				<form action="../../Controller/profilModifier.php" method="POST">
+				<button id="button-profil-modifier" class="pull-right">Modifier les informations personnelles</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
+				</form>
+			<?php }?>
 
 		</div>
 	</div>
