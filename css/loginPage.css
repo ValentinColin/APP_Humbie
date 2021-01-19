@@ -1,6 +1,7 @@
 body{
     overflow-wrap: break-word;
-    background: url("../images/background_login.png") no-repeat;
+    /*background: url("../images/background_login.png") no-repeat;*/
+    background: url("../images/icon-humbie-grand.png") no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
