@@ -1,6 +1,7 @@
 <?php
 
 include("login_bdd.php");
+
 /*
 Listes des fonctions :
 function getNameLastNameMngOfUser(String $ordre=''):array--> ligne 14
@@ -94,6 +95,21 @@ function getUserOrManager2(String $nom, String $prenom){
     $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE  nom='$nom' AND prenom='$prenom' AND not access='ADMIN' ");
 
     $requete->execute();
+    return $requete->fetchall();
+} catch (PDOException $e) {
+    return null;
+}
+}
+
+function getUserByManager($id_manager){
+    echo 'salut';
+    try{
+    $connexion = login_bdd();
+    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE  id_manager='$id_manager' AND access='USER' ");
+    
+    $requete->execute();
+    print_r($requete);
     return $requete->fetchall();
 } catch (PDOException $e) {
     return null;
