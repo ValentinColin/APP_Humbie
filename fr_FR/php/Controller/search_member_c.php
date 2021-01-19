@@ -27,6 +27,7 @@ $triRole = exist_data("triRole", True);
 $triOrdre = exist_data("ordre", True);
 $typeRecherche = exist_data("searchPeople", false);
 $element = exist_data("barreRecherche", false);
+$id_manager = exist_data("id_manager", false);
 $decroissant = false;
 $nom=exist_data('nom',false);
 $prenom=exist_data('prenom',false);
@@ -93,6 +94,11 @@ switch ($search) {
         $path = role($role, "../../View/User/simpleSearch.php", "../../View/Manager/simpleSearch.php", "../../View/Admin/simpleSearch.php");
         $_SESSION['search'] = $resultat;
         break;
+
+    case "Id_Manager":
+        $resultat=getUserByManager(2);
+        $path = role($role, "../../View/User/searchAllMember.php", "../../View/Manager/searchAllMember.php", "../../View/Admin/searchAllMember.php");
+        $_SESSION['search'] = $resultat;
 
     default:
         header('location:' . role($role, "../../View/User/simpleSerch.php", "../../View/Manager/simpleSearch.php", "../../View/Admin/simpleSearch.php"));

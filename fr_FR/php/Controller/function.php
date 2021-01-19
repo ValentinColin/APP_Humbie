@@ -74,6 +74,7 @@ function path_photo()
 	
 }
 
+
 function path_photo_controller()
 {
 	return '../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png';
