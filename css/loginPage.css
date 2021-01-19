@@ -1,6 +1,6 @@
 body{
     overflow-wrap: break-word;
-    /*background: url("../images/background.png") no-repeat;*/
+    background: url("../images/background.png") no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;

@@ -25,7 +25,7 @@
 
 
 	<div id="cell-header-profil" class="cell-header">
-		<a href="profil.php" title="PROFIL">
+		<a href="../../Controller/profil.php" title="PROFIL">
 			<div id="header-profil-grid">
 				<div id="box-photo"><img id="photo_profil" class="icon" src=<?= path_photo() ?>></div>
 				<span id="box-nom"><?= user_name() ?></span>

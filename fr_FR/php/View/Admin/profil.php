@@ -56,12 +56,18 @@ if_not_connected($redirection = '../../View/login.php');
 					<td class="strong-cell"><strong>E-MAIL:</strong> <?= $_SESSION['resultat_profil']['email'] ?></td> <!-- colonne 3 -->
 				</tr>
 			</table>
-			<?php  if(!isset($_SESSION['resultat_profil']) ||  $_SESSION['resultat_profil']['id'] == $_SESSION['id']){?>}
-				<form action="../../Controller/profilModifier.php" method="POST">
-				<button id="button-profil-modifier" class="pull-right">Modifier les informations personnelles</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
-				</form>
-			<?php }?>
 
+			<?php  if(!isset($_SESSION['resultat_profil']) ||  $_SESSION['resultat_profil']['id'] == $_SESSION['id']){?>
+				<form action="../../Controller/profilModifier.php" method="POST">
+					<button id="button-profil-modifier" class="pull-right">Modifier les informations personnelles</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
+				</form>
+				
+			<?php }else{?>
+				<form action="../../Controller/profilModifier.php" method="POST">
+					<button id="button-profil-modifier" class="pull-right">Voir les resultats des tests effectués</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
+				</form>
+
+			<?php }?>
 		</div>
 	</div>
 	<span id="footer-position">
