@@ -62,9 +62,9 @@ if_not_connected($redirection = '../../View/login.php');
 					<button id="button-profil-modifier" class="pull-right">Modifier les informations personnelles</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
 				</form>
 				
-			<?php }else{?>
-				<form action="../../Controller/profilModifier.php" method="POST">
-					<button id="button-profil-modifier" class="pull-right">Voir les resultats des tests effectués</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
+			<?php }elseif($_SESSION['access'] == 'MANAGER'){?>
+				<form action="../../Controller/results.php" method="GET">
+					<button id="button-profil-modifier" class="pull-right" name="id" value="<?= $_SESSION['resultat_profil']['id']?>">Voir les resultats des tests effectués</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
 				</form>
 
 			<?php }?>
