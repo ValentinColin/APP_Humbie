@@ -29,87 +29,151 @@ if_not_connected($redirection = '../../View/login.php');
 
 	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 	<div class="wrapper">
-        <h1 id="title">Mes résultats</h1>
+        <h1 id="title">Mes résultats:</h1>
         <?php
             $data = trier(results($_SESSION['id']));
             foreach($data as $element){
         ?>  
         <h2 id="sous-titre">Résultats de la session du <?= $element[0][0] ?> fait au centre d'examen de <?= $element[0][1] ?> </h1>      
         <br>
-        <table id="table-main">
-            <tr id="tr-main" >
-                <th id="left" >
-                    <table  class="cell">
-                        <tr>
-                            <th id = 'cell-value'>Unité: BPM</th>
-                            <?php
-                                foreach($element[1] as $value){
-                                    echo "<th id = 'cell-value' >$value</th>";
+        <div class="test-box">   
+            <div class="cell">
+                <h3 class="sous-sous-titre">Prise de la fréquence cardiaque</h3>
+                <table id="table-main">
+                    <th id = 'cell-value'>Unité: BPM</th>
+                        <?php
+                            $table = stats($element[1]);
+                            foreach($element[1] as $value){
+                                echo "<th id = 'cell-value' >$value</td>";
+                            }
+                        ?>
+                    </th>   
+                </table>
+                <div class="stats">
+                    <div class="stats-value">MIN: <?= $table[0] ?></div>
+                    <div class="stats-value">MOY: <?= $table[1] ?></div>
+                    <div class="stats-value">MAX: <?= $table[2] ?></div>
+                </div>
+            </div>
+        
+            <div class="cell">
+                <h3 class="sous-sous-titre">Prise de la température</h3>
+                <table id="table-main">
+                    <th id = 'cell-value'>Unité: °C</th>
+                        <?php
+                            $table = stats($element[2]);
+                            foreach($element[2] as $value){
+                                echo "<th id = 'cell-value' >$value</td>";
+                            }
+                        ?>
+                    </th>   
+                </table>
+                <div class="stats">
+                    <div class="stats-value">MIN: <?= $table[0] ?></div>
+                    <div class="stats-value">MOY: <?= $table[1] ?></div>
+                    <div class="stats-value">MAX: <?= $table[2] ?></div>
+                </div>
+            </div>      
+
+            <div class="cell">
+                <h3 class="sous-sous-titre">Reproduction d'un son avec la voix</h3>
+                <table id="table-main">
+                    <th id = 'cell-value'>Unité: Hz</th>
+                        <?php
+                            $table = stats_sound($element[3]);
+                            foreach($element[3] as $value){
+                                foreach($value as $val){
+                                    echo "<th id = 'cell-value' >$val</td>";
                                 }
-                            ?>
-                        </tr>
-                        <tr>
-                            <th>MINIMUM:</th>
-                            <th>MOYENNE:</th>
-                            <th>MAXIMUM:</th> 
-                        </tr>
-                    </table>
-                </th>
+                            }
+                        ?>
+                    </th>   
+                </table>
+                <div class="stats">
+                    <div class="stats-value">MIN: <?= $table[0] ?></div>
+                    <div class="stats-value">MOY: <?= $table[1] ?></div>
+                    <div class="stats-value">MAX: <?= $table[2] ?></div>
+                </div>
+            </div> 
+            <div class="cell">
+                <h3 class="sous-sous-titre">Temps de réaction à un son inattendu</h3>
+                <table id="table-main">
+                    <th id = 'cell-value'>Unité: ms</th>
+                        <?php
+                            $table = stats($element[4]);
+                            foreach($element[4] as $value){
+                                echo "<th id = 'cell-value' >$value</td>";
+                            }
+                        ?>
+                    </th>   
+                </table>
+                <div class="stats">
+                    <div class="stats-value">MIN: <?= $table[0] ?></div>
+                    <div class="stats-value">MOY: <?= $table[1] ?></div>
+                    <div class="stats-value">MAX: <?= $table[2] ?></div>
+                </div>
+            </div>
+            <div class="cell">
+                <h3 class="sous-sous-titre">Temps de réaction à une lumière attendue</h3>
+                <table id="table-main">
+                    <th id = 'cell-value'>Unité: ms</th>
+                        <?php
+                            $table = stats($element[5]);
+                            foreach($element[5] as $value){
+                                echo "<th id = 'cell-value' >$value</td>";
+                            }
+                        ?>
+                    </th>   
+                </table>
+                <div class="stats">
+                    <div class="stats-value">MIN: <?= $table[0] ?></div>
+                    <div class="stats-value">MOY: <?= $table[1] ?></div>
+                    <div class="stats-value">MAX: <?= $table[2] ?></div>
+                </div>
+            </div>
+            <div class="cell">
+                <h3 class="sous-sous-titre">Plage de fréquence audible</h3>
+                <table id="table-main">
+                    <th id = 'cell-value'>Unité: Hz</th>
+                        <?php
+                            $table = stats($element[6]);
+                            foreach($element[6] as $value){
+                                echo "<th id = 'cell-value' >$value</td>";
+                            }
+                        ?>
+                    </th>   
+                </table>
+                <div class="stats">
+                    <div class="stats-value">MIN: <?= $table[0] ?></div>
+                    <div class="stats-value">MAX: <?= $table[2] ?></div>
+                </div>
+            </div> 
+         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>   
+        
 
-                <th id="right" class="cell">
-                    <table>
-                        <th>MINIMUM:</th>
-                        <th>MOYENNE:</th>
-                        <th>MAXIMUM:</th>
-                    </table>
-                </th>
-                
-            </tr>
-            <tr id="tr-main">
-                <th id="left" class="cell">
-                    <table>
-                        <th>MINIMUM:</th>
-                        <th>MOYENNE:</th>
-                        <th>MAXIMUM:</th>
-                    </table>
-                </th>
-                <th id="right" class="cell">
-                    <table>
-                        <th>MINIMUM:</th>
-                        <th>MOYENNE:</th>
-                        <th>MAXIMUM:</th>
-                    </table>
-                </th>
-            </tr>
-            <tr id="tr-main">
-                <th id="left" class="cell">
-                    <table>
-                        <th>MINIMUM:</th>
-                        <th>MOYENNE:</th>
-                        <th>MAXIMUM:</th>
-                    </table>
-                </th>
-                <th id="right" class="cell">
-                    <table>
-                        <th>MINIMUM:</th>
-                        <th>MOYENNE:</th>
-                        <th>MAXIMUM:</th>
-                    </table>
-                </th>
-                
-            </tr>
-            
-        </table>
-        <?php
-            }
-        ?>
-
+    <?php }?>
     </div>
 
 	<span id="footer-position">
 		<?php require('footer.php'); ?>
     </span>
-
+    
 </body>
 
 </html>

@@ -4,7 +4,7 @@ body{
 }
 
 #title{
-    text-align: center;
+
     margin-top: 50px;
     font-size: 40px;
 }
@@ -15,7 +15,12 @@ body{
     width: 100%;
 }
 #sous-titre{
-    text-align: center;
+    margin-top: 50px;
+    margin-left: 16%;
+}
+
+.sous-sous-titre{
+    text-decoration: underline;
 }
 .wrapper{
     margin-left: 15%;
@@ -28,15 +33,13 @@ body{
 /* box de centenu principal */
 #table-main{
 
-    border-spacing: 10px;
+    border-spacing: 0px;
 	/*border: 1px solid black;*/
 }
 
 
 
-.wrapper table tr td.unstrong-cell, #box-content table tr th.strong-cell{
-	padding-left: 60px;
-}
+
 
 strong{
 	font-size: 20px;
@@ -45,13 +48,17 @@ strong{
 }
 
 .cell{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
     border: 3px solid;
     border-color: #0fe8ba;
     border-radius: 50px;
-    height: 200px;
-    width: 200px;
-    padding: 5px;
-    border-spacing: 0px;
+    width: 35%;
+    padding: 20px;
+    margin: 15px;
+    background-color: rgba(222, 222, 222, 0.3);
+
 }
 
 
@@ -59,4 +66,20 @@ strong{
     border: 1px solid;
     border-color: black;
 
+}
+
+.stats{
+    justify-content: center;
+    display:flex;
+    flex-direction: row;
+}   
+
+.stats-value{
+    padding: 20px;
+}
+
+.test-box{
+    display: flex;
+    flex-direction: inline;
+    flex-wrap: wrap;
 }
