@@ -25,6 +25,7 @@ h2{
 #topic,input,textarea {
     outline: none;
     border: ridge 2px #0fe8ba;
+    border-radius: 10px;
 
 }
 #pbm input{
@@ -48,6 +49,8 @@ textarea{
 
 #submit{
     margin-top: 10px;
+    color: #0fe8ba;
+    background-color: white;
 }
 #submit:hover{
     color:white;

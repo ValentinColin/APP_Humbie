@@ -1,0 +1,49 @@
+body{
+    word-wrap: break-word;
+}
+#tiket-en-attente tr td{
+    border-bottom: 5px ridge #0fe8ba;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(15,232,186,0.1);
+width: 20%;
+}
+
+#tiket-en-attente{
+    border-radius: 20px;
+}
+
+#tiket-en-attente span{
+    font-weight: bold;
+}
+table{
+    border-spacing: 0;
+}
+.question, .rep{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(15,232,186,0.1);
+    width: 100%;
+    padding-right: 2px;
+}
+.input_Reponse{
+    padding-top: -20px;
+    padding-bottom: -20px;
+    position: relative;
+    width: 75%;
+    border: 4px ridge white;
+}
+.submit{
+    border-radius: 10px ;
+    background-color: #0fe8ba;
+    color: white;
+}
+.submit:hover{
+    color:#0fe8ba;
+    background-color: white;
+}
+#ticket{
+    border:2px ridge #0fe8ba;
+    border-radius: 15px;
+    font-size: 1.1em;
+}
