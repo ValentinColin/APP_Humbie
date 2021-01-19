@@ -17,6 +17,7 @@
 div.cell-header{
 	position: relative;
 	padding: 10px;
+	text-decoration: none;
 
 	/*border: 1px solid green;*/
 }
@@ -70,7 +71,7 @@ div[id="cell-header-profil"] img{
 .searchBar2{
 	border-left: none;
 	border-radius: 0px;
-	
+
 }
 
 .searchBar1 option {
@@ -93,7 +94,7 @@ div[id="cell-header-profil"] img{
 	border: 3px solid var(--search-color);
 	border-left: none;
 	border-radius: 0 17px 17px 0;
-	
+
 
 	cursor: pointer; /* Icone de la souris au survol de l'élément */
 }
@@ -108,7 +109,7 @@ div[id="cell-header-profil"] img{
 	display: grid;
 	grid-template-columns: 50px 1fr 1fr; /* 3 colonnes qui prennent chacune une 'fraction' de l'espace disponible */
 	grid-template-rows: 50px ; /* 1 lignes qui prennent chacune une 'fraction' de l'espace disponible */
-	grid-template-areas: "photo name deco" 
+	grid-template-areas: "photo name deco"
 
 }
 /* Placement des cellules de la grid ci-dessus */
@@ -167,7 +168,7 @@ div[id="cell-header-profil"] img{
 #box-deconnexion{
 	position: relative;
 	top: 13px;
-	
+
 
 }
 #button-deconnexion{
@@ -181,4 +182,11 @@ div[id="cell-header-profil"] img{
 	position: relative;
 	top: 5px;
 
+}
+
+#cell-header-profil a {
+	text-decoration: none;
+}
+#cell-header-profil a:hover{
+	text-decoration: underline 3px #0fe8ba;
 }

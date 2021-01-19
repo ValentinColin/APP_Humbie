@@ -18,7 +18,7 @@ body{
     display: inline;
     padding-left: 2.5%;
     padding-right: 2.5%;
- 
+
 }
 
 #navigation li a{
@@ -43,4 +43,7 @@ body{
 	margin-top: 0px;
 	height: 80%;
 
+}
+#mainNav li:hover {
+border-bottom: ridge 2px #0fe8ba;
 }
