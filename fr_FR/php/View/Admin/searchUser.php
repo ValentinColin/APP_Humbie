@@ -55,15 +55,15 @@ if_not_connected($redirection = '../../View/login.php');
 
             <table id='table'>
                 <tr>
-                    <th> nom </th>
-                    <th> prénom </th>
-                    <th> id manager(à remplacer) </th>
+                    <th> Nom </th>
+                    <th> Prénom </th>
+                    <th> Manager </th>
                 </tr>
                 <?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
                     <tr>
-                        <td> <?php print_r(strtoupper($_SESSION['search'][$i][1])); ?> </td>
-                        <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
-                        <td> <?php print_r($_SESSION['search'][$i][2]); ?> </td>
+                        <td> <?php print_r(strtoupper($_SESSION['search'][$i][0])); ?> </td>
+                        <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
+                        <td> <?= $_SESSION['search'][$i][2].' '.$_SESSION['search'][$i][3]; ?> </td>
                     <tr>
                     <?php endfor; ?>
             </table>

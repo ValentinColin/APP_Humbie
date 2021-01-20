@@ -17,8 +17,19 @@ function getNameLastNameMngOfUser(String $ordre = ''): array
         $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // en cas d'erreur
         if ($ordre == "decroissant") { // si decroissant, classement par ordre decroissant
             $requete = $connexion->prepare("SELECT prenom,nom,id_manager FROM members WHERE access='USER' ORDER BY nom DESC");
+            $requete = $connexion->prepare("SELECT U.nom, U.prenom, M.nom, M.prenom 
+                                            FROM members U
+                                                LEFT JOIN members M
+                                                ON U.id_manager = M.id
+                                                WHERE U.access='USER'
+                                                ORDER BY U.nom DESC");
         } else { // sinonn, classement des utilisateur par ordre croissant
-            $requete = $connexion->prepare("SELECT prenom,nom,id_manager FROM members WHERE access='USER' ORDER BY nom ASC");
+            $requete = $connexion->prepare("SELECT U.nom, U.prenom, M.nom, M.prenom 
+                                            FROM members U
+                                                LEFT JOIN members M
+                                                ON U.id_manager = M.id
+                                                WHERE U.access='USER'
+                                                ORDER BY U.nom ASC");
         }
         $requete->execute(); // récupération des données
         return $requete->fetchall(); // tableau contenant les données récupérées
