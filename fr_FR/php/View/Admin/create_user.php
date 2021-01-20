@@ -16,76 +16,70 @@ if_not_connected($redirection = 'loginPage.php');
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/create_user.css">
+	<link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
 </head>
 
 <body>
 	<?php require('header.php'); ?>
-
-	<div class="wrapper">
-		<div id="box-title" class="my-block">
-			<div><a href="../../../../html/building.html" title="Menu"><img class="icon" src="../../../../Images/icon-burger-menu.png"></a></div>
-			<h1>Page de création de membre</h1>
-		</div>
-
-		<div id="box-nav" class="my-block">
-			<?php require('nav.php') ?>
-		</div>
-
-		<div id="box-content" class="my-block">
-			<?php
-			// TODO: Réduire ce bout de code en une fonction !
-			if (isset($_GET['mailExisting'])) {
-				if ($_GET['mailExisting'])
-					echo '<p>Cette adresse mail existe déjà !</p>';
-			}
-			if (isset($_GET['sending'])) {
-				if (!$_GET['sending'])
-					echo "<p>Envoie du mail d'initialisation de mot de passe échoué !</p>";
-				else
-					echo "<p>Création de compte réussi !</p>";
-			}
-			?>
-
-			<form method="post" action="../../Controller/create_user.php">
-				<p>
-					<label for="nom">Nom:</label>
-					<input type="text" id="nom" name="nom" placeholder="nom" required>
-				</p>
-				<p>
-					<label for="prenom">Prénom:</label>
-					<input type="text" id="prenom" name="prenom" placeholder="prenom" required>
-					<p>
-						<label for="access">Rôle:</label>
-						<select id="access" name="role">
-							<option value="User" selected>Utilisateur</option>
-							<option value="Manager">Manager</option>
-							<option value="Admin">Administrateur</option>
-						</select>
-					</p>
-					<p>
-						<label for="id_manager">Manager:</label>
-						<input type="text" id="id_manager" name="id_manager">
-					</p>
-					<p>
-						<label for="mail">Email:</label>
-						<input type="mail" id="mail" name="mail" placeholder="exemple@mail.com" required>
-					</p>
-					<p>
-						<label for="birthday">Date d'anniversaire (YYYY-DD-MM)</label>
-						<input type="date" id="birthday" name="birthday" required>
-					</p>
-					<p>
-						<label for="license_aviation">Date de livraison de la licence d'aviation (YYYY-DD-MM)</label>
-						<input type="date" id="license_aviation" name="license_aviation">
-					</p>
-					<p>
-						<input type="submit" name="submit" value="Inscription">
-					</p>
-			</form>
-		</div>
+	<div id="box-nav" class="my-block">
+		<?php require('nav.php') ?>
 	</div>
+	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
+
+	<div id="box-content" class="my-block">
+		<?php
+		// TODO: Réduire ce bout de code en une fonction !
+		if (isset($_GET['mailExisting'])) {
+			if ($_GET['mailExisting'])
+				echo "<h3 style='text-align: center; color:orange'>Cette adresse mail existe déjà !</h3>";
+		}
+		if (isset($_GET['sending'])) {
+			if (!$_GET['sending'])
+				echo "<h3 style='text-align: cente;color:red;'>Envoie du mail d'initialisation de mot de passe échoué !</h3>";
+			else
+				echo "<h3 style='text-align: center; color:green;' >Création de compte réussi !</h3>";
+		}
+		?>
+		<form method="post" action="../../Controller/create_user.php">
+			<fieldset>
+				<legend> Ajouter un nouveau membre</legend>
+				<span> Nom :* </span>
+				<input id='lastname' type="text" id="nom" name="nom">
+				<span>Prénom: * </span>
+				<input type="text" id="firstname" name="prenom">
+				<span> Numéro de téléphone : </span>
+				<input id="phoneNumber" type="number">
+				<span> Rôle: </span>
+				<select id="access" name="role">
+					<option value="User">Utilisateur</option>
+					<option value="Manager" selected>Manager</option>
+					<option value="Admin">Administrateur</option>
+				</select>
+				<br>
+				<span class="manager"> Manager</span>
+				<select class="manager" name="manager">
+					<option value="null">-----</option>
+					<?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
+						<option value='<?php print_r($_SESSION['search'][$i][3])?>' > <?php print_r($_SESSION['search'][$i][1]) ?>
+							<?php echo " " ?>
+							<?php print_r($_SESSION['search'][$i][0]); ?> </option>
+					<?php endfor; ?>
+				</select>
+				<br>
+				<span>Adresse mail: * </span>
+				<input id='email' type="mail" id="mail" name="mail">
+				<span> Date d'anniversaire </span>
+				<input type="date" id="birthday" name="birthday">
+				<span> Date de livraison de la licence d'aviation </span>
+				<input type="date" id="license_aviation" name="license_aviation">
+				<input id="submit" type="submit" value="Créer un compte">
+			</fieldset>
+		</form>
+	</div>
+
 
 	<?php require('footer.php'); ?>
 </body>
+<script src='../../../js/createUser.js'> </script>
 
 </html>

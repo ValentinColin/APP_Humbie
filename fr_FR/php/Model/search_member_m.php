@@ -36,9 +36,9 @@ function getNameLastNameManager(String $ordre = ''): array
         $connexion = login_bdd();
         $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         if ($ordre == "decroissant") {
-            $requete = $connexion->prepare("SELECT prenom,nom,email FROM members WHERE access='MANAGER' ORDER BY nom DESC");
+            $requete = $connexion->prepare("SELECT prenom,nom,email,id FROM members WHERE access='MANAGER' ORDER BY nom DESC");
         } else {
-            $requete = $connexion->prepare("SELECT prenom,nom,email FROM members WHERE access='MANAGER' ORDER BY nom ASC");
+            $requete = $connexion->prepare("SELECT prenom,nom,email,id FROM members WHERE access='MANAGER' ORDER BY nom ASC");
         }
         $requete->execute();
         return $requete->fetchall();
@@ -105,7 +105,7 @@ function getUserByManager($id_manager){
     $connexion = login_bdd();
     $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE  id_manager='$id_manager' AND access='USER' ");
-    
+
     $requete->execute();
     print_r($requete);
     return $requete->fetchall();

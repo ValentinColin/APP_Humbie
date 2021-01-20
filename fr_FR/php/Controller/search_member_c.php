@@ -31,7 +31,7 @@ $id_manager = exist_data("id_manager", false);
 $decroissant = false;
 $nom=exist_data('nom',false);
 $prenom=exist_data('prenom',false);
-
+$needManager=exist_data("needManager",false);
 $_SESSION['noOne'] = false;
 
 if($nom and $prenom){
@@ -46,7 +46,6 @@ if ($typeRecherche) {
 
     }
 }
-
 if ($typeRecherche) {
     $search = 'OnePeople';
 }
@@ -70,7 +69,12 @@ switch ($search) {
         } else {
             $resultat = getNameLastNameManager();
         }
+        if($needManager==true){
+            $path="../../View/Admin/create_user.php";
+        }
+        else{
         $path = role($role, " ", "../../View/Manager/searchManager.php", "../../View/Admin/searchManager.php");
+        }
         $_SESSION['search'] = $resultat;
         break;
 
