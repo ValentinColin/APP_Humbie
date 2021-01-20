@@ -45,12 +45,12 @@ if_not_connected($redirection = '../../View/login.php');
 
             <div id='classement'>
                 <span> classé les noms par ordre: <span>
-                        <a href="../../Controller/search_member_c.php/?search=AllUser">
-                            <input type='button' value='croissant' <?php if (!$_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
-                        </a>
-                        <a href="../../Controller/search_member_c.php/?search=AllUser&classement=decroissant">
-                            <input type='button' value='décroissant' <?php if ($_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
-                        </a>
+                <a href="../../Controller/search_member_c.php/?search=AllUser">
+                    <input type='button' value='croissant' <?php if (!$_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                </a>
+                <a href="../../Controller/search_member_c.php/?search=AllUser&classement=decroissant">
+                    <input type='button' value='décroissant' <?php if ($_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                </a>
             </div>
 
             <table id='table'>
@@ -65,7 +65,7 @@ if_not_connected($redirection = '../../View/login.php');
                         <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
                         <td> <?= $_SESSION['search'][$i][2].' '.$_SESSION['search'][$i][3]; ?> </td>
                     <tr>
-                    <?php endfor; ?>
+                <?php endfor; ?>
             </table>
 
         </div>
