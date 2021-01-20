@@ -32,10 +32,9 @@ if_not_connected($redirection = '../../View/login.php');
         <h1 id="title">Resultats de mes pilotes:</h1>
         <?php
             foreach($_SESSION['resultat_test'] as $element){
-                print_r($element)
         ?>  
         <h2 id="sous-titre">Résultats de la session du <?= $element[0][0] ?> fait au centre d'examen de <?= $element[0][1] ?> </h2> 
-        <h2 id="sous-titre">Test de <?= $element[0][2]." ".$element[0][2] ?> </h2>    
+        <h2 id="sous-titre">Test de <?= $element[0][2]." ".$element[0][3] ?> </h2>    
         <br>
         <div class="test-box">   
             <div class="cell">

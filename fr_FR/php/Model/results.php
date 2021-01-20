@@ -10,7 +10,7 @@ session_start();
 
 function resultsByManager($id){
     $bdd = login_bdd();
-    $req = $bdd->query('SELECT  `id_session`, `id_type`, `date`, `result` 
+    $req = $bdd->query('SELECT  `id_session`, `id_type`, `date`, `result`, `nom`, `prenom`
                         FROM `test_board` JOIN `members` ON test_board.id_user = members.id
                         WHERE `id_manager` = '.$id.' ORDER BY  `date` DESC' );
     $datas = $req->fetchAll();
@@ -44,8 +44,11 @@ function trier($datas){
             $index[] = $value['id_session'];
             $indice = array_search($value['id_session'],$index);
             $json = json_decode($value['result'], true);
-            $table[$indice][] = [$json['date'],$json['centre-examen'],$value['nom'],$value['prenom']];
-
+            if(isset($value['nom']) && isset($value['prenom'])){
+                $table[$indice][] = [$json['date'],$json['centre-examen'],$value['nom'],$value['prenom']];
+            }else{
+                $table[$indice][] = [$json['date'],$json['centre-examen']];
+            }
             $table[$indice][] = $json['result'];
         }
         
