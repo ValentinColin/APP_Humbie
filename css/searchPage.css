@@ -36,6 +36,7 @@ table{
    text-align: center;
    margin-left:15% ;
 
+
 }
 
 #classement{
@@ -64,6 +65,8 @@ table a:hover{
     background-color: transparent;
 
 }
+table tr:nth-child(even) {background-color: rgba(15,232,186,0.1);}
+table tr:nth-child(odd) {background-color:  rgba(15,232,186,0.5)}
 
 #upload{
 position: relative;
@@ -99,7 +102,7 @@ border-radius: 10px;
 #button-upload:hover{
     cursor: pointer;
     outline: none;
-    
+
 }
 
 h1{
