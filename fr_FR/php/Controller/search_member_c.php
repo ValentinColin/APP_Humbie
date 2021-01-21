@@ -28,6 +28,7 @@ $triOrdre = exist_data("ordre", True);
 $typeRecherche = exist_data("searchPeople", false);
 $element = exist_data("barreRecherche", false);
 $id_manager = exist_data("id_manager", false);
+$id_mana=$_SESSION['id'];
 $decroissant = false;
 $nom=exist_data('nom',false);
 $prenom=exist_data('prenom',false);
@@ -100,7 +101,7 @@ switch ($search) {
         break;
 
     case "Id_Manager":
-        $resultat=getUserByManager(2);
+        $resultat=getUserByManager($id_mana);
         $path = role($role, "../../View/User/searchAllMember.php", "../../View/Manager/searchAllMember.php", "../../View/Admin/searchAllMember.php");
         $_SESSION['search'] = $resultat;
 

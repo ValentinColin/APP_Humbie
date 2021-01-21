@@ -51,9 +51,11 @@ if_not_connected($redirection = '../../View/login.php');
 
                     <?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
                         <tr>
-                            <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
-                            <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
-                            <td> <a href="mailto:service.humbie@gmail.com" title="Contacter <?= $_SESSION['search'][$i][0] ?>  par mail"> <?php print_r($_SESSION['search'][$i][2]); ?> </a> </td>
+                            <td> <a href='../../Controller/profil.php/?id=<?php print_r($_SESSION['search'][$i][4]) ?>'>
+                             <?php print_r($_SESSION['search'][$i][1]); ?> </a> </td>
+                            <td> <a href='../../Controller/profil.php/?id=<?php print_r($_SESSION['search'][$i][4])  ?>'>
+                            <?php print_r($_SESSION['search'][$i][0]); ?> </a> </td>
+                            <td> <a href="mailto: <?= $_SESSION['search'][$i][2]?>" title="Contacter <?= $_SESSION['search'][$i][0] ?>  par mail"> <?php print_r($_SESSION['search'][$i][2]); ?> </a> </td>
                             <td> <?php print_r($_SESSION['search'][$i][3]); ?> </td>
                         <tr>
                         <?php endfor; ?>
