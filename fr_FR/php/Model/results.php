@@ -8,11 +8,11 @@ session_start();
 
 //Cherche les résultats disponibles des tests effectués par tous les users associé à un manager
 
-function resultsByManager($id){
+function resultsByManager($id,$nbr =50){
     $bdd = login_bdd();
     $req = $bdd->query('SELECT  `id_session`, `id_type`, `date`, `result`, `nom`, `prenom`
                         FROM `test_board` JOIN `members` ON test_board.id_user = members.id
-                        WHERE `id_manager` = '.$id.' ORDER BY  `date` DESC' );
+                        WHERE `id_manager` = '.$id.' ORDER BY  `date` DESC LIMIT '.$nbr );
     $datas = $req->fetchAll();
     $req->closeCursor();
     return $datas;
