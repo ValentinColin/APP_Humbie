@@ -1,4 +1,4 @@
-<?php  
+<?php
 session_start();
 require_once 'function.php';
 require_once '../Model/profilModifier.php';
@@ -10,6 +10,7 @@ if (!$id){
 }
 $resultat = getprofil($id);
 $_SESSION['resultat_profil'] = $resultat;
-goView('profil.php');
+header('Location: ../../View/Manager/profil.php');
+exit;
 
 ?>

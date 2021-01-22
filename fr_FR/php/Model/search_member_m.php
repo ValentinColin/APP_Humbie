@@ -17,14 +17,14 @@ function getNameLastNameMngOfUser(String $ordre = ''): array
         $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // en cas d'erreur
         if ($ordre == "decroissant") { // si decroissant, classement par ordre decroissant
             $requete = $connexion->prepare("SELECT prenom,nom,id_manager FROM members WHERE access='USER' ORDER BY nom DESC");
-            $requete = $connexion->prepare("SELECT U.nom, U.prenom, M.nom, M.prenom 
+            $requete = $connexion->prepare("SELECT U.nom, U.prenom, M.nom, M.prenom
                                             FROM members U
                                                 LEFT JOIN members M
                                                 ON U.id_manager = M.id
                                                 WHERE U.access='USER'
                                                 ORDER BY U.nom DESC");
         } else { // sinonn, classement des utilisateur par ordre croissant
-            $requete = $connexion->prepare("SELECT U.nom, U.prenom, M.nom, M.prenom 
+            $requete = $connexion->prepare("SELECT U.nom, U.prenom, M.nom, M.prenom
                                             FROM members U
                                                 LEFT JOIN members M
                                                 ON U.id_manager = M.id
@@ -111,14 +111,12 @@ function getUserOrManager2(String $nom, String $prenom){
 }
 }
 function getUserByManager($id_manager){
-    echo 'salut';
     try{
     $connexion = login_bdd();
     $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE  id_manager='$id_manager' AND access='USER' ");
+    $requete = $connexion->prepare("SELECT prenom,nom,email,access,id FROM members WHERE  id_manager='$id_manager' AND access='USER' ");
 
     $requete->execute();
-    print_r($requete);
     return $requete->fetchall();
 } catch (PDOException $e) {
     return null;
