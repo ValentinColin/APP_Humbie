@@ -8,6 +8,24 @@ body{
     font-size: 20px;
 }
 
+#pasDeCompte{
+    text-decoration: none;
+    position: fixed;
+    top: 10px;
+    right: 0%;
+    color:white;
+    background-color:  rgba(15,232,186,0.4);
+    margin-top: -10px;
+    border: white 1px ridge;
+    border-radius: 5px;
+    padding: 2px;
+}
+#pasDeCompte:hover{
+    text-decoration: underline white 2px;
+}
+
+
+
 main{
     /* Les quatres lignes en dessous de celles-ci
     permettent de centrer parfaitement la fenêtre*/
@@ -139,9 +157,11 @@ legend{
 }
 
 #newPassword{
-
-    color:#B1C0C8;
+    text-align: center;
+	color: #0fe8ba;
     text-decoration : none;
+    margin-left: -10px;
+
 
 }
 

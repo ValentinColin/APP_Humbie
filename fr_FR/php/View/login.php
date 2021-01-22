@@ -27,6 +27,9 @@ if (isset($_SESSION['connected'])) {
 
 <body>
     <center>
+
+    <a id='pasDeCompte' href='mailto:service.humbie@gmail.com' title="Envoyer un mail à service.humbie@gmail.com"> Un problème ?  Contacter l'admin </a>
+
         <main>
             <?php if (isset($_GET['connexion']) and $_GET['connexion'] == 'non') : ?>
                 <p id='tryAgain'>Adresse mail ou mot de passe incorrecte.</p>
