@@ -24,6 +24,7 @@ body{
 }
 .wrapper{
     margin-left: 15%;
+    font: 18px "Bahnschrift light";
 }
 
 
@@ -82,4 +83,19 @@ strong{
     display: flex;
     flex-direction: inline;
     flex-wrap: wrap;
+}
+#nbrres{
+    border: 4px solid #0fe8ba;
+    background-color: white;
+    border-radius: 10px;
+    outline: none;
+    width: 20px;
+}
+
+#sub{
+    border: 4px solid #0fe8ba;
+    background-color: #0fe8ba;
+    color: white;
+    border-radius: 10px;
+    outline: none;
 }
