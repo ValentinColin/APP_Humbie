@@ -50,10 +50,8 @@ if_not_connected($redirection = '../../View/login.php');
                     <th id = 'cell-value'>Unité: BPM</th>
                         <?php
                             $table = stats($element[1]);
-                            foreach($element[1] as $value){
-                                echo "<th id = 'cell-value' >$value</td>";
-                            }
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4] ?>_1.png' >
                     </th>   
                 </table>
                 <div class="stats">
@@ -69,10 +67,8 @@ if_not_connected($redirection = '../../View/login.php');
                     <th id = 'cell-value'>Unité: °C</th>
                         <?php
                             $table = stats($element[2]);
-                            foreach($element[2] as $value){
-                                echo "<th id = 'cell-value' >$value</td>";
-                            }
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4]+1 ?>_2.png' >
                     </th>   
                 </table>
                 <div class="stats">
@@ -88,12 +84,8 @@ if_not_connected($redirection = '../../View/login.php');
                     <th id = 'cell-value'>Unité: Hz</th>
                         <?php
                             $table = stats_sound($element[3]);
-                            foreach($element[3] as $value){
-                                foreach($value as $val){
-                                    echo "<th id = 'cell-value' >$val</td>";
-                                }
-                            }
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4]+2 ?>_3.png' >
                     </th>   
                 </table>
                 <div class="stats">
@@ -108,10 +100,8 @@ if_not_connected($redirection = '../../View/login.php');
                     <th id = 'cell-value'>Unité: ms</th>
                         <?php
                             $table = stats($element[4]);
-                            foreach($element[4] as $value){
-                                echo "<th id = 'cell-value' >$value</td>";
-                            }
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4]+3 ?>_4.png' >
                     </th>   
                 </table>
                 <div class="stats">
