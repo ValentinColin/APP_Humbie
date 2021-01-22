@@ -6,5 +6,5 @@
   <span> croissant <span>
       <input name='ordre' type="radio" value="croissant" <?php if ($_SESSION['triOrdre'] != "decroissant") : ?> checked='checked' title='tri déjà effectif' <?php endif ?>>
       <span> décroissant <span>
-        <input name='ordre' type='radio' value='decroissant' <?php if ($_SESSION['triOrdre'] == "decroissant") : ?> checked='checked' title='tri déjà effectif' <?php endif ?>>
+          <input name='ordre' type='radio' value='decroissant' <?php if ($_SESSION['triOrdre'] == "decroissant") : ?> checked='checked' title='tri déjà effectif' <?php endif ?>>
 </form>

@@ -190,3 +190,7 @@ div[id="cell-header-profil"] img{
 #cell-header-profil a:hover{
 	text-decoration: underline 3px #0fe8ba;
 }
+#cell-header-home img{
+	width: 50px;
+	height: auto;
+}

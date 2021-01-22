@@ -75,7 +75,6 @@ if_not_connected($redirection = '../../View/login.php');
 <script type="text/javascript" src="../../../../convert/libs/js-xlsx/xlsx.core.min.js"></script>
 <script type="text/javascript" src="../../../../convert/tableExport.min.js"></script>
 <script src='../../../js/t.js'> </script>
-<?php //$_SESSION['search']='';
-?>
+<script src='../../../js/search.js'> </script>
 
 </html>

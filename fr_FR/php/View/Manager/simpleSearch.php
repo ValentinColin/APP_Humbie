@@ -68,6 +68,7 @@ if_not_connected($redirection = '../../View/login.php');
 		<?php require('footer.php'); ?>
 	</span>
 </body>
+<script src='../../../js/search.js'> </script>
 
 <?php //$_SESSION['search']='';
 ?>
