@@ -4,6 +4,9 @@
 #header-grid{
 	font: 18px  "Bahnschrift light";
 }
+input{
+	outline: none;
+}
    header[id="header-grid"]{
 	display: grid;
 	grid-template-columns: 70px 50fr  10fr; /* full arbitraire */
@@ -13,6 +16,7 @@
 
 	/*text-align: center; k*/
 }
+
 
 div.cell-header{
 	position: relative;
@@ -193,4 +197,25 @@ div[id="cell-header-profil"] img{
 #cell-header-home img{
 	width: 50px;
 	height: auto;
+}
+
+#showSearch{
+	padding: 0px;
+}
+
+#showSearch li{
+background-color: rgba(18,238,180,0.9);
+color: white;
+border: 1px white ridge;
+border-bottom: royalblue 2px ridge;
+border-radius: 20px;
+text-decoration: none;
+
+}
+#showSearch a{
+	text-decoration: none;
+}
+
+#showSearch li:hover{
+	text-decoration: underline white 2px;
 }

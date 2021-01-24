@@ -14,3 +14,4 @@
 		<li><a style="text-decoration: none;" href="faq.php">Gestion de la FAQ</a></li>
 	</ul>
 </nav>
+

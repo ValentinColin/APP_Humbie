@@ -5,12 +5,17 @@ require_once '../Model/profilModifier.php';
 
 
 $id = exist_data("id",false);
+$pourManager=exist_data("special",false);
 if (!$id){
     $id = $_SESSION['id'];
 }
 $resultat = getprofil($id);
 $_SESSION['resultat_profil'] = $resultat;
+if($pourManager=="vrai"){
 header('Location: ../../View/Manager/profil.php');
+exit;
+}
+header('Location: ../View/Manager/profil.php');
 exit;
 
 ?>

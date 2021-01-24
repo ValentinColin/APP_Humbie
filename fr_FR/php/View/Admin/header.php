@@ -1,5 +1,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="../../../js/ajax_Search.js"> </script>
 <header id="header-grid">
 	<div id="cell-header-home" class="cell-header">
 		<a href="home.php" title="HOME"><img class="icon" src="../../../../Images/icon-home.png"></a>
@@ -18,7 +17,9 @@
 
 				<input type="image" id="loupe" class="icon" src="../../../../Images/icon-loupe.png">
 			</div>
-			<ul id='showSearch' class='searchBar'></ul>
+			<ul id='showSearch' class='searchBar' >
+
+			</ul>
 
 		</form>
 	</div>
@@ -38,3 +39,6 @@
 		</a>
 	</div>
 </header>
+
+<script src="../../../js/ajax_Search.js"> </script>
+
