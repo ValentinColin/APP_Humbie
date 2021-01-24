@@ -1,13 +1,7 @@
 <?php
-
 include("../../Controller/function.php");
 include('../../Model/profilModifier.php');
-
-
-
-// On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
-if_not_connected($redirection = '../../View/login.php');
-
+verif_access('USER');
 ?>
 
 <!DOCTYPE html>

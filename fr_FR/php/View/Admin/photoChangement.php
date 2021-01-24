@@ -1,9 +1,7 @@
 <?php
-include('../../Controller/function.php');
 session_start();
-
-if_not_connected('loginPage.php');
-
+include('../../Controller/function.php');
+verif_access('ADMIN');
 ?>
 
 <!DOCTYPE html>

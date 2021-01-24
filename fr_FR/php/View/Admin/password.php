@@ -1,9 +1,10 @@
 <?php
 session_start();
-include('../../php_pur/function.php');
+include('../../Model/login_bdd.php');
+include('../../Controller/function.php');
 
 if (isset($_POST['mail'])) {
-    $bdd = new PDO('mysql:host=localhost;dbname=Humbie', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = login_bdd();
     $req = $bdd->query("SELECT COUNT(*) FROM members WHERE email = '" . $_POST['mail'] . "'");
     $instantanceNumber = $req->fetch();
 

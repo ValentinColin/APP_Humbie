@@ -2,9 +2,7 @@
 session_start();
 include("../../Controller/function.php");
 include("../../Model/faq.php");
-
-if_not_connected($redirection = "../../View/login.php");
-
+verif_access('MANAGER');
 ?>
 
 <!DOCTYPE html>

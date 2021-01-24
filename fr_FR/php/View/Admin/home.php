@@ -1,10 +1,7 @@
 <?php
 session_start();
 include('../../Controller/function.php');
-
-// On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
-if_not_connected($redirection = '../../View/login.php');
-
+verif_access('ADMIN');
 ?>
 
 <!DOCTYPE html>

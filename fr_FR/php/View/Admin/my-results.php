@@ -1,11 +1,7 @@
 <?php
-
-include_once("../../Controller/function.php");
+include_once('../../Controller/function.php');
 include_once('../../Model/results.php');
-
-// On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
-if_not_connected($redirection = '../../View/login.php');
-
+verif_access('ADMIN');
 ?>
 
 <!DOCTYPE html>

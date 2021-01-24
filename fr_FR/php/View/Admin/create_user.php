@@ -1,13 +1,14 @@
 <?php
 session_start();
 include('../../Controller/function.php');
+verif_access('ADMIN');
 
 // On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
 if_not_connected($redirection = 'loginPage.php');
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
 	<meta charset="UTF-8">

@@ -1,5 +1,7 @@
 <?php
 session_start();
+include('../../Controller/function.php');
+verif_access('ADMIN');
 
 if (isset($_POST['code']) && isset($_SESSION['mail'])) {
     if ($_POST['code'] != $_SESSION['motdepasse']) {

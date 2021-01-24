@@ -1,10 +1,7 @@
 <?php
 session_start();
-include("../../Controller/function.php");
-
-
-if_not_connected($redirection = "../../View/login.php");
-
+include('../../Controller/function.php');
+verif_access('MANAGER');
 ?>
 
 <!DOCTYPE html>

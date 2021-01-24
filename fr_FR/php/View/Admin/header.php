@@ -14,16 +14,12 @@
 						Recherche par prénom </option>
 				</select>
 				<input type='text' name="barreRecherche" class="searchBar searchBar2" placeholder="Barre de recherche">
-
 				<input type="image" id="loupe" class="icon" src="../../../../Images/icon-loupe.png">
 			</div>
-			<ul id='showSearch' class='searchBar' >
-
+			<ul id='showSearch' class='searchBar'>
 			</ul>
-
 		</form>
 	</div>
-
 
 	<div id="cell-header-profil" class="cell-header">
 		<a href="../../Controller/profil.php" title="PROFIL">

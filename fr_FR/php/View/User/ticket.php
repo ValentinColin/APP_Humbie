@@ -1,13 +1,12 @@
-
 <?php
 require_once("../../Model/ticket.php");
 require_once("../../Controller/function.php");
 session_start();
-if_not_connected($redirection = "../View/login.php");
+verif_access('USER');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">

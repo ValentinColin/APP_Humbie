@@ -1,13 +1,12 @@
-
 <?php
 require_once("../../Model/ticket.php");
 require_once("../../Controller/function.php");
 session_start();
-if_not_connected($redirection = "../View/login.php");
+verif_access('MANAGER');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -20,8 +19,6 @@ if_not_connected($redirection = "../View/login.php");
     <link rel="stylesheet" type="text/css" href="../../../../css/ticket.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/tickets.css">
-
-
 </head>
 
 <body>
