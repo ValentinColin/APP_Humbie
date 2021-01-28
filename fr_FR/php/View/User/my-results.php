@@ -26,6 +26,13 @@ verif_access('USER');
 	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 	<div class="wrapper">
         <h1 id="title">Mes résultats:</h1>
+        <form action="../../Controller/results.php" method="GET">
+            <label for="nbrres">Nombre de résultats à afficher</label>
+            <input id="nbrres" type="text" name="nbr"><br>
+            <label for="graph">Afficher sous forme de graphique ?</label>
+            <input id="graph" type="checkbox" name='graph'> <br>
+            <input id="sub" type="submit" value="Soumettre">
+        </form>
         <?php
             foreach($_SESSION['resultat_test'] as $element){
         ?>  

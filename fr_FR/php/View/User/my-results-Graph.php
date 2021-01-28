@@ -1,7 +1,7 @@
 <?php
 include_once("../../Controller/function.php");
 include_once('../../Model/results.php');
-verif_access('MANAGER');
+verif_access('USER');
 ?>
 
 <!DOCTYPE html>
@@ -25,10 +25,9 @@ verif_access('MANAGER');
 
 	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 	<div class="wrapper">
-        <h1 id="title">Résultats de <?= $_SESSION['resultat_test'][0][0][2]." ".$_SESSION['resultat_test'][0][0][3] ?>  </h1>
+        <h1 id="title">Mes résultats :  </h1>
         <form action="../../Controller/results.php" method="GET">
             <label for="nbrres">Nombre de résultats à afficher</label>
-            <input id='hide' type="text" name="id" value="<?= $_SESSION['resultat_test'][0][0][5]?>" >
             <input id="nbrres" type="text" name="nbr"><br>
             <label for="graph">Afficher sous forme de graphique ?</label>
             <input id="graph" type="checkbox" name='graph'> <br>
@@ -37,7 +36,7 @@ verif_access('MANAGER');
         <?php
             foreach($_SESSION['resultat_test'] as $element){
         ?>  
-        <h2 id="sous-titre">Résultats de la session du <?= $element[0][0] ?> fait au centre d'examen de <?= $element[0][1] ?> </h1>      
+        <h2 id="sous-titre">Résultats de la session du <?= $element[0][0] ?> fait au centre d'examen de <?= $element[0][1] ?> </h2>   
         <br>
         <div class="test-box">   
             <div class="cell">
@@ -46,10 +45,8 @@ verif_access('MANAGER');
                     <th id = 'cell-value'>Unité: BPM</th>
                         <?php
                             $table = stats($element[1]);
-                            foreach($element[1] as $value){
-                                echo "<th id = 'cell-value' >$value</td>";
-                            }
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4] ?>_1.png' >
                     </th>   
                 </table>
                 <div class="stats">
@@ -65,10 +62,8 @@ verif_access('MANAGER');
                     <th id = 'cell-value'>Unité: °C</th>
                         <?php
                             $table = stats($element[2]);
-                            foreach($element[2] as $value){
-                                echo "<th id = 'cell-value' >$value</td>";
-                            }
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4]+1 ?>_2.png' >
                     </th>   
                 </table>
                 <div class="stats">
@@ -84,12 +79,8 @@ verif_access('MANAGER');
                     <th id = 'cell-value'>Unité: Hz</th>
                         <?php
                             $table = stats_sound($element[3]);
-                            foreach($element[3] as $value){
-                                foreach($value as $val){
-                                    echo "<th id = 'cell-value' >$val</td>";
-                                }
-                            }
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4]+2 ?>_3.png' >
                     </th>   
                 </table>
                 <div class="stats">
@@ -104,10 +95,8 @@ verif_access('MANAGER');
                     <th id = 'cell-value'>Unité: ms</th>
                         <?php
                             $table = stats($element[4]);
-                            foreach($element[4] as $value){
-                                echo "<th id = 'cell-value' >$value</td>";
-                            }
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4]+3 ?>_4.png' >
                     </th>   
                 </table>
                 <div class="stats">
@@ -119,6 +108,7 @@ verif_access('MANAGER');
             <div class="cell">
                 <h3 class="sous-sous-titre">Temps de réaction à une lumière attendue</h3>
                 <table id="table-main">
+
                     <th id = 'cell-value'>Unité: ms</th>
                         <?php
                             $table = stats($element[5]);

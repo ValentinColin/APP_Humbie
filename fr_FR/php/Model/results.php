@@ -18,11 +18,11 @@ function resultsByManager($id,$nbr =50){
     return $datas;
 }
 //Cherche les résultats disponibles des tests effectués par un user
-function results($id){
+function results($id,$nbr =50){
     $bdd = login_bdd();
-    $req = $bdd->query('SELECT  `id_session`, `id_type`, `date`, `result` 
-                        FROM `test_board` 
-                        WHERE `id_user` = '.$id.' ORDER BY  `date` DESC' );
+    $req = $bdd->query('SELECT  `id_session`, `id_type`, `date`, `result`, `nom`, `prenom`,`id_test`,id
+                        FROM `test_board` JOIN `members` ON test_board.id_user = members.id
+                        WHERE `id` = '.$id.' ORDER BY  `date` DESC LIMIT '.$nbr );
     $datas = $req->fetchAll();
     $req->closeCursor();
     return $datas;
@@ -45,7 +45,7 @@ function trier($datas){
             $indice = array_search($value['id_session'],$index);
             $json = json_decode($value['result'], true);
             if(isset($value['nom']) && isset($value['prenom'])){
-                $table[$indice][] = [$json['date'],$json['centre-examen'],$value['nom'],$value['prenom'],$value['id_test']];
+                $table[$indice][] = [$json['date'],$json['centre-examen'],$value['nom'],$value['prenom'],$value['id_test'],$value['id']];
             }else{
                 $table[$indice][] = [$json['date'],$json['centre-examen']];
             }

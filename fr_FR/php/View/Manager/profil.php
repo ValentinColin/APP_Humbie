@@ -25,6 +25,7 @@ verif_access('MANAGER');
 	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 	<div class="wrapper">
 		<div id="box-nav" class="my-block">
+
 			<img id="photo_profil_big" src=<?= path_photoById($_SESSION['resultat_profil']['id']) ?>>
 
 		</div>
