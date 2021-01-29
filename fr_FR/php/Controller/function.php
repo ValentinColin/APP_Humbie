@@ -132,9 +132,7 @@ function path_photo()
 	} else {
 		return '../../../../Images/Photo/default.png';
 	}
-	
 }
-
 
 function path_photo_controller()
 {
