@@ -1,15 +1,14 @@
 body {
 	margin:0;
 	padding:0;
-
 }
 
 /* --- TAILLE --- */
-.icon{
+/*.icon{
 	max-height: 30px;
 	width: auto;
-	/*border: 1px solid black;  Pour visualiser le block */
-}
+	border: 1px solid black;  Pour visualiser le block 
+}*/
 
 #photo_profil_big{
 	width: 100%; /* On force l'image à prendre toute la largeur de la colonne de navigation du menu */
@@ -41,6 +40,7 @@ body {
 	float: right;
 	margin-right: 25%;
 }
+
 .pull-clear{clear: both; /* Retire la propriété float */}
 
 #box-title{
@@ -53,8 +53,6 @@ body {
 #box-title div{grid-column: 1;margin-left: 30px;}
 #box-title h1{grid-column: 2;}
 
-
-
 /* --- TITRE H1 --- */
 #box-content h1 {
 	margin-left: 30px;
@@ -63,9 +61,7 @@ body {
 	text-decoration-color: #0fe8ba;
 	text-underline-offset: 5px;
 	text-decoration-thickness: 4px;
-
 }
-
 
 #box-nav h2{
 	text-align: center;
@@ -78,6 +74,7 @@ body {
 	margin-top: 30px;
 
 }
+
 /* box de centenu principal */
 #box-content table{
 	margin: 20px 20px;
@@ -115,15 +112,15 @@ strong{
 	border-radius: 15px
 
 }
-#button-profil-modifier:hover{
 
+#button-profil-modifier:hover{
 	color: white;
 	background-color: #0fe8ba;
-
 }
+
 /* Placement du footer */
 #footer-position{
-	position: relative;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 }
@@ -140,21 +137,14 @@ strong{
 	border: 5px solid  #0fe8ba;
 	border-radius: 15px
 }
-#button-send-photo:hover{
 
+#button-send-photo:hover{
 	color: #0fe8ba;
 
 	background-color:white;
 	border: 5px solid  #0fe8ba;
 	border-radius: 15px
 }
-
-
-
-
-
-
-
 
 #file{
 	display: none;
@@ -164,6 +154,3 @@ strong{
 	margin-top: 15px;
 	font: 20px;
 }
-
-
-

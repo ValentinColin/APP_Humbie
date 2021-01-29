@@ -57,7 +57,7 @@ verif_access('ADMIN');
                         <td> <a href="mailto:service.humbie@gmail.com" title="Contacter <?= $_SESSION['search'][$i][0] ?>  par mail"> <?php print_r($_SESSION['search'][$i][2]); ?> </a> </td>
                         <td> <?php print_r($_SESSION['search'][$i][3]); ?> </td>
                     <tr>
-                    <?php endfor; ?>
+                <?php endfor; ?>
             </table>
         </div>
     </main>

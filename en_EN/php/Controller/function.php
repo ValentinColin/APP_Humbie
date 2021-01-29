@@ -210,5 +210,18 @@ function stats_sound(array $array){
 
 	$table = array_merge($array['low'], $array['acute']);
 	return stats($table);
-
 }
+
+// fonction qui renvoie le chemin du home.php dans l'autre langue et redéfinie la variable $_SESSIONS['lang']
+function change_path_lang(){
+	if ($_SESSION['lang'] == 'Français'){
+		$lang = 'en_EN';
+		$_SESSION['lang'] = 'English';
+	} else {
+		$lang = 'fr_FR';
+		$_SESSION['lang'] = 'Français';
+	}
+	$role = ucfirst(strtolower($_SESSION['access'])); 
+	return "../../../../".$lang."/php/View/".$role."/home.php";
+}
+

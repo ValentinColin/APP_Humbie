@@ -28,12 +28,12 @@ function login($mail, $password)
 	if (empty($data)) { // erreur de mail
 		$success = false;
 	} else if (password_verify($password, $data['password'])) {
-		$_SESSION['id'] = $data['id'];
+		$_SESSION['id'] 	= $data['id'];
 		$_SESSION['access'] = $data['access'];
-		$_SESSION['mail'] = $data['email'];
+		$_SESSION['mail'] 	= $data['email'];
 		$_SESSION['prenom'] = $data['prenom'];
-		$_SESSION['nom'] = $data['nom'];
-		$_SESSION['lang'] = $data['lang'];
+		$_SESSION['nom'] 	= $data['nom'];
+		$_SESSION['lang'] 	= $data['lang'];
 		$_SESSION['banned'] = $data['banned'];
 		$_SESSION['connected'] = true;
 

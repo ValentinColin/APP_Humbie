@@ -5,55 +5,55 @@ main{
 
     margin-left: 20px;
     margin-right: 90px;
-
 }
+
 body{
     margin: 0;
     padding: 0;
     color: #464646;
     font: "Bahnschrift light";
 }
+
 a{
     text-decoration: none;
 }
 
 #search-page{
     width: 90%;
-
     border-radius: var(--border-radius)
-
 }
+
 #title{
     text-align: center;
     margin-top: 50px;
     font-size: 40px;
 }
+
 #search-page td, th{
     font-size: 20px;
     border-bottom: 1px grey ridge;
     padding: 5px;
     width: 200px;
 }
+
 table{
    width: 70%;
    text-align: center;
    margin-left:15% ;
-
-
 }
 
 #classement{
     text-align: center;
     margin: 30px;
-
 }
+
 #classement input {
     color: black;
     background-color: azure;
     outline: none;
     border: 2px #0fe8ba ridge;
     border-radius: 10px;
-   }
+}
 
 #search-page tr:hover {
     background-color: aqua;
@@ -68,59 +68,57 @@ table a:hover{
     text-decoration: underline;
 }
 
-
 .titreClassemement{
     font-weight: bold;
 }
+
 #search-page #trth:hover {
     background-color: transparent;
-
 }
+
 table tr:nth-child(even) {background-color: rgba(15,232,186,0.1);}
 table tr:nth-child(odd) {background-color:  rgba(15,232,186,0.5)}
 
 #upload{
-position: relative;
+    position: relative;
 
-left: 60%;
-transform: translate(-50%);
-padding: 5px;
- display: block;
- margin-left: auto;
- margin-right: auto;
-text-align: center;
-border: 2px white ridge;
-width: fit-content;
-background-color: whitesmoke;
-border-radius: 10px;
-background-color: #0fe8ba;
-
-
-
+    left: 60%;
+    transform: translate(-50%);
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 2px white ridge;
+    width: fit-content;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    background-color: #0fe8ba;
 }
+
 #button-upload{
     background-color: transparent;
-   position: relative;
-   top: -5px;
-   border: none;
-   border-right: 1px grey ridge;
-   color: black;
-   font-weight: bold;
-   outline: none;
-   background-color: #0fe8ba;
-   color: white;
-   font-size: 1.2em;
-
+    position: relative;
+    top: -5px;
+    border: none;
+    border-right: 1px grey ridge;
+    color: black;
+    font-weight: bold;
+    outline: none;
+    background-color: #0fe8ba;
+    color: white;
+    font-size: 1.2em;
 }
+
 #upload:hover{
     color: blue;
     cursor: pointer;
 }
+
 #button-upload:hover{
     cursor: pointer;
     outline: none;
     color: blue;
-
 }
 
 h1{
@@ -129,8 +127,8 @@ h1{
 }
 
 #footer-position{
-    position: fixed;
-    bottom:0;
+    /*position: fixed;*/
+    /*bottom:0;*/
     width: 100%;
 }
 
@@ -142,11 +140,9 @@ h1{
 	background-color: white;
 	border: 5px solid  #0fe8ba;
 	border-radius: 15px
-
 }
-#button-profil:hover{
 
+#button-profil:hover{
 	color: white;
 	background-color: #0fe8ba;
-
 }
