@@ -220,5 +220,6 @@ function change_path_lang(){
 		$lang = 'fr_FR';
 		$_SESSION['lang'] = 'Français';
 	}
-	return "../../../../".$lang."/php/View/".$_SESSION['access']."/home.php";
+	$role = ucfirst(strtolower($_SESSION['access'])); 
+	return "../../../../".$lang."/php/View/".$role."/home.php";
 }
