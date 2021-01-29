@@ -135,6 +135,7 @@ function path_photo()
 	
 }
 
+
 function path_photo_controller()
 {
 	return '../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png';
@@ -186,4 +187,38 @@ function role(String $role, String $redirectionUser, String $redirectionManager,
 	} else {
 		return $redirectionAdmin;
 	}
+}
+
+// fonction qui permet de donner min,max et moyenne.
+function stats(array $array){
+	$min = min($array);
+	$max = max($array);
+	$total = 0;
+	$n = 0;
+	foreach ($array as $value){
+		$total += $value;
+		$n += 1;
+	}
+	$moy = $total/$n;
+	$results = [$min,$moy,$max];
+
+	return $results;
+}
+
+// fonction qui permet de donner min,max et moyenne pour le résultat reproduction d'un son avec la voix.
+function stats_sound(array $array){
+	$table = array_merge($array['low'], $array['acute']);
+	return stats($table);
+}
+
+// fonction qui renvoie le chemin du home.php dans l'autre langue et redéfinie la variable $_SESSIONS['lang']
+function change_path_lang(){
+	if ($_SESSION['lang'] == 'Français'){
+		$lang = 'en_EN';
+		$_SESSION['lang'] = 'English';
+	} else {
+		$lang = 'fr_FR';
+		$_SESSION['lang'] = 'Français';
+	}
+	return "../../../../".$lang."/php/View/".$_SESSION['access']."/home.php";
 }
