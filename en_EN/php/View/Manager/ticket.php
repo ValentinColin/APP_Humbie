@@ -2,7 +2,7 @@
 require_once("../../Model/ticket.php");
 require_once("../../Controller/function.php");
 session_start();
-if_not_connected($redirection = "../View/login.php");
+verif_access('MANAGER');
 ?>
 
 <!DOCTYPE html>
@@ -17,65 +17,94 @@ if_not_connected($redirection = "../View/login.php");
     <link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/home.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/ticket.css">
-
+    <link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/tickets.css">
 </head>
 
 <body>
     <?php require("header.php"); ?>
 
-    <main>
-
-        <div id="box-nav" class="my-block">
+    <div id="box-nav" class="my-block">
             <?php require('nav.php') ?>
         </div>
 
+    <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
+
+    <main>
+
         <form action="../../Controller/ticket.php" method="post">
             <H1>Send a ticket</H1>
-            <select name="topic">
+        <div id="pbm">
+        <select id="topic" name="topic">
                 <option value="login" selected>Login problem</option>
                 <option value="test">Test problem</option>
                 <option value="private_information">Private informations</option>
             </select>
-            <input type="text" name="title" placeholder="Name of your request">
-            <input type="text" name="content" placeholder="Write your request">
-            <input type="submit" value="Envoyer" name="poster">
+            <input type="text" name="title" placeholder="Name ">
+        </div>
+            <br>
+            <textarea  name="content" placeholder="write here... (400 caractères maximum)"   rows='4' cols= '10' minlength="5" maxlength="400" wrap='hard' >
+            </textarea>
+            <br>
+            <input id="submit" type="submit" value="Envoyer" name="poster">
         </form>
 
-        <?php
+
+        <div id="historique">
+
+        <h1> Your ticket history </h1>
+
+        <h2> Your pending tickets </h2>
+        <table id='tableRep2'>
+            <tr>
+            <th> Topic </th>
+            <th> Subjet </th>
+            <th> Question from  </th>
+            <th> Date </th>
+            <th> Content </th>
+            </tr>
+            <?php
         $ticket = getTicketById($_SESSION['id'], '"in_process"');
-        echo '<h1> Your ticket hitoric </h1>';
-        echo '<h2> Your pending tickets </h2>';
         for ($i = 0; $i < count($ticket); $i++) {
         ?>
-            <p>
-                topic : <?= $ticket[$i]['topic'] ?> <br>
-                subject : <?= $ticket[$i]['subject'] ?> <br>
-                Question from : <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?> <br>
-                Request the : <?= $ticket[$i]['date_request'] ?> <br>
-                Content: <br> <?= $ticket[$i]['msg_request'] ?>
-
-            </p>
+            <tr>
+              <td>  <?= $ticket[$i]['topic'] ?> </td>
+              <td>  <?= $ticket[$i]['subject'] ?> </td>
+              <td>  <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?> </td>
+              <td>  <?= $ticket[$i]['date_request'] ?> </td>
+              <td>   <?= $ticket[$i]['msg_request'] ?> </td>
+            </tr>
 
         <?php } ?>
+        </table>
 
+
+        <h2> Your completed tickets </h2>
+        <table id='tableRep'>
+            <tr>
+            <th> Topic </th>
+            <th> Subjet </th>
+            <th> Question from  </th>
+            <th> Date  </th>
+            <th> Content </th>
+            <th> Answer</th>
+            </tr>
         <?php
         $ticket = getTicketById($_SESSION['id'], '"validated"');
-        echo '<h2> Your finished ticket </h2>';
         for ($i = 0; $i < count($ticket); $i++) {
-        ?>
-            <p>
-                topic : <?= $ticket[$i]['topic'] ?> <br>
-                subjet : <?= $ticket[$i]['subject'] ?> <br>
-                Question from : <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?> <br>
-                Request the : <?= $ticket[$i]['date_request'] ?> <br>
-                Content: <br> <?= $ticket[$i]['msg_request'] ?> <br>
-                Answer: <br> <?= $ticket[$i]['msg_reply'] ?>
-
-            </p>
-
+        ?>      <tr>
+               <td> <?= $ticket[$i]['topic'] ?></td>
+               <td> <?= $ticket[$i]['subject'] ?></td>
+               <td> <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?></td>
+               <td> <?= $ticket[$i]['date_request'] ?></td>
+               <td> <?= $ticket[$i]['msg_request'] ?></td>
+               <td> <?= $ticket[$i]['msg_reply'] ?></td>
+                </tr>
         <?php } ?>
-
-        <?php require("footer.php"); ?>
+        </table>
+    </div>
+    </main>
+    <?php require("footer.php"); ?>
 </body>
 
 </html>

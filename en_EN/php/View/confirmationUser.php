@@ -9,7 +9,7 @@
 <body>
 
     <form method='post' action='changePassword.php'>
-        <input type='password' name='motdepasse' placeholder='Actual password'>
+        <input type='password' name='motdepasse' placeholder='actual password'>
         <input type='submit' value='Valider'>
     </form>
 

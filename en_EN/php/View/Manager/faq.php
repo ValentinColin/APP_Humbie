@@ -2,9 +2,7 @@
 session_start();
 include("../../Controller/function.php");
 include("../../Model/faq.php");
-
-if_not_connected($redirection = "../../View/login.php");
-
+verif_access('MANAGER');
 ?>
 
 <!DOCTYPE html>
@@ -17,22 +15,20 @@ if_not_connected($redirection = "../../View/login.php");
 	<link rel="stylesheet" type="text/css" href="../../../../css/config.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
-	<link rel="stylesheet" type="text/css" href="../../../../css/home.css">
+	<link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/faq.css">
 	<!-- <link rel="stylesheet" type="text/css" href="../../../../css/faq.css"> -->
 </head>
 
 <body>
-	<?php require("header.php"); ?>
+	<?php require('header.php'); ?>
+	<?php require('nav.php') ?>
+    <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 
 
 	<main>
-
-		<div id="box-nav" class="my-block">
-			<?php require('nav.php') ?>
-		</div>
-
 		<div class="wrapper">
+			<h1 id="title">Frequently Asked Questions</h1>
 			<div id="box-read-FAQ" class="my-block">
 				<?php // Boucle pour afficher les élements: question/réponse
 				$faq = getFAQ();
@@ -49,7 +45,9 @@ if_not_connected($redirection = "../../View/login.php");
 
 	</main>
 
-	<?php require("footer.php"); ?>
+	<span id="footer-position">
+		<?php require('footer.php'); ?>
+	</span>
 </body>
 
 </html>

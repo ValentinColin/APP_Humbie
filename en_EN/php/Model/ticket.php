@@ -35,22 +35,19 @@ function ticketReply($id, $reponse, $post)
 function sendTicketByMail($post)
 {
     $bdd = login_bdd();
-    $req = $bdd->query('SELECT  `id_ticket`,`topic`, `subject`, `id_member`, `date_request`, `msg_request`,`msg_reply`
-                    FROM `tickets` WHERE `id_ticket` = ' . idTicket($post));
+    $req = $bdd->query('SELECT  `id_ticket`,`topic`, `subject`, `id_member`, `date_request`, `msg_request`,`msg_reply`,`nom`,`prenom`,`email`
+                    FROM `tickets`  JOIN `members`ON tickets.id_member = members.id WHERE `id_ticket` = ' . idTicket($post));
     $row = $req->fetch();
-    $reponse = $bdd->query('SELECT  `nom`,`prenom`,`email`FROM `members` WHERE `id` = ' . $row["id_member"]);
-    $datas = $reponse->fetch();
 
     $message =  "Your ticket has been answered. \r\n
                 topic : " . $row['topic'] . " \r
-                subject : " . $row['subject'] . " \r
-                Question from : " . $datas["nom"] . " " . $datas["prenom"] . " \r
-                
-				request issued on : " . $row['date_request'] . " \r\n
+                subjet : " . $row['subject'] . " \r
+                Question from : " . $row["nom"] . " " . $row["prenom"] . " \r
+                request issued on : " . $row['date_request'] . " \r\n
                 Content: " . $row['msg_request'] . " \r\n
                 Answer: " . $row['msg_reply'];
 
-    $mail = mail($datas["email"], 'Response to your ticket', $message);
+    $mail = mail($row["email"], 'Reply to your ticket.', $message);
     return $mail;
 }
 

@@ -6,28 +6,25 @@ include("login_bdd.php");
 function getFAQ()
 {
 	$bdd = login_bdd();
-
-	$req = $bdd->query('SELECT id, question, answer
+	$req = $bdd->query('SELECT id, question_FR, answer_FR
 						FROM faq');
 
 	$faq = array();
 	while ($row = $req->fetch()) {
 		array_push($faq, array(
-			"question" => $row["question"],
-			"answer"   => $row["answer"],
-			"id" 	   => $row["id"]
+			'id' 	   => $row['id'],
+			'question' => $row['question_FR'],
+			'answer'   => $row['answer_FR']
 		));
 	}
-
 	$req->closeCursor();
-
 	return $faq;
 }
 
 function addQuestion($question, $answer)
 {
 	$bdd = login_bdd();
-	$req = $bdd->prepare('INSERT INTO `faq`(`question`, `answer`)
+	$req = $bdd->prepare('INSERT INTO `faq`(`question_FR`, `answer_FR`)
     					  VALUES (:question ,:answer)');
 
 	$req->execute(array(

@@ -1,10 +1,7 @@
 <?php
 session_start();
 include('../../Controller/function.php');
-
-// On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
-if_not_connected($redirection = '../../View/login.php');
-
+verif_access('MANAGER');
 ?>
 
 <!DOCTYPE html>
@@ -33,11 +30,11 @@ if_not_connected($redirection = '../../View/login.php');
 		<div id="box-content" class="my-block">
 			<main onclick="draw()">
 				<!-- Corps -->
-				<?= '<p>Hello ' . $_SESSION['prenom'] . ' ' . $_SESSION['nom'] . ' [' . $_SESSION['access'] . '] !</p>' .
+				<?= '<p>Bonjour ' . $_SESSION['prenom'] . ' ' . $_SESSION['nom'] . ' [' . $_SESSION['access'] . '] !</p>' .
 					'<p>You are currently on the main page.</p>';
 				?>
 				<label>
-					<h2>A graph</h2>
+					<h2>A graphic</h2>
 					<svg id="graphExemple1" width="900" height="450"></svg>
 				</label>
 			</main>

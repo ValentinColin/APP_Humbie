@@ -37,10 +37,10 @@ mail.addEventListener("blur", function () {
 submit.addEventListener("click", function () {
 	if (!verifMail(mail.value)) // On vérifie si l'adresse mail est correctement saisi
 		if (mail.value == '') { // Si le champs est vide
-			alert("The file is empty, \nplease type your mai adress.", "Invalid adress mail")
+			alert("Le champs de saisie est vide, \nVeillez saisir votre adresse mail.", "Adresse mail incorrecte")
 		}
 	else { // sinon
-		alert(mail.value.toUpperCase() + " : does not correspond to an email address", "Invalid adress mail")
+		alert(mail.value.toUpperCase() + " : ne correspond pas à une adresse mail", "Adresse mail incorrecte")
 		// On remet le champs dans on etat initial.
 		mail.value = '';
 	}

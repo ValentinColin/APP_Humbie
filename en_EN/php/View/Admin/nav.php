@@ -1,16 +1,17 @@
 <nav id='mainNav'>
 	<!-- Navigation (ie. Menu) -->
 	<ul id="navigation">
-		<li><a href="../../Controller/search_member_c.php/?search=AllManager">Managers</a></li>
+		<li><a  style="text-decoration: none;" href="../../Controller/search_member_c.php/?search=AllManager">Managers</a></li>
 		<span id="barre">I</span>
-		<li><a href="../../Controller/search_member_c.php/?search=AllUser">Pilots</a></li>
+		<li><a style="text-decoration: none;" href="../../Controller/search_member_c.php/?search=AllUser">Pilots</a></li>
 		<span id="barre">I</span>
-		<li><a href="../../Controller/search_member_c.php/?search=AllMember">All members</a></li>
+		<li><a style="text-decoration: none;" href="../../Controller/search_member_c.php/?search=AllMember">All members</a></li>
 		<span id="barre">I</span>
-		<li><a href="create_user.php">Add a member</a></li>
+		<li><a style="text-decoration: none;" href="../../Controller/search_member_c.php/?needManager=true&search=AllManager">Add a member</a></li>
 		<span id="barre">I</span>
-		<li><a href="ticket.php">Gestion of tickets</a></li>
+		<li><a style="text-decoration: none;" href="ticket.php">Tickets management</a></li>
 		<span id="barre">I</span>
-		<li><a href="faq.php">Gestion of the FAQ</a></li>
+		<li><a style="text-decoration: none;" href="faq.php">FAQ management</a></li>
 	</ul>
 </nav>
+

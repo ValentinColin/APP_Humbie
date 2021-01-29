@@ -1,15 +1,15 @@
 <nav id='mainNav'>
 	<ul id="navigation">
-		<li><a href="empty">(Pilots with the same manager?)</a></li>
+
 		<span id="barre">I</span>
-		<li><a href="../../Controller/search_member_c.php/?search=AllMember">Directoire</a></li>
+		<li><a style="text-decoration: none;" href="../../Controller/results.php">My test results</a></li>
 		<span id="barre">I</span>
-		<li><a href="empty">My test result</a></li>
+		<li><a style="text-decoration: none;" href="empty">My Statistics</a></li>
 		<span id="barre">I</span>
-		<li><a href="empty">My statistics</a></li>
+		<li><a style="text-decoration: none;" href="ticket.php">Tickets</a></li>
 		<span id="barre">I</span>
-		<li><a href="faq.php">FAQ</a></li>
+		<li><a style="text-decoration: none;" href="../../Controller/search_member_c.php/?search=AllMember">Directory</a></li>
+		<li><a style="text-decoration: none;" href="faq.php">FAQ</a></li>
 		<span id="barre">I</span>
-		<li><a href="ticket.php">Tickets</a></li>
 	</ul>
 </nav>

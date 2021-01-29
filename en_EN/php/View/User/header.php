@@ -14,7 +14,7 @@
 					<option value='searchPrenom' <?php if (isset($_SESSION['searchPrenom']) && $_SESSION['searchPrenom']) : ?> selected <?php endif; ?>>
 						Search by first name </option>
 				</select>
-				<input type='text' name="Search here" class="searchBar searchBar2" placeholder="...">
+				<input type='text' name="barreRecherche" class="searchBar searchBar2" placeholder="Search here">
 
 				<input type="image" id="loupe" class="icon" src="../../../../Images/icon-loupe.png">
 			</div>
@@ -25,7 +25,7 @@
 
 
 	<div id="cell-header-profil" class="cell-header">
-		<a href="profil.php" title="PROFIL">
+		<a href="../../Controller/profil.php" title="PROFIL">
 			<div id="header-profil-grid">
 				<div id="box-photo"><img id="photo_profil" class="icon" src=<?= path_photo() ?>></div>
 				<span id="box-nom"><?= user_name() ?></span>

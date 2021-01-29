@@ -46,6 +46,6 @@ function login_bdd($errmode = true)
 
 		return $bdd;
 	} catch (Exception $e) {
-		die('Error : ' . $e->getMessage());
+		die('Erreur : ' . $e->getMessage());
 	}
 }

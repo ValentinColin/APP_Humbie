@@ -1,9 +1,8 @@
 <?php
+session_start();
 require_once("../../Model/ticket.php");
 require_once("../../Controller/function.php");
-session_start();
-if_not_connected($redirection = "../View/login.php");
-
+verif_access('ADMIN');
 ?>
 
 <!DOCTYPE html>
@@ -17,43 +16,53 @@ if_not_connected($redirection = "../View/login.php");
     <link rel="stylesheet" type="text/css" href="../../../../css/header.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/home.css">
-    <link rel="stylesheet" type="text/css" href="../../../../css/ticket.css">
-
+	<link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/tickets.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/ticket_admin.css">
 </head>
 
 <body>
     <?php require("header.php"); ?>
 
-    <main>
-
-        <div id="box-nav" class="my-block">
+    <div id="box-nav" class="my-block">
             <?php require('nav.php') ?>
-        </div>
+    </div>
+    <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 
+    <main>
+        <div id= "tiket-en-attente">
         <?php
         $ticket = getTicket();
-        echo  count($ticket) . ' Pending tickets: </h1> ';
-        for ($i = 0; $i < count($ticket); $i++) {
+        echo '<h1> Il y a ' . count($ticket) . ' tickets en attente: </h1> ';
+        for ($i = 0; $i < count($ticket); $i++):
         ?>
-            <p>
-                topic : <?= $ticket[$i]['topic'] ?> <br>
-                subject : <?= $ticket[$i]['subject'] ?> <br>
-                Question from : <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?> <br>
-                request sent the : <?= $ticket[$i]['date_request'] ?> <br>
-                Content: <br> <?= $ticket[$i]['msg_request'] ?>
-
+        <div id='ticket'>
+            <table>
+                <tr>
+                    <td> <span> topic :</span> <?= $ticket[$i]['topic'] ?>  </td>
+                    <td> <span> subjet :</span> <?= $ticket[$i]['subject'] ?> </td>
+                    <td> <span> Question from :</span> <?= $ticket[$i]['name'] . " " . $ticket[$i]['firstname'] ?> </td>
+                    <td> <span> request on :</span> <?= $ticket[$i]['date_request'] ?> </td>
+                </tr>
+            </table>
+            <div class="question">
+                 <span> Content:</span>  <?= $ticket[$i]['msg_request'] ?>
+            </div>
+            <div class="rep">
                 <form action="../../Controller/ticket.php" method="post">
-                    <input type="text" name="reponse" placeholder="Contenu de la réponse" require>
-                    <input type="submit" name=<?= sprintf('%d', $ticket[$i]['id_ticket']) ?> value="Poster">
+                    <textarea class="input_Reponse" type="text" name="reponse" placeholder="content of the answer" require> </textarea>
+                    <input class='submit' type="submit" name=<?= sprintf('%d', $ticket[$i]['id_ticket']) ?> value="Poster">
                     <label for="mail">Notify by email</label>
                     <input type="checkbox" name="mail">
                 </form>
+            </div>
+        </div> <br> <br>
+        <?php endfor; ?>
+        </div>
 
-            </p>
+    </main>
 
-        <?php } ?>
-        <?php require("footer.php"); ?>
-
+    <?php require("footer.php"); ?>
+    
 </body>
-
 </html>

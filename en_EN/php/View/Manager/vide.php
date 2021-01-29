@@ -1,10 +1,7 @@
 <?php
 session_start();
 include('../../Controller/function.php');
-
-// On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
-if_not_connected($redirection = '../../View/login.php');
-
+verif_access('MANAGER');
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +27,7 @@ if_not_connected($redirection = '../../View/login.php');
 	<div class="wrapper">
 		<div id="box-title" class="my-block">
 			<div><a href="../../../../html/building.html" title="Menu"><img class="icon" src="../../../../Images/icon-burger-menu.png"></a></div>
-			<h1> Home Page</h1>
+			<h1> Main page</h1>
 		</div>
 
 

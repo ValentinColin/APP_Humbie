@@ -7,7 +7,7 @@ if_not_connected($redirection = "../View/login.php");
 $bdd = login_bdd();
 
 if (isset($_POST['add'])) {
-    addQuestion($_POST['answer'], $_POST['answer']);
+    addQuestion($_POST['question'], $_POST['answer']);
 } else { // On supprime une question/réponse
     $keys = array_keys($_POST);
     $id = $keys[0];

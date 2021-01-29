@@ -10,8 +10,7 @@ if (mail_exist($_POST['mail'])) {
 	die();
 } else {
 	$password = create_user($_POST);
-	$mail = mail($_POST['mail'], 'Password initialization
-', $password);
+	$mail = mail($_POST['mail'], 'Initialisation du mot de passe', $password);
 
 	if ($mail)
 		header('Location: ../View/Admin/create_user.php?sending=true');
