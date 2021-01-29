@@ -2,9 +2,6 @@
 session_start();
 include('../../Controller/function.php');
 verif_access('ADMIN');
-
-// On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
-if_not_connected($redirection = 'loginPage.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +13,9 @@ if_not_connected($redirection = 'loginPage.php');
 	<link rel="stylesheet" type="text/css" href="../../../../css/config.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
-	<link rel="stylesheet" type="text/css" href="../../../../css/create_user.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
+	<link rel="stylesheet" type="text/css" href="../../../../css/create_user.css">
+	
 </head>
 
 <body>

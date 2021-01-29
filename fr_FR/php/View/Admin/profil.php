@@ -11,11 +11,10 @@ verif_access('ADMIN');
 	<meta charset="UTF-8">
 	<title>Profil</title>
 	<link rel="stylesheet" type="text/css" href="../../../../css/config.css">
-	<!-- <link rel="stylesheet" type="text/css" href="../../../css/default.css"> -->
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
+	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/profil.css">
-	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
 </head>
 
 <body>
