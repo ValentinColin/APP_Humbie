@@ -1,9 +1,7 @@
 {
-  "require" : {
-    "gd": "*"
-  },
-  "require-dev": {
-    "heroku/heroku-buildpack-php": "*",
+  "require": {
+    "php": "7.4",
     "gd": "*"
   }
 }
+
