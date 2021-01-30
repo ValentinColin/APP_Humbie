@@ -1,5 +1,7 @@
 <?php
 session_start();
+include('../../Controller/function.php');
+verif_access('ADMIN');
 
 if (isset($_POST['code']) && isset($_SESSION['mail'])) {
     if ($_POST['code'] != $_SESSION['motdepasse']) {
@@ -47,8 +49,8 @@ if (isset($_POST['code']) && isset($_SESSION['mail'])) {
 <body>
     <form method="post" action="../../php_pur/sqlmodifierpassword.php">
         New password : <input type="password" name="password" placeholder="New password"><br>
-        Confirm password : <input type="password" name="passwordConfirm" placeholder="Confirm password"><br>
-        <input type="submit" value="Submit">
+        Confirm password : <input type="password" name="passwordConfirm" placeholder="New password"><br>
+        <input type="submit" value="Changer">
     </form>
 
 </body>

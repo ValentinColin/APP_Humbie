@@ -1,3 +1,9 @@
+body{
+    margin: 0;
+    padding: 0;
+    color: #464646;
+    font: "Bahnschrift light";
+}
 
 form input {
     display: block;
@@ -7,13 +13,13 @@ form input {
     border-bottom: #0fe8ba 2px ridge;
     outline: none;
 }
+
 form input:hover, form input:focus{
     background-color: rgba(15,232,186,0.1);
     display: block;
 }
 
-fieldset
-{
+fieldset{
     margin-top: 50px;
     width: fit-content;
     width: 25%;
@@ -24,36 +30,41 @@ fieldset
     width: fit-content;
     border-radius: 20px;
     box-shadow: #0fe8ba 0px 1px 1px 1px;
-
 }
+
 legend{
     text-align: center;
     font-size: 1.2em;
     margin-bottom: 20;
 }
+
  #submit{
 	margin-bottom: 30px;
 	background-color: #0fe8ba;
 	color: white;
 	border-radius: 5px;
 }
-#submit:hover{
-background-color: rgba(80,250,256,0.9);
 
+#submit:hover{
+    background-color: rgba(80,250,256,0.9);
 }
+
 #reset{
     width: fit-content;
     color: black;
 }
+
 select{
     display: block;
     border: #0fe8ba 2px ridge;
     outline: none;
 }
+
 select option{
     background-color: rgba(15,232,186,0.2);
     outline: none;
 }
+
 fieldset span{
     font-weight: 500;
 }

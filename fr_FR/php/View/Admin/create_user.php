@@ -2,9 +2,6 @@
 session_start();
 include('../../Controller/function.php');
 verif_access('ADMIN');
-
-// On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
-if_not_connected($redirection = 'loginPage.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +13,8 @@ if_not_connected($redirection = 'loginPage.php');
 	<link rel="stylesheet" type="text/css" href="../../../../css/config.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
-	<link rel="stylesheet" type="text/css" href="../../../../css/create_user.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
+	<link rel="stylesheet" type="text/css" href="../../../../css/create_user.css">
 </head>
 
 <body>
@@ -44,21 +41,26 @@ if_not_connected($redirection = 'loginPage.php');
 		<form method="post" action="../../Controller/create_user.php">
 			<fieldset>
 				<legend> Ajouter un nouveau membre</legend>
-				<span> Nom :* </span>
-				<input id='lastname' type="text" id="nom" name="nom">
-				<span>Prénom: * </span>
-				<input type="text" id="firstname" name="prenom">
-				<span> Numéro de téléphone : </span>
+
+				<label for="lastname"> Nom : * </label>
+				<input type="text" id='lastname' name="nom" required>
+
+				<label for="firstname"> Prénom: * </label>
+				<input type="text" id="firstname" name="prenom" required>
+
+				<label for="phoneNumber"> Numéro de téléphone : </label>
 				<input id="phoneNumber" type="number">
-				<span> Rôle: </span>
-				<select id="access" name="role">
+
+				<label for="access"> Rôle: </label>
+				<select id="access" name="role" required>
 					<option value="User">Utilisateur</option>
 					<option value="Manager" selected>Manager</option>
 					<option value="Admin">Administrateur</option>
 				</select>
 				<br>
-				<span class="manager"> Manager</span>
-				<select class="manager" name="manager">
+
+				<label class="manager" for="label_manager"> Manager</label>
+				<select class="manager" name="manager" id="label_manager">
 					<option value="null">-----</option>
 					<?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
 						<option value='<?php print_r($_SESSION['search'][$i][3])?>' > <?php print_r($_SESSION['search'][$i][1]) ?>
@@ -67,17 +69,20 @@ if_not_connected($redirection = 'loginPage.php');
 					<?php endfor; ?>
 				</select>
 				<br>
-				<span>Adresse mail: * </span>
-				<input id='email' type="mail" id="mail" name="mail">
-				<span> Date d'anniversaire </span>
-				<input type="date" id="birthday" name="birthday">
-				<span> Date de livraison de la licence d'aviation </span>
+
+				<label for="mail">Adresse mail: * </label>
+				<input type="mail" id="mail" name="mail" required>
+
+				<label for="birthday"> Date d'anniversaire: * </label>
+				<input type="date" id="birthday" name="birthday" required>
+
+				<label for="license_aviation"> Date de livraison de la licence d'aviation </label>
 				<input type="date" id="license_aviation" name="license_aviation">
+
 				<input id="submit" type="submit" value="Créer un compte">
 			</fieldset>
 		</form>
 	</div>
-
 
 	<?php require('footer.php'); ?>
 </body>

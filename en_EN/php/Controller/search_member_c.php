@@ -28,10 +28,11 @@ $triOrdre = exist_data("ordre", True);
 $typeRecherche = exist_data("searchPeople", false);
 $element = exist_data("barreRecherche", false);
 $id_manager = exist_data("id_manager", false);
+$id_mana=$_SESSION['id'];
 $decroissant = false;
 $nom=exist_data('nom',false);
 $prenom=exist_data('prenom',false);
-
+$needManager=exist_data("needManager",false);
 $_SESSION['noOne'] = false;
 
 if($nom and $prenom){
@@ -46,7 +47,6 @@ if ($typeRecherche) {
 
     }
 }
-
 if ($typeRecherche) {
     $search = 'OnePeople';
 }
@@ -70,7 +70,12 @@ switch ($search) {
         } else {
             $resultat = getNameLastNameManager();
         }
+        if($needManager==true){
+            $path="../../View/Admin/create_user.php";
+        }
+        else{
         $path = role($role, " ", "../../View/Manager/searchManager.php", "../../View/Admin/searchManager.php");
+        }
         $_SESSION['search'] = $resultat;
         break;
 
@@ -96,7 +101,7 @@ switch ($search) {
         break;
 
     case "Id_Manager":
-        $resultat=getUserByManager(2);
+        $resultat=getUserByManager($id_mana);
         $path = role($role, "../../View/User/searchAllMember.php", "../../View/Manager/searchAllMember.php", "../../View/Admin/searchAllMember.php");
         $_SESSION['search'] = $resultat;
 

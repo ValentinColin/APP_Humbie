@@ -1,9 +1,10 @@
 <?php
 session_start();
-include('../../php_pur/function.php');
+include('../../Model/login_bdd.php');
+include('../../Controller/function.php');
 
 if (isset($_POST['mail'])) {
-    $bdd = new PDO('mysql:host=localhost;dbname=Humbie', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = login_bdd();
     $req = $bdd->query("SELECT COUNT(*) FROM members WHERE email = '" . $_POST['mail'] . "'");
     $instantanceNumber = $req->fetch();
 
@@ -20,7 +21,7 @@ if (isset($_POST['mail'])) {
 
 if (!isset($_SESSION['motdepasse']) || isset($_POST['resend'])) {
     $_SESSION['motdepasse'] = passwordgen(7);
-    $message = 'Here is the secret code : ' . $_SESSION['motdepasse'];
+    $message = 'Here is your secret code : ' . $_SESSION['motdepasse'];
     $mail = mail($_SESSION['mail'], 'Reset password', $_SESSION['motdepasse']);
     if ($mail) {
         echo 'The email has been sent';
@@ -45,11 +46,11 @@ if (!isset($_SESSION['motdepasse']) || isset($_POST['resend'])) {
             <p class='input'> code received: <input name="code" placeholder="code received"> <br></p>
         </a>
         <hr>
-        <input type='submit' value='Submit'>
+        <input type='submit' value='Valider'>
     </form>
 
     <form method="post" action="password.php">
-        <input type='submit' name='resend' Value='Submit Again'>
+        <input type='submit' name='resend' Value='Renvoyer'>
     </form>
 </body>
 

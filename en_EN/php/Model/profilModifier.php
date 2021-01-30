@@ -3,11 +3,11 @@ include("login_bdd.php");
 session_start();
 
 
-function getprofil(){
+function getprofil($id){
 
     $bdd = login_bdd();
-    $req = $bdd->query('SELECT `email`, `birthday_date`, `country`, `phone` FROM `members`
-    WHERE `id` = '.$_SESSION['id']);
+    $req = $bdd->query('SELECT `id`,`prenom`, `nom`,`email`, `birthday_date`, `country`, `phone` FROM `members`
+    WHERE `id` = '.$id);
 
     return $req->fetch();
 } 
@@ -58,6 +58,20 @@ function change_password($password)
 	return true;
 }
 
+function path_photoById($id)
+{		
+    $bdd = login_bdd();
+	$req = $bdd->query('SELECT nom, prenom,id
+                        FROM members
+                        WHERE id ='.$id );
+    $data = $req->fetch(); // Tableau possédant à présent les clés:valeurs de la BDD
+	if (file_exists('../../../../Images/Photo/' . $data['prenom'] . $data['nom'] . $data['id'] . '.png')) {
+		return '../../../../Images/Photo/' . $data['prenom'] . $data['nom'] . $data['id'] . '.png';
+	} else {
+		return '../../../../Images/Photo/default.png';
+	}
+	
+}
 
 
 

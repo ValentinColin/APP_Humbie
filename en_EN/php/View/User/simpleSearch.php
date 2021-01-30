@@ -1,10 +1,7 @@
 <?php
 session_start();
 include('../../Controller/function.php');
-
-// On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
-if_not_connected($redirection = '../../View/login.php');
-
+verif_access('USER');
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +13,7 @@ if_not_connected($redirection = '../../View/login.php');
     <link rel="stylesheet" type="text/css" href="../../../../css/config.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/header.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../../../../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
     <link rel="stylesheet" type="text/css" href="../../../../css/searchPage.css">
     <!-- <link rel="icon" href="../../../Images/logo_Humbie.png"> Ne fonctionne pas -->
     <link rel="script" type="text/css" href="../../../../js/drawGraph.js">
@@ -24,29 +21,24 @@ if_not_connected($redirection = '../../View/login.php');
 
 <body>
     <?php require('header.php'); ?>
+	<?php require('nav.php') ?>
+    <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 
     <main>
-
-        <div id="box-nav" class="my-block">
-            <?php require('nav.php') ?>
-        </div>
-
         <div id='search-page'>
-       
-            <h1>
+            <h1 id="title">
                 <?php if (count($_SESSION["search"]) == 0) : ?>
-                    No result found
+                    
                 <?php elseif (count($_SESSION["search"]) == 1) : ?>
                     1 result found
                 <?php else : ?>
-                    <?= count($_SESSION["search"]) ?> result found
+                    <?= count($_SESSION["search"]) ?> results founds
                 <?php endif; ?>
             </h1>
 
             <?php if (!$_SESSION['noOne']) : ?>
 
                 <table>
-
                     <tr id='trth'>
                         <th> Last name </th>
                         <th> First name </th>
@@ -64,13 +56,14 @@ if_not_connected($redirection = '../../View/login.php');
                         <?php endfor; ?>
                 </table>
             <?php endif; ?>
-
         </div>
-
     </main>
 
-    <?php require('footer.php'); ?>
+    <span id="footer-position">
+		<?php require('footer.php'); ?>
+	</span>
 </body>
+<script src='../../../js/search.js'> </script>
 
 <?php //$_SESSION['search']='';
 ?>

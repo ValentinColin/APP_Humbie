@@ -1,13 +1,14 @@
 <?php
 session_start();
 include('../../Controller/function.php');
+verif_access('ADMIN');
 
 // On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
 if_not_connected($redirection = 'loginPage.php');
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
 	<meta charset="UTF-8">
@@ -16,76 +17,70 @@ if_not_connected($redirection = 'loginPage.php');
 	<link rel="stylesheet" type="text/css" href="../../../../css/header.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/footer.css">
 	<link rel="stylesheet" type="text/css" href="../../../../css/create_user.css">
+	<link rel="stylesheet" type="text/css" href="../../../../css/nav.css">
 </head>
 
 <body>
 	<?php require('header.php'); ?>
-
-	<div class="wrapper">
-		<div id="box-title" class="my-block">
-			<div><a href="../../../../html/building.html" title="Menu"><img class="icon" src="../../../../Images/icon-burger-menu.png"></a></div>
-			<h1>Member creation page</h1>
-		</div>
-
-		<div id="box-nav" class="my-block">
-			<?php require('nav.php') ?>
-		</div>
-
-		<div id="box-content" class="my-block">
-			<?php
-			// TODO: Réduire ce bout de code en une fonction !
-			if (isset($_GET['mailExisting'])) {
-				if ($_GET['mailExisting'])
-					echo '<p>This email is already in use !</p>';
-			}
-			if (isset($_GET['sending'])) {
-				if (!$_GET['sending'])
-					echo "<p>Failed to send password initialization mail!</p>";
-				else
-					echo "<p>Successful account creation !</p>";
-			}
-			?>
-
-			<form method="post" action="../../Controller/create_user.php">
-				<p>
-					<label for="nom">Last name:</label>
-					<input type="text" id="nom" name="nom" placeholder="Lastname" required>
-				</p>
-				<p>
-					<label for="prenom">First name</label>
-					<input type="text" id="prenom" name="prenom" placeholder="Firstname" required>
-					<p>
-						<label for="access">Role:</label>
-						<select id="access" name="role">
-							<option value="User" selected>User</option>
-							<option value="Manager">Manager</option>
-							<option value="Admin">Administrator</option>
-						</select>
-					</p>
-					<p>
-						<label for="id_manager">Manager:</label>
-						<input type="text" id="id_manager" name="id_manager">
-					</p>
-					<p>
-						<label for="mail">Email:</label>
-						<input type="mail" id="mail" name="mail" placeholder="exemple@mail.com" required>
-					</p>
-					<p>
-						<label for="birthday">Birthday date (YYYY-DD-MM)</label>
-						<input type="date" id="birthday" name="birthday" required>
-					</p>
-					<p>
-						<label for="license_aviation">Aviation license delivery date (YYYY-DD-MM)</label>
-						<input type="date" id="license_aviation" name="license_aviation">
-					</p>
-					<p>
-						<input type="submit" name="submit" value="Inscription">
-					</p>
-			</form>
-		</div>
+	<div id="box-nav" class="my-block">
+		<?php require('nav.php') ?>
 	</div>
+	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
+
+	<div id="box-content" class="my-block">
+		<?php
+		// TODO: Réduire ce bout de code en une fonction !
+		if (isset($_GET['mailExisting'])) {
+			if ($_GET['mailExisting'])
+				echo "<h3 style='text-align: center; color:orange'>Cette adresse mail existe déjà !</h3>";
+		}
+		if (isset($_GET['sending'])) {
+			if (!$_GET['sending'])
+				echo "<h3 style='text-align: cente;color:red;'>Envoie du mail d'initialisation de mot de passe échoué !</h3>";
+			else
+				echo "<h3 style='text-align: center; color:green;' >Création de compte réussi !</h3>";
+		}
+		?>
+		<form method="post" action="../../Controller/create_user.php">
+			<fieldset>
+				<legend> Add a new member</legend>
+				<span> Last name :* </span>
+				<input id='lastname' type="text" id="nom" name="nom">
+				<span>First name: * </span>
+				<input type="text" id="firstname" name="prenom">
+				<span> Phone Number : </span>
+				<input id="phoneNumber" type="number">
+				<span> Role: </span>
+				<select id="access" name="role">
+					<option value="User">User</option>
+					<option value="Manager" selected>Manager</option>
+					<option value="Admin">Director</option>
+				</select>
+				<br>
+				<span class="manager"> Manager</span>
+				<select class="manager" name="manager">
+					<option value="null">-----</option>
+					<?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
+						<option value='<?php print_r($_SESSION['search'][$i][3])?>' > <?php print_r($_SESSION['search'][$i][1]) ?>
+							<?php echo " " ?>
+							<?php print_r($_SESSION['search'][$i][0]); ?> </option>
+					<?php endfor; ?>
+				</select>
+				<br>
+				<span>Email adress: * </span>
+				<input id='email' type="mail" id="mail" name="mail">
+				<span> Anniversary Date </span>
+				<input type="date" id="birthday" name="birthday">
+				<span> Delivery date of the aviation license </span>
+				<input type="date" id="license_aviation" name="license_aviation">
+				<input id="submit" type="submit" value="Créer un compte">
+			</fieldset>
+		</form>
+	</div>
+
 
 	<?php require('footer.php'); ?>
 </body>
+<script src='../../../js/createUser.js'> </script>
 
 </html>

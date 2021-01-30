@@ -1,14 +1,9 @@
 <?php
 include("../../Controller/function.php");
 include('../../Model/profilModifier.php');
-if_not_connected($redirection = "../../View/login.php");
+verif_access('ADMIN');
 
-
-$profil = getprofil();
-
-// On vérifie toujours si le visiteur est connecté, sinon on le redirige vers la page demander
-if_not_connected($redirection = '../../View/login.php');
-
+$profil = getprofil($_SESSION['id']);
 ?>
 
 <!DOCTYPE html>
@@ -49,13 +44,13 @@ if_not_connected($redirection = '../../View/login.php');
 		</div>
 		<div id="box-content" class="my-block">
         	<form method="post" action="../../Controller/profilModifier.php">
-			<h1>Personnal informations </h1>
+			<h1>Personnal informations</h1>
 
 			<table>
 				<tr>
 					<!-- ligne 1 -->
 					<th class="strong-cell"><strong>LAST NAME:</strong> <?= $_SESSION['prenom'] . ' ' . $_SESSION['nom'] ?></td> <!-- colonne 1 -->
-					<td class="strong-cell"><strong>BIRTHDAY DATE:</strong> <input type="text" name="birthday_date" value="<?= $profil['birthday_date'] ?>"></td>  <!-- colonne 3 -->
+					<td class="strong-cell"><strong>BIRT DATE:</strong> <input type="text" name="birthday_date" value="<?= $profil['birthday_date'] ?>"></td>  <!-- colonne 3 -->
 
 				</tr>
 				<tr>
@@ -70,33 +65,33 @@ if_not_connected($redirection = '../../View/login.php');
 					<td class="strong-cell"><strong>E-MAIL</strong> <input type="text" name="email" value="<?= $profil['email'] ?>"></td> <!-- colonne 3 -->
 				</tr>
 			</table>
-			<button id="button-profil-modifier" class="pull-right">Submit changes</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
+			<button id="button-profil-modifier" class="pull-right">Validate modifications</button> <!-- Ce bouton doit être placer avant le h2 à cause du float (à modifier plus tard) -->
 			</form>
 
-			<h1 id="password-title">Change password</h1>
+			<h1 id="password-title">Modify password</h1>
 			<form method="post" action="../../Controller/profilModifier.php">
 				<table>
 					<?php 
 					if(isset($_SESSION['passwordError'])){
 						if ($_SESSION['passwordError'] == 'ok'){
-							echo '<td class="strong-cell"><strong>Your password has been changed successfully</strong></td>';
+							echo '<td class="strong-cell"><strong>Your password has been changed</strong></td>';
 						}
 						elseif ($_SESSION['passwordError'] == 'new'){
 							
-							echo "<td class='strong-cell'><strong>The confirmation field is not the same as the new password</strong></td>";
+							echo "<td class='strong-cell'><strong>The confirmation field is not the same as the new password.</strong></td>";
 						}
 						elseif ($_SESSION['passwordError'] == 'old'){
-							echo '<td class="strong-cell"><strong>Incorrect password</strong></td>';
+							echo '<td class="strong-cell"><strong>Old password incorrect</strong></td>';
 						}
 						unset($_SESSION['passwordError']);
 					}
 					?>
 					<tr>
-						<th class="unstrong-cell"><input type="password" placeholder="Actual password" name="password" ></td>	
+						<th class="unstrong-cell"><input type="password" placeholder="actual password" name="password" ></td>	
 					</tr>
 					<tr>
-						<th class="unstrong-cell"><input type="password" placeholder="New password" name="newpassword"></td>
-						<th class="unstrong-cell"><input type="password" placeholder="Confirm password" name="repetpassword" ></td>	
+						<th class="unstrong-cell"><input type="password" placeholder="new password" name="newpassword"></td>
+						<th class="unstrong-cell"><input type="password" placeholder="confirm password" name="repetpassword" ></td>	
 					</tr>
 					<tr>
 					<th class="unstrong-cell"><input id="button-profil-modifier" type="submit" value="Modifier" ></td>	
