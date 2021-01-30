@@ -3,6 +3,8 @@ include_once("login_bdd.php");
 // importez Controller/function.php dans votre view
 session_start(); 
 
+ini_set('extension', 'gd2');
+
 gd_info();
 
 
