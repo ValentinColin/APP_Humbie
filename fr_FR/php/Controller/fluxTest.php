@@ -2,6 +2,8 @@
 session_start();
 require_once 'function.php';
 require_once '../Model/results.php';
+
+ini_set('display_errors', '1');
 ini_set('extension', 'gd2');
 
 $nbr = exist_data("nbr",false);
