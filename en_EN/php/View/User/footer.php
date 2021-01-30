@@ -5,6 +5,6 @@
 		<li><a href="faq.php" title="FAQ">FAQ</a></li>
 		<li><a href="mailto:service.humbie@gmail.com" title="service.humbie@gmail.com">Contact Us</a></li>
 		<!-- Modifier la ligne suivante avec du php -->
-		<li><a>Français / English</a></li>
+		<li><a href="<?= change_path_lang() ?>">Français / English</a></li>
 	</ul>
 </footer>
