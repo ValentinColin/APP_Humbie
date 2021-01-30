@@ -73,7 +73,7 @@ verif_access('ADMIN');
 				<label for="mail">Adresse mail: * </label>
 				<input type="mail" id="mail" name="mail" required>
 
-				<label for="birthday"> Date d'anniversaire: * </label>
+				<label for="birthday"> Date d'anniversaire (YYYY-MM-DD): * </label>
 				<input type="date" id="birthday" name="birthday" required>
 
 				<label for="license_aviation"> Date de livraison de la licence d'aviation </label>
