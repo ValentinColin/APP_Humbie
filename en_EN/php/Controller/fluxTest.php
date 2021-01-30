@@ -25,8 +25,8 @@ if($graph){
                 createImage($elements[$n],$elements[0][4]+$n-1,$n,'temps','C',37);
             }
             if($n == 3){
-                $tables = array_merge($elements[$n]['acute'], $elements[$n]['low']) ;
-                createImage($tables,$elements[0][4]+$n-1,$n,'temps','Hz');
+
+                createImage($elements[$n],$elements[0][4]+$n-1,$n,'temps','Hz');
             }
             else{
                 createImage($elements[$n],$elements[0][4]+$n-1,$n,'temps','ms',200);

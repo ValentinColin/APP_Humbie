@@ -31,7 +31,7 @@ verif_access('MANAGER');
             <input id="nbrres" type="text" name="nbr"><br>
             <label for="graph">Display as a graphic?</label>
             <input id="graph" type="checkbox" name='graph'> <br>
-            <input id="sub" type="submit" value="Soumettre">
+            <input id="sub" type="submit" value="Submit">
         </form>
         <?php
             foreach($_SESSION['resultat_test'] as $element){
@@ -83,11 +83,9 @@ verif_access('MANAGER');
                 <table id="table-main">
                     <th id = 'cell-value'>Unit: Hz</th>
                         <?php
-                            $table = stats_sound($element[3]);
-                            foreach($element[3] as $value){
-                                foreach($value as $val){
-                                    echo "<th id = 'cell-value' >$val</td>";
-                                }
+                            $table = stats($element[3]);
+                              foreach($element[3] as $value){
+                                echo "<th id = 'cell-value' >$value</td>";
                             }
                         ?>
                     </th>   

@@ -10,23 +10,59 @@ gd_info();
 
 function resultsByManager($id,$nbr =50){
     $bdd = login_bdd();
-    $req = $bdd->query('SELECT  `id_session`, `id_type`, `date`, `result`, `nom`, `prenom`,`id_test`
+    $req = $bdd->query('SELECT  `id_session`, `id_type`, `date`, `nom`, `prenom`,`id_test`,city,id
                         FROM `test_board` JOIN `members` ON test_board.id_user = members.id
                         WHERE `id_manager` = '.$id.' ORDER BY  `date` DESC LIMIT '.$nbr );
     $datas = $req->fetchAll();
     $req->closeCursor();
+    $i = 0;
+    foreach($datas as $element)
+    {
+        $req = $bdd->query('SELECT  `result`
+                        FROM `results` 
+                        WHERE `id_test` = '.$element['id_test']);
+        $array_results = $req->fetchAll();
+        $table_results = [];
+        foreach($array_results as $results)
+        {
+            $table_results[] = $results[0];
+        }
+        $datas[$i]['results'] = $table_results;
+        $i +=1;
+    }
+
+    
     return $datas;
 }
+
+
 //Cherche les résultats disponibles des tests effectués par un user
 function results($id,$nbr =50){
     $bdd = login_bdd();
-    $req = $bdd->query('SELECT  `id_session`, `id_type`, `date`, `result`, `nom`, `prenom`,`id_test`,id
+    $req = $bdd->query('SELECT  `id_session`, `id_type`, `date`, `nom`, `prenom`,`id_test`,id,city
                         FROM `test_board` JOIN `members` ON test_board.id_user = members.id
                         WHERE `id` = '.$id.' ORDER BY  `date` DESC LIMIT '.$nbr );
     $datas = $req->fetchAll();
     $req->closeCursor();
+    $i = 0;
+    foreach($datas as $element)
+    {
+        $req = $bdd->query('SELECT  `result`
+                        FROM `results` 
+                        WHERE `id_test` = '.$element['id_test']);
+        $array_results = $req->fetchAll();
+        $table_results = [];
+        foreach($array_results as $results)
+        {
+            $table_results[] = $results[0];
+        }
+        $datas[$i]['results'] = $table_results;
+        $i +=1;
+    }
     return $datas;
 }
+
+
 
 //Trie les résutats d'un user en fonction de id_session
 function trier($datas){
@@ -35,24 +71,24 @@ function trier($datas){
     foreach($datas as $value)
     {   
         if (in_array($value['id_session'], $index)){
+
             $indice = array_search($value['id_session'],$index);
-            $json = json_decode($value['result'], true);
-            $table[$indice][] = $json['result'];
+            $table[$indice][] = $value['results'];
 
         }
         else{
             $index[] = $value['id_session'];
             $indice = array_search($value['id_session'],$index);
-            $json = json_decode($value['result'], true);
             if(isset($value['nom']) && isset($value['prenom'])){
-                $table[$indice][] = [$json['date'],$json['centre-examen'],$value['nom'],$value['prenom'],$value['id_test'],$value['id']];
+                $table[$indice][] = [$value['date'],$value['city'],$value['nom'],$value['prenom'],$value['id_test'],$value['id']];
             }else{
-                $table[$indice][] = [$json['date'],$json['centre-examen']];
+                $table[$indice][] = [$value['date'],$value['city']];
             }
-            $table[$indice][] = $json['result'];
+            $table[$indice][] = $value['results'];
         }
         
     }
+    print_r($table);
     return $table;
 }
 

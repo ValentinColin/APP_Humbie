@@ -31,12 +31,12 @@ verif_access('MANAGER');
             <input id="nbrres" type="text" name="nbr"><br>
             <label for="graph">Display as a graphic?</label>
             <input id="graph" type="checkbox" name='graph'> <br>
-            <input id="sub" type="submit" value="Soumettre">
+            <input id="sub" type="submit" value="Submit">
         </form>
         <?php
             foreach($_SESSION['resultat_test'] as $element){
         ?>  
-        <h2 id="sous-titre">Results of the session of<?= $element[0][0] ?> made at the examination centre of <?= $element[0][1] ?> </h2> 
+        <h2 id="sous-titre">Results of the <?= $element[0][0] ?> made at the examination centre of <?= $element[0][1] ?> </h2> 
         <h2 id="sous-titre">Test from <?= $element[0][2]." ".$element[0][3] ?> </h2>    
         <br>
         <div class="test-box">   
@@ -79,7 +79,7 @@ verif_access('MANAGER');
                 <table id="table-main">
                     <th id = 'cell-value'>Unit: Hz</th>
                         <?php
-                            $table = stats_sound($element[3]);
+                            $table = stats($element[3]);
                         ?>
                         <img src='../../../../Images/Resultats/test<?= $element[0][4]+2 ?>_3.png' >
                     </th>   

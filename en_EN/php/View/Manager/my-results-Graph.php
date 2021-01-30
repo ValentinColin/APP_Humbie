@@ -32,7 +32,7 @@ verif_access('MANAGER');
             <input id="nbrres" type="text" name="nbr"><br>
             <label for="graph">Display as a graphic ?</label>
             <input id="graph" type="checkbox" name='graph'> <br>
-            <input id="sub" type="submit" value="Soumettre">
+            <input id="sub" type="submit" value="Submit">
         </form>
         <?php
             foreach($_SESSION['resultat_test'] as $element){
@@ -41,15 +41,13 @@ verif_access('MANAGER');
         <br>
         <div class="test-box">   
             <div class="cell">
-                <h3 class="sous-sous-titre">Prendre le rythme cardiaque</h3>
+                <h3 class="sous-sous-titre">Taking the heart rate</h3>
                 <table id="table-main">
                     <th id = 'cell-value'>Unit: BPM</th>
                         <?php
                             $table = stats($element[1]);
-                            foreach($element[1] as $value){
-                                echo "<th id = 'cell-value' >$value</td>";
-                            }
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4] ?>_1.png' >
                     </th>   
                 </table>
                 <div class="stats">
@@ -65,10 +63,8 @@ verif_access('MANAGER');
                     <th id = 'cell-value'>Unit: °C</th>
                         <?php
                             $table = stats($element[2]);
-                            foreach($element[2] as $value){
-                                echo "<th id = 'cell-value' >$value</td>";
-                            }
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4]+1 ?>_2.png' >
                     </th>   
                 </table>
                 <div class="stats">
@@ -83,13 +79,9 @@ verif_access('MANAGER');
                 <table id="table-main">
                     <th id = 'cell-value'>Unit: Hz</th>
                         <?php
-                            $table = stats_sound($element[3]);
-                            foreach($element[3] as $value){
-                                foreach($value as $val){
-                                    echo "<th id = 'cell-value' >$val</td>";
-                                }
-                            }
+                            $table = stats($element[3]);
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4]+2 ?>_3.png' >
                     </th>   
                 </table>
                 <div class="stats">
@@ -104,10 +96,8 @@ verif_access('MANAGER');
                     <th id = 'cell-value'>Unit: ms</th>
                         <?php
                             $table = stats($element[4]);
-                            foreach($element[4] as $value){
-                                echo "<th id = 'cell-value' >$value</td>";
-                            }
                         ?>
+                        <img src='../../../../Images/Resultats/test<?= $element[0][4]+3 ?>_4.png' >
                     </th>   
                 </table>
                 <div class="stats">
@@ -157,6 +147,7 @@ verif_access('MANAGER');
 
     <?php }?>
     </div>
+            
 
 	<span id="footer-position">
 		<?php require('footer.php'); ?>
