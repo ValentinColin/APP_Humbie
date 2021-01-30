@@ -1,6 +1,4 @@
 <?php
-//include("php/maquette.php");
-//session_start(); // On démarre la session AVANT toute chose
 header('Location: fr_FR/php/View/login.php')
 ?>
 
