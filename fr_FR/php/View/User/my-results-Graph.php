@@ -78,7 +78,7 @@ verif_access('USER');
                 <table id="table-main">
                     <th id = 'cell-value'>Unité: Hz</th>
                         <?php
-                            $table = stats_sound($element[3]);
+                            $table = stats($element[3]);
                         ?>
                         <img src='../../../../Images/Resultats/test<?= $element[0][4]+2 ?>_3.png' >
                     </th>   

@@ -82,11 +82,9 @@ verif_access('USER');
                 <table id="table-main">
                     <th id = 'cell-value'>Unité: Hz</th>
                         <?php
-                            $table = stats_sound($element[3]);
+                            $table = stats($element[3]);
                             foreach($element[3] as $value){
-                                foreach($value as $val){
-                                    echo "<th id = 'cell-value' >$val</td>";
-                                }
+                                echo "<th id = 'cell-value' >$value</td>";
                             }
                         ?>
                     </th>   
