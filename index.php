@@ -1,12 +1,13 @@
 <?php
 //include("php/maquette.php");
 //session_start(); // On démarre la session AVANT toute chose
+header('Location: fr_FR/php/View/login.php')
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <title>Index</title>
     </head>
     <body>
