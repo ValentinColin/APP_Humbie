@@ -47,16 +47,24 @@ verif_access('ADMIN');
                     <th> nom </th>
                     <th> prénom </th>
                     <th> E-mail </th>
-                    <th> Rôle</th>
+                    <th> Rôle </th>
+                    <th> Banni </th>
                 </tr>
 
                 <?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
-                    <tr>
-                        <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
-                        <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
-                        <td> <a href="mailto:service.humbie@gmail.com" title="Contacter <?= $_SESSION['search'][$i][0] ?>  par mail"> <?php print_r($_SESSION['search'][$i][2]); ?> </a> </td>
-                        <td> <?php print_r($_SESSION['search'][$i][3]); ?> </td>
-                    <tr>
+                <tr>
+                    <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
+                    <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
+                    <td> <a href="<?=  $_SESSION['search'][$i][2]; ?>" 
+                            title="Contacter <?php echo $_SESSION['search'][$i][0].' '.$_SESSION['search'][$i][1]; ?>  par mail"> 
+                            <?php print_r($_SESSION['search'][$i][2]); ?> 
+                        </a> </td>
+                    <td> <?php print_r($_SESSION['search'][$i][3]); ?> </td>
+                    <td> <input type="checkbox" name="banned" <?php if ($_SESSION['search'][$i][4]) {
+                        echo('checked');
+                    } ?> disabled></td>
+                    
+                <tr>
                 <?php endfor; ?>
             </table>
         </div>

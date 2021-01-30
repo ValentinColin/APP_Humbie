@@ -66,13 +66,13 @@ function getNameLastNameAllMembers(String $triOrdre, $triRole): array
         $connexion = login_bdd();
         $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         if ($triOrdre == "decroissant" and $triRole == "oui") {
-            $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN'  ORDER BY access,nom DESC");
+            $requete = $connexion->prepare("SELECT nom,prenom,email,access,banned FROM members WHERE not access='ADMIN'  ORDER BY access,nom DESC");
         } else if ($triOrdre == "decroissant" and $triRole == "non") {
-            $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN'  ORDER BY nom DESC");
+            $requete = $connexion->prepare("SELECT nom,prenom,email,access,banned FROM members WHERE not access='ADMIN'  ORDER BY nom DESC");
         } else if ($triOrdre == "croissant" and $triRole == "oui") {
-            $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN'  ORDER BY access,nom ASC");
+            $requete = $connexion->prepare("SELECT nom,prenom,email,access,banned FROM members WHERE not access='ADMIN'  ORDER BY access,nom ASC");
         } else {
-            $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN' ORDER BY nom ASC ");
+            $requete = $connexion->prepare("SELECT nom,prenom,email,access,banned FROM members WHERE not access='ADMIN' ORDER BY nom ASC ");
         }
         $requete->execute();
         return $requete->fetchall();
