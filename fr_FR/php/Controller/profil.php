@@ -14,7 +14,7 @@ if (!$id){
 $resultat = getprofil($id);
 $_SESSION['resultat_profil'] = $resultat;
 if($pourManager=="vrai"){
-    header('Location: ../../View/manager/profil.php');
+    header('Location: ../../View/Manager/profil.php');
     exit;
 }
 goView('profil.php');
