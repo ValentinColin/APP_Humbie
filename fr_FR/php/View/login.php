@@ -6,7 +6,7 @@ session_start();
 include("../Controller/function.php");
 
 if (isset($_SESSION['connected'])) {
-    if ($_SESSION['connected']) {
+    if ($_SESSION['connected'] and !$_SESSION['banned']) {
         go('home.php');
     }
 } else {
