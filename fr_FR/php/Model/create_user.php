@@ -44,12 +44,11 @@ function create_user($data)
 function changePassword($password,$email)
 {
 	$bdd = login_bdd();
-	$req = $bdd->prepare('UPDATE `members` SET `password`= :pass WHERE email = '.$email);
 	$password_gen_hash = passwordhash($password);
+	$req = $bdd->prepare('UPDATE `members` SET `password`= :password WHERE email = \'' . htmlspecialchars($email) . '\'');
 
-	$req->execute(array(
-		':pass' => $password_gen_hash
-	));
+	return $req->execute([
+		':password' => $password_gen_hash
+	]);
 
-	return $password_gen_hash;
 }

@@ -213,7 +213,7 @@ function change_path_lang(){
 		$lang = 'fr_FR';
 		$_SESSION['lang'] = 'Français';
 	} else {
-		die('erreur de redirection, lang='.$_SESSION['lang'].' role='.$_SESSION['access'])
+		die('erreur de redirection, lang='.$_SESSION['lang'].' role='.$_SESSION['access']);
 	}
 	$role = ucfirst(strtolower($_SESSION['access'])); 
 	return "../../../../".$lang."/php/View/".$role."/home.php";
