@@ -42,13 +42,13 @@ verif_access('USER');
                 <option value="test">Problème test</option>
                 <option value="private_information">Information privée</option>
             </select>
-            <input type="text" name="title" placeholder="Nom de votre requête">
+            <input type="text" name="title" placeholder="Name of your request">
         </div>
             <br>
-            <textarea  name="content" placeholder="Saissisez votre message ici... (400 caractères maximum)"   rows='4' cols= '10' minlength="5" maxlength="400" wrap='hard' >
+            <textarea  name="content" placeholder="Write here"   rows='4' cols= '10' minlength="5" maxlength="400" wrap='hard' >
             </textarea>
             <br>
-            <input id="submit" type="submit" value="Envoyer" name="poster">
+            <input id="submit" type="submit" value="Submit" name="poster">
         </form>
 
 

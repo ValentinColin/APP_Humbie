@@ -45,10 +45,10 @@ verif_access('MANAGER');
         <div id='classement'>
         <span>  Sorted last names alphabetically : <span>
                     <a href="../../Controller/search_member_c.php/?search=AllManager">
-                        <input type='button' value='yes' <?php if (!$_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                        <input type='button' value='yes' <?php if (!$_SESSION['decroissant']) : ?> disabled title='sorting already effective' <?php endif ?>>
                     </a>
                     <a href="../../Controller/search_member_c.php/?search=AllManager&classement=decroissant">
-                        <input type='button' value='no' <?php if ($_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                        <input type='button' value='no' <?php if ($_SESSION['decroissant']) : ?> disabled title='sorting already effective' <?php endif ?>>
                     </a>
             </div>
 

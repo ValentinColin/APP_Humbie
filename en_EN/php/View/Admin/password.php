@@ -50,7 +50,7 @@ if (!isset($_SESSION['motdepasse']) || isset($_POST['resend'])) {
     </form>
 
     <form method="post" action="password.php">
-        <input type='submit' name='resend' Value='Renvoyer'>
+        <input type='submit' name='resend' Value='Send again'>
     </form>
 </body>
 

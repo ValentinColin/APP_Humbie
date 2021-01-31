@@ -53,10 +53,10 @@ verif_access('MANAGER');
                 <span> sorted last names alphabetically :  <span>
 
                     <a href="../../Controller/search_member_c.php/?search=Id_Manager">
-                                <input type='button' value='yes' <?php if (!$_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                                <input type='button' value='yes' <?php if (!$_SESSION['decroissant']) : ?> disabled title='sorting already effective' <?php endif ?>>
                             </a>
                             <a href="../../Controller/search_member_c.php/?search=Id_Manager&classement=decroissant">
-                                <input type='button' value='no' <?php if ($_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                                <input type='button' value='no' <?php if ($_SESSION['decroissant']) : ?> disabled title='sorting already effective' <?php endif ?>>
                             </a>
                 </div>
 
@@ -74,7 +74,7 @@ verif_access('MANAGER');
                              <?php print_r($_SESSION['search'][$i][0]); ?> </a> </td>
                             <td> <a href='../../Controller/profil.php/?special=vrai&id=<?php print_r($_SESSION['search'][$i][4])  ?>'>
                             <?php print_r($_SESSION['search'][$i][1]); ?> </a> </td>
-                            <td> <a href="mailto: <?= $_SESSION['search'][$i][2]?>" title="Contacter <?= $_SESSION['search'][$i][0] ?>  par mail"> <?php print_r($_SESSION['search'][$i][2]); ?> </a> </td>
+                            <td> <a href="mailto: <?= $_SESSION['search'][$i][2]?>" title="Contact us <?= $_SESSION['search'][$i][0] ?>  by mail"> <?php print_r($_SESSION['search'][$i][2]); ?> </a> </td>
                             <td> <?php print_r($_SESSION['search'][$i][3]); ?> </td>
                         <tr>
                         <?php endfor; ?>
