@@ -66,13 +66,13 @@ function getNameLastNameAllMembers(String $triOrdre, $triRole): array
         $connexion = login_bdd();
         $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         if ($triOrdre == "decroissant" and $triRole == "oui") {
-            $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN'  ORDER BY access,nom DESC");
+            $requete = $connexion->prepare("SELECT nom,prenom,email,access,banned FROM members WHERE not access='ADMIN'  ORDER BY access,nom DESC");
         } else if ($triOrdre == "decroissant" and $triRole == "non") {
-            $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN'  ORDER BY nom DESC");
+            $requete = $connexion->prepare("SELECT nom,prenom,email,access,banned FROM members WHERE not access='ADMIN'  ORDER BY nom DESC");
         } else if ($triOrdre == "croissant" and $triRole == "oui") {
-            $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN'  ORDER BY access,nom ASC");
+            $requete = $connexion->prepare("SELECT nom,prenom,email,access,banned FROM members WHERE not access='ADMIN'  ORDER BY access,nom ASC");
         } else {
-            $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE not access='ADMIN' ORDER BY nom ASC ");
+            $requete = $connexion->prepare("SELECT nom,prenom,email,access,banned FROM members WHERE not access='ADMIN' ORDER BY nom ASC ");
         }
         $requete->execute();
         return $requete->fetchall();
@@ -98,36 +98,42 @@ function getUserOrManager(String $typeSearch, String $item): array
         return null;
     }
 }
-function getUserOrManager2(String $nom, String $prenom){
-    try{
-    $connexion = login_bdd();
-    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE  nom='$nom' AND prenom='$prenom' AND not access='ADMIN' ");
+function getUserOrManager2(String $nom, String $prenom)
+{
+    try {
+        $connexion = login_bdd();
+        $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $requete = $connexion->prepare("SELECT prenom,nom,email,access FROM members WHERE  nom='$nom' AND prenom='$prenom' AND not access='ADMIN' ");
 
-    $requete->execute();
-    return $requete->fetchall();
-} catch (PDOException $e) {
-    return null;
+        $requete->execute();
+        return $requete->fetchall();
+    } catch (PDOException $e) {
+        return null;
+    }
 }
-}
-function getUserByManager($id_manager){
-    try{
-    $connexion = login_bdd();
-    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $requete = $connexion->prepare("SELECT prenom,nom,email,access,id FROM members WHERE  id_manager='$id_manager' AND access='USER' ");
+function getUserByManager($id_manager, $ordre)
+{
+    try {
+        $connexion = login_bdd();
+        $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if ($ordre == "decroissant") {
+            $requete = $connexion->prepare("SELECT prenom,nom,email,access,id FROM members WHERE  id_manager='$id_manager' AND access='USER' ORDER BY nom DESC ");
+        } else {
+            $requete = $connexion->prepare("SELECT prenom,nom,email,access,id FROM members WHERE  id_manager='$id_manager' AND access='USER'ORDER BY nom ASC ");
+        }
 
-    $requete->execute();
-    return $requete->fetchall();
-} catch (PDOException $e) {
-    return null;
-}
+        $requete->execute();
+        return $requete->fetchall();
+    } catch (PDOException $e) {
+        return null;
+    }
 }
 
 /**************
  FONCTION POUR AJAX
  *************/
 
-function ajaxSearch(String $typeSearch, String $item):array
+function ajaxSearch(String $typeSearch, String $item): array
 {
     try {
         $connexion = login_bdd();

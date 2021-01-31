@@ -3,6 +3,9 @@ session_start();
 require_once 'function.php';
 require_once '../Model/results.php';
 
+ini_set('display_errors', '1');
+ini_set('extension', 'gd2');
+
 $nbr = exist_data("nbr",false);
 $graph = exist_data("graph",false);
 
@@ -25,7 +28,6 @@ if($graph){
                 createImage($elements[$n],$elements[0][4]+$n-1,$n,'temps','C',37);
             }
             if($n == 3){
-
                 createImage($elements[$n],$elements[0][4]+$n-1,$n,'temps','Hz');
             }
             else{

@@ -132,9 +132,7 @@ function path_photo()
 	} else {
 		return '../../../../Images/Photo/default.png';
 	}
-	
 }
-
 
 function path_photo_controller()
 {
@@ -207,7 +205,6 @@ function stats(array $array){
 
 // fonction qui permet de donner min,max et moyenne pour le résultat reproduction d'un son avec la voix.
 function stats_sound(array $array){
-
 	$table = array_merge($array['low'], $array['acute']);
 	return stats($table);
 }
@@ -224,4 +221,3 @@ function change_path_lang(){
 	$role = ucfirst(strtolower($_SESSION['access'])); 
 	return "../../../../".$lang."/php/View/".$role."/home.php";
 }
-

@@ -7,7 +7,7 @@ include('../Model/create_user.php');
 
 if (mail_exist($_POST['mail'])) {
 	header('Location: ../View/Admin/create_user.php?mailExisting=true');
-	die();
+	exit;
 } else {
 	$password = create_user($_POST);
 	$mail = mail($_POST['mail'], 'Initialisation du mot de passe', $password);

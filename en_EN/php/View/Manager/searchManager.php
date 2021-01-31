@@ -43,12 +43,12 @@ verif_access('MANAGER');
 
 
         <div id='classement'>
-            <span> order the names in order: <span>
+        <span>  Sorted last names alphabetically : <span>
                     <a href="../../Controller/search_member_c.php/?search=AllManager">
-                        <input type='button' value='croissant' <?php if (!$_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                        <input type='button' value='yes' <?php if (!$_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
                     </a>
                     <a href="../../Controller/search_member_c.php/?search=AllManager&classement=decroissant">
-                        <input type='button' value='décroissant' <?php if ($_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                        <input type='button' value='no' <?php if ($_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
                     </a>
             </div>
 
@@ -59,8 +59,8 @@ verif_access('MANAGER');
                 </tr>
                 <?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
                     <tr>
-                        <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
                         <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
+                        <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
                     <tr>
                     <?php endfor; ?>
             </table>
