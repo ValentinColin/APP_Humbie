@@ -1,6 +1,6 @@
 <?php
-include('../Controller/function.php');
-include('../Model/login_bdd.php');
+require_once('../Controller/function.php');
+require_once('../Model/login_bdd.php');
 
 function mail_exist($mail)
 {
@@ -39,4 +39,17 @@ function create_user($data)
 	));
 
 	return $password_gen;
+}
+
+function changePassword($password,$email)
+{
+	$bdd = login_bdd();
+	$req = $bdd->prepare('UPDATE `members` SET `password`= :pass WHERE email = '.$email);
+	$password_gen_hash = passwordhash($password);
+
+	$req->execute(array(
+		':pass' => $password_gen_hash
+	));
+
+	return $password_gen_hash;
 }

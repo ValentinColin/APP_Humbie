@@ -205,12 +205,6 @@ function stats(array $array){
 	return $results;
 }
 
-// fonction qui permet de donner min,max et moyenne pour le résultat reproduction d'un son avec la voix.
-function stats_sound(array $array){
-
-	$table = array_merge($array['low'], $array['acute']);
-	return stats($table);
-}
 
 // fonction qui renvoie le chemin du home.php dans l'autre langue et redéfinie la variable $_SESSIONS['lang']
 function change_path_lang(){
