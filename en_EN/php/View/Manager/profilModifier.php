@@ -1,8 +1,8 @@
 <?php
-include("../../Controller/function.php");
-include('../../Model/profilModifier.php');
-include('../../Controller/function.php');
+require_once('../../Model/profilModifier.php');
+require_once('../../Controller/function.php');
 verif_access('MANAGER');
+
 
 $profil = getprofil($_SESSION['id']);
 ?>
