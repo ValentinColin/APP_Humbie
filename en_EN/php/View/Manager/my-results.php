@@ -25,7 +25,15 @@ verif_access('MANAGER');
 
 	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 	<div class="wrapper">
-        <h1 id="title">Results from <?= $_SESSION['resultat_test'][0][0][2]." ".$_SESSION['resultat_test'][0][0][3] ?>  </h1>
+        <?php 
+        if(!isset($_SESSION['resultat_test']) || $_SESSION['resultat_test']== null){
+        ?>
+            <h1 id="title">The user has not yet carried out any tests.  </h1>
+        <?php
+        }else{
+        ?>
+            <h1 id="title">Results from <?= $_SESSION['resultat_test'][0][0][2]." ".$_SESSION['resultat_test'][0][0][3] ?>  </h1>
+
         <form action="../../Controller/results.php" method="GET">
             <label for="nbrres">Number of results to show</label>
             <input id='hide' type="text" name="id" value="<?= $_SESSION['resultat_test'][0][0][5]?>" >
@@ -153,7 +161,7 @@ verif_access('MANAGER');
         </div>   
         
 
-    <?php }?>
+    <?php }}?>
     </div>
 
 	<span id="footer-position">

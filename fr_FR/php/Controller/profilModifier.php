@@ -9,7 +9,7 @@ if(isset($_POST['email']))
 {   
 
     modifierprofil($_POST['email'],$_POST['birthday_date'],$_POST['country'],$_POST['phone']);
-    goView('profil.php');
+    header('Location: profil.php');
     die;
 }
 elseif(isset($_POST['password']) && isset($_POST['newpassword']) && isset($_POST['repetpassword']))
@@ -42,7 +42,7 @@ elseif(isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
     {   
         $_FILES['photo']['name'] = $_SESSION['id'].'.png';
         move_uploaded_file($_FILES['photo']['tmp_name'],path_photo_controller());
-        goView('profil.php');
+        header('Location: profil.php');
         die;
     }
 }

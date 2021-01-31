@@ -28,7 +28,6 @@ verif_access('USER');
         <h1 id="title">My results :  </h1>
         <form action="../../Controller/results.php" method="GET">
             <label for="nbrres">Number of results to show</label>
-            <input id='hide' type="text" name="id" value="<?= $_SESSION['resultat_test'][0][0][5]?>" >
             <input id="nbrres" type="text" name="nbr"><br>
             <label for="graph">Display as a graphic ?</label>
             <input id="graph" type="checkbox" name='graph'> <br>

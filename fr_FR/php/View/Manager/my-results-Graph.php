@@ -25,7 +25,15 @@ verif_access('MANAGER');
 
 	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 	<div class="wrapper">
-        <h1 id="title">Résultats de <?= $_SESSION['resultat_test'][0][0][2]." ".$_SESSION['resultat_test'][0][0][3] ?>  </h1>
+        <?php 
+        if(!isset($_SESSION['resultat_test']) || $_SESSION['resultat_test']== null){
+        ?>
+            <h1 id="title">L'utilisateur n'a pas encore fait de tests.  </h1>
+        <?php
+        }else{
+        ?>
+            <h1 id="title">Résultats de <?= $_SESSION['resultat_test'][0][0][2]." ".$_SESSION['resultat_test'][0][0][3] ?>  </h1>
+
         <form action="../../Controller/results.php" method="GET">
             <label for="nbrres">Nombre de résultats à afficher</label>
             <input id='hide' type="text" name="id" value="<?= $_SESSION['resultat_test'][0][0][5]?>" >
@@ -142,7 +150,10 @@ verif_access('MANAGER');
                     <div class="stats-value">MAX: <?= $table[2] ?></div>
                 </div>
             </div> 
-           
+
+        <?php    
+        }
+        ?>
         </div>   
         
 
