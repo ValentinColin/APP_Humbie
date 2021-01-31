@@ -23,7 +23,7 @@ verif_access('ADMIN');
     <?php require('header.php'); ?>
 	<?php require('nav.php') ?>
     <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
-    
+
     <main>
         <div id='search-page'>
         <p id='upload'> <button id='button-upload'  type="button"> Télécharger le tableau en format excel</button>
@@ -44,8 +44,8 @@ verif_access('ADMIN');
 
             <table id='table'>
                 <tr id='trth'>
-                    <th> nom </th>
-                    <th> prénom </th>
+                    <th> Prénom </th>
+                    <th> Nom </th>
                     <th> E-mail </th>
                     <th> Rôle </th>
                     <th> Banni </th>
@@ -53,17 +53,17 @@ verif_access('ADMIN');
 
                 <?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
                 <tr>
-                    <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
                     <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
-                    <td> <a href="<?=  $_SESSION['search'][$i][2]; ?>" 
-                            title="Contacter <?php echo $_SESSION['search'][$i][0].' '.$_SESSION['search'][$i][1]; ?>  par mail"> 
-                            <?php print_r($_SESSION['search'][$i][2]); ?> 
+                    <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
+                    <td> <a href="<?=  $_SESSION['search'][$i][2]; ?>"
+                            title="Contacter <?php echo $_SESSION['search'][$i][0].' '.$_SESSION['search'][$i][1]; ?>  par mail">
+                            <?php print_r($_SESSION['search'][$i][2]); ?>
                         </a> </td>
                     <td> <?php print_r($_SESSION['search'][$i][3]); ?> </td>
                     <td> <input type="checkbox" name="banned" <?php if ($_SESSION['search'][$i][4]) {
                         echo('checked');
                     } ?> disabled></td>
-                    
+
                 <tr>
                 <?php endfor; ?>
             </table>

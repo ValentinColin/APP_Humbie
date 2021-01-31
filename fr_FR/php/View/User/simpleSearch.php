@@ -40,16 +40,16 @@ verif_access('USER');
 
                 <table>
                     <tr id='trth'>
-                        <th> Nom </th>
                         <th> Prénom </th>
+                        <th> Nom </th>
                         <th> E-mail </th>
                         <th> Rôle</th>
                     </tr>
 
                     <?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
                         <tr>
-                            <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
                             <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
+                            <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
                             <td> <a href="mailto:service.humbie@gmail.com" title="Contacter <?= $_SESSION['search'][$i][0] ?>  par mail"> <?php print_r($_SESSION['search'][$i][2]); ?> </a> </td>
                             <td> <?php print_r($_SESSION['search'][$i][3]); ?> </td>
                         <tr>

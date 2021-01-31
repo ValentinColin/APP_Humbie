@@ -38,25 +38,25 @@ verif_access('ADMIN');
             <h1> Les Pilotes </h1>
 
             <div id='classement'>
-                <span> classé les noms par ordre: <span>
+                <span> Classer les noms par ordre alphabétique: <span>
                 <a href="../../Controller/search_member_c.php/?search=AllUser">
-                    <input type='button' value='croissant' <?php if (!$_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                    <input type='button' value='oui' <?php if (!$_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
                 </a>
                 <a href="../../Controller/search_member_c.php/?search=AllUser&classement=decroissant">
-                    <input type='button' value='décroissant' <?php if ($_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                    <input type='button' value='non'  <?php if ($_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
                 </a>
             </div>
 
             <table id='table'>
                 <tr>
-                    <th> Nom </th>
                     <th> Prénom </th>
+                    <th> Nom </th>
                     <th> Manager </th>
                 </tr>
                 <?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
                     <tr>
-                        <td> <?php print_r(($_SESSION['search'][$i][0])); ?> </td>
-                        <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
+                        <td> <?php print_r(($_SESSION['search'][$i][1])); ?> </td>
+                        <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
                         <td> <?= $_SESSION['search'][$i][2].' '.$_SESSION['search'][$i][3]; ?> </td>
                     <tr>
                 <?php endfor; ?>
