@@ -16,9 +16,11 @@ if (!$nbr){
 }else{
     $nbr = $nbr*6;
 }
+
 $resultat = trier(results($id,$nbr));
 $_SESSION['resultat_test'] = $resultat;
-if($graph){
+if($graph ){
+
     foreach($resultat as $elements){
         $n = 1;
         while($n <=4){
@@ -40,6 +42,7 @@ if($graph){
     }
     goView('my-results-Graph.php');
 }
+
 goView('my-results.php');
 
 ?>

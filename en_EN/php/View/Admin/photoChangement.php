@@ -16,7 +16,7 @@ verif_access('ADMIN');
     <form method="post" action="../../php_pur/photoCheck.php" enctype="multipart/form-data">
         <p>Send your photo :</p>
         <p><input type="file" name="photo"></p>
-        <p><input type="submit" value="Envoyer la photo"></p>
+        <p><input type="submit" value="Send picture"></p>
     </form>
 </body>
 

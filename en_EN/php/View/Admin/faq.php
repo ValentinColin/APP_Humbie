@@ -35,7 +35,7 @@ verif_access('ADMIN');
 				<form method="post" action="../../Controller/faq.php">
 					<input type="text" name="question" placeholder="Question">
 					<input type="text" name="answer" placeholder="Answer">
-					<input type="submit" name="add" value="Ajouter">
+					<input type="submit" name="add" value="Add">
 				</form>
 			</div>
 			<br>

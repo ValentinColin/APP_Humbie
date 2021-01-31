@@ -132,9 +132,7 @@ function path_photo()
 	} else {
 		return '../../../../Images/Photo/default.png';
 	}
-	
 }
-
 
 function path_photo_controller()
 {
@@ -211,11 +209,12 @@ function change_path_lang(){
 	if ($_SESSION['lang'] == 'Français'){
 		$lang = 'en_EN';
 		$_SESSION['lang'] = 'English';
-	} else {
+	} else if ($_SESSION['lang'] == 'English') {
 		$lang = 'fr_FR';
 		$_SESSION['lang'] = 'Français';
+	} else {
+		die('erreur de redirection, lang='.$_SESSION['lang'].' role='.$_SESSION['access']);
 	}
 	$role = ucfirst(strtolower($_SESSION['access'])); 
 	return "../../../../".$lang."/php/View/".$role."/home.php";
 }
-

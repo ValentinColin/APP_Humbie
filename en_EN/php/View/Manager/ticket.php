@@ -43,10 +43,10 @@ verif_access('MANAGER');
             <input type="text" name="title" placeholder="Name ">
         </div>
             <br>
-            <textarea  name="content" placeholder="write here... (400 caractères maximum)"   rows='4' cols= '10' minlength="5" maxlength="400" wrap='hard' >
+            <textarea  name="content" placeholder="write here... (400 characters maximum)"   rows='4' cols= '10' minlength="5" maxlength="400" wrap='hard' >
             </textarea>
             <br>
-            <input id="submit" type="submit" value="Envoyer" name="poster">
+            <input id="submit" type="submit" value="Send" name="poster">
         </form>
 
 

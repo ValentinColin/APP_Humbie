@@ -37,7 +37,7 @@ $profil = getprofil($_SESSION['id']);
 						<td class="unstrong-cell"> <label  class="photo-modifier" for="file" id="button-profil-modifier">Choose a file</label><input  id="file" type="file" name="photo"></td>
 					</tr>	
 					<tr>	
-						<td class="unstrong-cell"><input   class="photo-modifier" id="button-send-photo" type="submit" value="Valider l'envoi du fichier"></td>
+						<td class="unstrong-cell"><input   class="photo-modifier" id="button-send-photo" type="submit" value="Confirm the sending of the file"></td>
 					</tr>	
 					</form>
 				</tr>
@@ -95,7 +95,7 @@ $profil = getprofil($_SESSION['id']);
 						<th class="unstrong-cell"><input type="password" placeholder="Confirm password" name="repetpassword" ></td>	
 					</tr>
 					<tr>
-					<th class="unstrong-cell"><input id="button-profil-modifier" type="submit" value="Modifier" ></td>	
+					<th class="unstrong-cell"><input id="button-profil-modifier" type="submit" value="Modify" ></td>	
 						
 					</tr>
 				</table>

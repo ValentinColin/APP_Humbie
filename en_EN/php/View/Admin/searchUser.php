@@ -38,25 +38,25 @@ verif_access('ADMIN');
             <h1> The Pilots </h1>
 
             <div id='classement'>
-                <span> class names by order: <span>
+            <span>  Arranged alphabetically : <span>
                 <a href="../../Controller/search_member_c.php/?search=AllUser">
-                    <input type='button' value='croissant' <?php if (!$_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                    <input type='button' value='yes' <?php if (!$_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
                 </a>
                 <a href="../../Controller/search_member_c.php/?search=AllUser&classement=decroissant">
-                    <input type='button' value='décroissant' <?php if ($_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
+                    <input type='button' value='no' <?php if ($_SESSION['decroissant']) : ?> disabled title='tri déjà effectif' <?php endif ?>>
                 </a>
             </div>
 
             <table id='table'>
                 <tr>
-                    <th> Last Name </th>
                     <th> First Name </th>
+                    <th> Last Name </th>
                     <th> Manager </th>
                 </tr>
                 <?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
                     <tr>
-                        <td> <?php print_r(($_SESSION['search'][$i][0])); ?> </td>
-                        <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
+                        <td> <?php print_r(($_SESSION['search'][$i][1])); ?> </td>
+                        <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
                         <td> <?= $_SESSION['search'][$i][2].' '.$_SESSION['search'][$i][3]; ?> </td>
                     <tr>
                 <?php endfor; ?>

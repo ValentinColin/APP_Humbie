@@ -28,7 +28,7 @@ verif_access('USER');
         <div id='search-page'>
             <h1 id="title">
                 <?php if (count($_SESSION["search"]) == 0) : ?>
-                    
+
                 <?php elseif (count($_SESSION["search"]) == 1) : ?>
                     1 result found
                 <?php else : ?>
@@ -40,16 +40,16 @@ verif_access('USER');
 
                 <table>
                     <tr id='trth'>
-                        <th> Last name </th>
                         <th> First name </th>
+                        <th> Last name </th>
                         <th> E-mail </th>
                         <th> Role</th>
                     </tr>
 
                     <?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
                         <tr>
-                            <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
                             <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
+                            <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
                             <td> <a href="mailto:service.humbie@gmail.com" title="Contacter <?= $_SESSION['search'][$i][0] ?>  par mail"> <?php print_r($_SESSION['search'][$i][2]); ?> </a> </td>
                             <td> <?php print_r($_SESSION['search'][$i][3]); ?> </td>
                         <tr>

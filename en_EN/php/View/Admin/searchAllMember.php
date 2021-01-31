@@ -23,7 +23,7 @@ verif_access('ADMIN');
     <?php require('header.php'); ?>
 	<?php require('nav.php') ?>
     <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
-    
+
     <main>
         <div id='search-page'>
         <p id='upload'> <button id='button-upload'  type="button"> Download the table in excel format</button>
@@ -44,17 +44,17 @@ verif_access('ADMIN');
 
             <table id='table'>
                 <tr id='trth'>
-                    <th> last name </th>
-                    <th> first name </th>
+                    <th> First name </th>
+                    <th> Last name </th>
                     <th> E-mail </th>
                     <th> Role</th>
                 </tr>
 
                 <?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
                     <tr>
-                        <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
                         <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
-                        <td> <a href="mailto:service.humbie@gmail.com" title="Contacter <?= $_SESSION['search'][$i][0] ?>  par mail"> <?php print_r($_SESSION['search'][$i][2]); ?> </a> </td>
+                        <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
+                        <td> <a href="mailto:service.humbie@gmail.com" title="Contact <?= $_SESSION['search'][$i][0] ?>  by mail"> <?php print_r($_SESSION['search'][$i][2]); ?> </a> </td>
                         <td> <?php print_r($_SESSION['search'][$i][3]); ?> </td>
                     <tr>
                     <?php endfor; ?>
