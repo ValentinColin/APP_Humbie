@@ -48,7 +48,7 @@ if (isset($_SESSION['connected'])) {
                         <hr>
                         <input id='submit' type='submit' value='Se connecter'> <br> <br>
 
-                        <a id='newPassword' href='newPassword.php'> Mot de passe oublié </a>
+                        <a id='newPassword' href='../Controller/newPassword.php'> Mot de passe oublié </a>
                     </p>
                 </fieldset>
             </form>

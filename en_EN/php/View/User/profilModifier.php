@@ -35,7 +35,7 @@ $profil = getprofil($_SESSION['id']);
 						<td class="unstrong-cell"> <label  class="photo-modifier" for="file" id="button-profil-modifier">Choose a file</label><input  id="file" type="file" name="photo"></td>
 					</tr>	
 					<tr>	
-						<td class="unstrong-cell"><input   class="photo-modifier" id="button-send-photo" type="submit" value="Valider l'envoi du fichier"></td>
+						<td class="unstrong-cell"><input   class="photo-modifier" id="button-send-photo" type="submit" value="Confirm the sending of the file"></td>
 					</tr>	
 					</form>
 				</tr>
@@ -73,14 +73,14 @@ $profil = getprofil($_SESSION['id']);
 					<?php 
 					if(isset($_SESSION['passwordError'])){
 						if ($_SESSION['passwordError'] == 'ok'){
-							echo '<td class="strong-cell"><strong>Votre mot de passe a bien été modifié</strong></td>';
+							echo '<td class="strong-cell"><strong>Your password has been changed</strong></td>';
 						}
 						elseif ($_SESSION['passwordError'] == 'new'){
 							
-							echo "<td class='strong-cell'><strong>Le champ de confirmation n'est pas identique au nouveau mot de passe</strong></td>";
+							echo "<td class='strong-cell'><strong>The confirmation field is not the same as the new password.</strong></td>";
 						}
 						elseif ($_SESSION['passwordError'] == 'old'){
-							echo '<td class="strong-cell"><strong>Ancien mot de passe incorrect</strong></td>';
+							echo '<td class="strong-cell"><strong>Old password incorrect</strong></td>';
 						}
 						unset($_SESSION['passwordError']);
 					}

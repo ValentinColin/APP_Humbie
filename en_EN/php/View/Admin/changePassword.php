@@ -50,7 +50,7 @@ if (isset($_POST['code']) && isset($_SESSION['mail'])) {
     <form method="post" action="../../php_pur/sqlmodifierpassword.php">
         New password : <input type="password" name="password" placeholder="New password"><br>
         Confirm password : <input type="password" name="passwordConfirm" placeholder="New password"><br>
-        <input type="submit" value="Changer">
+        <input type="submit" value="Change">
     </form>
 
 </body>

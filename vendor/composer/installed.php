@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '37033087cc1fc1fc2baf6e5b750ab7f348a9a7c2',
+    'reference' => '2aa6f615883b0272b8f03df8e63a1f736e41c275',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '37033087cc1fc1fc2baf6e5b750ab7f348a9a7c2',
+      'reference' => '2aa6f615883b0272b8f03df8e63a1f736e41c275',
     ),
     'heroku/heroku-buildpack-php' => 
     array (

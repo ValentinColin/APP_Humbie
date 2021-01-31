@@ -8,7 +8,7 @@ if_not_connected($redirection = 'loginPage.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -32,13 +32,13 @@ if_not_connected($redirection = 'loginPage.php');
 		// TODO: Réduire ce bout de code en une fonction !
 		if (isset($_GET['mailExisting'])) {
 			if ($_GET['mailExisting'])
-				echo "<h3 style='text-align: center; color:orange'>Cette adresse mail existe déjà !</h3>";
+				echo "<h3 style='text-align: center; color:orange'>This email address already exists!</h3>";
 		}
 		if (isset($_GET['sending'])) {
 			if (!$_GET['sending'])
-				echo "<h3 style='text-align: cente;color:red;'>Envoie du mail d'initialisation de mot de passe échoué !</h3>";
+				echo "<h3 style='text-align: cente;color:red;'>Sending password initialization mail failed!</h3>";
 			else
-				echo "<h3 style='text-align: center; color:green;' >Création de compte réussi !</h3>";
+				echo "<h3 style='text-align: center; color:green;' >Successful account creation!</h3>";
 		}
 		?>
 		<form method="post" action="../../Controller/create_user.php">
@@ -73,7 +73,7 @@ if_not_connected($redirection = 'loginPage.php');
 				<input type="date" id="birthday" name="birthday">
 				<span> Delivery date of the aviation license </span>
 				<input type="date" id="license_aviation" name="license_aviation">
-				<input id="submit" type="submit" value="Créer un compte">
+				<input id="submit" type="submit" value="Create account">
 			</fieldset>
 		</form>
 	</div>

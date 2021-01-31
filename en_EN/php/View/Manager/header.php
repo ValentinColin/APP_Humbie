@@ -31,7 +31,7 @@
 				<span id="box-nom"><?= user_name() ?></span>
 				<span id="box-deconnexion">
 					<form method="post" action="../../Controller/logout.php">
-						<input id="button-deconnexion" type="submit" value="déconnexion">
+						<input id="button-deconnexion" type="submit" value="deconnection">
 					</form>
 				</span>
 			</div>
