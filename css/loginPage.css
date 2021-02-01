@@ -104,15 +104,17 @@ legend{
     padding-left: 20%;
 }
 
-#tryAgain{
+#tryAgain,#banned{
     width: 100%;
     padding-left: 5%;
     font-size: 1.1em;
     font-weight: bold;
-    color: red;
     text-align: center;
-
 }
+#tryAgain{
+    color: red;
+}
+
 
 #input_mail,#mail{
     outline: none;/* Pour pouvoir changer la couleur de l'input de l'adresse Mail*/
