@@ -1,54 +1,37 @@
-<?php 
-session_start();
-require_once("function.php");
-require_once("mail.php");
-require_once("../Model/create_user.php");
-
-if(isset($_SESSION['error']) && $_SESSION['error']){
-    unset($_SESSION['error']);
+<?php
+if(!(isset($_SESSION['access']) && isset($_SESSION['mail']) &&$_SESSION['access'] = $_SESSION['mail'])){
+    header('Location: login.php');
 }
 
-if(isset($_POST['mail'])){
-    
-    $reinitialisationPassword = passwordgen();
-    $_SESSION['reinitialisationPassword'] = $reinitialisationPassword;
-    $_SESSION['mail'] = $_POST['mail'];
-    sendMail($_POST['mail'],'Privacy Code',"Here is the security code to reset your password: \n $reinitialisationPassword");
-    header('Location: ../View/confirmer.php');
-    exit;
-
-}elseif(isset($_POST['password'])){
-    if($_POST['password'] == $_SESSION['reinitialisationPassword']){
-        $_SESSION['reinitialisation'] = true;
-        header('Location: ../View/newPassword.php');
-        exit;
-    }
-    else{
-        $_SESSION['error'] = true;
-        header('Location: ../View/confirmer.php');
-        exit;
-    }
-}elseif(isset($_POST['newpassword']) && isset($_POST['repeatpassword'])){
-    if($_POST['newpassword'] == $_POST['repeatpassword']){
-        changePassword($_POST['newpassword'],$_SESSION['mail']);
-        unset($_SESSION['reinitialisationPassword']);
-        header('Location: ../View/login.php');
-        exit;
-    }
-    else{
-        $_SESSION['error'] = true;
-        header('Location: ../View/newPassword.php');
-        exit;
-    }
-}elseif(isset($_POST['resend'])){
-    $reinitialisationPassword = passwordgen();
-    $_SESSION['reinitialisationPassword'] = $reinitialisationPassword;
-    sendMail($_SESSION['mail'],'Privacy Code',"Here is the security code to reset your password: \n $reinitialisationPassword");
-    header('Location: ../View/confirmer.php');
-    exit;
-}
-else{
-    header('Location: ../View/mailNewPassword.php');
-    exit;
-}
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../css/loginPage.css">
+    <link rel="stylesheet" href="../../../css/newPassword.css">
+
+</head>
+<body>
+    <main>
+        <form method="post" action="../Controller/newPassword.php">
+            <fieldset >
+                <legend>Enter your new password.</legend>
+
+                <a class='backLoginPage' href='loginPage.php' title="Return to the login page"> <<< </a>
+                <p class="input">
+                <span id="errorDisplay"> Incorrect email address </span>
+                    <br id='br'>
+                      <input id='mail' type="password" placeholder="new password" name="newpassword"><br>
+                    <br id='br'>
+                      <input id='mail'  type="password" placeholder="repeat your password" name="repeatpassword"><br>
+                </p>
+                <hr>
+                <input id='submit' type="submit" value="change your password">
+            </fieldset>
+        </form>
+    </main> 
+</body>
+</html>
+

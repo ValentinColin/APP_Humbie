@@ -1,3 +1,9 @@
+<?php
+if(!(isset($_SESSION['access']) && isset($_SESSION['mail']) &&$_SESSION['access'] = $_SESSION['mail'])){
+    header('Location: login.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
