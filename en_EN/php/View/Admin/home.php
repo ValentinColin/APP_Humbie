@@ -24,7 +24,36 @@ verif_access('ADMIN');
 	<img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 
 	<main>
-		<p>Welcome to Humbie's website <?= $_SESSION['prenom'].' '.$_SESSION['nom'] ?> !</p>
+		<h1>Welcome to Humbie's website <?= $_SESSION['prenom'] ?> !</h1>
+		<br>
+		<p>
+			I detect that you are logged in as administrator.<br>
+			Please be particularly careful not to communicate your login and password.<br>
+		</p>
+		<p>
+			This site is here to help you in several areas, but has one main feature !<br>
+			That of helping pilots to recover data from psychomotor tests they have carried out and those they will carry out in the future.<br>
+		</p>
+		<p>
+			Managers are responsible for several pilots (users),<br>
+			in particular, they have the right to access the psychomotor results of the pilots for whom they are responsible.
+		</p>
+		<p>
+			As administrator you have the following specific rights:
+			<ul>
+				<li>Create or ban members.</li>
+				<li>Edit FAQ.</li>
+				<li>Modify FAQ.</li>
+				<li>Reply to tickets.</li>
+				<li>... in addition to having direct access to the database and source files.</li> .
+			</ul>
+		</p>
+		<p>
+			This site is currently available in 2 languages French and English where you can switch from one to the other (see at the bottom of the page).
+		</p>
+		<p>
+			May the force be with you !
+		</p>
 	</main>
 
 	<!-- <aside id="blank"></aside> -->

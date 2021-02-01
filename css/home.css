@@ -4,6 +4,8 @@ body {
 }
 
 main{
+	font: "Bahnschrift light";
+	color: #464646;
 	margin-top: 100px;
 	margin-left: 15%;
 }
