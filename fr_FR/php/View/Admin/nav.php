@@ -7,7 +7,7 @@
 		<span id="barre">I</span>
 		<li><a style="text-decoration: none;" href="../../Controller/search_member_c.php/?search=AllMember">Tous les membres</a></li>
 		<span id="barre">I</span>
-		<li><a style="text-decoration: none;" href="../../Controller/search_member_c.php/?needManager=true&search=AllManager">Ajouter un membre</a></li>
+		<li><a style="text-decoration: none;" href="../../Controller/search_member_c.php/?needManager=true&search=AllManager&triRole=oui">Ajouter un membre</a></li>
 		<span id="barre">I</span>
 		<li><a style="text-decoration: none;" href="../../Controller/ticket.php">Gestion des tickets</a></li>
 		<span id="barre">I</span>
