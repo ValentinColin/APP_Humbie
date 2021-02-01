@@ -60,7 +60,7 @@ verif_access('ADMIN');
 				<br>
 
 				<label class="manager" for="label_manager"> Manager</label>
-				<select class="manager" name="manager" id="label_manager">
+				<select class="manager" name="id_manager" id="label_manager">
 					<option value="null">-----</option>
 					<?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
 						<option value='<?php print_r($_SESSION['search'][$i][3])?>' > <?php print_r($_SESSION['search'][$i][1]) ?>
