@@ -13,7 +13,7 @@ if(isset($_POST['mail'])){
     $reinitialisationPassword = passwordgen();
     $_SESSION['reinitialisationPassword'] = $reinitialisationPassword;
     $_SESSION['mail'] = $_POST['mail'];
-    sendMail($_POST['mail'],'Code de confidentialité',"Voici le code de sécurité vous permettant de réinitialiser votre mot de passe: \n $reinitialisationPassword");
+    sendMail($_POST['mail'],'Code de confidentiel',"Voici le code de sécurité vous permettant de réinitialiser votre mot de passe: \n $reinitialisationPassword");
     header('Location: ../View/confirmer.php');
     exit;
 
@@ -44,7 +44,7 @@ if(isset($_POST['mail'])){
 }elseif(isset($_POST['resend'])){
     $reinitialisationPassword = passwordgen();
     $_SESSION['reinitialisationPassword'] = $reinitialisationPassword;
-    sendMail($_SESSION['mail'],'Code de confidentialité',"Voici le code de sécurité vous permettant de réinitialiser votre mot de passe: \n $reinitialisationPassword");
+    sendMail($_SESSION['mail'],'Code de confidentiel',"Voici le code de sécurité vous permettant de réinitialiser votre mot de passe: \n $reinitialisationPassword");
     header('Location: ../View/confirmer.php');
     exit;
 }
