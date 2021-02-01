@@ -39,15 +39,15 @@ function sendTicketByMail($post)
                     FROM `tickets`  JOIN `members`ON tickets.id_member = members.id WHERE `id_ticket` = ' . idTicket($post));
     $row = $req->fetch();
 
-    $message =  "Votre ticket a reçu une réponse. \r\n
+    $message =  "Your ticket has been answered. \r\n
                 topic : " . $row['topic'] . " \r
-                sujet : " . $row['subject'] . " \r
-                Question de : " . $row["nom"] . " " . $row["prenom"] . " \r
-                réquête émise le : " . $row['date_request'] . " \r\n
-                Contenu: " . $row['msg_request'] . " \r\n
-                Réponse: " . $row['msg_reply'];
+                subjet : " . $row['subject'] . " \r
+                Question from : " . $row["nom"] . " " . $row["prenom"] . " \r
+                request from : " . $row['date_request'] . " \r\n
+                Content: " . $row['msg_request'] . " \r\n
+                Answer: " . $row['msg_reply'];
 
-    $mail = mail($row["email"], 'Réponse à votre ticket', $message);
+    $mail = mail($row["email"], 'Reply to your ticket', $message);
     return $mail;
 }
 

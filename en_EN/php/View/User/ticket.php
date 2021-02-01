@@ -35,12 +35,12 @@ verif_access('USER');
     <main>
 
         <form action="../../Controller/ticket.php" method="post">
-            <H1>Envoyer un ticket</H1>
+            <H1>Send a ticket</H1>
         <div id="pbm">
         <select id="topic" name="topic">
-                <option value="login" selected>Problème login</option>
-                <option value="test">Problème test</option>
-                <option value="private_information">Information privée</option>
+                <option value="login" selected>Login problem</option>
+                <option value="test">Test problem</option>
+                <option value="private_information">Private information</option>
             </select>
             <input type="text" name="title" placeholder="Name of your request">
         </div>
