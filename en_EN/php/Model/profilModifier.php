@@ -43,19 +43,16 @@ function mail_exist($mail)
 	return $exist;
 }
 
-function change_password($password)
+function change_password($password, $id)
 {
-	$bdd = login_bdd();
-	$req = $bdd->prepare('UPDATE members 
-    					  SET password = :password ');
+    $bdd = login_bdd();
+	$password_gen_hash = passwordhash($password);
+	$req = $bdd->prepare('UPDATE `members` SET `password`= :password WHERE id = '.$id);
 
-	$password_hash = passwordhash($password);
+	return $req->execute([
+		':password' => $password_gen_hash
+	]);
 
-	$req->execute(array(
-		':password' => $password_hash,
-	));
-
-	return true;
 }
 
 function path_photoById($id)

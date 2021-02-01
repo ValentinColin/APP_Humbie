@@ -12,8 +12,10 @@ session_start();
     <title>Humbie</title>
 </head>
 <body>
+
     <a href="login.php">Retourner à la page de login.</a>
     <h1>Réinitialisation de mot de passe.</h1>
+
 
     <?php
     if(isset($_SESSION['error']) && $_SESSION['error']){
@@ -22,12 +24,18 @@ session_start();
     <?php
     }
     ?>
+
     <h2>Indiquez le mail de votre compte. </h2>
     <form action="../Controller/newPassword.php" method="POST">
-        <input id="input_mail" type="email" placeholder="e-mail de réninitialisation" name="email"> <br>
-        <input id="submit" type="submit" value="envoyer un code de vérification">
+        <input type="email" placeholder="e-mail de réninitialisation" name="email">
+        <input type="submit" value="envoyer un code de vérification">
+    </form>
+
+    <h2>Un mot de passe vous a été envoyé par mail. </h2>
+    <form action="../Controller/newPassword.php" method="POST">
+        <input type="text" placeholder="code de vérification" name="password">
+        <input type="submit" value="envoyer un code de vérification">
     </form>
 
 </body>
 </html>
-
