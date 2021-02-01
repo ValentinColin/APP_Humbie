@@ -24,7 +24,7 @@ function create_user($data)
 	$password_gen = passwordgen();
 	$password_gen_hash = passwordhash($password_gen);
 
-	if (empty($data['id_manager'])) 		$data['id_manager'] = 0;
+	if (empty($data['id_manager'])) 		$data['id_manager'] = null;
 	if (empty($data['license_aviation'])) 	$data['license_aviation'] = null;
 
 	$req->execute(array(
