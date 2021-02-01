@@ -1,6 +1,6 @@
 <?php
-include('../Controller/function.php');
-include('../Model/login_bdd.php');
+require_once('../Controller/function.php');
+require_once('../Model/login_bdd.php');
 
 function mail_exist($mail)
 {

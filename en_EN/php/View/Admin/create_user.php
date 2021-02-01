@@ -58,7 +58,7 @@ if_not_connected($redirection = 'loginPage.php');
 				</select>
 				<br>
 				<span class="manager"> Manager</span>
-				<select class="manager" name="manager">
+				<select class="manager" name="id_manager">
 					<option value="null">-----</option>
 					<?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
 						<option value='<?php print_r($_SESSION['search'][$i][3])?>' > <?php print_r($_SESSION['search'][$i][1]) ?>

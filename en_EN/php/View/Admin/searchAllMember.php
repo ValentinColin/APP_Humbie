@@ -5,7 +5,7 @@ verif_access('ADMIN');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -21,13 +21,13 @@ verif_access('ADMIN');
 
 <body>
     <?php require('header.php'); ?>
-	<?php require('nav.php') ?>
+    <?php require('nav.php') ?>
     <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
 
     <main>
         <div id='search-page'>
-        <p id='upload'> <button id='button-upload'  type="button"> Download the table in excel format</button>
-             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-spreadsheet-fill" viewBox="0 0 16 16">
+            <p id='upload'> <button id='button-upload' type="button"> Download table in excel format</button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-spreadsheet-fill" viewBox="0 0 16 16">
                     <path d="M6 12v-2h3v2H6z" />
                     <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM3 9h10v1h-3v2h3v1h-3v2H9v-2H6v2H5v-2H3v-1h2v-2H3V9z" />
                 </svg> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
@@ -36,7 +36,7 @@ verif_access('ADMIN');
                 </svg>
             </p>
 
-            <h1 id="title"> Pilots and Manager </h1>
+            <h1 id="title"> Pilots et Managers </h1>
 
             <div id='classement'>
                 <?php require("../divSearch.php") ?>
@@ -47,15 +47,22 @@ verif_access('ADMIN');
                     <th> First name </th>
                     <th> Last name </th>
                     <th> E-mail </th>
-                    <th> Role</th>
+                    <th> Rôle </th>
+                    <th> Banned </th>
                 </tr>
 
                 <?php for ($i = 0; $i < count($_SESSION['search']); $i++) : ?>
                     <tr>
-                        <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
                         <td> <?php print_r($_SESSION['search'][$i][1]); ?> </td>
-                        <td> <a href="mailto:service.humbie@gmail.com" title="Contact <?= $_SESSION['search'][$i][0] ?>  by mail"> <?php print_r($_SESSION['search'][$i][2]); ?> </a> </td>
+                        <td> <?php print_r($_SESSION['search'][$i][0]); ?> </td>
+                        <td> <a href="<?= $_SESSION['search'][$i][2]; ?>" title="Contacter <?php echo $_SESSION['search'][$i][0] . ' ' . $_SESSION['search'][$i][1]; ?>  par mail">
+                                <?php print_r($_SESSION['search'][$i][2]); ?>
+                            </a> </td>
                         <td> <?php print_r($_SESSION['search'][$i][3]); ?> </td>
+                        <td>
+                                <input id="<?php print_r($_SESSION['search'][$i][5]) ?>" value="<?php print_r($_SESSION['search'][$i][4]) ?> " class='banned'  type="checkbox" name="banned" <?php if ($_SESSION['search'][$i][4] == 1) : ?> checked title="
+        User banned, click to remove ban" <?php endif; ?>>  </td>
+
                     <tr>
                     <?php endfor; ?>
             </table>
@@ -63,8 +70,8 @@ verif_access('ADMIN');
     </main>
 
     <span id="footer-position">
-		<?php require('footer.php'); ?>
-	</span>
+        <?php require('footer.php'); ?>
+    </span>
 </body>
 <script src='../../../js/search.js'> </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

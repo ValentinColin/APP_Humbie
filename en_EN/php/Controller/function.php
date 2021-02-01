@@ -1,7 +1,6 @@
 <?php
-
 /*
- * Cette fonction vérifie si la personne est connecter 
+ * Cette fonction vérifie si la personne est connectée
  */
 function if_not_connected($redirection)
 {
@@ -202,6 +201,7 @@ function stats(array $array){
 
 	return $results;
 }
+
 
 
 // fonction qui renvoie le chemin du home.php dans l'autre langue et redéfinie la variable $_SESSIONS['lang']
