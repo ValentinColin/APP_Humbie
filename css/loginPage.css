@@ -39,12 +39,20 @@ main{
 
 h1{
     text-align: center;
-    position: absolute;
+    position: relative;
     top:10%;
     left: 50%;
     transform: translate(-50%,-50%);
     font-size: 3.8em;
     color : #B1C0C8;
+}
+
+h2{
+    text-align: center;
+    position: relative;
+
+    font-size: 2.5em;
+    color : #262829;
 }
 
 hr{
