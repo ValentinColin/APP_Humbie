@@ -20,6 +20,7 @@ if(isset($_POST['mail'])){
 }elseif(isset($_POST['password'])){
     if($_POST['password'] == $_SESSION['reinitialisationPassword']){
         $_SESSION['reinitialisation'] = true;
+        $_SESSION['access'] = $_SESSION['mail'];
         header('Location: ../View/newPassword.php');
         exit;
     }
