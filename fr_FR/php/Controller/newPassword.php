@@ -8,12 +8,12 @@ if(isset($_SESSION['error']) && $_SESSION['error']){
     unset($_SESSION['error']);
 }
 
-if(isset($_POST['email'])){
+if(isset($_POST['mail'])){
     
     $reinitialisationPassword = passwordgen();
     $_SESSION['reinitialisationPassword'] = $reinitialisationPassword;
-    $_SESSION['email'] = $_POST['email'];
-    sendMail($_POST['email'],'Code de confidentialité',"Voici le code de sécurité vous permettant de réinitialiser votre mot de passe: \n $reinitialisationPassword");
+    $_SESSION['mail'] = $_POST['mail'];
+    sendMail($_POST['mail'],'Code de confidentialité',"Voici le code de sécurité vous permettant de réinitialiser votre mot de passe: \n $reinitialisationPassword");
     header('Location: ../View/confirmer.php');
     exit;
 
@@ -30,7 +30,7 @@ if(isset($_POST['email'])){
     }
 }elseif(isset($_POST['newpassword']) && isset($_POST['repeatpassword'])){
     if($_POST['newpassword'] == $_POST['repeatpassword']){
-        changePassword($_POST['newpassword'],$_SESSION['email']);
+        changePassword($_POST['newpassword'],$_SESSION['mail']);
         unset($_SESSION['reinitialisationPassword']);
         header('Location: ../View/login.php');
         exit;
@@ -40,7 +40,14 @@ if(isset($_POST['email'])){
         header('Location: ../View/newPassword.php');
         exit;
     }
-}else{
+}elseif(isset($_POST['resend'])){
+    $reinitialisationPassword = passwordgen();
+    $_SESSION['reinitialisationPassword'] = $reinitialisationPassword;
+    sendMail($_SESSION['mail'],'Code de confidentialité',"Voici le code de sécurité vous permettant de réinitialiser votre mot de passe: \n $reinitialisationPassword");
+    header('Location: ../View/confirmer.php');
+    exit;
+}
+else{
     header('Location: ../View/mailNewPassword.php');
     exit;
 }
