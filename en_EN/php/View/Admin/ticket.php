@@ -31,8 +31,10 @@ verif_access('ADMIN');
     <main>
         <div id= "tiket-en-attente">
         <?php
+
         $ticket = $_SESSION['ticket'];
-        echo '<h1> Il y a ' . count($ticket) . ' tickets en attente: </h1> ';
+        echo '<h1> There is (are) ' . count($ticket) . ' tickets pending: </h1> ';
+
         for ($i = 0; $i < count($ticket); $i++):
         ?>
         <div id='ticket'>

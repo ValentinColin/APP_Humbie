@@ -48,7 +48,7 @@ verif_access('ADMIN');
 						<p class='question'><?= $faq[$i]["question"] ?></p>
 						<p class='answer'><?= $faq[$i]["answer"] ?></p>
 						<form method="post" action="../../Controller/faq.php">
-							<?= "<input id='button-delete' type='submit' name='" . $faq[$i]["id"] . "' value='Supprimer'>" ?>
+							<?= "<input id='button-delete' type='submit' name='" . $faq[$i]["id"] . "' value='Delete'>" ?>
 						</form>
 					</div>
 					<hr>
