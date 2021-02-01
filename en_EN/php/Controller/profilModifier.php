@@ -17,7 +17,7 @@ elseif(isset($_POST['password']) && isset($_POST['newpassword']) && isset($_POST
 
     if (login($_SESSION['mail'],$_POST['password']) && $_POST['newpassword'] == $_POST['repetpassword'] )
     {
-        change_password($_POST['newpassword']);
+        change_password($_POST['newpassword'],$_SESSION['id']);
         $_SESSION['passwordError'] = 'ok';
         goView('profilModifier.php');
         die;
