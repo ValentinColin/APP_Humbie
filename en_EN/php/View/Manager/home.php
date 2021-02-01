@@ -35,8 +35,8 @@ verif_access('MANAGER');
 			That of helping pilots to recover data from psychomotor tests they have carried out and those they will carry out in the future.<br>
 		</p>
 		<p>
-			Managers are responsible for several pilots (users),<br>.
-			In particular that of being able to access the psychomotor results of the pilots for whom they are responsible.<br>
+			Managers are responsible for several pilots (users),<br>
+			in particular that of being able to access the psychomotor results of the pilots for whom they are responsible.<br>
 			You therefore have a certain responsibility towards them.
 		</p>
 		<p>

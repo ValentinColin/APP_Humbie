@@ -27,7 +27,7 @@ verif_access('ADMIN');
 		<h1>Welcome to Humbie's website <?= $_SESSION['prenom'] ?> !</h1>
 		<br>
 		<p>
-			I detect that you are logged in as administrator.
+			I detect that you are logged in as administrator.<br>
 			Please be particularly careful not to communicate your login and password.<br>
 		</p>
 		<p>
@@ -35,8 +35,8 @@ verif_access('ADMIN');
 			That of helping pilots to recover data from psychomotor tests they have carried out and those they will carry out in the future.<br>
 		</p>
 		<p>
-			Managers are responsible for several pilots (users),<br>.
-			In particular, they have the right to access the psychomotor results of the pilots for whom they are responsible.
+			Managers are responsible for several pilots (users),<br>
+			in particular, they have the right to access the psychomotor results of the pilots for whom they are responsible.
 		</p>
 		<p>
 			As administrator you have the following specific rights:
