@@ -1,5 +1,6 @@
 <?php
 include("login_bdd.php");
+include("../Controller/mail.php");
 
 /* Permet d'envoyer son ticket */
 function ticketPost($topic, $title, $id, $content)
@@ -47,7 +48,7 @@ function sendTicketByMail($post)
                 Contenu: " . $row['msg_request'] . " \r\n
                 Réponse: " . $row['msg_reply'];
 
-    $mail = mail($row["email"], 'Réponse à votre ticket', $message);
+    $mail = sendMail($row["email"], 'Humbie Suivi Ticket' , $message);
     return $mail;
 }
 

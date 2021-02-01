@@ -12,5 +12,7 @@ if (isset($_POST['poster'])) {
         sendTicketByMail($_POST);
     }
 }
-
+$_SESSION['ticket'] = getTicket();
+$_SESSION['ticket_in_progress'] = getTicketById($_SESSION['id'], '"in_process"');
+$_SESSION['ticket_validated'] = getTicketById($_SESSION['id'], '"validated"');
 goView('ticket.php');

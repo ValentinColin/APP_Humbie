@@ -9,7 +9,7 @@
 		<span id="barre">I</span>
 		<li><a style="text-decoration: none;" href="../../Controller/search_member_c.php/?needManager=true&search=AllManager">Ajouter un membre</a></li>
 		<span id="barre">I</span>
-		<li><a style="text-decoration: none;" href="ticket.php">Gestion des tickets</a></li>
+		<li><a style="text-decoration: none;" href="../../Controller/ticket.php">Gestion des tickets</a></li>
 		<span id="barre">I</span>
 		<li><a style="text-decoration: none;" href="faq.php">Gestion de la FAQ</a></li>
 	</ul>

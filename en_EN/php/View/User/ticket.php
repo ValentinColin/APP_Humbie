@@ -1,5 +1,4 @@
 <?php
-require_once("../../Model/ticket.php");
 require_once("../../Controller/function.php");
 session_start();
 verif_access('USER');
@@ -66,7 +65,7 @@ verif_access('USER');
             <th> Content </th>
             </tr>
             <?php
-        $ticket = getTicketById($_SESSION['id'], '"in_process"');
+        $ticket = $_SESSION['ticket_in_progress'];
         for ($i = 0; $i < count($ticket); $i++) {
         ?>
             <tr>
@@ -92,7 +91,7 @@ verif_access('USER');
             <th> Answer</th>
             </tr>
         <?php
-        $ticket = getTicketById($_SESSION['id'], '"validated"');
+        $ticket = $_SESSION['ticket_validated'];
         for ($i = 0; $i < count($ticket); $i++) {
         ?>      <tr>
                <td> <?= $ticket[$i]['topic'] ?></td>

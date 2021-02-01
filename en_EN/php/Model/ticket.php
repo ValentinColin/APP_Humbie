@@ -1,5 +1,6 @@
 <?php
 include("login_bdd.php");
+include("../Controller/mail.php");
 
 /* Permet d'envoyer son ticket */
 function ticketPost($topic, $title, $id, $content)
@@ -39,15 +40,15 @@ function sendTicketByMail($post)
                     FROM `tickets`  JOIN `members`ON tickets.id_member = members.id WHERE `id_ticket` = ' . idTicket($post));
     $row = $req->fetch();
 
-    $message =  "Votre ticket a reçu une réponse. \r\n
-                topic : " . $row['topic'] . " \r
-                sujet : " . $row['subject'] . " \r
-                Question de : " . $row["nom"] . " " . $row["prenom"] . " \r
-                réquête émise le : " . $row['date_request'] . " \r\n
-                Contenu: " . $row['msg_request'] . " \r\n
-                Réponse: " . $row['msg_reply'];
+    $message =  "Your ticket has been answered. \r\n
+                Topic : " . $row['topic'] . " \r
+                subjet : " . $row['subject'] . " \r
+                Qestion from : " . $row["nom"] . " " . $row["prenom"] . " \r
+                Requested on : " . $row['date_request'] . " \r\n
+                Content : " . $row['msg_request'] . " \r\n
+                Answer : " . $row['msg_reply'];
 
-    $mail = mail($row["email"], 'Réponse à votre ticket', $message);
+    $mail = sendMail($row["email"], 'Reply to your ticket' , $message);
     return $mail;
 }
 

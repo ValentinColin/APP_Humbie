@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once("../../Model/ticket.php");
 require_once("../../Controller/function.php");
 verif_access('ADMIN');
 ?>
@@ -32,7 +31,7 @@ verif_access('ADMIN');
     <main>
         <div id= "tiket-en-attente">
         <?php
-        $ticket = getTicket();
+        $ticket = $_SESSION['ticket'];
         echo '<h1> Il y a ' . count($ticket) . ' tickets en attente: </h1> ';
         for ($i = 0; $i < count($ticket); $i++):
         ?>
