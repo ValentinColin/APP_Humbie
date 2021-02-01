@@ -33,7 +33,7 @@ verif_access('ADMIN');
         <div id= "tiket-en-attente">
         <?php
         $ticket = getTicket();
-        echo '<h1> Il y a ' . count($ticket) . ' tickets en attente: </h1> ';
+        echo '<h1> Il y a ' . count($ticket) . ' tickets pending: </h1> ';
         for ($i = 0; $i < count($ticket); $i++):
         ?>
         <div id='ticket'>
