@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    padding-bottom: 50px;
 }
 
 #title{
@@ -75,7 +76,7 @@ strong{
     justify-content: center;
     display:flex;
     flex-direction: row;
-}   
+}
 
 .stats-value{
     padding: 20px;

@@ -26,4 +26,17 @@ if(ordre_alphabetique[1].title=="tri déjà effectif"){
     ordre_alphabetique[1].style.color='grey'
 }
 
+var banned=document.getElementsByClassName("banned");
+
+function function_banned(bannedI){
+bannedI.addEventListener('click',function(){
+    var redirection="../../Controller/banned.php/?id="+bannedI.id+"&etat="+bannedI.value
+    document.location.href=redirection;
+})
+}
+
+for(var i=0; i<banned.length;i++){
+    function_banned(banned[i]);
+}
+
 

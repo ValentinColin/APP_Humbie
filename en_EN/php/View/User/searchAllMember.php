@@ -23,7 +23,7 @@ verif_access('USER');
     <?php require('header.php'); ?>
 	<?php require('nav.php') ?>
     <img src="../../../../Images/Remplissage_gauche.png" id="remplissage-gauche">
-    
+
     <main>
         <div id='search-page'>
         <p id='upload'> <button id='button-upload'  type="button"> Download the table in excel format</button>
@@ -36,7 +36,7 @@ verif_access('USER');
                 </svg>
             </p>
 
-            <h1 id="title"> Pilots and Manager </h1>
+            <h1 id="title"> Pilots and Managers </h1>
 
             <div id='classement'>
                 <?php require("../divSearch.php") ?>

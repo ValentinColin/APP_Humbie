@@ -5,7 +5,7 @@
 footer {
 	text-align: center;
 	/* modif qui permet au footer de rester en bas de page*/
-	position: relative;/* Ou relative si l'on tient à voir le footer juste avant la fin du body*/
+	position: fixed;/* Ou relative si l'on tient à voir le footer juste avant la fin du body*/
 	bottom: 1px;
 	left: 50%;
 	width: 100%;
@@ -21,13 +21,14 @@ footer {
 #footer_nav {
 	margin: 0;
   	padding: 0;
-  	list-style: none;
+	  list-style: none;
+
 }
 
 #footer_nav li {
 	display: inline;
 	margin-right: 1px;
-	
+
   	/*border: 1px dotted #600;*/
 }
 
@@ -45,4 +46,8 @@ footer {
 
 #footer_nav li a:hover {
   color: #0fe8ba;
+}
+
+main{
+margin-bottom: 200px;
 }
