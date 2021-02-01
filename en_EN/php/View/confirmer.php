@@ -13,21 +13,21 @@
     <main>
     <form method="post" action="../Controller/newPassword.php">
         <fieldset >
-            <legend>Réinitialisation de mot de passe</legend>
+            <legend>Password reset</legend>
             <a class='backLoginPage' href='loginPage.php' title="Retouner à la page de connexion"> <<< </a>
             <p class="input">
             <?php
                 if(isset($_SESSION['error']) && $_SESSION['error']){
             ?>
-                <h3 id="error">Un champ a été mal renseigné </h3>
+                <h3 id="error">A field has been filled in incorrectly </h3>
             <?php
             }
             ?>
                 <br id='br'>
-                Code reçu:  :  <input  id="mail" name="password" placeholder="code reçu"><br>
+                Code reçu:  :  <input  id="mail" name="password" placeholder="code reveived"><br>
             </p>
             <hr>
-            <input id='submit' type='submit' value='Valider'>
+            <input id='submit' type='submit' value='Submit'>
         </fieldset>
     
     </form>

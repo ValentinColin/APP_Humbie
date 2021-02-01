@@ -7,7 +7,7 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <title> Réinitialisation de mot de passe </title>
+    <title> Password reset </title>
     <link rel="stylesheet" href="../../../css/loginPage.css">
     <link rel="stylesheet" href="../../../css/newPassword.css">
 
@@ -16,23 +16,23 @@ session_start();
 <body>
     <center>
     <header>
-        <h1>Page Réinitialisation</h1>
+        <h1>Reset page</h1>
         <!-- <img id="compagnyLogo"src="../Images/Infini_Measures.png" alt=""> -->
     </header>
 
     <main>
         <form method="post" action="../Controller/newPassword.php">
             <fieldset >
-                <legend>Réinitialisation de mot de passe</legend>
+                <legend>Password reset</legend>
 
                 <a class='backLoginPage' href='loginPage.php' title="Retouner à la page de connexion"> <<< </a>
                 <p class="input">
-                <span id="errorDisplay"> Adresse mail incorrecte </span>
+                <span id="errorDisplay"> Incorrect email address </span>
                     <br id='br'>
-                    Adresse mail  :  <input id="mail" type="mail" name="mail"  placeholder="ceci-est-n@exemple.fr" required><br>
+                    Adresse mail  :  <input id="mail" type="mail" name="mail"  placeholder="write here" required><br>
                 </p>
                 <hr>
-                <input id='submit' type='submit' value='Réinitialiser'>
+                <input id='submit' type='submit' value='Submit'>
             </fieldset>
         </form>
     </main>
