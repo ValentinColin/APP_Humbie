@@ -1,7 +1,11 @@
 <?php
 include("login_bdd.php");
 
-function banned(int $id,int $toBanned)
+
+/**
+ * Cette fonction change le statut 'banni' du membre possédant l'id: $id dans la BDD
+ */
+function banned(int $id, int $toBanned)
 {
     $connexion = login_bdd();
     if($toBanned==0){

@@ -8,6 +8,11 @@ require '../../../PHPMailer/src/Exception.php';
 require '../../../PHPMailer/src/PHPMailer.php';
 require '../../../PHPMailer/src/SMTP.php';
 
+
+/**
+ * Cette fonction envoie un mail au $destinataire, avec un sujet et un contenu
+ * Renvoie true si le mail à été envoyer avec succès, false sinon.
+ */
 function sendMail($destinataire, $sujet , $contenu){
 	define("MAIL",'service.humbie@gmail.com');
 	define('MAIL_PASSWORD', 'G1Dhumbie');

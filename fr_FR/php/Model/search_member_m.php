@@ -40,7 +40,6 @@ function getNameLastNameMngOfUser(String $ordre = ''): array
 
 //Recupère,nom prenom managers  des et les classes
 // par odre croissant ou decroissant, suivant le parametre.
-
 function getNameLastNameManager(String $ordre = ''): array
 {
     try {

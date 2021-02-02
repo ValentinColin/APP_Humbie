@@ -2,7 +2,16 @@
 include("login_bdd.php");
 session_start();
 
-
+/**
+ * Renvoie un tableau d'information de la personne possédant l'id: $id dans la BDD
+ * - id
+ * - prenom
+ * - nom
+ * - mail
+ * - birthday_date
+ * - country
+ * - phone
+ */
 function getprofil($id){
 
     $bdd = login_bdd();
@@ -12,6 +21,13 @@ function getprofil($id){
     return $req->fetch();
 } 
 
+/**
+ * Modifie les informations suivante de la personne connecter dans la BDD 
+ * - email
+ * - birthday_date
+ * - country
+ * - phone
+ */
 function modifierprofil($email,$birthday_date,$country,$phone){
     $bdd = login_bdd();
     $req = $bdd->prepare('UPDATE `members` 
@@ -29,7 +45,9 @@ function modifierprofil($email,$birthday_date,$country,$phone){
     ));
 }
 
-
+/**
+ * Renvoie true or false si le mail donnée en paramètre existe dans la BDD
+ */
 function mail_exist($mail)
 {
 	$bdd = login_bdd();
@@ -43,6 +61,10 @@ function mail_exist($mail)
 	return $exist;
 }
 
+/**
+ * Modifie le mot de passe de la personne possédant l'id: $id
+ * par $password (non hasher)
+ */
 function change_password($password, $id)
 {
     $bdd = login_bdd();
@@ -55,6 +77,9 @@ function change_password($password, $id)
 
 }
 
+/**
+ * Renvoie le chemin de la photo de profil de la personne possédant l'id: $id
+ */
 function path_photoById($id)
 {		
     $bdd = login_bdd();
@@ -69,8 +94,3 @@ function path_photoById($id)
 	}
 	
 }
-
-
-
-
-?>

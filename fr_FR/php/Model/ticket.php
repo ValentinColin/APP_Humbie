@@ -33,6 +33,9 @@ function ticketReply($id, $reponse, $post)
     ));
 }
 
+/**
+ * Cette fonction envoie la réponse à un ticket par mail.
+ */
 function sendTicketByMail($post)
 {
     $bdd = login_bdd();
@@ -51,8 +54,6 @@ function sendTicketByMail($post)
     $mail = sendMail($row["email"], 'Humbie Suivi Ticket' , $message);
     return $mail;
 }
-
-
 
 /* Permet de récupérer l'id d'un ticket */
 function idTicket($post)
@@ -86,6 +87,19 @@ function getTicket()
     return $ticket;
 }
 
+/**
+ * Cette fonction envoie un tableau contenant les informations du ticket  possédant l'id: $id
+ * renvoie un tableau contenant ces valeurs:
+ * - id_ticket
+ * - topic
+ * - subject
+ * - id_member
+ * - date_request
+ * - msg_request
+ * - name
+ * - first name
+ * - msg_reply
+ */
 function getTicketById($id, $status)
 {
     $bdd = login_bdd();

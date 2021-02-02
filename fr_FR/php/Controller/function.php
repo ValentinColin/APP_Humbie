@@ -76,6 +76,10 @@ function verif_access($access, $redirection='../../View/login.php') {
 	if_banned();
 }
 
+/*
+ * Cette fonction redirige vers le bon fichier (model/controller) demander selon 
+ * le role de la personne connecter.
+ */
 function go($page)
 {
 	switch ($_SESSION['access']) {
@@ -93,6 +97,10 @@ function go($page)
 	exit;
 }
 
+/*
+ * Cette fonction redirige vers la bonne page (view) demander selon 
+ * le role de la personne connecter.
+ */
 function goView($page)
 {
 	switch ($_SESSION['access']) {
@@ -124,6 +132,10 @@ function path_lang($default_path){
 	return $path;
 }*/
 
+/*
+ * Renvoie le chemin de la photo de profil de la personne connecter.
+ * Attention cette fonction doit être appeler depuis une vue.
+ */
 function path_photo()
 {	
 	if (file_exists('../../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png')) {
@@ -133,16 +145,26 @@ function path_photo()
 	}
 }
 
+/*
+ * Renvoie le chemin de la photo de profil de la personne connecter.
+ * Attention cette fonction doit être appeler depuis un controller.
+ */
 function path_photo_controller()
 {
 	return '../../../Images/Photo/' . $_SESSION['prenom'] . $_SESSION['nom'] . $_SESSION['id'] . '.png';
 }
 
+/**
+ * Cette fonction renvoie le 'prénom nom' de la personne connecter.
+ */
 function user_name()
 {
 	return $_SESSION['prenom'] . ' ' . $_SESSION['nom'];
 }
 
+/**
+ * Cette fonction génère un mot de passe aléatoire de $len caractères.
+ */
 function passwordgen($len = 6)
 {
 	$chaine = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890+-*/%!:/;.,?$";
@@ -151,6 +173,9 @@ function passwordgen($len = 6)
 	return $chaine;
 }
 
+/**
+ * Cette fonction renvoie le hashage de $password.
+ */
 function passwordhash($password)
 {
 	return password_hash($password, PASSWORD_BCRYPT, ['cost' => 9]);
@@ -201,8 +226,6 @@ function stats(array $array){
 
 	return $results;
 }
-
-
 
 // fonction qui renvoie le chemin du home.php dans l'autre langue et redéfinie la variable $_SESSIONS['lang']
 function change_path_lang(){

@@ -15,6 +15,18 @@ function mail_exist($mail)
 	return $exist;
 }
 
+/**
+ * Cette fonction ajoute un membre dans la BDD avec les information suivante contenue dans un array:
+ * - mail
+ * - role
+ * - id_manager
+ * - nom
+ * - prenom
+ * - birthday
+ * - license_aviation (facultatif)
+ * 
+ * Renvoie le mot de passe générer aléatoirement qui a été affecter au membre crée
+ */
 function create_user($data)
 {
 	$bdd = login_bdd();
@@ -41,6 +53,11 @@ function create_user($data)
 	return $password_gen;
 }
 
+
+/**
+ * Cette fonction modifie le mot de passe de la personne possédant l'email: $email
+ * sachant que l'email est unique en base de donnée.
+ */
 function changePassword($password,$email)
 {
 	$bdd = login_bdd();

@@ -10,7 +10,6 @@ gd_info();
 
 
 //Cherche les résultats disponibles des tests effectués par tous les users associé à un manager
-
 function resultsByManager($id,$nbr =50){
     $bdd = login_bdd();
     $req = $bdd->query('SELECT  `id_session`, `id_type`, `date`, `nom`, `prenom`,`id_test`,city,id
@@ -95,6 +94,9 @@ function trier($datas){
     return $table;
 }
 
+/**
+ * Cette fonction crée et renvoie le chemin du graphique générer.
+ */
 function createImage(array $array,$id,$id_type,$uniteX = 'temps',$uniteY = 'valeur',$origine =0){
     if(file_exists("../../../Images/Resultats/test"."$id"."_"."$id_type".".png")){
         return "../../../Images/Resultats/test"."$id"."_"."$id_type".".png";
@@ -197,6 +199,3 @@ function createImage(array $array,$id,$id_type,$uniteX = 'temps',$uniteY = 'vale
     }
 
 }
-
-
-?>

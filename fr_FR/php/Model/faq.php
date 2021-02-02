@@ -21,6 +21,9 @@ function getFAQ()
 	return $faq;
 }
 
+/**
+ * Cette fonction ajouter une question/answser de FAQ dans la BDD
+ */
 function addQuestion($question, $answer)
 {
 	$bdd = login_bdd();
@@ -33,7 +36,7 @@ function addQuestion($question, $answer)
 	));
 }
 
-/* Supprime une Question/Answer de la FAQ */
+/* Supprime une question/answer de la FAQ dans la BDD */
 function deleteQuestion($id)
 {
 	$bdd = login_bdd();
