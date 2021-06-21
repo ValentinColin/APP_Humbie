@@ -45,6 +45,7 @@ verif_access('USER');
                 <table id="table-main">
                     <th id = 'cell-value'>Unité: Hz</th>
                         <?php
+                        $element[1][0] = json_decode($element[1][0]);
                             $table = stats($element[1][0]);
                             foreach($element[1][0] as $value){
                                 echo "<th id = 'cell-value' >$value</td>";

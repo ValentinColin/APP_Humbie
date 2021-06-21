@@ -51,8 +51,8 @@ function results($id,$nbr =50){
         $table_results = [];
         foreach($array_results as $results)
         {
-            $results = json_decode($results[0]);
-            $table_results[] = $results;
+            $results = json_decode($results);
+            $table_results[] = $results[0];
         }
         $datas[$i]['results'] = $table_results;
         $i +=1;
